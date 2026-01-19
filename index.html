@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 提示詞結構化生成器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .filter-card.active { border-color: #3b82f6; background-color: #eff6ff; }
+        
+        .layer-content {
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+            max-height: 3500px; 
+            opacity: 1;
+        }
+        .layer-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .sub-switch {
+            transform: scale(0.85);
+            transform-origin: right center;
+        }
+        .color-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent; 
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1); 
+            transition: all 0.2s;
+            position: relative;
+        }
+        .color-swatch:hover {
+            transform: scale(1.15);
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .color-swatch.active {
+            border-color: #64748b; 
+            box-shadow: 0 0 0 2px #fff inset, 0 2px 4px rgba(0,0,0,0.2);
+            transform: scale(1.2);
+            z-index: 10;
+        }
+        .color-swatch.none {
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        .palette-disabled {
+            opacity: 0.3;
+            pointer-events: none;
+            filter: grayscale(100%);
+        }
+
+        /* Custom Scrollbar Styles */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1; 
+            border-radius: 20px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 h-screen flex flex-col overflow-hidden">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white px-6 py-3 rounded-full shadow-lg transition-all duration-300 translate-y-24 opacity-0 z-50 flex items-center gap-2">
+        <i class="fa-solid fa-check-circle text-green-400"></i>
+        <span id="toastMsg">通知訊息</span>
+    </div>
+
+    <!-- 頂部導航 -->
+    <header class="bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center shadow-sm z-10 shrink-0">
+        <div class="flex items-center gap-3">
+            <div class="bg-blue-600 text-white p-2 rounded-lg">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div>
+                <h1 class="font-bold text-xl text-slate-800">Prompt Architect</h1>
+                <p class="text-xs text-slate-500">基於五層邏輯的結構化生成器 (羞澀內八坐版)</p>
+            </div>
+        </div>
+        <button onclick="copyToClipboard()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition flex items-center gap-2 active:scale-95">
+            <i class="fa-regular fa-copy"></i> 複製 JSON
+        </button>
+    </header>
+
+    <!-- 主內容區 -->
+    <main class="flex-1 flex overflow-hidden">
+        
+        <!-- 左側：控制面板 -->
+        <div class="w-full md:w-1/2 lg:w-5/12 overflow-y-auto p-6 space-y-8 border-r border-slate-200 bg-white custom-scrollbar pb-24">
+
+            <!-- Layer 1: 角色模組 -->
+            <section>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">LAYER 1</span>
+                        <h2 class="font-bold text-lg">角色設定 (Character)</h2>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="toggleLayer1" class="sr-only peer" onchange="toggleLayer('contentLayer1', this)">
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+                
+                <div id="contentLayer1" class="layer-content collapsed space-y-5 pl-1">
+                    
+                    <!-- Sub-Option 1: Base -->
+                    <div class="relative border-l-2 border-slate-100 pl-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700">基礎描述 (Base)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleCharBase" class="sr-only peer" onchange="toggleLayer('boxCharBase', this)">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <div id="boxCharBase" class="layer-content collapsed">
+                            <select id="charBase" class="w-full p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                <option value="Young beautiful Japanese woman (日本年輕漂亮女性)">年輕日本女性 (Young Japanese Woman)</option>
+                                <option value="Elegant mature woman (優雅成熟女性)">優雅成熟女性 (Mature Woman)</option>
+                                <option value="Cute Japanese idol (可愛日本偶像)">日本偶像 (Japanese Idol)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Sub-Option 2a: Hair Style -->
+                    <div class="relative border-l-2 border-slate-100 pl-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700">髮型與髮色 (Hair)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleCharHair" class="sr-only peer" onchange="toggleLayer('boxCharHair', this)">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <div id="boxCharHair" class="layer-content collapsed space-y-2">
+                            <div class="flex gap-2">
+                                <select id="charHairCategory" class="w-1/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updateHairStyles()">
+                                    <option value="ponytail">高馬尾</option>
+                                    <option value="short">短髮</option>
+                                    <option value="long">長髮</option>
+                                </select>
+                                <select id="charHairStyle" class="w-2/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                </select>
+                            </div>
+                            <div class="flex items-center gap-2 pt-1">
+                                <span class="text-xs text-slate-500 mr-1">髮色:</span>
+                                <div class="color-swatch none active" onclick="selectHairColor(null, this)" title="不指定顏色"><i class="fa-solid fa-xmark"></i></div>
+                                <div class="color-swatch" style="background-color: #0C0C0C;" onclick="selectHairColor('#0C0C0C', this, 'Jet Black')" title="純黑"></div>
+                                <div class="color-swatch" style="background-color: #333333;" onclick="selectHairColor('#333333', this, 'Soft Black')" title="柔黑"></div>
+                                <div class="color-swatch" style="background-color: #3B2417;" onclick="selectHairColor('#3B2417', this, 'Dark Brown')" title="深棕"></div>
+                                <div class="color-swatch" style="background-color: #5D4037;" onclick="selectHairColor('#5D4037', this, 'Chestnut Brown')" title="栗棕"></div>
+                                <div class="color-swatch" style="background-color: #8D5524;" onclick="selectHairColor('#8D5524', this, 'Light Brown')" title="淺棕"></div>
+                                <div class="color-swatch" style="background-color: #E6BE8A;" onclick="selectHairColor('#E6BE8A', this, 'Blonde')" title="金髮"></div>
+                                <div class="color-swatch" style="background-color: #E0E0E0;" onclick="selectHairColor('#E0E0E0', this, 'Silver')" title="銀髮"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sub-Option 2b: Expression -->
+                    <div class="relative border-l-2 border-slate-100 pl-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700">表情 (Expression)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleCharExpression" class="sr-only peer" onchange="toggleLayer('boxCharExpression', this)">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <div id="boxCharExpression" class="layer-content collapsed">
+                            <div class="flex gap-2">
+                                <select id="charExpressionCategory" class="w-1/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updateExpressionStyles()">
+                                </select>
+                                <select id="charExpressionStyle" class="w-2/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sub-Option 3: Costume -->
+                    <div class="relative border-l-2 border-slate-100 pl-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700">服裝造型 (Costume)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleCharCostume" class="sr-only peer" onchange="toggleLayer('boxCharCostume', this)">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <div id="boxCharCostume" class="layer-content collapsed">
+                            
+                            <!-- 模式切換 -->
+                            <div class="flex gap-2 mb-3 bg-slate-100 p-1 rounded-md">
+                                <button onclick="toggleCostumeMode('set')" id="btnModeSet" class="flex-1 text-xs py-1.5 rounded bg-white shadow text-blue-600 font-bold transition">套裝模式</button>
+                                <button onclick="toggleCostumeMode('mix')" id="btnModeMix" class="flex-1 text-xs py-1.5 rounded text-slate-500 font-medium hover:bg-white/50 transition">自由混搭</button>
+                            </div>
+
+                            <!-- 模式 1: 套裝 (Set) -->
+                            <div id="costumeModeSet">
+                                <div class="flex gap-2">
+                                    <select id="charCostumeSetCategory" class="w-1/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updateCostumeSets()">
+                                        <option value="qipao">旗袍 (Qipao)</option>
+                                        <option value="xmas">聖誕 (Xmas)</option>
+                                        <option value="hanfu">漢服 (Hanfu)</option>
+                                        <option value="kimono">和服 (Kimono)</option>
+                                        <option value="professional">職業 (Work)</option>
+                                    </select>
+                                    <select id="charCostumeSetStyle" class="w-2/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                    </select>
+                                </div>
+                                <div class="flex flex-wrap gap-1.5 mt-2" id="paletteCostumeSet"></div>
+                            </div>
+
+                            <!-- 模式 2: 混搭 (Mix) -->
+                            <div id="costumeModeMix" class="hidden space-y-3">
+                                
+                                <!-- 上衣 -->
+                                <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                    <label class="text-xs font-bold text-slate-500 mb-1 block">上衣 (Top)</label>
+                                    <select id="charTop" class="w-full p-1.5 border border-slate-300 rounded text-sm mb-2" onchange="updatePrompt()">
+                                        <option value="Tube top (平口小可愛)">平口小可愛 (Tube top)</option>
+                                        <option value="Camisole (細肩帶背心)">細肩帶背心 (Camisole)</option>
+                                        <option value="Off-shoulder blouse (露肩襯衫)">露肩襯衫 (Off-shoulder)</option>
+                                        <option value="Crop top (露肚短上衣)">短版上衣 (Crop top)</option>
+                                        <option value="T-shirt (T恤)">T恤 (T-shirt)</option>
+                                        <!-- New options -->
+                                        <option value="Floral lace camisole (碎花蕾絲小可愛)">碎花蕾絲小可愛 (Floral Lace)</option>
+                                        <option value="Candy colored crop T-shirt (糖果色短T恤)">糖果色短T恤 (Candy Crop Tee)</option>
+                                        <option value="Ruffled chiffon camisole (荷葉邊雪紡吊帶)">荷葉邊雪紡吊帶 (Ruffled Chiffon)</option>
+                                        <option value="Tube top bandeau (平口抹胸小可愛)">平口抹胸小可愛 (Bandeau)</option>
+                                        <option value="Backless halter top (露背繞頸背心)">露背繞頸背心 (Halter Top)</option>
+                                        <option value="Bikini top (比基尼式上衣)">比基尼式上衣 (Bikini Top)</option>
+                                    </select>
+                                    <div class="flex flex-wrap gap-1.5" id="paletteTop"></div>
+                                </div>
+
+                                <!-- 下裝 (Bottom) -->
+                                <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                    <label class="text-xs font-bold text-slate-500 mb-1 block">下裝 (Bottom)</label>
+                                    <div class="flex gap-2 mb-2">
+                                        <select id="charBottomCategory" class="w-1/3 p-1.5 border border-slate-300 rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updateBottomStyles()">
+                                            <option value="pants">褲子 (Pants)</option>
+                                            <option value="mini_skirt">迷妳裙 (Mini Skirt)</option>
+                                            <option value="short_skirt">短裙 (Short Skirt)</option>
+                                            <option value="midi_skirt">過膝裙 (Midi Skirt)</option>
+                                            <option value="long_skirt">長裙 (Long Skirt)</option>
+                                        </select>
+                                        <select id="charBottomStyle" class="w-2/3 p-1.5 border border-slate-300 rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                            <!-- JS Populated -->
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-wrap gap-1.5" id="paletteBottom"></div>
+                                </div>
+
+                                <!-- 外套 -->
+                                <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                    <label class="text-xs font-bold text-slate-500 mb-1 block">外套 (Outerwear)</label>
+                                    <select id="charOuter" class="w-full p-1.5 border border-slate-300 rounded text-sm mb-2" onchange="updatePrompt()">
+                                        <option value="Sheer cardigan (薄紗外套)">薄紗外套 (Sheer Cardigan)</option>
+                                        <option value="Denim jacket (牛仔外套)">牛仔外套 (Denim Jacket)</option>
+                                        <option value="Oversized hoodie (寬鬆帽T)">寬鬆帽T (Hoodie)</option>
+                                        <option value="Blazer (西裝外套)">西裝外套 (Blazer)</option>
+                                        <option value="None">無 (None)</option>
+                                    </select>
+                                    <div class="flex flex-wrap gap-1.5" id="paletteOuter"></div>
+                                </div>
+
+                                <!-- 鞋子 -->
+                                <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                    <label class="text-xs font-bold text-slate-500 mb-1 block">鞋子 (Shoes)</label>
+                                    <div class="flex gap-2 mb-2">
+                                        <select id="charShoeCategory" class="w-1/3 p-1.5 border border-slate-300 rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updateShoeStyles()">
+                                            <option value="sneakers">運動鞋</option>
+                                            <option value="heels">高跟鞋</option>
+                                            <option value="barefoot">赤腳</option>
+                                            <option value="boots">靴子</option>
+                                            <option value="flats">平底/涼鞋</option>
+                                            <option value="none">無</option>
+                                        </select>
+                                        <select id="charShoeStyle" class="w-2/3 p-1.5 border border-slate-300 rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                            <!-- JS Populated -->
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-wrap gap-1.5" id="paletteShoes"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sub-Option 4: Legwear (INDEPENDENT) -->
+                    <div class="relative border-l-2 border-slate-100 pl-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700">絲襪與腿部 (Legs)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleCharLegwear" class="sr-only peer" onchange="toggleLayer('boxCharLegwear', this)">
+                                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <div id="boxCharLegwear" class="layer-content collapsed">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                                <select id="charLegwear" class="w-full p-1.5 border border-slate-300 rounded text-sm mb-2" onchange="updatePrompt()">
+                                    <option value="None">無 (None)</option>
+                                    <option value="15D ultra-high gloss sheer pantyhose (15D極高光澤超薄連褲襪)">15D極高光澤連褲襪 (15D High Gloss)</option>
+                                    <option value="Wide lace top thigh-high stockings (寬邊蕾絲大腿襪)">寬邊蕾絲大腿襪 (Lace Thigh-highs)</option>
+                                    <option value="Cotton over-the-knee socks (棉質過膝長襪)">棉質過膝長襪 (Cotton OTK Socks)</option>
+                                </select>
+                                <div class="flex flex-wrap gap-1.5" id="paletteLegwear"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sub-Option 5: Intimate Apparel (INDEPENDENT) -->
+                    <div class="relative border-l-2 border-slate-100 pl-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700 text-pink-600">私密內著 (Intimate)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleCharIntimate" class="sr-only peer" onchange="toggleLayer('boxCharIntimate', this)">
+                                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-pink-500"></div>
+                            </label>
+                        </div>
+                        <div id="boxCharIntimate" class="layer-content collapsed">
+                            <div class="bg-slate-50 p-2 rounded border border-slate-200 border-l-4 border-l-pink-200">
+                                <!-- 內衣 -->
+                                <div class="mb-3">
+                                    <label class="text-[10px] text-slate-400 block mb-1">內衣 (Bra)</label>
+                                    <select id="charBra" class="w-full p-1.5 border border-slate-300 rounded text-sm mb-2" onchange="updatePrompt()">
+                                        <option value="None">無 (None)</option>
+                                        <option value="Lace bra (蕾絲內衣)">蕾絲內衣 (Lace)</option>
+                                        <option value="Cotton bra (棉質內衣)">棉質內衣 (Cotton)</option>
+                                        <option value="Sports bra (運動內衣)">運動內衣 (Sports)</option>
+                                    </select>
+                                    <div class="flex flex-wrap gap-1.5" id="paletteBra"></div>
+                                </div>
+                                <!-- 內褲 -->
+                                <div>
+                                    <label class="text-[10px] text-slate-400 block mb-1">內褲 (Panties)</label>
+                                    <select id="charPanties" class="w-full p-1.5 border border-slate-300 rounded text-sm mb-2" onchange="updatePrompt()">
+                                        <option value="None">無 (None)</option>
+                                        <option value="Lace panties (蕾絲內褲)">蕾絲內褲 (Lace)</option>
+                                        <option value="Cotton panties (棉質內褲)">棉質內褲 (Cotton)</option>
+                                        <option value="Sports panties (運動內褲)">運動內褲 (Sports)</option>
+                                    </select>
+                                    <div class="flex flex-wrap gap-1.5" id="palettePanties"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sub-Option 6: Accessories -->
+                    <div class="relative border-l-2 border-slate-100 pl-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700 text-blue-600">飾品配件 (Accessories)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleCharAccessories" class="sr-only peer" onchange="toggleLayer('boxCharAccessories', this)">
+                                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <div id="boxCharAccessories" class="layer-content collapsed">
+                            <select id="charAccessories" class="w-full p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                <option value="None">無 (None)</option>
+                                <option value="Silver rimless glasses, intellectual look">銀框眼鏡 (Silver Glasses)</option>
+                                <option value="Gold necklace with heart pendant">金項鍊 (Gold Necklace)</option>
+                                <option value="Cute cat ear headphones">貓耳耳機 (Cat Ear Headphones)</option>
+                                <option value="White medical mask">白色口罩 (Medical Mask)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="border-slate-100">
+
+            <!-- Layer 2: 鏡頭模組 -->
+            <section>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">LAYER 2</span>
+                        <h2 class="font-bold text-lg">鏡頭與動作 (Camera)</h2>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="toggleLayer2" class="sr-only peer" onchange="toggleLayer('contentLayer2', this)">
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+                <div id="contentLayer2" class="layer-content collapsed">
+                    <!-- Basic Camera Settings -->
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">取景 (Framing)</label>
+                            <select id="camFraming" class="w-full p-2 border border-slate-300 rounded-md text-sm" onchange="updatePrompt()">
+                                <option value="Full body shot">全身照 (Full Body)</option>
+                                <option value="Cowboy shot (thighs up)">七分身 (Cowboy Shot)</option>
+                                <option value="Upper body shot">半身照 (Upper Body)</option>
+                                <option value="Close up portrait">特寫 (Close Up)</option>
+                                <option value="Extreme close up">眼部/嘴唇特寫 (Extreme Close Up)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">視角 (Angle)</label>
+                            <select id="camAngle" class="w-full p-2 border border-slate-300 rounded-md text-sm" onchange="updatePrompt()">
+                                <option value="Eye level to slightly low angle">平視/微仰 (Eye Level)</option>
+                                <option value="Low angle shot">低角度仰拍 (Low Angle)</option>
+                                <option value="High angle shot">高角度俯拍 (High Angle)</option>
+                                <option value="POV (第一人稱視角)">第一人稱 (POV)</option>
+                                <option value="Dutch angle (荷蘭式傾斜)">荷蘭式傾斜 (Dutch Angle)</option>
+                                <option value="From below (底視角)">底視角 (From Below)</option>
+                                <option value="From above (頂視角)">頂視角 (From Above)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Action / Pose -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-slate-700 mb-1">動作姿態 (Action)</label>
+                        <div class="flex gap-2">
+                            <!-- Level 1: Category -->
+                            <select id="camPoseCategory" class="w-1/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePoseStyles()">
+                                <!-- JS Populated -->
+                            </select>
+                            <!-- Level 2: Style -->
+                            <select id="camPoseStyle" class="w-2/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                <!-- JS Populated -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Hand Action (New Independent Section) -->
+                    <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700">手部動作 (Hand Action)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleHandAction" class="sr-only peer" onchange="toggleLayer('boxHandAction', this)">
+                                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <div id="boxHandAction" class="layer-content collapsed">
+                            <select id="camHandAction" class="w-full p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                                <!-- JS Populated -->
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="border-slate-100">
+
+            <!-- Layer 3: 場景模組 -->
+            <section>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">LAYER 3</span>
+                        <h2 class="font-bold text-lg">物理環境 (Stage)</h2>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="toggleLayer3" class="sr-only peer" onchange="toggleLayer('contentLayer3', this)">
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+                <div id="contentLayer3" class="layer-content collapsed space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">地點 (Location)</label>
+                        <div class="flex gap-2">
+                            <select id="stageLocCategory" class="w-1/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updateStageLocations()">
+                                <!-- JS Populated -->
+                            </select>
+                            <select id="stageLocStyle" class="w-2/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updateStageProps()">
+                                <!-- JS Populated -->
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">場景元素 (Props)</label>
+                        <input type="text" id="stageProps" class="w-full p-2 border border-slate-300 rounded-md text-sm text-slate-600 bg-slate-50" 
+                               value="Wooden school desks and chairs, white vertical blinds/curtains" oninput="updatePrompt()">
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-slate-100">
+
+            <!-- Layer 4: 風格濾鏡 -->
+            <section>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">LAYER 4</span>
+                        <h2 class="font-bold text-lg text-blue-800">風格濾鏡 (Filter)</h2>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="toggleLayer4" class="sr-only peer" onchange="toggleLayer('contentLayer4', this)">
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+                <div id="contentLayer4" class="layer-content collapsed">
+                    <p class="text-xs text-slate-500 mb-3">此選項將決定最終的光影、色調與美學氛圍。</p>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="filter-card border rounded-lg p-3 cursor-pointer hover:border-blue-400 transition" onclick="selectFilter('pastel')">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded bg-pink-100 flex items-center justify-center text-pink-500"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                <div>
+                                    <h3 class="font-bold text-sm">日系夢幻 (Pastel Dream)</h3>
+                                    <p class="text-xs text-slate-500 mt-1">Soft high-key, pastel palette.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card border rounded-lg p-3 cursor-pointer hover:border-blue-400 transition" onclick="selectFilter('luxury')">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded bg-slate-800 flex items-center justify-center text-amber-400"><i class="fa-solid fa-gem"></i></div>
+                                <div>
+                                    <h3 class="font-bold text-sm">高級質感 (Luxury Contrast)</h3>
+                                    <p class="text-xs text-slate-500 mt-1">Indoor light, chiaroscuro, rich textures.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card border rounded-lg p-3 cursor-pointer hover:border-blue-400 transition" onclick="selectFilter('urban')">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded bg-green-100 flex items-center justify-center text-green-600"><i class="fa-solid fa-camera"></i></div>
+                                <div>
+                                    <h3 class="font-bold text-sm">自然街拍 (Urban Realism)</h3>
+                                    <p class="text-xs text-slate-500 mt-1">Natural daylight, low contrast, realistic.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <hr class="border-slate-100">
+
+             <!-- Layer 5: 渲染與媒材 -->
+             <section>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">LAYER 5</span>
+                        <h2 class="font-bold text-lg">渲染與媒材 (Render)</h2>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="toggleLayer5" class="sr-only peer" onchange="toggleLayer('contentLayer5', this)">
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                </div>
+                <div id="contentLayer5" class="layer-content collapsed space-y-4">
+                     <!-- 畫幅比例 -->
+                     <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700">畫幅比例 (Aspect Ratio)</label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleRenderRatio" class="sr-only peer" checked onchange="updatePrompt()">
+                                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <select id="renderRatio" class="w-full p-2 border border-slate-300 rounded-md text-sm" onchange="updatePrompt()">
+                            <option value="2:3">2:3 (Portrait)</option>
+                            <option value="3:4">3:4 (Standard)</option>
+                            <option value="16:9">16:9 (Cinematic)</option>
+                            <option value="1:1">1:1 (Square)</option>
+                        </select>
+                     </div>
+
+                     <!-- 媒材風格 -->
+                     <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-sm font-medium text-slate-700 flex items-center gap-1">
+                                媒材風格 (Medium)
+                                <span class="text-[10px] text-blue-500 bg-blue-50 px-1 rounded border border-blue-100">*影響風格關鍵</span>
+                            </label>
+                            <label class="relative inline-flex items-center cursor-pointer sub-switch">
+                                <input type="checkbox" id="toggleRenderMedium" class="sr-only peer" checked onchange="updatePrompt()">
+                                <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500"></div>
+                            </label>
+                        </div>
+                        <div class="flex gap-2">
+                            <select id="renderMediumCategory" class="w-1/3 p-2 border border-slate-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 outline-none" onchange="updateMediumStyles()">
+                            </select>
+                            <select id="renderMediumStyle" class="w-2/3 p-2 border border-slate-300 rounded-md text-sm bg-blue-50 focus:ring-2 focus:ring-blue-500 outline-none" onchange="updatePrompt()">
+                            </select>
+                        </div>
+                     </div>
+                </div>
+             </section>
+
+             <div class="h-10"></div> <!-- Spacer -->
+        </div>
+
+        <!-- 右側：即時預覽 -->
+        <div class="w-full md:w-1/2 lg:w-7/12 bg-slate-900 text-slate-300 p-6 flex flex-col">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="font-bold text-white"><i class="fa-solid fa-code mr-2"></i>JSON Output</h2>
+                <span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Live Preview</span>
+            </div>
+            
+            <div class="flex-1 bg-slate-950 rounded-lg p-4 border border-slate-800 overflow-auto font-mono text-sm shadow-inner custom-scrollbar relative">
+                <pre id="jsonOutput" class="text-green-400"></pre>
+            </div>
+
+            <!-- 提示區 -->
+            <div class="mt-4 p-3 bg-blue-900/30 border border-blue-800 rounded-md">
+                <div class="flex gap-3">
+                    <i class="fa-solid fa-lightbulb text-yellow-400 mt-1"></i>
+                    <p class="text-xs text-blue-200">
+                        提示：這份代碼包含完整的資料庫與邏輯，直接執行即可運作。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- 完整資料庫定義 (Full Database Definitions) ---
+
+        const filterDatabase = {
+            pastel: {
+                lighting: "Soft high-key lighting, diffuse studio lighting, no harsh shadows, bright and airy",
+                color_palette: [
+                    "Pastel Pink (#FFD1DC)",
+                    "Cream White (#FFFDD0)",
+                    "Beige (#F5F5DC)",
+                    "Light Brown (#B5651D)"
+                ],
+                aesthetic: "J-pop idol style, youthful, innocent, dreamy, soft focus, kawaii"
+            },
+            luxury: {
+                lighting: "Soft artificial indoor lighting, well-lit subject, slight chiaroscuro",
+                color_palette: [
+                    { name: "Pure White", hex: "#FFFFFF" },
+                    { name: "Dark Wood Brown", hex: "#5C4033" },
+                    { name: "Jet Black", hex: "#0C0C0C" },
+                    { name: "Fair Skin Tone", hex: "#FFE0BD" }
+                ],
+                aesthetic: "Gravure idol style, polished, high-fashion cosplay, glossy texture"
+            },
+            urban: {
+                lighting: "Soft diffuse daylight, even illumination, low contrast, no harsh shadows",
+                color_palette: {
+                    dominant: ["#1A1A1A (Black)", "#808080 (Grey)", "#D2B48C (Beige)"],
+                    accents: ["#228B22 (Plant Green)", "#FFFFFF (Signage)"]
+                },
+                aesthetic: "Japanese street fashion, Ryousangata style, feminine, realistic photography"
+            }
+        };
+
+        const hairDatabase = {
+            short: [
+                { value: "Short bob cut (短髮鮑伯頭)", label: "鮑伯頭 (Bob Cut)" },
+                { value: "Pixie cut (精靈短髮)", label: "精靈短髮 (Pixie Cut)" },
+                { value: "Short curly hair (短捲髮)", label: "短捲髮 (Short Curly)" }
+            ],
+            long: [
+                { value: "Long straight hair (長直髮)", label: "長直髮 (Long Straight)" },
+                { value: "Long wavy hair (長捲髮)", label: "長捲髮 (Long Wavy)" },
+                { value: "Hime cut (姬髮式)", label: "姬髮式 (Hime Cut)" }
+            ],
+            ponytail: [
+                { value: "High ponytail with ribbon (緞帶高馬尾)", label: "緞帶高馬尾 (Ribbon Ponytail)" },
+                { value: "Simple sport high ponytail (運動風高馬尾)", label: "運動風高馬尾 (Sport Ponytail)" },
+                { value: "Side ponytail (側馬尾)", label: "側馬尾 (Side Ponytail)" }
+            ]
+        };
+
+        const expressionDatabase = [
+            {
+                label: "喜 (JOY)",
+                options: [
+                    { value: "Sweet smile, eyes curved, showing teeth, sunny atmosphere (甜美治癒)", label: "甜美治癒 (Sweet Smile)" },
+                    { value: "Laughing out loud, squinting eyes, wide mouth, enthusiastic (爽朗大笑)", label: "爽朗大笑 (Big Laugh)" },
+                    { value: "Gentle smile, soft eyes, warm motherly aura (溫柔淺笑)", label: "溫柔淺笑 (Gentle Smile)" },
+                    { value: "Excited, shining eyes, mouth 'O' shape, blushing (驚喜雀躍)", label: "驚喜雀躍 (Excited)" },
+                    { value: "Confident smile, determined eyes, charming (自信笑容)", label: "自信笑容 (Confident)" },
+                    { value: "Shy smile, averting gaze, blushing (羞澀微笑)", label: "羞澀微笑 (Shy Smile)" },
+                    { value: "Blissful expression, closed eyes smile, head tilted up (幸福洋溢)", label: "幸福洋溢 (Blissful)" },
+                    { value: "Teasing face, sticking tongue out, winking, playful (俏皮吐舌)", label: "俏皮吐舌 (Teasing)" },
+                    { value: "Energetic smile, wide eyes, shouting morning (元氣滿滿)", label: "元氣滿滿 (Energetic)" },
+                    { value: "Touched smile, teary eyes, hands clasped, moved (欣慰感動)", label: "欣慰感動 (Touched)" }
+                ]
+            },
+            {
+                label: "怒 (ANGER)",
+                options: [
+                    { value: "Cold scorn, looking down, sharp gaze, distant (清冷蔑視)", label: "清冷蔑視 (Cold Scorn)" },
+                    { value: "Suppressed anger, cold eyes, small pupils, tense face (憤怒壓抑)", label: "憤怒壓抑 (Suppressed Anger)" },
+                    { value: "Manic expression, dilated pupils, twisted smile, crazy (崩潰狂氣)", label: "崩潰狂氣 (Manic)" },
+                    { value: "Disgusted face, frowning, curled lip, wrinkled nose (厭惡嫌棄)", label: "厭惡嫌棄 (Disgust)" },
+                    { value: "Provocative expression, chin up, looking down, mocking smile (高傲挑釁)", label: "高傲挑釁 (Provocative)" },
+                    { value: "Screaming in anger, mouth wide open, veins popping (大聲怒吼)", label: "大聲怒吼 (Screaming)" },
+                    { value: "Glaring, fierce eyes, lowered brows, hostile (不爽瞪視)", label: "不爽瞪視 (Glaring)" },
+                    { value: "Pouty face, puffed cheeks, crossed arms, looking away (傲嬌生氣)", label: "傲嬌生氣 (Pouty Anger)" },
+                    { value: "Murderous look, expressionless, hollow eyes, dark aura (陰沉殺氣)", label: "陰沉殺氣 (Murderous)" },
+                    { value: "Gritting teeth, twitching mouth, hateful eyes (咬牙切齒)", label: "咬牙切齒 (Gritting Teeth)" }
+                ]
+            },
+            {
+                label: "哀 (SORROW)",
+                options: [
+                    { value: "Melancholy, unfocused gaze, sad brows, storytelling atmosphere (憂鬱哀愁)", label: "憂鬱哀愁 (Melancholy)" },
+                    { value: "Crying, red eyes, tears rolling down, pitiful (梨花帶雨)", label: "梨花帶雨 (Crying)" },
+                    { value: "Ethereal blank stare, transparent eyes, no focus, soul left body (空靈呆滯)", label: "空靈呆滯 (Ethereal)" },
+                    { value: "Despair, wide hollow eyes, trembling mouth, darkness (絕望無助)", label: "絕望無助 (Despair)" },
+                    { value: "Grievance, pursed lips, pouting, tears in eyes (委屈巴巴)", label: "委屈巴巴 (Grievance)" },
+                    { value: "Heartbroken, frowning, hand on chest, painful expression (心碎痛苦)", label: "心碎痛苦 (Heartbroken)" },
+                    { value: "Exhausted, dark circles, dull eyes, drooping mouth (疲憊憔悴)", label: "疲憊憔悴 (Exhausted)" },
+                    { value: "Lonely, hugging knees, looking down, solitary (落寞孤單)", label: "落寞孤單 (Lonely)" },
+                    { value: "Forced smile, sad eyes, frowning brows, bitter (強顏歡笑)", label: "強顏歡笑 (Forced Smile)" },
+                    { value: "Fearful, trembling pupils, shrinking body, tears held back (恐懼含淚)", label: "恐懼含淚 (Fearful)" }
+                ]
+            },
+            {
+                label: "樂 (PLEASURE)",
+                options: [
+                    { value: "Seductive face, half-closed moist eyes, red cheeks, parting lips (微醺誘惑)", label: "微醺誘惑 (Seductive)" },
+                    { value: "Playful wink, wrinkled nose, smiling, lively (俏皮眨眼)", label: "俏皮眨眼 (Playful Wink)" },
+                    { value: "Drowsy, unfocused eyes, heavy eyelids, head tilted (慵懶睏倦)", label: "慵懶睏倦 (Drowsy)" },
+                    { value: "Enjoying food, closed eyes, licking lips, satisfied (享受美味)", label: "享受美味 (Enjoying)" },
+                    { value: "Mysterious smile, smirking, deep eyes, dangerous (神祕微笑)", label: "神祕微笑 (Mysterious)" },
+                    { value: "Smug face, side glance, bad boy smile, chin up (得意洋洋)", label: "得意洋洋 (Smug)" },
+                    { value: "Ecstatic face, blushing, panting, looking up, trance (陶醉迷離)", label: "陶醉迷離 (Ecstatic)" },
+                    { value: "Curious face, wide eyes, close to camera, excited smile (好奇探究)", label: "好奇探究 (Curious)" },
+                    { value: "Relaxed expression, exhaling, comfortable smile (放鬆舒展)", label: "放鬆舒展 (Relaxed)" },
+                    { value: "Prankster smile, mischievous eyes, covering mouth (惡作劇壞笑)", label: "惡作劇壞笑 (Prankster)" }
+                ]
+            }
+        ];
+
+        const costumeSetDatabase = {
+            qipao: [
+                { value: "Traditional red silk qipao, golden dragon embroidery, high slit, mandarin collar, sleeveless, red silk high heels (經典紅絲綢旗袍)", label: "經典紅絲綢旗袍 (Classic Red)" },
+                { value: "Modified short qipao, white base with blue porcelain floral patterns, keyhole chest design, cap sleeves, white strappy heels (現代短款花旗袍)", label: "現代短款花旗袍 (Modern Floral)" },
+                { value: "Elegant black velvet qipao, pearl buttons, gold piping, fitted silhouette, tea length, black velvet pumps (黑色絲絨旗袍)", label: "黑色絲絨旗袍 (Black Velvet)" },
+                { value: "White satin qipao with intricate blue floral patterns, traditional cut, side slits, white satin heels (青花瓷旗袍)", label: "青花瓷旗袍 (Blue & White Porcelain)" },
+                { value: "Pink lace overlay qipao, modern fusion style, sheer sleeves, romantic and soft aesthetic, nude high heels (蕾絲改良旗袍)", label: "蕾絲改良旗袍 (Lace Fusion)" },
+                { value: "Sapphire blue velvet qipao, gold phoenix embroidery, tea length, gold strappy heels (藍絲絨鳳凰旗袍)", label: "藍絲絨鳳凰旗袍 (Blue Velvet Phoenix)" },
+                { value: "Modern fusion denim qipao, zipper front, mini length, white canvas sneakers (丹寧改良旗袍)", label: "丹寧改良旗袍 (Denim Fusion)" },
+                { value: "Sheer black lace qipao, nude lining, high slit, black stiletto heels (黑色蕾絲透視旗袍)", label: "黑色蕾絲透視旗袍 (Sheer Black Lace)" },
+                { value: "Pale green silk qipao, bamboo patterns, cap sleeves, pearl accessories, green satin pumps (淡綠竹韻旗袍)", label: "淡綠竹韻旗袍 (Pale Green Bamboo)" },
+                { value: "Golden yellow brocade qipao, mandarin collar, intricate button knots, gold platform heels (金黃織錦旗袍)", label: "金黃織錦旗袍 (Golden Brocade)" },
+                { value: "Sleeveless halter-neck qipao, red and black floral print, open back, black strappy sandals (掛脖露背旗袍)", label: "掛脖露背旗袍 (Halter Neck)" },
+                { value: "White cotton qipao, simple elegance, side slits, beige flat shoes (純棉素雅旗袍)", label: "純棉素雅旗袍 (Simple White Cotton)" },
+                { value: "Purple satin qipao, peony embroidery, long sleeves, velvet texture, purple heels (紫緞牡丹旗袍)", label: "紫緞牡丹旗袍 (Purple Peony)" },
+                { value: "High-fashion leather qipao, tight fit, studs details, black knee-high boots (皮質龐克旗袍)", label: "皮質龐克旗袍 (Leather Punk)" },
+                { value: "Wedding style red qipao, trailing hem, heavy gold thread embroidery, red embroidered shoes (中式婚禮旗袍)", label: "中式婚禮旗袍 (Wedding Red)" }
+            ],
+            xmas: [
+                { value: "Red velvet mini dress with white faux fur trim, black belt, santa hat, festive and cute, black fur-trimmed boots (聖誕女郎洋裝)", label: "聖誕女郎洋裝 (Santa Girl)" },
+                { value: "Brown hooded dress with reindeer antlers and ears, white fur cuffs, cute bell choker, brown suede boots (馴鹿造型)", label: "馴鹿造型 (Reindeer)" },
+                { value: "Oversized red knit sweater with white snowflake patterns, white pleated skirt, white winter boots (雪花毛衣)", label: "雪花毛衣 (Snowflake Sweater)" },
+                { value: "Red lace lingerie set with white fur trim, shear red robe, festive ribbon details, red stiletto heels (性感聖誕內衣)", label: "性感聖誕內衣 (Sexy Lingerie)" },
+                { value: "Green velvet tunic dress with red jagged collar, pointed elf hat, pointed elf shoes with bells (聖誕精靈裝)", label: "聖誕精靈裝 (Elf Helper)" },
+                { value: "Sexy Santa bikini set, red velvet with white fur, santa hat, white fur leg warmers (聖誕比基尼)", label: "聖誕比基尼 (Santa Bikini)" },
+                { value: "Candy cane striped bodysuit, red and white, festive bow, white patent leather boots (糖果手杖連體衣)", label: "糖果手杖連體衣 (Candy Cane Bodysuit)" },
+                { value: "Elegant green velvet evening gown, gold sash, reindeer antler headband, gold heels (綠色絲絨晚禮服)", label: "綠色絲絨晚禮服 (Green Velvet Gown)" },
+                { value: "Cozy reindeer onesie pajamas, hood with antlers, brown fluffy slippers (馴鹿連身睡衣)", label: "馴鹿連身睡衣 (Reindeer Onesie)" },
+                { value: "Snow Queen inspired dress, ice blue satin, snowflake cape, crystal heels (冰雪女王禮服)", label: "冰雪女王禮服 (Snow Queen)" },
+                { value: "Mrs. Claus style long red dress, white apron, glasses, black boots (聖誕婆婆長裙)", label: "聖誕婆婆長裙 (Mrs. Claus)" },
+                { value: "Festive plaid mini skirt, red knit sweater, scarf, black loafers (聖誕格紋學院風)", label: "聖誕格紋學院風 (Festive Plaid)" },
+                { value: "White sweater dress, off-shoulder, fair isle pattern, ugg boots (白色落肩毛衣裙)", label: "白色落肩毛衣裙 (White Sweater Dress)" },
+                { value: "Christmas tree costume, tiered green dress with ornaments, star headband, red pumps (聖誕樹造型裙)", label: "聖誕樹造型裙 (Christmas Tree)" },
+                { value: "Shimmering gold sequin mini dress, red ribbon belt, festive party look, gold strappy sandals (金色亮片派對裙)", label: "金色亮片派對裙 (Gold Sequin Party)" }
+            ],
+            hanfu: [
+                { value: "Tang Dynasty style, sheer shawl (pibo), floral embroidered chest-high skirt, flowing wide sleeves, fairy-like, embroidered silk shoes (唐制齊胸襦裙)", label: "唐制齊胸襦裙 (Tang Dynasty)" },
+                { value: "Song Dynasty style, long sheer outer coat (beizi), camisole (moziong), pleated skirt, scholarly, flat cloth shoes (宋制褙子)", label: "宋制褙子 (Song Dynasty)" },
+                { value: "Ming Dynasty style, woven gold top (ao), mamian skirt (horse-face skirt), dignified and luxurious, platform embroidered shoes (明制襖裙)", label: "明制襖裙 (Ming Dynasty)" },
+                { value: "Cross-collar narrow sleeve hanfu, leather wrist guards, waist sash, dynamic martial arts style, black combat boots (武俠女劍客)", label: "武俠女劍客 (Swordswoman)" },
+                { value: "All white flowing hanfu, multiple layers of sheer silk, silver hair accessories, ethereal and mystical, white silk shoes (白蛇傳風格)", label: "白蛇傳風格 (White Snake Spirit)" },
+                { value: "Wei-Jin style, wide sleeves, crossed collar, flowing layered robes, cloth shoes (魏晉風廣袖衫)", label: "魏晉風廣袖衫 (Wei-Jin Style)" },
+                { value: "Qixiong Ruqun (chest-high skirt), pink gradient, floral embroidery, embroidered flats (粉色漸變齊胸襦裙)", label: "粉色漸變齊胸襦裙 (Pink Gradient)" },
+                { value: "Ming Dynasty style, stand collar top, mamian skirt (horse face skirt), black cloth boots (明制馬面裙)", label: "明制馬面裙 (Mamian Skirt)" },
+                { value: "Song Dynasty style, long beizi coat, camisole, pleated skirt, refined scholarly look, embroidered shoes (宋制長褙子)", label: "宋制長褙子 (Long Beizi)" },
+                { value: "Red bridal Hanfu, heavy gold embroidery, phoenix crown, red embroidered silk shoes (鳳冠霞帔婚服)", label: "鳳冠霞帔婚服 (Bridal Phoenix Crown)" },
+                { value: "Dunhuang Flying Apsaras style, ribbons, exposed midriff, bare feet with anklets (敦煌飛天舞衣)", label: "敦煌飛天舞衣 (Dunhuang Apsaras)" },
+                { value: "Tang Dynasty round collar robe, men's style worn by women, belt, black leather boots (唐制圓領袍)", label: "唐制圓領袍 (Round Collar Robe)" },
+                { value: "Wuxia style white robes, simple and elegant, waist sash, white cloth boots (白衣俠女裝)", label: "白衣俠女裝 (White Wuxia)" },
+                { value: "Green bamboo print Hanfu, literati style, straight hem robes, cloth shoes (竹林雅士漢服)", label: "竹林雅士漢服 (Green Bamboo)" },
+                { value: "Winter Hanfu with fur-lined cloak, warm colors, brocade fabric, warm boots (冬日斗篷漢服)", label: "冬日斗篷漢服 (Winter Cloak)" }
+            ],
+            kimono: [
+                { value: "Gorgeous long-sleeved furisode kimono with vibrant floral patterns, elaborate obi sash, formal traditional style, traditional zori sandals (振袖和服)", label: "振袖和服 (Formal Furisode)" },
+                { value: "Lightweight cotton yukata, indigo blue with morning glory patterns, simple obi, holding a paper fan, wooden geta sandals (夏季浴衣)", label: "夏季浴衣 (Summer Yukata)" },
+                { value: "Arrow feather pattern kimono top, maroon hakama pants, classic Taisho Roman retro student style, black leather lace-up boots (大正浪漫袴)", label: "大正浪漫袴 (Hakama Student)" },
+                { value: "Modernized short kimono dress, off-shoulder, frilly skirt, obi corset, anime kunoichi style, red high heels (改良短和服)", label: "改良短和服 (Short Kimono Dress)" },
+                { value: "Traditional white haori jacket, red hakama pants, sacred and pure atmosphere, traditional zori with red straps (巫女服)", label: "巫女服 (Shrine Maiden Miko)" },
+                { value: "Black Tomesode kimono, five crests, gold pattern on hem, formal zori sandals (黑留袖和服)", label: "黑留袖和服 (Black Tomesode)" },
+                { value: "Pink Homongi kimono, flowing floral patterns across shoulders and hem, pink zori (訪問著和服)", label: "訪問著和服 (Pink Homongi)" },
+                { value: "Red Uchikake wedding overcoat, heavy embroidery of cranes, white kimono underneath, white zori (色打掛婚服)", label: "色打掛婚服 (Red Uchikake Wedding)" },
+                { value: "Dark blue Yukata, fireworks pattern, yellow obi, wooden geta (深藍煙火浴衣)", label: "深藍煙火浴衣 (Fireworks Yukata)" },
+                { value: "Geisha style Hikizuri, trailing hem, black base with autumn leaves, high okobo clogs (藝妓拖尾和服)", label: "藝妓拖尾和服 (Geisha Hikizuri)" },
+                { value: "Hakama outfit, arrow feather pattern top, purple skirt-pants, black lace-up boots (矢羽根紋袴)", label: "矢羽根紋袴 (Arrow Feather Hakama)" },
+                { value: "White Shiromuku wedding kimono, all white layers, white hood (wataboshi), white zori (白無垢婚服)", label: "白無垢婚服 (White Shiromuku)" },
+                { value: "Oiran style kimono, flashy colors, exposed shoulders, heavy hair ornaments, tall black geta (花魁華麗和服)", label: "花魁華麗和服 (Oiran Style)" },
+                { value: "Ninja Kunoichi style, short kimono tunic, mesh armor, ninja tabi boots (女忍短和服)", label: "女忍短和服 (Ninja Kunoichi)" },
+                { value: "Modern lace kimono, fusion style, pastel colors, ribbon obi, lace gloves, western heels (蕾絲改良和服)", label: "蕾絲改良和服 (Modern Lace Fusion)" }
+            ],
+            professional: [
+                { value: "Fitted flight attendant uniform suit, silk neck scarf, pencil skirt, pillbox hat, professional elegance, black leather pumps (空服員)", label: "空服員 (Flight Attendant)" },
+                { value: "Classic white nurse dress, nurse cap, stethoscope, clean and caring look, white nursing shoes (護士服)", label: "護士服 (Nurse Uniform)" },
+                { value: "White blouse, black fitted blazer, tight mini skirt, glasses, sharp business look, black high heels (OL套裝)", label: "OL套裝 (Office Lady)" },
+                { value: "Classic black and white french maid dress, white apron, lace headband, puffed sleeves, black mary jane shoes (女僕裝)", label: "女僕裝 (Maid Outfit)" },
+                { value: "Blue police shirt, badges, tight skirt, utility belt, police hat, authoritative look, black tactical boots (女警)", label: "女警 (Police Officer)" },
+                { value: "Doctor outfit, white lab coat, blue scrubs underneath, stethoscope, comfortable sneakers (醫生白袍)", label: "醫生白袍 (Doctor)" },
+                { value: "Teacher look, cardigan, pencil skirt, glasses, pointer stick, flat shoes (氣質女教師)", label: "氣質女教師 (Teacher)" },
+                { value: "Secretary look, silk blouse, tight mini skirt, high heels (性感秘書)", label: "性感秘書 (Secretary)" },
+                { value: "Police tactical gear, bulletproof vest, utility belt, cargo pants, combat boots (特警戰術裝)", label: "特警戰術裝 (SWAT Tactical)" },
+                { value: "Military officer dress uniform, peaked cap, medals, pencil skirt, dress shoes (軍官禮服)", label: "軍官禮服 (Military Officer)" },
+                { value: "Chef uniform, double-breasted white jacket, checked pants, toque hat, non-slip clogs (主廚制服)", label: "主廚制服 (Chef)" },
+                { value: "Waitress uniform, diner style, apron, name tag, comfortable walking shoes (餐廳女服務生)", label: "餐廳女服務生 (Diner Waitress)" },
+                { value: "Construction worker, reflective vest, hard hat, tank top, jeans, heavy work boots (建築女工)", label: "建築女工 (Construction Worker)" },
+                { value: "Tennis player outfit, white polo shirt, pleated mini skirt, visor, tennis shoes (網球選手)", label: "網球選手 (Tennis Player)" },
+                { value: "Librarian look, conservative blouse, long plaid skirt, reading glasses, loafers (圖書館員)", label: "圖書館員 (Librarian)" }
+            ]
+        };
+
+        const shoeDatabase = {
+            sneakers: [
+                { value: "Sneakers (運動鞋)", label: "基本款 (Basic)" },
+                { value: "High-top sneakers (高筒運動鞋)", label: "高筒 (High-tops)" },
+                { value: "Chunky sneakers (老爹鞋)", label: "老爹鞋 (Chunky)" },
+                { value: "Canvas shoes (帆布鞋)", label: "帆布鞋 (Canvas)" }
+            ],
+            heels: [
+                { value: "High heels (高跟鞋)", label: "基本高跟 (Basic Heels)" },
+                { value: "Stilettos (細跟高跟鞋)", label: "細跟 (Stilettos)" },
+                { value: "Ankle strap heels (踝帶高跟鞋)", label: "踝帶 (Ankle Strap)" },
+                { value: "Platform heels (厚底高跟鞋)", label: "厚底 (Platform)" }
+            ],
+            barefoot: [
+                { value: "Barefoot (赤腳)", label: "赤腳 (Barefoot)" }
+            ],
+            boots: [
+                { value: "Ankle boots (踝靴)", label: "踝靴 (Ankle Boots)" },
+                { value: "Knee-high boots (膝下靴)", label: "膝下靴 (Knee-high)" },
+                { value: "Thigh-high boots (過膝靴)", label: "過膝靴 (Thigh-high)" }
+            ],
+            flats: [
+                { value: "Loafers (樂福鞋)", label: "樂福鞋 (Loafers)" },
+                { value: "Mary Jane shoes (瑪莉珍鞋)", label: "瑪莉珍 (Mary Jane)" },
+                { value: "Sandals (涼鞋)", label: "涼鞋 (Sandals)" },
+                { value: "Ballet flats (芭蕾平底鞋)", label: "平底鞋 (Flats)" }
+            ],
+            none: [
+                { value: "None", label: "無 (None)" }
+            ]
+        };
+
+        const bottomDatabase = {
+            pants: [
+                { value: "Denim shorts (牛仔短褲)", label: "牛仔短褲 (Denim Shorts)" },
+                { value: "Hot pants (熱褲)", label: "熱褲 (Hot Pants)" },
+                { value: "Skinny jeans (緊身牛仔褲)", label: "緊身牛仔褲 (Skinny Jeans)" },
+                { value: "Wide-leg pants (寬褲)", label: "寬褲 (Wide-leg Pants)" },
+                { value: "Leather pants (皮褲)", label: "皮褲 (Leather Pants)" }
+            ],
+            mini_skirt: [
+                { value: "Micro mini skirt (超短迷你裙)", label: "超短迷你裙 (Micro Mini)" },
+                { value: "Pleated mini skirt (百褶迷你裙)", label: "百褶迷你裙 (Pleated Mini)" },
+                { value: "Denim mini skirt (牛仔迷你裙)", label: "牛仔迷你裙 (Denim Mini)" },
+                { value: "Leather mini skirt (皮質迷你裙)", label: "皮質迷你裙 (Leather Mini)" },
+                { value: "Ruffled mini skirt (荷葉邊迷你裙)", label: "荷葉邊迷你裙 (Ruffled Mini)" },
+                // New additions
+                { value: "Denim mini skirt (丹寧短裙)", label: "丹寧短裙 (Denim Mini)" },
+                { value: "Lace tiered skirt (蕾絲蛋糕裙)", label: "蕾絲蛋糕裙 (Lace Tiered)" },
+                { value: "Black velvet mini skirt (黑色絲絨短裙)", label: "黑色絲絨短裙 (Black Velvet)" }
+            ],
+            short_skirt: [
+                { value: "A-line skirt (A字裙)", label: "A字裙 (A-line Skirt)" },
+                { value: "High-waisted skirt (高腰短裙)", label: "高腰短裙 (High-waisted)" },
+                { value: "Tennis skirt (網球裙)", label: "網球裙 (Tennis Skirt)" },
+                { value: "Button-front skirt (排扣裙)", label: "排扣裙 (Button-front)" }
+            ],
+            midi_skirt: [
+                { value: "Tight pencil skirt (窄裙)", label: "窄裙 (Pencil Skirt)" },
+                { value: "Midi pleated skirt (百褶過膝裙)", label: "百褶過膝裙 (Midi Pleated)" },
+                { value: "Office skirt (職場套裝裙)", label: "職場裙 (Office Skirt)" }
+            ],
+            long_skirt: [
+                { value: "Maxi skirt (落地長裙)", label: "落地長裙 (Maxi Skirt)" },
+                { value: "High-slit long skirt (高開衩長裙)", label: "高開衩長裙 (High-slit)" },
+                { value: "Sheer tulle skirt (透視紗裙)", label: "透視紗裙 (Tulle Skirt)" },
+                { value: "Mermaid skirt (魚尾長裙)", label: "魚尾長裙 (Mermaid Skirt)" }
+            ]
+        };
+
+        const poseDatabase = {
+            prone: [
+                { value: "Lying on stomach, propping chin with hands, legs kicking up (趴著托腮翹腳)", label: "趴著托腮翹腳 (Prop Chin)" },
+                { value: "Crawling forward on knees, seductive gaze (膝蓋爬行)", label: "膝蓋爬行 (Crawling)" },
+                { value: "Lying on stomach, reading a book on the floor (趴著看書)", label: "趴著看書 (Reading)" },
+                { value: "Cat pose, arching back slightly on all fours (貓式伸展)", label: "貓式伸展 (Cat Pose)" },
+                { value: "Lying on stomach, stretching arms forward on bed (趴床伸懶腰)", label: "趴床伸懶腰 (Stretching)" },
+                { value: "Lying prone, head resting on crossed arms (趴著休息)", label: "趴著休息 (Resting)" },
+                { value: "Lying on stomach, looking back over shoulder (趴姿回眸)", label: "趴姿回眸 (Looking Back)" },
+                { value: "Lying prone on beach towel, sunbathing (趴著日光浴)", label: "趴著日光浴 (Sunbathing)" },
+                { value: "Lying on stomach, using a laptop (趴著用電腦)", label: "趴著用電腦 (Using Laptop)" },
+                { value: "Lying prone, playing with a pet (趴著逗寵物)", label: "趴著逗寵物 (Playing with Pet)" },
+                { value: "Lying on stomach, hips raised high (高腰趴姿)", label: "高腰趴姿 (Hips Raised)" },
+                { value: "Prone, one hand reaching out to camera (趴姿伸手)", label: "趴姿伸手 (Reaching Out)" },
+                { value: "Lying on stomach, legs in W shape (趴姿W腿)", label: "趴姿W腿 (W-Legs)" },
+                { value: "Prone, looking back biting lip (咬唇回眸)", label: "咬唇回眸 (Biting Lip)" },
+                { value: "Lying prone, burying face in pillow (埋頭趴姿)", label: "埋頭趴姿 (Burying Face)" }
+            ],
+            front: [
+                { value: "Standing straight, hands behind back, shy smile (正面站立藏手)", label: "正面站立藏手 (Shy Standing)" },
+                { value: "Standing confident, hands on hips, chest out (雙手叉腰)", label: "雙手叉腰 (Hands on Hips)" },
+                { value: "Standing, leaning forward slightly, welcoming (身體前傾)", label: "身體前傾 (Leaning Forward)" },
+                { value: "Standing, arms crossed, serious expression (雙手抱胸)", label: "雙手抱胸 (Arms Crossed)" },
+                { value: "Standing, one hand on cheek, thinking (單手托腮站姿)", label: "單手托腮站姿 (Hand on Cheek)" },
+                { value: "Standing, twisting torso (扭腰)", label: "扭腰 (Twisting Torso)" },
+                { value: "Standing, leaning forward (前傾)", label: "前傾 (Leaning Forward)" },
+                { value: "Standing, contrapposto (S型站姿/重心偏移)", label: "S型站姿 (Contrapposto)" },
+                { value: "Standing, bent over (彎腰翹臀)", label: "彎腰翹臀 (Bent Over)" },
+                { value: "Standing, arched back (拱背)", label: "拱背 (Arched Back)" },
+                { value: "Standing, lifting skirt hem high (正面高掀裙)", label: "正面高掀裙 (High Skirt Lift)" },
+                { value: "Standing, pulling down shirt collar (拉領口)", label: "拉領口 (Pulling Collar)" },
+                { value: "Standing, squeezing breasts with arms (雙臂擠胸)", label: "雙臂擠胸 (Squeezing Breasts)" },
+                { value: "Standing, one leg lifted up (站立抬腿)", label: "站立抬腿 (One Leg Up)" },
+                { value: "Standing, hands behind head, armpits exposed (抱頭露腋)", label: "抱頭露腋 (Armpits Exposed)" },
+                { value: "Standing, leaning forward, cleavage view (前傾視角)", label: "前傾視角 (Cleavage View)" },
+                { value: "Standing, pulling pantyhose waistband (拉扯絲襪頭)", label: "拉扯絲襪頭 (Pulling Waistband)" },
+                { value: "Standing, biting finger, seductive look (咬手指站姿)", label: "咬手指站姿 (Biting Finger)" },
+                { value: "Standing, hands on wall, body arched (靠牆拱身)", label: "靠牆拱身 (Wall Arch)" },
+                { value: "Standing, making heart shape on chest (胸前比心)", label: "胸前比心 (Heart on Chest)" }
+            ],
+            back: [
+                { value: "Back view, looking back over shoulder, smiling (背影回眸)", label: "背影回眸 (Looking Back)" },
+                { value: "Back view, holding hands behind back (背手站立)", label: "背手站立 (Hands Behind Back)" },
+                { value: "Walking away from camera, waving goodbye (背影揮手)", label: "背影揮手 (Walking Away)" },
+                { value: "Back view, standing leg lift (背影抬腿)", label: "背影抬腿 (Leg Lift)" },
+                { value: "Back view, looking at scenery (背影賞景)", label: "背影賞景 (Looking Scenery)" },
+                { value: "Back view, looking back over shoulder, skirt lifted (背影掀裙)", label: "背影掀裙 (Skirt Lifted)" },
+                { value: "Back view, bending over, looking through legs (彎腰胯下視角)", label: "彎腰胯下視角 (Through Legs)" },
+                { value: "Back view, pulling up stockings, hips tilted (提拉絲襪/扭胯)", label: "背影提襪 (Pulling Stockings)" },
+                { value: "Back view, hands on buttocks, looking back (回眸扶臀)", label: "回眸扶臀 (Hands on Buttocks)" },
+                { value: "Back view, twisting waist to show side profile (背影扭腰)", label: "背影扭腰 (Twisting Waist)" },
+                { value: "Back view, zip down back of dress (背影拉鍊)", label: "背影拉鍊 (Unzipping)" },
+                { value: "Back view, holding hair up, nape exposed (撩髮露頸)", label: "撩髮露頸 (Exposing Nape)" },
+                { value: "Back view, leaning forward, hips back (前傾翹臀)", label: "前傾翹臀 (Leaning Forward)" },
+                { value: "Back view, looking back over shoulder, finger on lips (回眸噓聲)", label: "回眸噓聲 (Shushing)" },
+                { value: "Back view, walking away, swaying hips (搖曳生姿)", label: "搖曳生姿 (Swaying Hips)" }
+            ],
+            sitting: [
+                { value: "sitting on invisible chair, sitting firmly, knock-kneed sitting, knees touching, ankles apart, cute pose (羞澀內八坐)", label: "羞澀內八坐 (Shy Knock-kneed)" },
+                { value: "Sitting on chair, thighs clamped tight together, calves spread wide in inverted V shape, knees touching (內八夾腿倒V)", label: "內八夾腿倒V (Inverted V Calves)" }, 
+                { value: "kneeling (跪姿)", label: "跪姿 (Kneeling)" },
+                { value: "sitting on camera (騎乘視角)", label: "騎乘視角 (Sitting on Camera)" },
+                { value: "wariza / w-sitting (鴨子坐)", label: "鴨子坐 (W-Sitting)" },
+                { value: "yokozuwari (側坐)", label: "側坐 (Yokozuwari)" },
+                { value: "sitting legs spread (M字開腿坐)", label: "M字開腿坐 (Legs Spread)" },
+                { value: "sitting hugging one knee (單腿抱膝)", label: "單腿抱膝 (Hugging One Knee)" },
+                { value: "kneeling with wide knees (跪姿開腿)", label: "跪姿開腿 (Wide Kneeling)" },
+                { value: "straddling a chair backwards (反坐椅子)", label: "反坐椅子 (Straddling Chair)" },
+                { value: "sitting on heels (正跪坐)", label: "正跪坐 (Seiza)" },
+                { value: "jack-o-lantern pose (抱膝蜷縮)", label: "抱膝蜷縮 (Jack-o-lantern)" },
+                { value: "sitting cross-legged (盤腿坐)", label: "盤腿坐 (Cross-legged)" },
+                { value: "sitting with legs dangling (坐姿晃腿)", label: "坐姿晃腿 (Legs Dangling)" }
+            ],
+            lying: [
+                { value: "Lying on back, looking up, arms spread (大字型仰躺)", label: "大字型仰躺 (Arms Spread)" },
+                { value: "Lying on side, curled up in fetal position (側臥蜷縮)", label: "側臥蜷縮 (Fetal Position)" },
+                { value: "Lying on back, one hand shielding eyes (仰躺遮陽)", label: "仰躺遮陽 (Shielding Eyes)" },
+                { value: "Lying on back, head on pillow, POV (枕頭視角)", label: "枕頭視角 (Pillow POV)" },
+                { value: "Lying on back, upside down face to camera (倒頭視角)", label: "倒頭視角 (Upside Down)" },
+                { value: "Lying sideways, propping head with hand (側臥托頭)", label: "側臥托頭 (Propping Head)" },
+                { value: "Lying on back, legs up against wall (抬腿仰躺)", label: "抬腿仰躺 (Legs Up)" },
+                { value: "Lying on back, holding a book (仰躺看書)", label: "仰躺看書 (Reading)" },
+                { value: "Lying on back, legs spread V-shape (仰臥V字開腿)", label: "仰臥V字開腿 (V-Legs)" },
+                { value: "Lying on back, pulling knees to chest (仰臥抱腿)", label: "仰臥抱腿 (Knees to Chest)" },
+                { value: "Lying on side, top leg raised (側臥抬腿)", label: "側臥抬腿 (Side Leg Lift)" },
+                { value: "Lying on back, looking down at camera (仰視鏡頭)", label: "仰視鏡頭 (Looking Down)" },
+                { value: "Lying on back, arching chest (仰臥挺胸)", label: "仰臥挺胸 (Arching Chest)" },
+                { value: "Lying on side, hand running through hair (側臥撩髮)", label: "側臥撩髮 (Hand in Hair)" },
+                { value: "Lying on back, biting shirt hem (仰臥咬衣角)", label: "仰臥咬衣角 (Biting Shirt)" },
+                { value: "Lying on back, hands bound above head (仰臥被縛感)", label: "仰臥被縛感 (Hands Bound)" },
+                { value: "Lying on bed, messy hair, waking up (慵懶賴床)", label: "慵懶賴床 (Waking Up)" },
+                { value: "Lying on side, sexy pose (性感側臥)", label: "性感側臥 (Sexy Side)" },
+                { value: "Lying in bathtub, relaxed (浴缸躺姿)", label: "浴缸躺姿 (Bathtub)" }
+            ],
+            squatting: [
+                { value: "Squatting down, knees together, cute pose (雙膝併攏蹲姿)", label: "雙膝併攏蹲姿 (Knees Together)" },
+                { value: "Asian squat, heels on ground, relaxed (亞洲蹲)", label: "亞洲蹲 (Asian Squat)" },
+                { value: "Squatting, one knee touching ground (單膝跪蹲)", label: "單膝跪蹲 (One Knee Down)" },
+                { value: "Squatting, looking up at camera (蹲姿仰視)", label: "蹲姿仰視 (Looking Up)" },
+                { value: "Squatting, hugging knees (蹲姿抱膝)", label: "蹲姿抱膝 (Hugging Knees)" },
+                { value: "Squatting, drawing on ground (蹲著畫畫)", label: "蹲著畫畫 (Drawing)" },
+                { value: "Squatting, petting a cat (蹲著摸貓)", label: "蹲著摸貓 (Petting Cat)" },
+                { value: "Deep squat, legs wide apart (M字深蹲)", label: "M字深蹲 (Deep Squat M)" },
+                { value: "Squatting, balancing on toes (踮腳蹲姿)", label: "踮腳蹲姿 (On Toes)" },
+                { value: "Squatting, taking a photo (蹲著拍照)", label: "蹲著拍照 (Taking Photo)" },
+                { value: "Squatting, pulling skirt tight (蹲姿拉裙)", label: "蹲姿拉裙 (Pulling Skirt)" },
+                { value: "Squatting, one leg stretched out (側伸腿蹲姿)", label: "側伸腿蹲姿 (Leg Stretched)" },
+                { value: "Squatting, back view, looking back (背影蹲姿)", label: "背影蹲姿 (Back View)" },
+                { value: "Squatting, resting chin on knees (下巴靠膝)", label: "下巴靠膝 (Chin on Knees)" },
+                { value: "Squatting, holding ankles (手抓腳踝)", label: "手抓腳踝 (Holding Ankles)" },
+                { value: "Squatting, leaning forward, cleavage view (蹲姿前傾)", label: "蹲姿前傾 (Leaning Forward)" }
+            ],
+            leg_focus: [
+                { value: "crossed legs (翹腳/二郎腿)", label: "翹腳 (Crossed Legs)" },
+                { value: "leg lift (抬腿)", label: "抬腿 (Leg Lift)" },
+                { value: "legs apart (張腿)", label: "張腿 (Legs Apart)" },
+                { value: "m-shaped legs (M字腿)", label: "M字腿 (M-shaped Legs)" },
+                { value: "fetal position (蜷曲/胎兒姿)", label: "蜷曲 (Fetal Position)" },
+                { value: "adjusting thighhighs (調整大腿襪)", label: "調整大腿襪 (Adjusting Highs)" },
+                { value: "pulling pantyhose (拉扯絲襪)", label: "拉扯絲襪 (Pulling Pantyhose)" },
+                { value: "feet soles facing camera (腳底特寫)", label: "腳底特寫 (Soles)" },
+                { value: "toes curled (腳趾蜷縮)", label: "腳趾蜷縮 (Curled Toes)" },
+                { value: "one leg resting on other knee (單腿架膝)", label: "單腿架膝 (Leg Resting)" },
+                { value: "knees together feet apart (內八跪姿)", label: "內八跪姿 (Knees Together)" },
+                { value: "standing on tiptoes (墊腳尖)", label: "墊腳尖 (Tiptoes)" },
+                { value: "legs up wall (抬腿靠牆)", label: "抬腿靠牆 (Legs Up Wall)" },
+                { value: "figure 4 leg lock (4字腿)", label: "4字腿 (Figure 4)" },
+                { value: "scissors legs (剪刀腿)", label: "剪刀腿 (Scissors Legs)" },
+                { value: "rubbing legs together (雙腿磨蹭)", label: "雙腿磨蹭 (Rubbing Legs)" },
+                { value: "ankle crossed (腳踝交叉)", label: "腳踝交叉 (Ankle Crossed)" },
+                { value: "knees pulled to chest (抱膝特寫)", label: "抱膝特寫 (Knees to Chest)" },
+                { value: "sitting on calves (壓腿坐)", label: "壓腿坐 (Sitting on Calves)" },
+                { value: "legs dangling off edge (懸空晃腿)", label: "懸空晃腿 (Legs Dangling)" }
+            ]
+        };
+
+        const handActionList = [
+             { value: "None", label: "無 (None)" },
+             { value: "hands on hips (插腰)", label: "插腰 (Hands on Hips)" },
+             { value: "hand on face (摸臉)", label: "摸臉 (Hand on Face)" },
+             { value: "hair pull / grabbing hair (抓頭髮)", label: "抓頭髮 (Grabbing Hair)" },
+             { value: "finger on lips (手指抵唇)", label: "手指抵唇 (Finger on Lips)" },
+             { value: "arms behind head (雙手抱頭)", label: "雙手抱頭 (Arms Behind Head)" },
+             { value: "adjusting thighhighs (調整大腿襪)", label: "調整大腿襪 (Adjusting Stockings)" },
+             { value: "skirt lift (掀裙角)", label: "掀裙角 (Skirt Lift)" },
+             { value: "shirt lift (掀上衣 - 露腹部用)", label: "掀上衣 (Shirt Lift)" },
+             { value: "hands on knees (雙手扶膝)", label: "雙手扶膝 (Hands on Knees)" },
+             { value: "biting finger (咬手指)", label: "咬手指 (Biting Finger)" },
+             { value: "covering breasts (雙手遮胸)", label: "雙手遮胸 (Covering Breasts)" },
+             { value: "pulling straps (拉肩帶)", label: "拉肩帶 (Pulling Straps)" },
+             { value: "hands between legs (手放腿間)", label: "手放腿間 (Hands Between Legs)" },
+             { value: "holding own face (捧臉)", label: "捧臉 (Holding Face)" },
+             { value: "stretching clothes (拉扯衣服)", label: "拉扯衣服 (Stretching Clothes)" },
+             { value: "peace sign near eye (眼邊比耶)", label: "眼邊比耶 (Peace Eye)" },
+             { value: "shushing gesture (噓聲手勢)", label: "噓聲手勢 (Shushing)" },
+             { value: "heart hands (愛心手勢)", label: "愛心手勢 (Heart Hands)" },
+             { value: "finger gun (手槍手勢)", label: "手槍手勢 (Finger Gun)" },
+             // New additions
+             { value: "arms crossed under breasts (雙手抱胸托胸)", label: "雙手抱胸 (Arms Crossed)" },
+             { value: "squeezing breasts with arms (雙臂擠胸)", label: "雙臂擠胸 (Squeezing Breasts)" },
+             { value: "hands lifting breasts (雙手托胸)", label: "雙手托胸 (Lifting Breasts)" },
+             { value: "pulling down collar (拉開領口)", label: "拉開領口 (Pulling Collar)" },
+             { value: "finger in mouth (手指含口)", label: "手指含口 (Finger in Mouth)" },
+             { value: "pulling panty waistband (拉扯內褲頭)", label: "拉內褲頭 (Pulling Panties)" },
+             { value: "finger hooking bra strap (手指勾肩帶)", label: "手指勾肩帶 (Hooking Bra Strap)" },
+             { value: "hands holding ponytail (雙手抓馬尾)", label: "雙手抓馬尾 (Holding Ponytail)" },
+             { value: "hands covering crotch (雙手遮擋私處)", label: "遮擋私處 (Covering Crotch)" },
+             { value: "hands tied up (雙手高舉被縛)", label: "雙手被縛 (Hands Bound)" },
+             { value: "reaching out to camera (伸手求抱)", label: "伸手求抱 (Reaching Out)" },
+             { value: "hand touching neck (撫摸頸部)", label: "撫摸頸部 (Touching Neck)" }
+        ];
+
+        const stageDatabase = {
+            private: [
+                { value: "Cozy bedroom with unmade bed, morning light (溫馨臥室)", label: "溫馨臥室 (Bedroom)", props: "unmade bed, soft pillows, warm lamp, plush rug, alarm clock" },
+                { value: "Modern bathroom with glass shower, steam (現代浴室)", label: "現代浴室 (Bathroom)", props: "glass shower, fluffy towels, mirror, steam, bath products" },
+                { value: "Luxury hotel suite, floor-to-ceiling windows, city view (豪華飯店套房)", label: "豪華飯店套房 (Hotel Suite)", props: "king size bed, champagne bucket, city view window, luggage" },
+                { value: "Messy artist loft, easel, paint supplies (藝術家閣樓)", label: "藝術家閣樓 (Artist Loft)", props: "easel, canvas, paint tubes, brushes, messy apron" },
+                { value: "Japanese tatami room, sliding doors, tea set (日式榻榻米房)", label: "日式榻榻米房 (Tatami Room)", props: "low tea table, floor cushions (zabuton), hanging scroll, sliding doors" },
+                { value: "Walk-in closet with mirrors and clothes (更衣間)", label: "更衣間 (Walk-in Closet)", props: "full-length mirror, hanging clothes, shoe rack, jewelry box" },
+                { value: "Sunlit balcony with plants, railing (陽台)", label: "陽台 (Balcony)", props: "potted plants, railing, patio chair, sunlight" },
+                { value: "Kitchen with marble island, cooking utensils (現代廚房)", label: "現代廚房 (Kitchen)", props: "marble island, knife set, cutting board, fresh fruit" },
+                { value: "Attic room with skylight, dust motes (閣樓)", label: "閣樓 (Attic)", props: "dust particles, old trunk, skylight, vintage furniture" },
+                { value: "Indoor swimming pool, blue tiles (室內泳池)", label: "室內泳池 (Indoor Pool)", props: "blue water, pool ladder, lounge chair, towel" }
+            ],
+            urban: [
+                { value: "Busy Tokyo street crossing, neon signs, rain (東京街頭)", label: "東京街頭 (Tokyo Street)", props: "neon signs, traffic lights, crosswalk, umbrella" },
+                { value: "Rooftop bar at night, city skyline bokeh (頂樓酒吧)", label: "頂樓酒吧 (Rooftop Bar)", props: "cocktail glass, bar stool, city lights, glass railing" },
+                { value: "Subway station platform, tiles, commuters (地鐵站)", label: "地鐵站 (Subway Station)", props: "subway tiles, handle straps, bench, vending machine" },
+                { value: "Convenience store interior, colorful shelves (便利商店)", label: "便利商店 (Convenience Store)", props: "shelves with snacks, refrigerator, magazine rack" },
+                { value: "Quiet library, rows of books, wooden tables (圖書館)", label: "圖書館 (Library)", props: "bookshelves, wooden table, reading lamp, stack of books" },
+                { value: "Trendy cafe, latte art, window seat (咖啡廳)", label: "咖啡廳 (Cafe)", props: "coffee cup, laptop, wooden table, window view" },
+                { value: "Neon lit cyberpunk alleyway, rain puddles (霓虹巷弄)", label: "霓虹巷弄 (Neon Alley)", props: "trash can, posters, puddles, neon glow" },
+                { value: "Shopping mall atrium, escalators, glass roof (購物中心)", label: "購物中心 (Shopping Mall)", props: "escalator, glass railing, shopping bags, mannequin" },
+                { value: "Classroom with chalkboard, desks (教室)", label: "教室 (Classroom)", props: "chalkboard, wooden desks, chairs, textbook" },
+                { value: "Gym with workout equipment, mirrors (健身房)", label: "健身房 (Gym)", props: "dumbbell, treadmill, yoga mat, mirror wall" }
+            ],
+            nature: [
+                { value: "Sunny beach, white sand, turquoise ocean (陽光沙灘)", label: "陽光沙灘 (Beach)", props: "palm tree, sea shells, beach towel, parasol" },
+                { value: "Deep forest path, sunlight through trees (森林小徑)", label: "森林小徑 (Forest)", props: "tall trees, ferns, fallen leaves, sunlight beams" },
+                { value: "Field of sunflowers, blue sky (向日葵花田)", label: "向日葵花田 (Flower Field)", props: "sunflowers, blue sky, straw hat" },
+                { value: "Japanese onsen, steam, rocks, bamboo (露天溫泉)", label: "露天溫泉 (Onsen)", props: "steam, rocks, wooden bucket, sake bottle" },
+                { value: "Snowy mountain landscape, pine trees (雪山)", label: "雪山 (Snowy Mountain)", props: "pine trees, snow, ski tracks" },
+                { value: "Bamboo grove, green light, stone path (竹林)", label: "竹林 (Bamboo Grove)", props: "bamboo stalks, stone lantern, fallen leaves" },
+                { value: "Riverside at sunset, grass, reflections (河畔夕陽)", label: "河畔夕陽 (Riverside)", props: "grass, flowing water, pebbles, sunset reflection" },
+                { value: "Abandoned ruins, overgrown vines, stone walls (廢墟)", label: "廢墟 (Ruins)", props: "vines, broken stone walls, rubble, moss" },
+                { value: "English garden, gazebo, rose bushes (英式花園)", label: "英式花園 (Garden)", props: "rose bushes, white gazebo, tea set, stone bench" },
+                { value: "Desert dunes, golden sand, clear sky (沙漠)", label: "沙漠 (Desert)", props: "sand dunes, cactus, clear sky" }
+            ]
+        };
+
+        const mediumDatabase = {
+            photorealistic: [
+                { value: "Raw Photo, DSLR, 8k, Hyperrealistic, Realistic skin texture, Soft focus, High quality", label: "真實照片 (Raw Photo)" },
+                { value: "Cinematic movie still, Film grain, Movie scene, 8k, Detailed, Color graded", label: "電影質感 (Cinematic)" },
+                { value: "Analog film, Polaroid style, vintage filter, grainy, nostalgic", label: "底片膠捲 (Analog Film)" }
+            ],
+            anime: [
+                { value: "Anime style, official art, key visual, high quality, highly detailed", label: "動畫主視覺 (Key Visual)" },
+                { value: "Japanese manga style, monochrome, screen tones, ink lines, high contrast", label: "日本漫畫 (Manga B&W)" },
+                { value: "Cel shading, vibrant colors, flat coloring, anime screencap style", label: "賽璐珞上色 (Cel Shading)" }
+            ],
+            "3d_render": [
+                { value: "3D Render, Unreal Engine 5, Ray tracing, 8k, Global Illumination", label: "UE5 渲染 (Unreal Engine)" },
+                { value: "Octane render, CGSociety, highly detailed, photorealistic 3d, volumetric lighting", label: "Octane 渲染 (Octane)" },
+                { value: "Blind box style, clay texture, cute 3d, soft lighting, chibi", label: "盲盒公仔 (Blind Box)" }
+            ],
+            semi_real: [
+                { value: "Semi-realistic, 2.5D, digital painting, smooth lighting, detailed eyes", label: "2.5D 半寫實 (2.5D)" },
+                { value: "Game CG, high detail, splash art style, intricate clothes, dynamic lighting", label: "遊戲 CG (Game Art)" },
+                { value: "Semi-realistic cel shading, sharp shadows, anime anatomy with realistic textures", label: "半寫實賽璐珞 (Semi-Cel)" }
+            ]
+        };
+
+        const macaronColors = [
+            { hex: "#FFFFFF", name: "White" },        
+            { hex: "#0C0C0C", name: "Black" }, 
+            { hex: "#FF0000", name: "Bright Red" },       
+            { hex: "#FFD1DC", name: "Sakura" },       
+            { hex: "#FFDAC1", name: "Peach" },        
+            { hex: "#FFFACD", name: "Lemon" },        
+            { hex: "#D0F0C0", name: "Apple Green" }, 
+            { hex: "#AEC6CF", name: "Sky" },          
+            { hex: "#E6E6FA", name: "Lavender"},      
+            { hex: "#F4C2C2", name: "Rose" },         
+            { hex: "#C1E1C1", name: "Mint" },         
+            { hex: "#AFEEEE", name: "Aqua" },         
+            { hex: "#F3E5AB", name: "Vanilla" }       
+        ];
+
+        const shoeColors = [
+            { hex: "#FFFFFF", name: "White" },
+            { hex: "#0C0C0C", name: "Black" },
+            { hex: "#3B2417", name: "Dark Brown" },
+            { hex: "#8D5524", name: "Camel/Tan" },
+            { hex: "#F5F5DC", name: "Beige" },
+            { hex: "#808080", name: "Grey" },
+            { hex: "#800020", name: "Burgundy" },
+            { hex: "#000080", name: "Navy" },
+            { hex: "#FFD700", name: "Gold" },
+            { hex: "#C0C0C0", name: "Silver" }
+        ];
+
+        const legwearColors = [
+            { hex: "#FFFFFF", name: "White" },
+            { hex: "#0C0C0C", name: "Black" },
+            { hex: "#F8D9C6", name: "Skin" },
+            { hex: "#E0E0E0", name: "Sheer", display: "linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee)" } 
+        ];
+
+        let currentFilter = 'pastel';
+        let currentHairColor = null; 
+        let costumeMode = 'set'; 
+        let mixColors = {
+            top: null,
+            bottom: null,
+            outer: null,
+            shoes: null,
+            bra: null,
+            panties: null,
+            legwear: null,
+            costumeSet: null
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            selectFilter('pastel');
+            updateHairStyles();
+            initExpressionMenu(); 
+            initPoseMenu(); 
+            initHandActionMenu(); 
+            updateShoeStyles(); 
+            updateBottomStyles(); 
+            updateCostumeSets(); 
+            initStageMenu();
+            initMediumMenu();
+            renderMacaronPalettes(); 
+            updatePrompt();
+        });
+
+        function initHandActionMenu() {
+            const select = document.getElementById('camHandAction');
+            select.innerHTML = '';
+            handActionList.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.value;
+                option.textContent = item.label;
+                select.appendChild(option);
+            });
+        }
+
+        // Initialize Medium Menu (New)
+        function initMediumMenu() {
+            const categorySelect = document.getElementById('renderMediumCategory');
+            categorySelect.innerHTML = ''; 
+
+            const categories = [
+                { value: "photorealistic", label: "真實照片 (Photorealistic)" },
+                { value: "anime", label: "動漫風格 (Anime)" },
+                { value: "3d_render", label: "3D 渲染 (3D Render)" },
+                { value: "semi_real", label: "半寫實動漫 (Semi-Realistic)" }
+            ];
+
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat.value; 
+                option.textContent = cat.label;
+                categorySelect.appendChild(option);
+            });
+
+            updateMediumStyles();
+        }
+
+        // Update Medium Styles (New)
+        function updateMediumStyles() {
+            const categoryValue = document.getElementById('renderMediumCategory').value;
+            const styleSelect = document.getElementById('renderMediumStyle');
+            
+            styleSelect.innerHTML = '';
+            
+            const styles = mediumDatabase[categoryValue];
+            
+            if (styles) {
+                styles.forEach(style => {
+                    const option = document.createElement('option');
+                    option.value = style.value;
+                    option.textContent = style.label;
+                    styleSelect.appendChild(option);
+                });
+            }
+            updatePrompt();
+        }
+
+        function initStageMenu() {
+            const categorySelect = document.getElementById('stageLocCategory');
+            categorySelect.innerHTML = ''; 
+
+            const categories = [
+                { value: "private", label: "私密居住 (Private)" },
+                { value: "urban", label: "都市現代 (Urban)" },
+                { value: "nature", label: "自然戶外 (Nature)" }
+            ];
+
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat.value; 
+                option.textContent = cat.label;
+                categorySelect.appendChild(option);
+            });
+
+            updateStageLocations();
+        }
+
+        function updateStageLocations() {
+            const categoryValue = document.getElementById('stageLocCategory').value;
+            const styleSelect = document.getElementById('stageLocStyle');
+            
+            styleSelect.innerHTML = '';
+            
+            const locs = stageDatabase[categoryValue];
+            
+            if (locs) {
+                locs.forEach(loc => {
+                    const option = document.createElement('option');
+                    option.value = loc.value;
+                    option.textContent = loc.label;
+                    option.dataset.props = loc.props; 
+                    styleSelect.appendChild(option);
+                });
+            }
+            
+            updateStageProps(); 
+        }
+
+        function updateStageProps() {
+            const styleSelect = document.getElementById('stageLocStyle');
+            const selectedOption = styleSelect.options[styleSelect.selectedIndex];
+            const propsInput = document.getElementById('stageProps');
+            
+            if (selectedOption && selectedOption.dataset.props) {
+                propsInput.value = selectedOption.dataset.props;
+            }
+            
+            updatePrompt();
+        }
+
+        function updateCostumeSets() {
+            const categorySelect = document.getElementById('charCostumeSetCategory');
+            const styleSelect = document.getElementById('charCostumeSetStyle');
+            const selectedCategory = categorySelect.value;
+            
+            styleSelect.innerHTML = '';
+            
+            const sets = costumeSetDatabase[selectedCategory];
+            if (sets) {
+                sets.forEach(style => {
+                    const option = document.createElement('option');
+                    option.value = style.value;
+                    option.textContent = style.label;
+                    styleSelect.appendChild(option);
+                });
+            }
+            updatePrompt();
+        }
+
+        function initPoseMenu() {
+            const categorySelect = document.getElementById('camPoseCategory');
+            categorySelect.innerHTML = ''; 
+
+            const categories = [
+                { value: "prone", label: "趴姿 (Prone)" }, // Added Prone
+                { value: "front", label: "正面 (Front)" },
+                { value: "back", label: "背面 (Back)" },
+                { value: "sitting", label: "坐姿 (Sitting)" },
+                { value: "lying", label: "臥姿 (Lying)" },
+                { value: "squatting", label: "蹲姿 (Squatting)" },
+                { value: "leg_focus", label: "腿部重點 (Legs)" }
+            ];
+
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat.value; 
+                option.textContent = cat.label;
+                categorySelect.appendChild(option);
+            });
+
+            updatePoseStyles();
+        }
+
+        function updatePoseStyles() {
+            const categoryValue = document.getElementById('camPoseCategory').value;
+            const styleSelect = document.getElementById('camPoseStyle');
+            
+            styleSelect.innerHTML = '';
+            
+            const poses = poseDatabase[categoryValue];
+            
+            if (poses) {
+                poses.forEach(pose => {
+                    const option = document.createElement('option');
+                    option.value = pose.value;
+                    option.textContent = pose.label;
+                    styleSelect.appendChild(option);
+                });
+            }
+            
+            updatePrompt();
+        }
+
+        function initExpressionMenu() {
+            const categorySelect = document.getElementById('charExpressionCategory');
+            categorySelect.innerHTML = ''; 
+
+            expressionDatabase.forEach((group, index) => {
+                const option = document.createElement('option');
+                option.value = index; 
+                option.textContent = group.label;
+                categorySelect.appendChild(option);
+            });
+
+            updateExpressionStyles();
+        }
+
+        function updateExpressionStyles() {
+            const categoryIndex = document.getElementById('charExpressionCategory').value;
+            const styleSelect = document.getElementById('charExpressionStyle');
+            
+            styleSelect.innerHTML = '';
+            
+            const group = expressionDatabase[categoryIndex];
+            
+            if (group) {
+                group.options.forEach(opt => {
+                    const option = document.createElement('option');
+                    option.value = opt.value;
+                    option.textContent = opt.label;
+                    styleSelect.appendChild(option);
+                });
+            }
+            
+            updatePrompt();
+        }
+
+        function renderMacaronPalettes() {
+            const containers = ['paletteTop', 'paletteBottom', 'paletteOuter', 'paletteShoes', 'paletteBra', 'palettePanties', 'paletteLegwear', 'paletteCostumeSet'];
+            const types = ['top', 'bottom', 'outer', 'shoes', 'bra', 'panties', 'legwear', 'costumeSet'];
+
+            containers.forEach((id, idx) => {
+                const container = document.getElementById(id);
+                if (!container) return;
+                container.innerHTML = '';
+                const type = types[idx];
+                
+                let colorList;
+                if (type === 'legwear') {
+                    colorList = legwearColors;
+                } else if (type === 'shoes') {
+                    colorList = shoeColors; 
+                } else {
+                    colorList = macaronColors;
+                }
+
+                const noneEl = document.createElement('div');
+                noneEl.className = 'color-swatch none active'; 
+                noneEl.title = '不指定顏色';
+                noneEl.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                noneEl.onclick = function() { selectMixColor(type, null, this, 'None'); };
+                container.appendChild(noneEl);
+
+                colorList.forEach(color => {
+                    const el = document.createElement('div');
+                    el.className = 'color-swatch';
+                    el.style.backgroundColor = color.hex;
+                    el.title = `${color.name}`;
+                    el.onclick = function() { selectMixColor(type, color.hex, this, color.name); };
+                    container.appendChild(el);
+                });
+            });
+        }
+
+        function toggleCostumeMode(mode) {
+            costumeMode = mode;
+            const setDiv = document.getElementById('costumeModeSet');
+            const mixDiv = document.getElementById('costumeModeMix');
+            const btnSet = document.getElementById('btnModeSet');
+            const btnMix = document.getElementById('btnModeMix');
+
+            if (mode === 'set') {
+                setDiv.classList.remove('hidden');
+                mixDiv.classList.add('hidden');
+                btnSet.className = 'flex-1 text-xs py-1.5 rounded bg-white shadow text-blue-600 font-bold transition';
+                btnMix.className = 'flex-1 text-xs py-1.5 rounded text-slate-500 font-medium hover:bg-white/50 transition';
+            } else {
+                setDiv.classList.add('hidden');
+                mixDiv.classList.remove('hidden');
+                btnSet.className = 'flex-1 text-xs py-1.5 rounded text-slate-500 font-medium hover:bg-white/50 transition';
+                btnMix.className = 'flex-1 text-xs py-1.5 rounded bg-white shadow text-blue-600 font-bold transition';
+            }
+            updatePrompt();
+        }
+
+        function selectMixColor(type, hex, el, name) {
+            mixColors[type] = hex ? { hex, name } : null;
+            const parent = el.parentNode;
+            Array.from(parent.children).forEach(child => child.classList.remove('active'));
+            el.classList.add('active');
+            updatePrompt();
+        }
+
+        function updateShoeStyles() {
+            const categorySelect = document.getElementById('charShoeCategory');
+            const styleSelect = document.getElementById('charShoeStyle');
+            const selectedCategory = categorySelect.value;
+            styleSelect.innerHTML = '';
+            const styles = shoeDatabase[selectedCategory];
+            if (styles) {
+                styles.forEach(style => {
+                    const option = document.createElement('option');
+                    option.value = style.value;
+                    option.textContent = style.label;
+                    styleSelect.appendChild(option);
+                });
+            }
+            checkShoeType(); 
+        }
+
+        function checkShoeType() {
+            const category = document.getElementById('charShoeCategory').value;
+            const paletteShoes = document.getElementById('paletteShoes');
+            
+            if (category === 'barefoot' || category === 'none') {
+                paletteShoes.classList.add('palette-disabled');
+                const active = paletteShoes.querySelector('.active');
+                if (active) active.classList.remove('active');
+                const none = paletteShoes.querySelector('.none');
+                if (none) none.classList.add('active');
+            } else {
+                paletteShoes.classList.remove('palette-disabled');
+            }
+            updatePrompt();
+        }
+
+        function updateBottomStyles() {
+            const categorySelect = document.getElementById('charBottomCategory');
+            const styleSelect = document.getElementById('charBottomStyle');
+            const selectedCategory = categorySelect.value;
+            
+            styleSelect.innerHTML = '';
+            
+            const styles = bottomDatabase[selectedCategory];
+            if (styles) {
+                styles.forEach(style => {
+                    const option = document.createElement('option');
+                    option.value = style.value;
+                    option.textContent = style.label;
+                    styleSelect.appendChild(option);
+                });
+            }
+            
+            updatePrompt();
+        }
+
+        function toggleLayer(contentId, checkbox) {
+            const content = document.getElementById(contentId);
+            if (checkbox.checked) {
+                content.classList.remove('collapsed');
+            } else {
+                content.classList.add('collapsed');
+            }
+            updatePrompt();
+        }
+
+        function selectFilter(filterKey) {
+            currentFilter = filterKey;
+            document.querySelectorAll('.filter-card').forEach(card => card.classList.remove('active'));
+            const index = filterKey === 'pastel' ? 0 : filterKey === 'luxury' ? 1 : 2;
+            document.querySelectorAll('.filter-card')[index].classList.add('active');
+            autoSuggestProps(filterKey);
+            updatePrompt();
+        }
+
+        function selectHairColor(hex, el, name) {
+            currentHairColor = hex ? { hex: hex, name: name } : null;
+            document.querySelectorAll('#boxCharHair .color-swatch').forEach(swatch => swatch.classList.remove('active'));
+            el.classList.add('active');
+            updatePrompt();
+        }
+
+        function updateHairStyles() {
+            const categorySelect = document.getElementById('charHairCategory');
+            const styleSelect = document.getElementById('charHairStyle');
+            const selectedCategory = categorySelect.value;
+            styleSelect.innerHTML = '';
+            const styles = hairDatabase[selectedCategory];
+            if (styles) {
+                styles.forEach(style => {
+                    const option = document.createElement('option');
+                    option.value = style.value;
+                    option.textContent = style.label;
+                    styleSelect.appendChild(option);
+                });
+            }
+            updatePrompt();
+        }
+
+        function autoSuggestProps(filterKey) {
+            const propInput = document.getElementById('stageProps');
+            if (filterKey === 'pastel') {
+                propInput.value = "Wooden school desks and chairs, white vertical blinds/curtains";
+            } else if (filterKey === 'luxury') {
+                propInput.value = "Wooden paneling, marble counter, mirror reflection, recessed lighting";
+            } else if (filterKey === 'urban') {
+                propInput.value = "Cafe menu signboards, potted green plants, paved sidewalk, patio heaters";
+            }
+        }
+
+        function updatePrompt() {
+            const layer1Enabled = document.getElementById('toggleLayer1').checked;
+            const layer2Enabled = document.getElementById('toggleLayer2').checked;
+            const layer3Enabled = document.getElementById('toggleLayer3').checked;
+            const layer4Enabled = document.getElementById('toggleLayer4').checked;
+            const layer5Enabled = document.getElementById('toggleLayer5').checked;
+
+            const promptSchema = {};
+
+            const formatItem = (item, colorObj) => {
+                if (!item || item === 'None') return null;
+                if (colorObj) return `${colorObj.name} (${colorObj.hex}) ${item}`; 
+                return item;
+            };
+
+            if (layer1Enabled) {
+                promptSchema.character = {};
+                
+                if (document.getElementById('toggleCharBase').checked) {
+                    promptSchema.character.base = document.getElementById('charBase').value;
+                }
+                
+                if (document.getElementById('toggleCharHair').checked) {
+                    promptSchema.character.hair_style = document.getElementById('charHairStyle').value;
+                    if (currentHairColor) {
+                         promptSchema.character.hair_color = `${currentHairColor.name} (${currentHairColor.hex})`;
+                    }
+                }
+                
+                if (document.getElementById('toggleCharExpression').checked) {
+                    promptSchema.character.expression = document.getElementById('charExpressionStyle').value;
+                }
+
+                if (document.getElementById('toggleCharCostume').checked) {
+                    if (costumeMode === 'set') {
+                        const setDesc = document.getElementById('charCostumeSetStyle').value;
+                        const colorObj = mixColors.costumeSet;
+                        let finalDesc = setDesc;
+                        
+                        if (colorObj && setDesc) {
+                            finalDesc = `${colorObj.name} (${colorObj.hex}) ${setDesc}`;
+                        }
+
+                        promptSchema.character.costume = {
+                            mode: "Set",
+                            description: finalDesc
+                        };
+                    } else {
+                        const top = document.getElementById('charTop').value;
+                        const bottom = document.getElementById('charBottomStyle').value; 
+                        const outer = document.getElementById('charOuter').value;
+                        const shoes = document.getElementById('charShoeStyle').value; 
+                        const shoeCategory = document.getElementById('charShoeCategory').value;
+                        
+                        const outfitParts = [];
+                        
+                        const topPart = formatItem(top, mixColors.top);
+                        if (topPart) outfitParts.push(topPart);
+
+                        const bottomPart = formatItem(bottom, mixColors.bottom);
+                        if (bottomPart) outfitParts.push(bottomPart);
+
+                        const outerPart = formatItem(outer, mixColors.outer);
+                        if (outerPart) outfitParts.push(outerPart);
+
+                        let shoesPart;
+                        if (shoeCategory === 'barefoot' || shoeCategory === 'none') {
+                             if (shoes !== 'None') shoesPart = shoes;
+                        } else {
+                             shoesPart = formatItem(shoes, mixColors.shoes);
+                        }
+                        if (shoesPart) outfitParts.push(shoesPart);
+
+                        promptSchema.character.costume = {
+                            mode: "Mix & Match",
+                            details: outfitParts.join(", ")
+                        };
+                    }
+                }
+
+                if (document.getElementById('toggleCharLegwear').checked) {
+                    const legwear = document.getElementById('charLegwear').value;
+                    let legwearDesc = formatItem(legwear, mixColors.legwear);
+                    
+                    if (legwear && legwear.includes("15D") && legwearDesc) {
+                         legwearDesc += ", fully covering buttocks, underwear worn inside pantyhose, ultimate sheer and wrapping sensation (完整包覆臀部，內著穿於絲襪之內，呈現極致透視與包覆感)";
+                    }
+
+                    if (legwearDesc) {
+                        promptSchema.character.legwear = legwearDesc;
+                    }
+                }
+
+                if (document.getElementById('toggleCharIntimate').checked) {
+                    const bra = document.getElementById('charBra').value;
+                    const panties = document.getElementById('charPanties').value;
+                    
+                    const intimateParts = [];
+                    const braPart = formatItem(bra, mixColors.bra);
+                    if (braPart) intimateParts.push(braPart);
+                    
+                    const pantiesPart = formatItem(panties, mixColors.panties);
+                    if (pantiesPart) intimateParts.push(pantiesPart);
+
+                    if (intimateParts.length > 0) {
+                        promptSchema.character.intimate_apparel = intimateParts.join(", ");
+                    }
+                }
+                
+                if (document.getElementById('toggleCharAccessories').checked) {
+                    const accValue = document.getElementById('charAccessories').value;
+                    if (accValue !== 'None') {
+                        promptSchema.character.accessories = accValue;
+                    }
+                }
+            }
+
+            if (layer2Enabled) {
+                // Get Category Label for better context
+                const poseCatSelect = document.getElementById('camPoseCategory');
+                const poseCatLabel = poseCatSelect.options[poseCatSelect.selectedIndex].text;
+                const poseStyle = document.getElementById('camPoseStyle').value;
+                const handAction = document.getElementById('toggleHandAction').checked ? document.getElementById('camHandAction').value : null;
+
+                const actionObj = {
+                    category: poseCatLabel,
+                    pose: poseStyle
+                };
+                
+                if (handAction && handAction !== 'None') {
+                    actionObj.hands = handAction;
+                }
+
+                promptSchema.camera_work = {
+                    shot_size: document.getElementById('camFraming').value,
+                    camera_angle: document.getElementById('camAngle').value,
+                    action: actionObj
+                };
+            }
+
+            if (layer3Enabled) {
+                promptSchema.stage = {
+                    location: document.getElementById('stageLocStyle').value, 
+                    props: document.getElementById('stageProps').value 
+                };
+            }
+
+            if (layer4Enabled) {
+                promptSchema.filter_preset = filterDatabase[currentFilter];
+            }
+
+            if (layer5Enabled) {
+                promptSchema.render_settings = {};
+
+                if (document.getElementById('toggleRenderRatio').checked) {
+                    promptSchema.render_settings.ratio = document.getElementById('renderRatio').value;
+                }
+
+                if (document.getElementById('toggleRenderMedium').checked) {
+                    const mediumStyle = document.getElementById('renderMediumStyle').value;
+                    const mediumCategory = document.getElementById('renderMediumCategory').value;
+                    
+                    promptSchema.render_settings.medium = {
+                        style: mediumStyle,
+                        category: mediumCategory
+                    };
+
+                    let neg = "";
+                    if (mediumCategory === 'photorealistic') {
+                        neg = "(anime, manga, comic, illustration, 3d), bad anatomy";
+                    } else if (mediumCategory === 'anime') {
+                        neg = "(photorealistic, real life, 3d), bad hands";
+                    } else if (mediumCategory === '3d_render') {
+                        neg = "(2d, sketch, painting), low poly";
+                    }
+                    promptSchema.render_settings.negative_prompt = neg;
+                }
+            }
+
+            document.getElementById('jsonOutput').textContent = JSON.stringify(promptSchema, null, 2);
+        }
+
+        // --- Toast Functionality ---
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            
+            toastMsg.textContent = message;
+            
+            // Show
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            
+            // Hide after 2 seconds
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 2000);
+        }
+
+        function copyToClipboard() {
+            const text = document.getElementById('jsonOutput').textContent;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if(successful) {
+                    showToast('JSON 已成功複製！');
+                } else {
+                    showToast('複製失敗，請手動複製。');
+                }
+            } catch (err) {
+                console.error('複製錯誤:', err);
+                showToast('複製失敗，請手動複製。');
+            }
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
