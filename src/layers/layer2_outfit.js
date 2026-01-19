@@ -1,4 +1,7 @@
-import { costumeSetDatabase, bottomDatabase, shoeDatabase } from '../data/db_outfit.js';
+import { 
+    costumeSetDatabase, bottomDatabase, shoeDatabase,
+    topDatabase, outerDatabase, legwearDatabase, braDatabase, pantiesDatabase, accessoriesDatabase 
+} from '../data/db_outfit.js';
 import { macaronColors, shoeColors, legwearColors } from '../data/db_meta.js';
 import { formatItem, toggleSection } from '../utils.js';
 
@@ -13,18 +16,27 @@ export function init(callback) {
     document.getElementById('btnModeSet').onclick = () => switchMode('set');
     document.getElementById('btnModeMix').onclick = () => switchMode('mix');
 
-    // 下拉選單初始化
+    // ★★★ 初始化所有下拉選單 (Data-Driven) ★★★
+    // 1. 複雜連動選單
     initSelect('charCostumeSetCategory', costumeSetDatabase, updateCostumeStyle);
     initSelect('charBottomCategory', bottomDatabase, updateBottomStyle);
     initSelect('charShoeCategory', shoeDatabase, updateShoeStyle);
 
-    // 綁定其他簡單選單
+    // 2. 簡單列表選單 (使用我們剛剛新增的 DB 資料)
+    populateSimpleSelect('charTop', topDatabase);
+    populateSimpleSelect('charOuter', outerDatabase);
+    populateSimpleSelect('charLegwear', legwearDatabase);
+    populateSimpleSelect('charBra', braDatabase);
+    populateSimpleSelect('charPanties', pantiesDatabase);
+    populateSimpleSelect('charAccessories', accessoriesDatabase);
+
+    // 綁定事件監聽
     ['charTop', 'charOuter', 'charLegwear', 'charBra', 'charPanties', 'charAccessories'].forEach(id => {
         const el = document.getElementById(id);
         if(el) el.addEventListener('change', notify);
     });
     
-    // 二級選單變更
+    // 二級選單變更監聽
     ['charCostumeSetStyle', 'charBottomStyle', 'charShoeStyle'].forEach(id => {
         document.getElementById(id).addEventListener('change', notify);
     });
@@ -74,11 +86,23 @@ function switchMode(mode) {
     notify();
 }
 
+// 用於初始化分類選單 (Category)
 function initSelect(id, db, changeHandler) {
     const el = document.getElementById(id);
     if(!el) return;
+    el.innerHTML = ''; // 清空 HTML 預設值
     Object.keys(db).forEach(k => el.add(new Option(k, k)));
     el.addEventListener('change', changeHandler);
+}
+
+// ★★★ 新增：用於填充簡單列表的輔助函式 ★★★
+function populateSimpleSelect(id, list) {
+    const el = document.getElementById(id);
+    if(!el || !list) return;
+    el.innerHTML = ''; // 清空 HTML 預設值
+    list.forEach(item => {
+        el.add(new Option(item.label, item.value));
+    });
 }
 
 function updateCostumeStyle() {
@@ -96,7 +120,8 @@ function updateShoeStyle() {
     const p = document.getElementById('paletteShoes');
     if(cat === 'barefoot' || cat === 'none') {
         p.classList.add('palette-disabled');
-        selectColor('shoes', null, p.querySelector('.none'));
+        const noneBtn = p.querySelector('.none');
+        if(noneBtn) selectColor('shoes', null, noneBtn);
     } else {
         p.classList.remove('palette-disabled');
     }
@@ -116,6 +141,7 @@ function createPalette(containerId, colors, type) {
 
     const none = document.createElement('div');
     none.className = 'color-swatch none active';
+    none.title = '不指定顏色';
     none.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     none.onclick = (e) => selectColor(type, null, e.currentTarget);
     container.appendChild(none);
