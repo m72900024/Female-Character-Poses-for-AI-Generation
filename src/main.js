@@ -1,6 +1,4 @@
-import { showToast, copyToClipboard } from './utils.js';
-
-// 引入各層邏輯
+import { copyToClipboard } from './utils.js';
 import * as L1 from './layers/layer1_character.js';
 import * as L2 from './layers/layer2_outfit.js';
 import * as L3 from './layers/layer3_camera.js';
@@ -8,68 +6,36 @@ import * as L4 from './layers/layer4_stage.js';
 import * as L5 from './layers/layer5_filter.js';
 import * as L6 from './layers/layer6_render.js';
 
-// 定義核心更新函式 (Aggregation Logic)
 function updatePrompt() {
-    const promptSchema = {};
+    const schema = {};
 
-    // 檢查各層開關狀態
-    const layerCharCoreEnabled = document.getElementById('toggleLayerCharCore')?.checked;
-    const layerOutfitEnabled = document.getElementById('toggleLayerOutfit')?.checked;
-    const layerCameraEnabled = document.getElementById('toggleLayerCamera')?.checked;
-    const layerStageEnabled = document.getElementById('toggleLayerStage')?.checked;
-    const layerFilterEnabled = document.getElementById('toggleLayerFilter')?.checked;
-    const layerRenderEnabled = document.getElementById('toggleLayerRender')?.checked;
+    // 取得開關狀態
+    const enL1 = document.getElementById('toggleLayerCharCore').checked;
+    const enL2 = document.getElementById('toggleLayerOutfit').checked;
+    const enL3 = document.getElementById('toggleLayerCamera').checked;
+    const enL4 = document.getElementById('toggleLayerStage').checked;
+    const enL5 = document.getElementById('toggleLayerFilter').checked;
+    const enL6 = document.getElementById('toggleLayerRender').checked;
 
-    // 初始化 character 物件 (如果 L1 或 L2 開啟)
-    if (layerCharCoreEnabled || layerOutfitEnabled) {
-        promptSchema.character = {};
-    }
+    if (enL1 || enL2) schema.character = {};
 
-    // 收集 Layer 1 資料
-    if (layerCharCoreEnabled) {
-        const l1Data = L1.getData();
-        Object.assign(promptSchema.character, l1Data);
-    }
+    if (enL1) Object.assign(schema.character, L1.getData());
+    if (enL2) Object.assign(schema.character, L2.getData());
+    if (enL3) schema.camera = L3.getData();
+    if (enL4) schema.stage = L4.getData();
+    if (enL5) schema.filter = L5.getData();
+    if (enL6) schema.render = L6.getData();
 
-    // 收集 Layer 2 資料 (合併到 character)
-    if (layerOutfitEnabled) {
-        const l2Data = L2.getData();
-        // L2 返回的可能是 { costume: ..., legwear: ... }
-        Object.assign(promptSchema.character, l2Data);
-    }
-
-    // 收集 Layer 3 資料
-    if (layerCameraEnabled) {
-        promptSchema.camera_work = L3.getData();
-    }
-
-    // 收集 Layer 4 資料
-    if (layerStageEnabled) {
-        promptSchema.stage = L4.getData();
-    }
-
-    // 收集 Layer 5 資料
-    if (layerFilterEnabled) {
-        promptSchema.filter_preset = L5.getData();
-    }
-
-    // 收集 Layer 6 資料
-    if (layerRenderEnabled) {
-        promptSchema.render_settings = L6.getData();
-    }
-
-    // 渲染到畫面
-    const jsonStr = JSON.stringify(promptSchema, null, 2);
-    document.getElementById('jsonOutput').textContent = jsonStr;
+    document.getElementById('jsonOutput').textContent = JSON.stringify(schema, null, 2);
 }
 
-// 初始化
 document.addEventListener('DOMContentLoaded', () => {
     // 綁定複製按鈕
-    const copyBtn = document.querySelector('header button');
-    if(copyBtn) copyBtn.onclick = () => copyToClipboard();
+    document.getElementById('btnCopyJson').addEventListener('click', () => {
+        copyToClipboard(document.getElementById('jsonOutput').textContent);
+    });
 
-    // 初始化各層，並傳入 updatePrompt 作為回調，當 UI 變更時觸發更新
+    // 初始化各層
     L1.init(updatePrompt);
     L2.init(updatePrompt);
     L3.init(updatePrompt);
@@ -77,27 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     L5.init(updatePrompt);
     L6.init(updatePrompt);
 
-    // 綁定 Layer 開關的 checkbox 事件
-    const toggles = [
-        'toggleLayerCharCore', 'toggleLayerOutfit', 'toggleLayerCamera', 
-        'toggleLayerStage', 'toggleLayerFilter', 'toggleLayerRender'
-    ];
-    
-    toggles.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.addEventListener('change', (e) => {
-                // 處理視覺上的摺疊 (這裡簡單實作，也可以移到 utils)
-                const contentId = id.replace('toggle', 'content');
-                const content = document.getElementById(contentId);
-                if (content) {
-                    if (e.target.checked) content.classList.remove('collapsed');
-                    else content.classList.add('collapsed');
-                }
-                updatePrompt();
-            });
-        }
-    });
+    // 處理 Layer 標題欄的摺疊
+    // (已在各層 init 內部或透過 utils 處理)
 
     // 初次執行
     updatePrompt();
