@@ -1,5 +1,4 @@
 import { hairDatabase, expressionDatabase } from '../data/db_character.js';
-// import { macaronColors } from '../data/db_meta.js'; // 這裡不需要引入通用色盤
 import { toggleSection } from '../utils.js';
 
 let updateCallback = null;
@@ -8,29 +7,34 @@ let currentHairColor = null;
 export function init(callback) {
     updateCallback = callback;
     
-    // 初始化表情選單
+    // 1. 初始化表情選單
     const expCat = document.getElementById('charExpressionCategory');
     if (expCat) {
+        expCat.innerHTML = '';
         expressionDatabase.forEach((group, idx) => expCat.add(new Option(group.label, idx)));
         expCat.addEventListener('change', updateExpressionStyles);
     }
     document.getElementById('charExpressionStyle').addEventListener('change', notify);
 
-    // 髮型
+    // 2. 初始化髮型分類選單 (現在改為讀取陣列，支援直接讀取 DB 中的 label)
     const hairCat = document.getElementById('charHairCategory');
     if (hairCat) {
-        Object.keys(hairDatabase).forEach(key => hairCat.add(new Option(key, key)));
+        hairCat.innerHTML = '';
+        hairDatabase.forEach((group, idx) => {
+            // 使用 group.id 作為值，group.label 作為顯示文字
+            hairCat.add(new Option(group.label, group.id));
+        });
         hairCat.addEventListener('change', updateHairStyles);
     }
     document.getElementById('charHairStyle').addEventListener('change', notify);
 
-    // 基礎
+    // 3. 基礎
     document.getElementById('charBase').addEventListener('change', notify);
 
-    // 顏色生成
+    // 4. 顏色生成
     renderHairColors();
 
-    // 綁定開關
+    // 5. 綁定開關
     ['toggleCharBase', 'toggleCharHair', 'toggleCharExpression'].forEach(id => {
         document.getElementById(id).addEventListener('change', () => {
             toggleSection(id);
@@ -47,7 +51,6 @@ function renderHairColors() {
     const container = document.getElementById('hairColorContainer');
     if (!container) return;
 
-    // ★★★ 這裡恢復完整的髮色列表 ★★★
     const colors = [
         { hex: "#0C0C0C", name: "Jet Black (漆黑)" },
         { hex: "#333333", name: "Soft Black (柔黑)" },
@@ -95,11 +98,20 @@ function selectColor(colorObj, el) {
     notify();
 }
 
+// ★★★ 更新髮型子選單 (邏輯已更新以配合新的 DB 結構) ★★★
 function updateHairStyles() {
-    const cat = document.getElementById('charHairCategory').value;
+    const selectedId = document.getElementById('charHairCategory').value;
     const select = document.getElementById('charHairStyle');
     select.innerHTML = '';
-    (hairDatabase[cat] || []).forEach(item => select.add(new Option(item.label, item.value)));
+    
+    // 在陣列中尋找 id 符合的群組
+    const group = hairDatabase.find(g => g.id === selectedId);
+    
+    if (group && group.options) {
+        group.options.forEach(item => {
+            select.add(new Option(item.label, item.value));
+        });
+    }
     notify();
 }
 
