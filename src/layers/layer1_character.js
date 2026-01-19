@@ -1,165 +1,80 @@
-import { hairDatabase, expressionDatabase } from '../data/db_character.js';
-import { macaronColors } from '../data/db_meta.js';
+export const hairDatabase = {
+    short: [
+        { value: "Short bob cut (短髮鮑伯頭)", label: "鮑伯頭 (Bob Cut)" },
+        { value: "Pixie cut (精靈短髮)", label: "精靈短髮 (Pixie Cut)" },
+        { value: "Short curly hair (短捲髮)", label: "短捲髮 (Short Curly)" }
+    ],
+    long: [
+        { value: "Long straight hair (長直髮)", label: "長直髮 (Long Straight)" },
+        { value: "Long wavy hair (長捲髮)", label: "長捲髮 (Long Wavy)" },
+        { value: "Hime cut (姬髮式)", label: "姬髮式 (Hime Cut)" }
+    ],
+    ponytail: [
+        { value: "High ponytail with ribbon (緞帶高馬尾)", label: "緞帶高馬尾 (Ribbon Ponytail)" },
+        { value: "Simple sport high ponytail (運動風高馬尾)", label: "運動風高馬尾 (Sport Ponytail)" },
+        { value: "Side ponytail (側馬尾)", label: "側馬尾 (Side Ponytail)" }
+    ]
+};
 
-let updateCallback = null;
-let currentHairColor = null;
-
-export function init(callback) {
-    updateCallback = callback;
-    
-    // 初始化選單
-    initExpressionMenu();
-    
-    // 綁定事件
-    document.getElementById('charBase').addEventListener('change', notifyUpdate);
-    document.getElementById('toggleCharBase').addEventListener('change', handleToggle);
-    
-    document.getElementById('charHairCategory').addEventListener('change', updateHairStyles);
-    document.getElementById('charHairStyle').addEventListener('change', notifyUpdate);
-    document.getElementById('toggleCharHair').addEventListener('change', handleToggle);
-    
-    document.getElementById('charExpressionCategory').addEventListener('change', updateExpressionStyles);
-    document.getElementById('charExpressionStyle').addEventListener('change', notifyUpdate);
-    document.getElementById('toggleCharExpression').addEventListener('change', handleToggle);
-
-    // 渲染髮色選擇器
-    renderHairColorPalette();
-    
-    // 初次填充子選單
-    updateHairStyles();
-}
-
-function notifyUpdate() {
-    if (updateCallback) updateCallback();
-}
-
-function handleToggle(e) {
-    // 處理 sub-switch 的摺疊邏輯 (需配合 CSS .layer-content.collapsed)
-    const targetId = e.target.id.replace('toggle', 'box');
-    const target = document.getElementById(targetId);
-    if(target) {
-        if(e.target.checked) target.classList.remove('collapsed');
-        else target.classList.add('collapsed');
+export const expressionDatabase = [
+    {
+        label: "喜 (JOY)",
+        options: [
+            { value: "Sweet smile, eyes curved, showing teeth, sunny atmosphere (甜美治癒)", label: "甜美治癒 (Sweet Smile)" },
+            { value: "Laughing out loud, squinting eyes, wide mouth, enthusiastic (爽朗大笑)", label: "爽朗大笑 (Big Laugh)" },
+            { value: "Gentle smile, soft eyes, warm motherly aura (溫柔淺笑)", label: "溫柔淺笑 (Gentle Smile)" },
+            { value: "Excited, shining eyes, mouth 'O' shape, blushing (驚喜雀躍)", label: "驚喜雀躍 (Excited)" },
+            { value: "Confident smile, determined eyes, charming (自信笑容)", label: "自信笑容 (Confident)" },
+            { value: "Shy smile, averting gaze, blushing (羞澀微笑)", label: "羞澀微笑 (Shy Smile)" },
+            { value: "Blissful expression, closed eyes smile, head tilted up (幸福洋溢)", label: "幸福洋溢 (Blissful)" },
+            { value: "Teasing face, sticking tongue out, winking, playful (俏皮吐舌)", label: "俏皮吐舌 (Teasing)" },
+            { value: "Energetic smile, wide eyes, shouting morning (元氣滿滿)", label: "元氣滿滿 (Energetic)" },
+            { value: "Touched smile, teary eyes, hands clasped, moved (欣慰感動)", label: "欣慰感動 (Touched)" }
+        ]
+    },
+    {
+        label: "怒 (ANGER)",
+        options: [
+            { value: "Cold scorn, looking down, sharp gaze, distant (清冷蔑視)", label: "清冷蔑視 (Cold Scorn)" },
+            { value: "Suppressed anger, cold eyes, small pupils, tense face (憤怒壓抑)", label: "憤怒壓抑 (Suppressed Anger)" },
+            { value: "Manic expression, dilated pupils, twisted smile, crazy (崩潰狂氣)", label: "崩潰狂氣 (Manic)" },
+            { value: "Disgusted face, frowning, curled lip, wrinkled nose (厭惡嫌棄)", label: "厭惡嫌棄 (Disgust)" },
+            { value: "Provocative expression, chin up, looking down, mocking smile (高傲挑釁)", label: "高傲挑釁 (Provocative)" },
+            { value: "Screaming in anger, mouth wide open, veins popping (大聲怒吼)", label: "大聲怒吼 (Screaming)" },
+            { value: "Glaring, fierce eyes, lowered brows, hostile (不爽瞪視)", label: "不爽瞪視 (Glaring)" },
+            { value: "Pouty face, puffed cheeks, crossed arms, looking away (傲嬌生氣)", label: "傲嬌生氣 (Pouty Anger)" },
+            { value: "Murderous look, expressionless, hollow eyes, dark aura (陰沉殺氣)", label: "陰沉殺氣 (Murderous)" },
+            { value: "Gritting teeth, twitching mouth, hateful eyes (咬牙切齒)", label: "咬牙切齒 (Gritting Teeth)" }
+        ]
+    },
+    {
+        label: "哀 (SORROW)",
+        options: [
+            { value: "Melancholy, unfocused gaze, sad brows, storytelling atmosphere (憂鬱哀愁)", label: "憂鬱哀愁 (Melancholy)" },
+            { value: "Crying, red eyes, tears rolling down, pitiful (梨花帶雨)", label: "梨花帶雨 (Crying)" },
+            { value: "Ethereal blank stare, transparent eyes, no focus, soul left body (空靈呆滯)", label: "空靈呆滯 (Ethereal)" },
+            { value: "Despair, wide hollow eyes, trembling mouth, darkness (絕望無助)", label: "絕望無助 (Despair)" },
+            { value: "Grievance, pursed lips, pouting, tears in eyes (委屈巴巴)", label: "委屈巴巴 (Grievance)" },
+            { value: "Heartbroken, frowning, hand on chest, painful expression (心碎痛苦)", label: "心碎痛苦 (Heartbroken)" },
+            { value: "Exhausted, dark circles, dull eyes, drooping mouth (疲憊憔悴)", label: "疲憊憔悴 (Exhausted)" },
+            { value: "Lonely, hugging knees, looking down, solitary (落寞孤單)", label: "落寞孤單 (Lonely)" },
+            { value: "Forced smile, sad eyes, frowning brows, bitter (強顏歡笑)", label: "強顏歡笑 (Forced Smile)" },
+            { value: "Fearful, trembling pupils, shrinking body, tears held back (恐懼含淚)", label: "恐懼含淚 (Fearful)" }
+        ]
+    },
+    {
+        label: "樂 (PLEASURE)",
+        options: [
+            { value: "Seductive face, half-closed moist eyes, red cheeks, parting lips (微醺誘惑)", label: "微醺誘惑 (Seductive)" },
+            { value: "Playful wink, wrinkled nose, smiling, lively (俏皮眨眼)", label: "俏皮眨眼 (Playful Wink)" },
+            { value: "Drowsy, unfocused eyes, heavy eyelids, head tilted (慵懶睏倦)", label: "慵懶睏倦 (Drowsy)" },
+            { value: "Enjoying food, closed eyes, licking lips, satisfied (享受美味)", label: "享受美味 (Enjoying)" },
+            { value: "Mysterious smile, smirking, deep eyes, dangerous (神祕微笑)", label: "神祕微笑 (Mysterious)" },
+            { value: "Smug face, side glance, bad boy smile, chin up (得意洋洋)", label: "得意洋洋 (Smug)" },
+            { value: "Ecstatic face, blushing, panting, looking up, trance (陶醉迷離)", label: "陶醉迷離 (Ecstatic)" },
+            { value: "Curious face, wide eyes, close to camera, excited smile (好奇探究)", label: "好奇探究 (Curious)" },
+            { value: "Relaxed expression, exhaling, comfortable smile (放鬆舒展)", label: "放鬆舒展 (Relaxed)" },
+            { value: "Prankster smile, mischievous eyes, covering mouth (惡作劇壞笑)", label: "惡作劇壞笑 (Prankster)" }
+        ]
     }
-    notifyUpdate();
-}
-
-function updateHairStyles() {
-    const category = document.getElementById('charHairCategory').value;
-    const select = document.getElementById('charHairStyle');
-    select.innerHTML = '';
-    
-    const styles = hairDatabase[category] || [];
-    styles.forEach(s => {
-        const opt = document.createElement('option');
-        opt.value = s.value;
-        opt.textContent = s.label;
-        select.appendChild(opt);
-    });
-    notifyUpdate();
-}
-
-function updateExpressionStyles() {
-    const index = document.getElementById('charExpressionCategory').value;
-    const select = document.getElementById('charExpressionStyle');
-    select.innerHTML = '';
-    
-    const group = expressionDatabase[index];
-    if(group) {
-        group.options.forEach(opt => {
-            const el = document.createElement('option');
-            el.value = opt.value;
-            el.textContent = opt.label;
-            select.appendChild(el);
-        });
-    }
-    notifyUpdate();
-}
-
-function initExpressionMenu() {
-    const select = document.getElementById('charExpressionCategory');
-    select.innerHTML = '';
-    expressionDatabase.forEach((group, idx) => {
-        const opt = document.createElement('option');
-        opt.value = idx;
-        opt.textContent = group.label;
-        select.appendChild(opt);
-    });
-}
-
-function renderHairColorPalette() {
-    // 這裡我們直接使用 HTML 裡寫好的 swatches 或動態生成
-    // 為了模組化，我們重新綁定 HTML 中的 onclick 事件到 JS
-    const swatches = document.querySelectorAll('#boxCharHair .color-swatch');
-    swatches.forEach(el => {
-        el.addEventListener('click', () => {
-             // 移除所有 active
-             swatches.forEach(s => s.classList.remove('active'));
-             el.classList.add('active');
-             
-             // 解析顏色
-             if (el.classList.contains('none')) {
-                 currentHairColor = null;
-             } else {
-                 // 從 style 或 title 獲取
-                 // 這裡假設我們將數據存儲在 dataset 或依賴 index，簡單起見我們讀取 inline style
-                 const rgb = el.style.backgroundColor; 
-                 const title = el.title; // 這裡作為名稱
-                 // 需要將 RGB 轉 Hex 或是直接用 title 裡的定義
-                 // 為了精確，建議在 HTML 生成時 dataset.hex = "#..."
-                 // 這裡簡化邏輯：
-                 // 實際專案建議動態生成 palette，這邊暫時沿用 HTML 結構，透過 click 觸發 update
-                 
-                 // **Hack**: 為了配合原代碼邏輯，這裡假設使用者點選時我們知道顏色
-                 // 更好的方式是將顏色數據寫在 dataset 中
-             }
-             
-             // *注意*：因為原本 HTML 是 hardcode onclick="selectHairColor('#0C0C0C', ...)"
-             // 在模組化後，建議用 JS 動態生成這些色塊，或者解析 dataset
-        });
-    });
-    
-    // 重新生成色塊以確保數據正確 (覆蓋 HTML 的內容)
-    const container = document.querySelector('#boxCharHair .flex.items-center.gap-2.pt-1');
-    if(container) {
-        // 清除除了 label 以外的內容
-        // 這裡為了演示方便，我們不做 DOM 重建，而是假設您會修改 init 裡的邏輯
-        // 建議在 main.js 移除 HTML 裡的 onclick，並在這裡動態生成
-    }
-}
-
-// 供外部綁定使用的顏色選擇 (替換 HTML onclick)
-export function setHairColor(hex, name) {
-    currentHairColor = hex ? { hex, name } : null;
-    notifyUpdate();
-}
-
-// 導出資料收集
-export function getData() {
-    const data = {};
-    
-    if (document.getElementById('toggleCharBase').checked) {
-        data.base = document.getElementById('charBase').value;
-    }
-    
-    if (document.getElementById('toggleCharHair').checked) {
-        data.hair_style = document.getElementById('charHairStyle').value;
-        
-        // 這裡需要獲取當前選中的顏色
-        // 簡單實作：查找 active 的元素
-        const activeSwatch = document.querySelector('#boxCharHair .color-swatch.active');
-        if(activeSwatch && !activeSwatch.classList.contains('none')) {
-             // 這裡需要一個機制把 hex 存回來，或者直接讀取 title/dataset
-             // 假設我們修改了 HTML 生成邏輯，加上 data-hex
-             const hex = activeSwatch.dataset.hex || "#000000"; 
-             const name = activeSwatch.title || "Color";
-             data.hair_color = `${name} (${hex})`;
-        }
-    }
-    
-    if (document.getElementById('toggleCharExpression').checked) {
-        data.expression = document.getElementById('charExpressionStyle').value;
-    }
-    
-    return data;
-}
+];
