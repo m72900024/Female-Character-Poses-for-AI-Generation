@@ -10,13 +10,13 @@ project_root/
     ├── utils.js            # [工具] 通用函式 (複製到剪貼簿、Toast 通知、選單動畫)
     │
     ├── data/               # [資料] 靜態資料庫 (純 JSON/Array 格式，易於維護)
-    │   ├── db_character.js   # 角色核心 (髮型分類、表情列表)
-    │   ├── db_outfit.js      # 外裝資料 (套裝, 上衣, 下裝, 外套, 鞋子)
-    │   ├── db_innerwear.js   # 內著資料 (內衣, 內褲, 絲襪, 飾品)
-    │   ├── db_pose.js        # 動作姿勢 (分類陣列), 手部動作
-    │   ├── db_camera.js      # 鏡頭運鏡 (取景 Framing, 視角 Angle)
-    │   ├── db_stage.js       # 場景地點, 環境道具
-    │   └── db_meta.js        # 色盤定義, 風格濾鏡, 渲染媒材
+    │   ├── db_character.js   # 角色核心 
+    │   ├── db_outfit.js      # 外裝資料 
+    │   ├── db_innerwear.js   # 內著資料 
+    │   ├── db_pose.js        # 動作姿勢 
+    │   ├── db_camera.js      # 鏡頭運鏡 
+    │   ├── db_stage.js       # 場景地點
+    │   └── db_meta.js        # 色盤定義
     │
     └── layers/             # [邏輯] 各層級的業務邏輯 (讀取 DB -> 渲染 UI -> 回傳 Data)
         ├── layer1_character.js # Layer 1: 角色核心
