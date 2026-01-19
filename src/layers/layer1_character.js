@@ -1,5 +1,5 @@
 import { hairDatabase, expressionDatabase } from '../data/db_character.js';
-import { macaronColors } from '../data/db_meta.js';
+// import { macaronColors } from '../data/db_meta.js'; // 這裡不需要引入通用色盤
 import { toggleSection } from '../utils.js';
 
 let updateCallback = null;
@@ -45,25 +45,38 @@ export function init(callback) {
 
 function renderHairColors() {
     const container = document.getElementById('hairColorContainer');
-    // 預設顏色列表
+    if (!container) return;
+
+    // ★★★ 這裡恢復完整的髮色列表 ★★★
     const colors = [
-        {hex:'#0C0C0C', name:'Black'}, {hex:'#333', name:'Soft Black'},
-        {hex:'#5D4037', name:'Brown'}, {hex:'#E6BE8A', name:'Blonde'},
-        {hex:'#E0E0E0', name:'Silver'}
+        { hex: "#0C0C0C", name: "Jet Black (漆黑)" },
+        { hex: "#333333", name: "Soft Black (柔黑)" },
+        { hex: "#3B2417", name: "Dark Brown (深棕)" },
+        { hex: "#5D4037", name: "Chestnut Brown (栗棕)" },
+        { hex: "#8D5524", name: "Light Brown (淺棕)" },
+        { hex: "#E6BE8A", name: "Blonde (金髮)" },
+        { hex: "#C0C0C0", name: "Silver/Grey (銀灰)" },
+        { hex: "#FFFFFF", name: "Platinum White (白金)" },
+        { hex: "#FF0000", name: "Redhead (紅髮)" },
+        { hex: "#800020", name: "Burgundy (酒紅)" },
+        { hex: "#FF69B4", name: "Pink (粉髮)" },
+        { hex: "#8A2BE2", name: "BlueViolet (紫髮)" }
     ];
     
-    // 清除舊的色塊（除了 label）
-    while(container.children.length > 1) {
-        container.removeChild(container.lastChild);
-    }
+    // 安全地清除舊內容，保留標籤文字
+    const labelSpan = container.querySelector('span.text-slate-500');
+    container.innerHTML = ''; 
+    if (labelSpan) container.appendChild(labelSpan);
 
-    // 無色
+    // 無色按鈕
     const noneDiv = document.createElement('div');
     noneDiv.className = 'color-swatch none active';
+    noneDiv.title = "不指定顏色";
     noneDiv.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     noneDiv.onclick = (e) => selectColor(null, e.currentTarget);
     container.appendChild(noneDiv);
 
+    // 生成所有色塊
     colors.forEach(c => {
         const div = document.createElement('div');
         div.className = 'color-swatch';
