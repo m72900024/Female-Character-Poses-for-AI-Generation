@@ -1,3 +1,4 @@
+// --- 套裝與主要分類 (Complex Sets) ---
 export const costumeSetDatabase = {
     qipao: [
         { value: "Traditional red silk qipao, golden dragon embroidery, high slit, mandarin collar, sleeveless, red silk high heels (經典紅絲綢旗袍)", label: "經典紅絲綢旗袍 (Classic Red)" },
@@ -8,30 +9,16 @@ export const costumeSetDatabase = {
         { value: "Sapphire blue velvet qipao, gold phoenix embroidery, tea length, gold strappy heels (藍絲絨鳳凰旗袍)", label: "藍絲絨鳳凰旗袍 (Blue Velvet Phoenix)" },
         { value: "Modern fusion denim qipao, zipper front, mini length, white canvas sneakers (丹寧改良旗袍)", label: "丹寧改良旗袍 (Denim Fusion)" },
         { value: "Sheer black lace qipao, nude lining, high slit, black stiletto heels (黑色蕾絲透視旗袍)", label: "黑色蕾絲透視旗袍 (Sheer Black Lace)" },
-        { value: "Pale green silk qipao, bamboo patterns, cap sleeves, pearl accessories, green satin pumps (淡綠竹韻旗袍)", label: "淡綠竹韻旗袍 (Pale Green Bamboo)" },
-        { value: "Golden yellow brocade qipao, mandarin collar, intricate button knots, gold platform heels (金黃織錦旗袍)", label: "金黃織錦旗袍 (Golden Brocade)" },
         { value: "Sleeveless halter-neck qipao, red and black floral print, open back, black strappy sandals (掛脖露背旗袍)", label: "掛脖露背旗袍 (Halter Neck)" },
-        { value: "White cotton qipao, simple elegance, side slits, beige flat shoes (純棉素雅旗袍)", label: "純棉素雅旗袍 (Simple White Cotton)" },
-        { value: "Purple satin qipao, peony embroidery, long sleeves, velvet texture, purple heels (紫緞牡丹旗袍)", label: "紫緞牡丹旗袍 (Purple Peony)" },
-        { value: "High-fashion leather qipao, tight fit, studs details, black knee-high boots (皮質龐克旗袍)", label: "皮質龐克旗袍 (Leather Punk)" },
-        { value: "Wedding style red qipao, trailing hem, heavy gold thread embroidery, red embroidered shoes (中式婚禮旗袍)", label: "中式婚禮旗袍 (Wedding Red)" }
+        { value: "High-fashion leather qipao, tight fit, studs details, black knee-high boots (皮質龐克旗袍)", label: "皮質龐克旗袍 (Leather Punk)" }
     ],
     xmas: [
         { value: "Red velvet mini dress with white faux fur trim, black belt, santa hat, festive and cute, black fur-trimmed boots (聖誕女郎洋裝)", label: "聖誕女郎洋裝 (Santa Girl)" },
         { value: "Brown hooded dress with reindeer antlers and ears, white fur cuffs, cute bell choker, brown suede boots (馴鹿造型)", label: "馴鹿造型 (Reindeer)" },
         { value: "Oversized red knit sweater with white snowflake patterns, white pleated skirt, white winter boots (雪花毛衣)", label: "雪花毛衣 (Snowflake Sweater)" },
-        { value: "Red lace lingerie set with white fur trim, shear red robe, festive ribbon details, red stiletto heels (性感聖誕內衣)", label: "性感聖誕內衣 (Sexy Lingerie)" },
-        { value: "Green velvet tunic dress with red jagged collar, pointed elf hat, pointed elf shoes with bells (聖誕精靈裝)", label: "聖誕精靈裝 (Elf Helper)" },
         { value: "Sexy Santa bikini set, red velvet with white fur, santa hat, white fur leg warmers (聖誕比基尼)", label: "聖誕比基尼 (Santa Bikini)" },
         { value: "Candy cane striped bodysuit, red and white, festive bow, white patent leather boots (糖果手杖連體衣)", label: "糖果手杖連體衣 (Candy Cane Bodysuit)" },
-        { value: "Elegant green velvet evening gown, gold sash, reindeer antler headband, gold heels (綠色絲絨晚禮服)", label: "綠色絲絨晚禮服 (Green Velvet Gown)" },
-        { value: "Cozy reindeer onesie pajamas, hood with antlers, brown fluffy slippers (馴鹿連身睡衣)", label: "馴鹿連身睡衣 (Reindeer Onesie)" },
-        { value: "Snow Queen inspired dress, ice blue satin, snowflake cape, crystal heels (冰雪女王禮服)", label: "冰雪女王禮服 (Snow Queen)" },
-        { value: "Mrs. Claus style long red dress, white apron, glasses, black boots (聖誕婆婆長裙)", label: "聖誕婆婆長裙 (Mrs. Claus)" },
-        { value: "Festive plaid mini skirt, red knit sweater, scarf, black loafers (聖誕格紋學院風)", label: "聖誕格紋學院風 (Festive Plaid)" },
-        { value: "White sweater dress, off-shoulder, fair isle pattern, ugg boots (白色落肩毛衣裙)", label: "白色落肩毛衣裙 (White Sweater Dress)" },
-        { value: "Christmas tree costume, tiered green dress with ornaments, star headband, red pumps (聖誕樹造型裙)", label: "聖誕樹造型裙 (Christmas Tree)" },
-        { value: "Shimmering gold sequin mini dress, red ribbon belt, festive party look, gold strappy sandals (金色亮片派對裙)", label: "金色亮片派對裙 (Gold Sequin Party)" }
+        { value: "Christmas tree costume, tiered green dress with ornaments, star headband, red pumps (聖誕樹造型裙)", label: "聖誕樹造型裙 (Christmas Tree)" }
     ],
     hanfu: [
         { value: "Tang Dynasty style, sheer shawl (pibo), floral embroidered chest-high skirt, flowing wide sleeves, fairy-like, embroidered silk shoes (唐制齊胸襦裙)", label: "唐制齊胸襦裙 (Tang Dynasty)" },
@@ -39,16 +26,7 @@ export const costumeSetDatabase = {
         { value: "Ming Dynasty style, woven gold top (ao), mamian skirt (horse-face skirt), dignified and luxurious, platform embroidered shoes (明制襖裙)", label: "明制襖裙 (Ming Dynasty)" },
         { value: "Cross-collar narrow sleeve hanfu, leather wrist guards, waist sash, dynamic martial arts style, black combat boots (武俠女劍客)", label: "武俠女劍客 (Swordswoman)" },
         { value: "All white flowing hanfu, multiple layers of sheer silk, silver hair accessories, ethereal and mystical, white silk shoes (白蛇傳風格)", label: "白蛇傳風格 (White Snake Spirit)" },
-        { value: "Wei-Jin style, wide sleeves, crossed collar, flowing layered robes, cloth shoes (魏晉風廣袖衫)", label: "魏晉風廣袖衫 (Wei-Jin Style)" },
-        { value: "Qixiong Ruqun (chest-high skirt), pink gradient, floral embroidery, embroidered flats (粉色漸變齊胸襦裙)", label: "粉色漸變齊胸襦裙 (Pink Gradient)" },
-        { value: "Ming Dynasty style, stand collar top, mamian skirt (horse face skirt), black cloth boots (明制馬面裙)", label: "明制馬面裙 (Mamian Skirt)" },
-        { value: "Song Dynasty style, long beizi coat, camisole, pleated skirt, refined scholarly look, embroidered shoes (宋制長褙子)", label: "宋制長褙子 (Long Beizi)" },
-        { value: "Red bridal Hanfu, heavy gold embroidery, phoenix crown, red embroidered silk shoes (鳳冠霞帔婚服)", label: "鳳冠霞帔婚服 (Bridal Phoenix Crown)" },
-        { value: "Dunhuang Flying Apsaras style, ribbons, exposed midriff, bare feet with anklets (敦煌飛天舞衣)", label: "敦煌飛天舞衣 (Dunhuang Apsaras)" },
-        { value: "Tang Dynasty round collar robe, men's style worn by women, belt, black leather boots (唐制圓領袍)", label: "唐制圓領袍 (Round Collar Robe)" },
-        { value: "Wuxia style white robes, simple and elegant, waist sash, white cloth boots (白衣俠女裝)", label: "白衣俠女裝 (White Wuxia)" },
-        { value: "Green bamboo print Hanfu, literati style, straight hem robes, cloth shoes (竹林雅士漢服)", label: "竹林雅士漢服 (Green Bamboo)" },
-        { value: "Winter Hanfu with fur-lined cloak, warm colors, brocade fabric, warm boots (冬日斗篷漢服)", label: "冬日斗篷漢服 (Winter Cloak)" }
+        { value: "Dunhuang Flying Apsaras style, ribbons, exposed midriff, bare feet with anklets (敦煌飛天舞衣)", label: "敦煌飛天舞衣 (Dunhuang Apsaras)" }
     ],
     kimono: [
         { value: "Gorgeous long-sleeved furisode kimono with vibrant floral patterns, elaborate obi sash, formal traditional style, traditional zori sandals (振袖和服)", label: "振袖和服 (Formal Furisode)" },
@@ -56,14 +34,6 @@ export const costumeSetDatabase = {
         { value: "Arrow feather pattern kimono top, maroon hakama pants, classic Taisho Roman retro student style, black leather lace-up boots (大正浪漫袴)", label: "大正浪漫袴 (Hakama Student)" },
         { value: "Modernized short kimono dress, off-shoulder, frilly skirt, obi corset, anime kunoichi style, red high heels (改良短和服)", label: "改良短和服 (Short Kimono Dress)" },
         { value: "Traditional white haori jacket, red hakama pants, sacred and pure atmosphere, traditional zori with red straps (巫女服)", label: "巫女服 (Shrine Maiden Miko)" },
-        { value: "Black Tomesode kimono, five crests, gold pattern on hem, formal zori sandals (黑留袖和服)", label: "黑留袖和服 (Black Tomesode)" },
-        { value: "Pink Homongi kimono, flowing floral patterns across shoulders and hem, pink zori (訪問著和服)", label: "訪問著和服 (Pink Homongi)" },
-        { value: "Red Uchikake wedding overcoat, heavy embroidery of cranes, white kimono underneath, white zori (色打掛婚服)", label: "色打掛婚服 (Red Uchikake Wedding)" },
-        { value: "Dark blue Yukata, fireworks pattern, yellow obi, wooden geta (深藍煙火浴衣)", label: "深藍煙火浴衣 (Fireworks Yukata)" },
-        { value: "Geisha style Hikizuri, trailing hem, black base with autumn leaves, high okobo clogs (藝妓拖尾和服)", label: "藝妓拖尾和服 (Geisha Hikizuri)" },
-        { value: "Hakama outfit, arrow feather pattern top, purple skirt-pants, black lace-up boots (矢羽根紋袴)", label: "矢羽根紋袴 (Arrow Feather Hakama)" },
-        { value: "White Shiromuku wedding kimono, all white layers, white hood (wataboshi), white zori (白無垢婚服)", label: "白無垢婚服 (White Shiromuku)" },
-        { value: "Oiran style kimono, flashy colors, exposed shoulders, heavy hair ornaments, tall black geta (花魁華麗和服)", label: "花魁華麗和服 (Oiran Style)" },
         { value: "Ninja Kunoichi style, short kimono tunic, mesh armor, ninja tabi boots (女忍短和服)", label: "女忍短和服 (Ninja Kunoichi)" },
         { value: "Modern lace kimono, fusion style, pastel colors, ribbon obi, lace gloves, western heels (蕾絲改良和服)", label: "蕾絲改良和服 (Modern Lace Fusion)" }
     ],
@@ -77,15 +47,87 @@ export const costumeSetDatabase = {
         { value: "Teacher look, cardigan, pencil skirt, glasses, pointer stick, flat shoes (氣質女教師)", label: "氣質女教師 (Teacher)" },
         { value: "Secretary look, silk blouse, tight mini skirt, high heels (性感秘書)", label: "性感秘書 (Secretary)" },
         { value: "Police tactical gear, bulletproof vest, utility belt, cargo pants, combat boots (特警戰術裝)", label: "特警戰術裝 (SWAT Tactical)" },
-        { value: "Military officer dress uniform, peaked cap, medals, pencil skirt, dress shoes (軍官禮服)", label: "軍官禮服 (Military Officer)" },
-        { value: "Chef uniform, double-breasted white jacket, checked pants, toque hat, non-slip clogs (主廚制服)", label: "主廚制服 (Chef)" },
         { value: "Waitress uniform, diner style, apron, name tag, comfortable walking shoes (餐廳女服務生)", label: "餐廳女服務生 (Diner Waitress)" },
-        { value: "Construction worker, reflective vest, hard hat, tank top, jeans, heavy work boots (建築女工)", label: "建築女工 (Construction Worker)" },
-        { value: "Tennis player outfit, white polo shirt, pleated mini skirt, visor, tennis shoes (網球選手)", label: "網球選手 (Tennis Player)" },
-        { value: "Librarian look, conservative blouse, long plaid skirt, reading glasses, loafers (圖書館員)", label: "圖書館員 (Librarian)" }
+        { value: "Tennis player outfit, white polo shirt, pleated mini skirt, visor, tennis shoes (網球選手)", label: "網球選手 (Tennis Player)" }
     ]
 };
 
+// --- 混搭單品：上衣 (Tops) ---
+export const topDatabase = [
+    { value: "Tube top (平口小可愛)", label: "平口小可愛 (Tube top)" },
+    { value: "Camisole (細肩帶背心)", label: "細肩帶背心 (Camisole)" },
+    { value: "Off-shoulder blouse (露肩襯衫)", label: "露肩襯衫 (Off-shoulder)" },
+    { value: "Crop top (露肚短上衣)", label: "短版上衣 (Crop top)" },
+    { value: "T-shirt (T恤)", label: "T恤 (T-shirt)" },
+    { value: "Floral lace camisole (碎花蕾絲小可愛)", label: "碎花蕾絲小可愛 (Floral Lace)" },
+    { value: "Candy colored crop T-shirt (糖果色短T恤)", label: "糖果色短T恤 (Candy Crop Tee)" },
+    { value: "Ruffled chiffon camisole (荷葉邊雪紡吊帶)", label: "荷葉邊雪紡吊帶 (Ruffled Chiffon)" },
+    { value: "Tube top bandeau (平口抹胸小可愛)", label: "平口抹胸小可愛 (Bandeau)" },
+    { value: "Backless halter top (露背繞頸背心)", label: "露背繞頸背心 (Halter Top)" },
+    { value: "Bikini top (比基尼式上衣)", label: "比基尼式上衣 (Bikini Top)" },
+    { value: "Oversized sweater (寬鬆毛衣)", label: "寬鬆毛衣 (Oversized Sweater)" },
+    { value: "Tight turtleneck (緊身套頭衫)", label: "緊身套頭衫 (Tight Turtleneck)" }
+];
+
+// --- 混搭單品：外套 (Outerwear) ---
+export const outerDatabase = [
+    { value: "None", label: "無 (None)" },
+    { value: "Sheer cardigan (薄紗外套)", label: "薄紗外套 (Sheer Cardigan)" },
+    { value: "Denim jacket (牛仔外套)", label: "牛仔外套 (Denim Jacket)" },
+    { value: "Oversized hoodie (寬鬆帽T)", label: "寬鬆帽T (Hoodie)" },
+    { value: "Blazer (西裝外套)", label: "西裝外套 (Blazer)" },
+    { value: "Leather jacket (皮夾克)", label: "皮夾克 (Leather Jacket)" },
+    { value: "Trench coat (風衣)", label: "風衣 (Trench Coat)" }
+];
+
+// --- 混搭單品：絲襪與腿部 (Legwear) ---
+export const legwearDatabase = [
+    { value: "None", label: "無 (None)" },
+    { 
+        value: "15D ultra-high gloss sheer pantyhose (15D極高光澤超薄連褲襪), fully covering buttocks, underwear worn inside pantyhose", 
+        label: "15D極高光澤連褲襪 (15D High Gloss)" 
+    },
+    { value: "Wide lace top thigh-high stockings (寬邊蕾絲大腿襪)", label: "寬邊蕾絲大腿襪 (Lace Thigh-highs)" },
+    { value: "Cotton over-the-knee socks (棉質過膝長襪)", label: "棉質過膝長襪 (Cotton OTK Socks)" },
+    { value: "Fishnet stockings (網襪)", label: "網襪 (Fishnet)" },
+    { value: "White ankle socks (白色短襪)", label: "白色短襪 (Ankle Socks)" },
+    { value: "Black opaque tights (黑色不透肉褲襪)", label: "黑色褲襪 (Black Tights)" },
+    { value: "Garter belt and stockings (吊襪帶)", label: "吊襪帶 (Garter Belt)" }
+];
+
+// --- 混搭單品：內衣 (Bra) ---
+export const braDatabase = [
+    { value: "None", label: "無 (None)" },
+    { value: "Lace bra (蕾絲內衣)", label: "蕾絲內衣 (Lace)" },
+    { value: "Cotton bra (棉質內衣)", label: "棉質內衣 (Cotton)" },
+    { value: "Sports bra (運動內衣)", label: "運動內衣 (Sports)" },
+    { value: "Strapless bra (無肩帶內衣)", label: "無肩帶內衣 (Strapless)" },
+    { value: "Push-up bra (集中托高內衣)", label: "集中托高內衣 (Push-up)" }
+];
+
+// --- 混搭單品：內褲 (Panties) ---
+export const pantiesDatabase = [
+    { value: "None", label: "無 (None)" },
+    { value: "Lace panties (蕾絲內褲)", label: "蕾絲內褲 (Lace)" },
+    { value: "Cotton panties (棉質內褲)", label: "棉質內褲 (Cotton)" },
+    { value: "Sports panties (運動內褲)", label: "運動內褲 (Sports)" },
+    { value: "Thong (丁字褲)", label: "丁字褲 (Thong)" },
+    { value: "High-waisted panties (高腰內褲)", label: "高腰內褲 (High-waisted)" }
+];
+
+// --- 混搭單品：飾品 (Accessories) ---
+export const accessoriesDatabase = [
+    { value: "None", label: "無 (None)" },
+    { value: "Silver rimless glasses, intellectual look", label: "銀框眼鏡 (Silver Glasses)" },
+    { value: "Gold necklace with heart pendant", label: "金項鍊 (Gold Necklace)" },
+    { value: "Cute cat ear headphones", label: "貓耳耳機 (Cat Ear Headphones)" },
+    { value: "White medical mask", label: "白色口罩 (Medical Mask)" },
+    { value: "Choker collar", label: "頸鍊 (Choker)" },
+    { value: "Pearl earrings", label: "珍珠耳環 (Pearl Earrings)" },
+    { value: "Ribbon in hair", label: "髮帶 (Ribbon)" }
+];
+
+// --- 混搭單品：鞋子 (Shoes) ---
 export const shoeDatabase = {
     sneakers: [
         { value: "Sneakers (運動鞋)", label: "基本款 (Basic)" },
@@ -118,6 +160,7 @@ export const shoeDatabase = {
     ]
 };
 
+// --- 混搭單品：下裝 (Bottoms) ---
 export const bottomDatabase = {
     pants: [
         { value: "Denim shorts (牛仔短褲)", label: "牛仔短褲 (Denim Shorts)" },
