@@ -1,51 +1,47 @@
 import { stageDatabase } from '../data/db_stage.js';
+import { toggleSection } from '../utils.js';
 
 let updateCallback = null;
 
 export function init(callback) {
     updateCallback = callback;
-
+    
     const catSelect = document.getElementById('stageLocCategory');
-    catSelect.innerHTML = '';
-    const cats = [
-        { value: "private", label: "私密居住 (Private)" },
-        { value: "urban", label: "都市現代 (Urban)" },
-        { value: "nature", label: "自然戶外 (Nature)" }
-    ];
-    cats.forEach(c => catSelect.add(new Option(c.label, c.value)));
-
-    catSelect.addEventListener('change', updateLocations);
+    if(catSelect) {
+        Object.keys(stageDatabase).forEach(k => catSelect.add(new Option(k, k)));
+        catSelect.addEventListener('change', updateLoc);
+    }
     document.getElementById('stageLocStyle').addEventListener('change', updateProps);
-    document.getElementById('stageProps').addEventListener('input', notifyUpdate);
+    document.getElementById('stageProps').addEventListener('input', notify);
 
-    updateLocations();
+    document.getElementById('toggleLayerStage').addEventListener('change', () => {
+        toggleSection('toggleLayerStage');
+        notify();
+    });
+
+    updateLoc();
 }
 
-function notifyUpdate() {
-    if(updateCallback) updateCallback();
-}
-
-function updateLocations() {
+function updateLoc() {
     const cat = document.getElementById('stageLocCategory').value;
     const select = document.getElementById('stageLocStyle');
     select.innerHTML = '';
-    
-    (stageDatabase[cat] || []).forEach(loc => {
-        const opt = new Option(loc.label, loc.value);
-        opt.dataset.props = loc.props;
+    (stageDatabase[cat] || []).forEach(l => {
+        const opt = new Option(l.label, l.value);
+        opt.dataset.props = l.props;
         select.add(opt);
     });
     updateProps();
 }
 
 function updateProps() {
-    const select = document.getElementById('stageLocStyle');
-    const selected = select.options[select.selectedIndex];
-    if(selected && selected.dataset.props) {
-        document.getElementById('stageProps').value = selected.dataset.props;
-    }
-    notifyUpdate();
+    const sel = document.getElementById('stageLocStyle');
+    const opt = sel.options[sel.selectedIndex];
+    if(opt && opt.dataset.props) document.getElementById('stageProps').value = opt.dataset.props;
+    notify();
 }
+
+function notify() { if(updateCallback) updateCallback(); }
 
 export function getData() {
     return {
