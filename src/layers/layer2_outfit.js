@@ -1,7 +1,14 @@
+// 引入 PART 1: 外裝
 import { 
     costumeSetDatabase, bottomDatabase, shoeDatabase,
-    topDatabase, outerDatabase, legwearDatabase, braDatabase, pantiesDatabase, accessoriesDatabase 
+    topDatabase, outerDatabase 
 } from '../data/db_outfit.js';
+
+// 引入 PART 2: 內著與配件 (注意這裡從新檔案引入)
+import { 
+    legwearDatabase, braDatabase, pantiesDatabase, accessoriesDatabase 
+} from '../data/db_innerwear.js';
+
 import { macaronColors, shoeColors, legwearColors } from '../data/db_meta.js';
 import { formatItem, toggleSection } from '../utils.js';
 
@@ -16,15 +23,17 @@ export function init(callback) {
     document.getElementById('btnModeSet').onclick = () => switchMode('set');
     document.getElementById('btnModeMix').onclick = () => switchMode('mix');
 
-    // ★★★ 初始化所有下拉選單 (Data-Driven) ★★★
-    // 1. 複雜連動選單
+    // ★★★ 初始化所有下拉選單 ★★★
+    
+    // 1. 外裝類 (來自 db_outfit.js)
     initSelect('charCostumeSetCategory', costumeSetDatabase, updateCostumeStyle);
     initSelect('charBottomCategory', bottomDatabase, updateBottomStyle);
     initSelect('charShoeCategory', shoeDatabase, updateShoeStyle);
-
-    // 2. 簡單列表選單 (使用我們剛剛新增的 DB 資料)
+    
     populateSimpleSelect('charTop', topDatabase);
     populateSimpleSelect('charOuter', outerDatabase);
+
+    // 2. 內著類 (來自 db_innerwear.js)
     populateSimpleSelect('charLegwear', legwearDatabase);
     populateSimpleSelect('charBra', braDatabase);
     populateSimpleSelect('charPanties', pantiesDatabase);
@@ -86,20 +95,18 @@ function switchMode(mode) {
     notify();
 }
 
-// 用於初始化分類選單 (Category)
 function initSelect(id, db, changeHandler) {
     const el = document.getElementById(id);
     if(!el) return;
-    el.innerHTML = ''; // 清空 HTML 預設值
+    el.innerHTML = ''; 
     Object.keys(db).forEach(k => el.add(new Option(k, k)));
     el.addEventListener('change', changeHandler);
 }
 
-// ★★★ 新增：用於填充簡單列表的輔助函式 ★★★
 function populateSimpleSelect(id, list) {
     const el = document.getElementById(id);
     if(!el || !list) return;
-    el.innerHTML = ''; // 清空 HTML 預設值
+    el.innerHTML = ''; 
     list.forEach(item => {
         el.add(new Option(item.label, item.value));
     });
@@ -116,7 +123,6 @@ function updateBottomStyle() {
 function updateShoeStyle() {
     const cat = document.getElementById('charShoeCategory').value;
     updateSubSelect('charShoeStyle', shoeDatabase[cat]);
-    // 若赤腳則禁用色盤
     const p = document.getElementById('paletteShoes');
     if(cat === 'barefoot' || cat === 'none') {
         p.classList.add('palette-disabled');
