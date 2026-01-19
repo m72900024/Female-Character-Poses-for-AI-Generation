@@ -22,8 +22,9 @@ project_root/
         ├── layer1_character.js # Layer 1: 角色核心
         ├── layer2_outfit.js    # Layer 2: 服裝穿搭
         ├── layer3_camera.js    # Layer 3: 鏡頭動作
-        ├── layer4_stage.js     # Layer 4: 物理環境
+        ├── layer4_stage.js     # Layer 4: 物理環境![Gemini_Generated_Image_mx1zexmx1zexmx1z](https://github.com/user-attachments/assets/a0b349f4-b228-44a0-97ca-7ff7867b972a)
+
         ├── layer5_filter.js    # Layer 5: 風格濾鏡
         └── layer6_render.js    # Layer 6: 渲染設定
 ```
-![Uploading image.png…]()
+
