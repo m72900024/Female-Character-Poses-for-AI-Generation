@@ -1,4 +1,7 @@
-// --- 套裝與主要分類 (Complex Sets) ---
+// ==========================================
+//  PART 1: 外裝與套裝 (Outerwear & Sets)
+// ==========================================
+
 export const costumeSetDatabase = {
     qipao: [
         { value: "Traditional red silk qipao, golden dragon embroidery, high slit, mandarin collar, sleeveless, red silk high heels (經典紅絲綢旗袍)", label: "經典紅絲綢旗袍 (Classic Red)" },
@@ -52,7 +55,6 @@ export const costumeSetDatabase = {
     ]
 };
 
-// --- 混搭單品：上衣 (Tops) ---
 export const topDatabase = [
     { value: "Tube top (平口小可愛)", label: "平口小可愛 (Tube top)" },
     { value: "Camisole (細肩帶背心)", label: "細肩帶背心 (Camisole)" },
@@ -69,7 +71,6 @@ export const topDatabase = [
     { value: "Tight turtleneck (緊身套頭衫)", label: "緊身套頭衫 (Tight Turtleneck)" }
 ];
 
-// --- 混搭單品：外套 (Outerwear) ---
 export const outerDatabase = [
     { value: "None", label: "無 (None)" },
     { value: "Sheer cardigan (薄紗外套)", label: "薄紗外套 (Sheer Cardigan)" },
@@ -80,54 +81,6 @@ export const outerDatabase = [
     { value: "Trench coat (風衣)", label: "風衣 (Trench Coat)" }
 ];
 
-// --- 混搭單品：絲襪與腿部 (Legwear) ---
-export const legwearDatabase = [
-    { value: "None", label: "無 (None)" },
-    { 
-        value: "15D ultra-high gloss sheer pantyhose (15D極高光澤超薄連褲襪), fully covering buttocks, underwear worn inside pantyhose", 
-        label: "15D極高光澤連褲襪 (15D High Gloss)" 
-    },
-    { value: "Wide lace top thigh-high stockings (寬邊蕾絲大腿襪)", label: "寬邊蕾絲大腿襪 (Lace Thigh-highs)" },
-    { value: "Cotton over-the-knee socks (棉質過膝長襪)", label: "棉質過膝長襪 (Cotton OTK Socks)" },
-    { value: "Fishnet stockings (網襪)", label: "網襪 (Fishnet)" },
-    { value: "White ankle socks (白色短襪)", label: "白色短襪 (Ankle Socks)" },
-    { value: "Black opaque tights (黑色不透肉褲襪)", label: "黑色褲襪 (Black Tights)" },
-    { value: "Garter belt and stockings (吊襪帶)", label: "吊襪帶 (Garter Belt)" }
-];
-
-// --- 混搭單品：內衣 (Bra) ---
-export const braDatabase = [
-    { value: "None", label: "無 (None)" },
-    { value: "Lace bra (蕾絲內衣)", label: "蕾絲內衣 (Lace)" },
-    { value: "Cotton bra (棉質內衣)", label: "棉質內衣 (Cotton)" },
-    { value: "Sports bra (運動內衣)", label: "運動內衣 (Sports)" },
-    { value: "Strapless bra (無肩帶內衣)", label: "無肩帶內衣 (Strapless)" },
-    { value: "Push-up bra (集中托高內衣)", label: "集中托高內衣 (Push-up)" }
-];
-
-// --- 混搭單品：內褲 (Panties) ---
-export const pantiesDatabase = [
-    { value: "None", label: "無 (None)" },
-    { value: "Lace panties (蕾絲內褲)", label: "蕾絲內褲 (Lace)" },
-    { value: "Cotton panties (棉質內褲)", label: "棉質內褲 (Cotton)" },
-    { value: "Sports panties (運動內褲)", label: "運動內褲 (Sports)" },
-    { value: "Thong (丁字褲)", label: "丁字褲 (Thong)" },
-    { value: "High-waisted panties (高腰內褲)", label: "高腰內褲 (High-waisted)" }
-];
-
-// --- 混搭單品：飾品 (Accessories) ---
-export const accessoriesDatabase = [
-    { value: "None", label: "無 (None)" },
-    { value: "Silver rimless glasses, intellectual look", label: "銀框眼鏡 (Silver Glasses)" },
-    { value: "Gold necklace with heart pendant", label: "金項鍊 (Gold Necklace)" },
-    { value: "Cute cat ear headphones", label: "貓耳耳機 (Cat Ear Headphones)" },
-    { value: "White medical mask", label: "白色口罩 (Medical Mask)" },
-    { value: "Choker collar", label: "頸鍊 (Choker)" },
-    { value: "Pearl earrings", label: "珍珠耳環 (Pearl Earrings)" },
-    { value: "Ribbon in hair", label: "髮帶 (Ribbon)" }
-];
-
-// --- 混搭單品：鞋子 (Shoes) ---
 export const shoeDatabase = {
     sneakers: [
         { value: "Sneakers (運動鞋)", label: "基本款 (Basic)" },
@@ -160,7 +113,6 @@ export const shoeDatabase = {
     ]
 };
 
-// --- 混搭單品：下裝 (Bottoms) ---
 export const bottomDatabase = {
     pants: [
         { value: "Denim shorts (牛仔短褲)", label: "牛仔短褲 (Denim Shorts)" },
