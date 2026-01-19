@@ -26,3 +26,4 @@ project_root/
         ├── layer5_filter.js    # Layer 5: 風格濾鏡
         └── layer6_render.js    # Layer 6: 渲染設定
 ```
+![Uploading image.png…]()
