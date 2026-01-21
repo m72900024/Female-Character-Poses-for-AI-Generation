@@ -1,3 +1,4 @@
+// 檔名：src/data/db_camera.js
 export const framingDatabase = [
     { value: "Extreme long shot, wide angle, vast environment (極遠景/大廣角)", label: "極遠景 (Extreme Long)" },
     { value: "Long shot, full body with scenery (遠景)", label: "遠景 (Long Shot)" },
