@@ -1,27 +1,108 @@
-export const framingDatabase = [
-    { value: "Extreme long shot, wide angle, vast environment (極遠景/大廣角)", label: "極遠景 (Extreme Long)" },
-    { value: "Long shot, full body with scenery (遠景)", label: "遠景 (Long Shot)" },
-    { value: "Full body shot, head to toe (全身照)", label: "全身照 (Full Body)" },
-    { value: "Medium full shot, knees up (膝上七分)", label: "膝上七分 (Knee Up)" },
-    { value: "Cowboy shot, thighs up (大腿七分)", label: "大腿七分 (Cowboy Shot)" },
-    { value: "Medium shot, waist up (半身腰上)", label: "半身腰上 (Medium Shot)" },
-    { value: "Medium close-up, chest up (胸上特寫)", label: "胸上特寫 (Chest Up)" },
-    { value: "Close up portrait, focus on face (臉部特寫)", label: "臉部特寫 (Close Up)" },
-    { value: "Extreme close up, detailed eyes and lips (局部特寫)", label: "局部特寫 (Extreme CU)" },
-    { value: "Macro shot, high detail texture (微距攝影)", label: "微距 (Macro)" }
-];
+// 檔名：src/layers/layer3_camera.js
+import { poseDatabase, handActionList } from '../data/db_pose.js';
+import { framingDatabase, angleDatabase } from '../data/db_camera.js'; // ★ 這裡一定要引入成功
+import { toggleSection } from '../utils.js';
 
-export const angleDatabase = [
-    { value: "Eye level shot, straight on (平視)", label: "平視 (Eye Level)" },
-    { value: "Low angle shot, looking up, imposing (低角度仰拍)", label: "低角度 (Low Angle)" },
-    { value: "High angle shot, looking down, vulnerable (高角度俯拍)", label: "高角度 (High Angle)" },
-    { value: "Bird's eye view, top down shot (鳥瞰/上帝視角)", label: "鳥瞰 (Bird's Eye)" },
-    { value: "Worm's eye view, ground level shot (蟲視角)", label: "蟲視角 (Worm's Eye)" },
-    { value: "Dutch angle, tilted frame, dynamic (荷蘭式傾斜)", label: "傾斜 (Dutch Angle)" },
-    { value: "POV, first person view, looking at hands (第一人稱)", label: "第一人稱 (POV)" },
-    { value: "Selfie angle, holding camera, slightly high (自拍視角)", label: "自拍 (Selfie)" },
-    { value: "Profile view, side face (側面視角)", label: "側面 (Profile)" },
-    { value: "Over the shoulder shot (過肩視角)", label: "過肩 (Over Shoulder)" },
-    { value: "Back view, from behind (背後視角)", label: "背後 (From Behind)" },
-    { value: "Dynamic angle, motion blur (動態視角)", label: "動態 (Dynamic)" }
-];
+let updateCallback = null;
+
+// ★★★ 必須有 export function init ★★★
+export function init(callback) {
+    updateCallback = callback;
+    
+    // 1. 初始化動作類別
+    const catSelect = document.getElementById('camPoseCategory');
+    if(catSelect) {
+        catSelect.innerHTML = '';
+        poseDatabase.forEach(group => {
+            catSelect.add(new Option(group.label, group.id));
+        });
+        catSelect.addEventListener('change', updatePose);
+    }
+    
+    const poseStyle = document.getElementById('camPoseStyle');
+    if(poseStyle) poseStyle.addEventListener('change', notify);
+
+    // 2. 初始化手部動作
+    const handSelect = document.getElementById('camHandAction');
+    if(handSelect) {
+        handSelect.innerHTML = '';
+        handActionList.forEach(h => handSelect.add(new Option(h.label, h.value)));
+        handSelect.addEventListener('change', notify);
+    }
+
+    // 3. 初始化取景 (Framing)
+    const frameSelect = document.getElementById('camFraming');
+    if(frameSelect) {
+        frameSelect.innerHTML = '';
+        framingDatabase.forEach(f => frameSelect.add(new Option(f.label, f.value)));
+        frameSelect.addEventListener('change', notify);
+    }
+
+    // 4. 初始化視角 (Angle)
+    const angleSelect = document.getElementById('camAngle');
+    if(angleSelect) {
+        angleSelect.innerHTML = '';
+        angleDatabase.forEach(a => angleSelect.add(new Option(a.label, a.value)));
+        angleSelect.addEventListener('change', notify);
+    }
+
+    // Toggle 事件
+    ['toggleLayerCamera', 'toggleHandAction'].forEach(id => {
+        const el = document.getElementById(id);
+        if(el) {
+            el.addEventListener('change', () => {
+                toggleSection(id);
+                notify();
+            });
+        }
+    });
+
+    updatePose();
+}
+
+function updatePose() {
+    const catId = document.getElementById('camPoseCategory').value;
+    const select = document.getElementById('camPoseStyle');
+    if(!select) return;
+    
+    select.innerHTML = '';
+    const group = poseDatabase.find(g => g.id === catId);
+    
+    if (group && group.options) {
+        group.options.forEach(p => select.add(new Option(p.label, p.value)));
+    }
+    notify();
+}
+
+function notify() { if(updateCallback) updateCallback(); }
+
+export function getData() {
+    const catEl = document.getElementById('camPoseCategory');
+    const styleEl = document.getElementById('camPoseStyle');
+    const frameEl = document.getElementById('camFraming');
+    const angleEl = document.getElementById('camAngle');
+    const handEl = document.getElementById('camHandAction');
+    const handToggle = document.getElementById('toggleHandAction');
+
+    // 安全檢查：如果 DOM 元素還沒準備好，回傳空物件
+    if (!catEl || !styleEl) return {};
+
+    const catId = catEl.value;
+    const group = poseDatabase.find(g => g.id === catId);
+    const categoryLabel = group ? group.label.split(' ')[0] : catId;
+
+    const actionObj = {
+        category: categoryLabel,
+        pose: styleEl.value
+    };
+    
+    if(handToggle && handToggle.checked && handEl) {
+        if(handEl.value !== 'None') actionObj.hands = handEl.value;
+    }
+    
+    return {
+        shot: frameEl ? frameEl.value : '',
+        angle: angleEl ? angleEl.value : '',
+        action: actionObj
+    };
+}
