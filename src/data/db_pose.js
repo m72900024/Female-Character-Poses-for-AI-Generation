@@ -3,10 +3,10 @@ export const poseDatabase = [
         id: "prone",
         label: "趴姿 (Prone)",
         options: [
+            { value: "Cat pose, arching back on bed, crawling forward, looking at viewer (貓式伸展)", label: "貓式伸展 (Cat Pose)" }, // ★
             { value: "Lying on stomach, propping chin with hands, legs kicking up (趴著托腮翹腳)", label: "趴著托腮翹腳 (Prop Chin)" },
             { value: "Crawling forward on knees, seductive gaze (膝蓋爬行)", label: "膝蓋爬行 (Crawling)" },
             { value: "Lying on stomach, reading a book on the floor (趴著看書)", label: "趴著看書 (Reading)" },
-            { value: "Cat pose, arching back slightly on all fours (貓式伸展)", label: "貓式伸展 (Cat Pose)" },
             { value: "Lying on stomach, stretching arms forward on bed (趴床伸懶腰)", label: "趴床伸懶腰 (Stretching)" },
             { value: "Lying prone, head resting on crossed arms (趴著休息)", label: "趴著休息 (Resting)" },
             { value: "Lying on stomach, looking back over shoulder (趴姿回眸)", label: "趴姿回眸 (Looking Back)" },
@@ -24,6 +24,7 @@ export const poseDatabase = [
         id: "front",
         label: "正面 (Front)",
         options: [
+            { value: "Holding phone, mirror selfie, hip popped out, looking at phone screen (對鏡自拍)", label: "對鏡自拍 (Mirror Selfie)" }, // ★
             { value: "Standing straight, hands behind back, shy smile (正面站立藏手)", label: "正面站立藏手 (Shy Standing)" },
             { value: "Standing confident, hands on hips, chest out (雙手叉腰)", label: "雙手叉腰 (Hands on Hips)" },
             { value: "Standing, leaning forward slightly, welcoming (身體前傾)", label: "身體前傾 (Leaning Forward)" },
@@ -50,6 +51,7 @@ export const poseDatabase = [
         id: "back",
         label: "背面 (Back)",
         options: [
+            { value: "Back view, holding hair up with both hands, exposing nape, elbows up (背影撩髮露頸)", label: "背影撩髮 (Exposing Nape)" }, // ★
             { value: "Back view, looking back over shoulder, smiling (背影回眸)", label: "背影回眸 (Looking Back)" },
             { value: "Back view, holding hands behind back (背手站立)", label: "背手站立 (Hands Behind Back)" },
             { value: "Walking away from camera, waving goodbye (背影揮手)", label: "背影揮手 (Walking Away)" },
@@ -61,7 +63,6 @@ export const poseDatabase = [
             { value: "Back view, hands on buttocks, looking back (回眸扶臀)", label: "回眸扶臀 (Hands on Buttocks)" },
             { value: "Back view, twisting waist to show side profile (背影扭腰)", label: "背影扭腰 (Twisting Waist)" },
             { value: "Back view, zip down back of dress (背影拉鍊)", label: "背影拉鍊 (Unzipping)" },
-            { value: "Back view, holding hair up, nape exposed (撩髮露頸)", label: "撩髮露頸 (Exposing Nape)" },
             { value: "Back view, leaning forward, hips back (前傾翹臀)", label: "前傾翹臀 (Leaning Forward)" },
             { value: "Back view, looking back over shoulder, finger on lips (回眸噓聲)", label: "回眸噓聲 (Shushing)" },
             { value: "Back view, walking away, swaying hips (搖曳生姿)", label: "搖曳生姿 (Swaying Hips)" }
@@ -71,11 +72,11 @@ export const poseDatabase = [
         id: "sitting",
         label: "坐姿 (Sitting)",
         options: [
+            { value: "Wariza, w-sitting, knees touching ground, feet apart, cute and submissive (日系鴨子坐)", label: "日系鴨子坐 (W-Sitting)" }, // ★
             { value: "sitting on invisible chair, sitting firmly, knock-kneed sitting, knees touching, ankles apart, cute pose (羞澀內八坐)", label: "羞澀內八坐 (Shy Knock-kneed)" },
             { value: "Sitting on chair, thighs clamped tight together, calves spread wide in inverted V shape, knees touching (內八夾腿倒V)", label: "內八夾腿倒V (Inverted V Calves)" }, 
             { value: "kneeling (跪姿)", label: "跪姿 (Kneeling)" },
             { value: "sitting on camera (騎乘視角)", label: "騎乘視角 (Sitting on Camera)" },
-            { value: "wariza / w-sitting (鴨子坐)", label: "鴨子坐 (W-Sitting)" },
             { value: "yokozuwari (側坐)", label: "側坐 (Yokozuwari)" },
             { value: "sitting legs spread (M字開腿坐)", label: "M字開腿坐 (Legs Spread)" },
             { value: "sitting hugging one knee (單腿抱膝)", label: "單腿抱膝 (Hugging One Knee)" },
@@ -164,13 +165,15 @@ export const poseDatabase = [
 
 export const handActionList = [
      { value: "None", label: "無 (None)" },
+     { value: "lifting skirt hem slightly, showing thighs (微掀裙角)", label: "微掀裙角 (Lifting Skirt)" }, // ★
+     { value: "pulling down collar, showing cleavage (拉開領口)", label: "拉開領口 (Pulling Collar)" }, // ★
      { value: "hands on hips (插腰)", label: "插腰 (Hands on Hips)" },
      { value: "hand on face (摸臉)", label: "摸臉 (Hand on Face)" },
      { value: "hair pull / grabbing hair (抓頭髮)", label: "抓頭髮 (Grabbing Hair)" },
      { value: "finger on lips (手指抵唇)", label: "手指抵唇 (Finger on Lips)" },
      { value: "arms behind head (雙手抱頭)", label: "雙手抱頭 (Arms Behind Head)" },
      { value: "adjusting thighhighs (調整大腿襪)", label: "調整大腿襪 (Adjusting Stockings)" },
-     { value: "skirt lift (掀裙角)", label: "掀裙角 (Skirt Lift)" },
+     { value: "skirt lift (掀裙角 - 高)", label: "掀裙角 (High Skirt Lift)" },
      { value: "shirt lift (掀上衣 - 露腹部用)", label: "掀上衣 (Shirt Lift)" },
      { value: "hands on knees (雙手扶膝)", label: "雙手扶膝 (Hands on Knees)" },
      { value: "biting finger (咬手指)", label: "咬手指 (Biting Finger)" },
@@ -186,7 +189,6 @@ export const handActionList = [
      { value: "arms crossed under breasts (雙手抱胸托胸)", label: "雙手抱胸 (Arms Crossed)" },
      { value: "squeezing breasts with arms (雙臂擠胸)", label: "雙臂擠胸 (Squeezing Breasts)" },
      { value: "hands lifting breasts (雙手托胸)", label: "雙手托胸 (Lifting Breasts)" },
-     { value: "pulling down collar (拉開領口)", label: "拉開領口 (Pulling Collar)" },
      { value: "finger in mouth (手指含口)", label: "手指含口 (Finger in Mouth)" },
      { value: "pulling panty waistband (拉扯內褲頭)", label: "拉內褲頭 (Pulling Panties)" },
      { value: "finger hooking bra strap (手指勾肩帶)", label: "手指勾肩帶 (Hooking Bra Strap)" },
