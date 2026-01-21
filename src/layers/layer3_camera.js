@@ -1,94 +1,27 @@
-import { poseDatabase, handActionList } from '../data/db_pose.js';
-import { framingDatabase, angleDatabase } from '../data/db_camera.js'; // ★ 新增引入
-import { toggleSection } from '../utils.js';
+export const framingDatabase = [
+    { value: "Extreme long shot, wide angle, vast environment (極遠景/大廣角)", label: "極遠景 (Extreme Long)" },
+    { value: "Long shot, full body with scenery (遠景)", label: "遠景 (Long Shot)" },
+    { value: "Full body shot, head to toe (全身照)", label: "全身照 (Full Body)" },
+    { value: "Medium full shot, knees up (膝上七分)", label: "膝上七分 (Knee Up)" },
+    { value: "Cowboy shot, thighs up (大腿七分)", label: "大腿七分 (Cowboy Shot)" },
+    { value: "Medium shot, waist up (半身腰上)", label: "半身腰上 (Medium Shot)" },
+    { value: "Medium close-up, chest up (胸上特寫)", label: "胸上特寫 (Chest Up)" },
+    { value: "Close up portrait, focus on face (臉部特寫)", label: "臉部特寫 (Close Up)" },
+    { value: "Extreme close up, detailed eyes and lips (局部特寫)", label: "局部特寫 (Extreme CU)" },
+    { value: "Macro shot, high detail texture (微距攝影)", label: "微距 (Macro)" }
+];
 
-let updateCallback = null;
-
-export function init(callback) {
-    updateCallback = callback;
-    
-    // 1. 初始化動作類別 (Pose Category)
-    const catSelect = document.getElementById('camPoseCategory');
-    if(catSelect) {
-        catSelect.innerHTML = '';
-        poseDatabase.forEach(group => {
-            catSelect.add(new Option(group.label, group.id));
-        });
-        catSelect.addEventListener('change', updatePose);
-    }
-    document.getElementById('camPoseStyle').addEventListener('change', notify);
-
-    // 2. 初始化手部動作 (Hand Action)
-    const handSelect = document.getElementById('camHandAction');
-    if(handSelect) {
-        handSelect.innerHTML = '';
-        handActionList.forEach(h => handSelect.add(new Option(h.label, h.value)));
-        handSelect.addEventListener('change', notify);
-    }
-
-    // 3. ★★★ 初始化取景 (Framing) - 改為讀取 DB ★★★
-    const frameSelect = document.getElementById('camFraming');
-    if(frameSelect) {
-        frameSelect.innerHTML = ''; // 清空 HTML 預設值
-        framingDatabase.forEach(f => frameSelect.add(new Option(f.label, f.value)));
-        frameSelect.addEventListener('change', notify);
-    }
-
-    // 4. ★★★ 初始化視角 (Angle) - 改為讀取 DB ★★★
-    const angleSelect = document.getElementById('camAngle');
-    if(angleSelect) {
-        angleSelect.innerHTML = ''; // 清空 HTML 預設值
-        angleDatabase.forEach(a => angleSelect.add(new Option(a.label, a.value)));
-        angleSelect.addEventListener('change', notify);
-    }
-
-    // Toggle 事件綁定
-    ['toggleLayerCamera', 'toggleHandAction'].forEach(id => {
-        document.getElementById(id).addEventListener('change', () => {
-            toggleSection(id);
-            notify();
-        });
-    });
-
-    // 初次執行
-    updatePose();
-}
-
-function updatePose() {
-    const catId = document.getElementById('camPoseCategory').value;
-    const select = document.getElementById('camPoseStyle');
-    select.innerHTML = '';
-    
-    // 從陣列中找到對應 id 的群組
-    const group = poseDatabase.find(g => g.id === catId);
-    
-    if (group && group.options) {
-        group.options.forEach(p => select.add(new Option(p.label, p.value)));
-    }
-    notify();
-}
-
-function notify() { if(updateCallback) updateCallback(); }
-
-export function getData() {
-    // 獲取目前選中的動作分類 ID，並轉換回中文標籤名稱 (為了 Prompt 顯示好看)
-    const catId = document.getElementById('camPoseCategory').value;
-    const group = poseDatabase.find(g => g.id === catId);
-    const categoryLabel = group ? group.label.split(' ')[0] : catId;
-
-    const actionObj = {
-        category: categoryLabel,
-        pose: document.getElementById('camPoseStyle').value
-    };
-    
-    if(document.getElementById('toggleHandAction').checked) {
-        const h = document.getElementById('camHandAction').value;
-        if(h !== 'None') actionObj.hands = h;
-    }
-    
-    return {
-        shot: document.getElementById('camFraming').value,
-        angle: document.getElementById('camAngle').value,
-        action: actionObj
-    };
-}
+export const angleDatabase = [
+    { value: "Eye level shot, straight on (平視)", label: "平視 (Eye Level)" },
+    { value: "Low angle shot, looking up, imposing (低角度仰拍)", label: "低角度 (Low Angle)" },
+    { value: "High angle shot, looking down, vulnerable (高角度俯拍)", label: "高角度 (High Angle)" },
+    { value: "Bird's eye view, top down shot (鳥瞰/上帝視角)", label: "鳥瞰 (Bird's Eye)" },
+    { value: "Worm's eye view, ground level shot (蟲視角)", label: "蟲視角 (Worm's Eye)" },
+    { value: "Dutch angle, tilted frame, dynamic (荷蘭式傾斜)", label: "傾斜 (Dutch Angle)" },
+    { value: "POV, first person view, looking at hands (第一人稱)", label: "第一人稱 (POV)" },
+    { value: "Selfie angle, holding camera, slightly high (自拍視角)", label: "自拍 (Selfie)" },
+    { value: "Profile view, side face (側面視角)", label: "側面 (Profile)" },
+    { value: "Over the shoulder shot (過肩視角)", label: "過肩 (Over Shoulder)" },
+    { value: "Back view, from behind (背後視角)", label: "背後 (From Behind)" },
+    { value: "Dynamic angle, motion blur (動態視角)", label: "動態 (Dynamic)" }
+];
