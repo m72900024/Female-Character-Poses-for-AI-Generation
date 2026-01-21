@@ -17,7 +17,11 @@ export const poseDatabase = [
             { value: "Prone, one hand reaching out to camera (趴姿伸手)", label: "趴姿伸手 (Reaching Out)" },
             { value: "Lying on stomach, legs in W shape (趴姿W腿)", label: "趴姿W腿 (W-Legs)" },
             { value: "Prone, looking back biting lip (咬唇回眸)", label: "咬唇回眸 (Biting Lip)" },
-            { value: "Lying prone, burying face in pillow (埋頭趴姿)", label: "埋頭趴姿 (Burying Face)" }
+            { value: "Lying prone, burying face in pillow (埋頭趴姿)", label: "埋頭趴姿 (Burying Face)" },
+            { value: "Lying on stomach, feet up crossed at ankles, chin on hands, innocent smile (甜美趴姿翹腳)", label: "甜美趴姿翹腳 (Sweet Prone)" },
+            { value: "Prone on bed, hugging pillow, looking at camera with soft eyes (抱枕趴姿)", label: "抱枕趴姿 (Hugging Pillow)" },
+            { value: "Lying prone, kicking feet playfully in air, cheerful expression (俏皮踢腿趴姿)", label: "俏皮踢腿趴姿 (Playful Kicking)" },
+            { value: "Prone position, body slightly twisted, one shoulder raised, flirty look (扭身趴姿)", label: "扭身趴姿 (Twisted Prone)" }
         ]
     },
     {
@@ -44,7 +48,12 @@ export const poseDatabase = [
             { value: "Standing, pulling pantyhose waistband (拉扯絲襪頭)", label: "拉扯絲襪頭 (Pulling Waistband)" },
             { value: "Standing, biting finger, seductive look (咬手指站姿)", label: "咬手指站姿 (Biting Finger)" },
             { value: "Standing, hands on wall, body arched (靠牆拱身)", label: "靠牆拱身 (Wall Arch)" },
-            { value: "Standing, making heart shape on chest (胸前比心)", label: "胸前比心 (Heart on Chest)" }
+            { value: "Standing, making heart shape on chest (胸前比心)", label: "胸前比心 (Heart on Chest)" },
+            { value: "Standing, hands clasped in front, head tilted, sweet smile (雙手交握甜笑)", label: "雙手交握甜笑 (Sweet Clasped)" },
+            { value: "Standing, twirling hair with finger, shy expression (撥弄髮絲)", label: "撥弄髮絲 (Twirling Hair)" },
+            { value: "Standing, both hands on cheeks, surprised cute expression (雙手捧臉驚喜)", label: "雙手捧臉驚喜 (Surprised Cute)" },
+            { value: "Standing, one hand behind head, stretching, casual sexy (單手撐頭伸展)", label: "單手撐頭伸展 (Casual Stretch)" },
+            { value: "Standing, blowing kiss to camera, playful wink (飛吻)", label: "飛吻 (Blowing Kiss)" }
         ]
     },
     {
@@ -65,7 +74,12 @@ export const poseDatabase = [
             { value: "Back view, zip down back of dress (背影拉鍊)", label: "背影拉鍊 (Unzipping)" },
             { value: "Back view, leaning forward, hips back (前傾翹臀)", label: "前傾翹臀 (Leaning Forward)" },
             { value: "Back view, looking back over shoulder, finger on lips (回眸噓聲)", label: "回眸噓聲 (Shushing)" },
-            { value: "Back view, walking away, swaying hips (搖曳生姿)", label: "搖曳生姿 (Swaying Hips)" }
+            { value: "Back view, walking away, swaying hips (搖曳生姿)", label: "搖曳生姿 (Swaying Hips)" },
+            { value: "Back view, arms stretched up, morning stretch, showing curves (背影伸懶腰)", label: "背影伸懶腰 (Back Stretch)" },
+            { value: "Back view, peeking over shoulder with shy smile (害羞回眸)", label: "害羞回眸 (Shy Peek)" },
+            { value: "Back view, hands touching own shoulders, elegant pose (雙手撫肩)", label: "雙手撫肩 (Touching Shoulders)" },
+            { value: "Back view, adjusting hair in ponytail, nape exposed (整理馬尾)", label: "整理馬尾 (Adjusting Ponytail)" },
+            { value: "Back view, glancing back with finger on lips, secretive (神秘回眸)", label: "神秘回眸 (Mysterious Glance)" }
         ]
     },
     {
@@ -85,7 +99,12 @@ export const poseDatabase = [
             { value: "sitting on heels (正跪坐)", label: "正跪坐 (Seiza)" },
             { value: "jack-o-lantern pose (抱膝蜷縮)", label: "抱膝蜷縮 (Jack-o-lantern)" },
             { value: "sitting cross-legged (盤腿坐)", label: "盤腿坐 (Cross-legged)" },
-            { value: "sitting with legs dangling (坐姿晃腿)", label: "坐姿晃腿 (Legs Dangling)" }
+            { value: "sitting with legs dangling (坐姿晃腿)", label: "坐姿晃腿 (Legs Dangling)" },
+            { value: "Sitting on bed, hugging pillow to chest, cute and cozy (抱枕坐姿)", label: "抱枕坐姿 (Hugging Pillow)" },
+            { value: "Sitting with legs to side, hands on lap, elegant and demure (淑女側坐)", label: "淑女側坐 (Elegant Side Sit)" },
+            { value: "Sitting on floor, leaning back on hands, legs extended, relaxed (後仰撐地)", label: "後仰撐地 (Leaning Back)" },
+            { value: "Sitting, knees up, arms wrapped around legs, innocent look (抱膝望向鏡頭)", label: "抱膝望向鏡頭 (Knees Up Looking)" },
+            { value: "Sitting on edge of bed, feet playfully swinging, cheerful (床邊甜美坐姿)", label: "床邊甜美坐姿 (Sweet Bed Edge)" }
         ]
     },
     {
@@ -110,7 +129,12 @@ export const poseDatabase = [
             { value: "Lying on back, hands bound above head (仰臥被縛感)", label: "仰臥被縛感 (Hands Bound)" },
             { value: "Lying on bed, messy hair, waking up (慵懶賴床)", label: "慵懶賴床 (Waking Up)" },
             { value: "Lying on side, sexy pose (性感側臥)", label: "性感側臥 (Sexy Side)" },
-            { value: "Lying in bathtub, relaxed (浴缸躺姿)", label: "浴缸躺姿 (Bathtub)" }
+            { value: "Lying in bathtub, relaxed (浴缸躺姿)", label: "浴缸躺姿 (Bathtub)" },
+            { value: "Lying on back, arms above head, peaceful sleeping pose (仰躺舉手酣睡)", label: "仰躺舉手酣睡 (Peaceful Sleep)" },
+            { value: "Lying on side, hugging pillow, soft dreamy expression (側臥抱枕)", label: "側臥抱枕 (Side Hugging Pillow)" },
+            { value: "Lying on back, playing with hair, gazing at camera (仰躺玩髮)", label: "仰躺玩髮 (Playing with Hair)" },
+            { value: "Lying on back, one knee up, relaxed and inviting (單膝彎曲仰躺)", label: "單膝彎曲仰躺 (One Knee Up)" },
+            { value: "Lying on stomach on bed, feet up, using phone cutely (趴床滑手機)", label: "趴床滑手機 (Using Phone Prone)" }
         ]
     },
     {
@@ -132,7 +156,11 @@ export const poseDatabase = [
             { value: "Squatting, back view, looking back (背影蹲姿)", label: "背影蹲姿 (Back View)" },
             { value: "Squatting, resting chin on knees (下巴靠膝)", label: "下巴靠膝 (Chin on Knees)" },
             { value: "Squatting, holding ankles (手抓腳踝)", label: "手抓腳踝 (Holding Ankles)" },
-            { value: "Squatting, leaning forward, cleavage view (蹲姿前傾)", label: "蹲姿前傾 (Leaning Forward)" }
+            { value: "Squatting, leaning forward, cleavage view (蹲姿前傾)", label: "蹲姿前傾 (Leaning Forward)" },
+            { value: "Squatting, hands on cheeks, looking up innocently (蹲姿捧臉仰望)", label: "蹲姿捧臉仰望 (Cute Looking Up)" },
+            { value: "Squatting, picking flowers, gentle smile (蹲姿採花)", label: "蹲姿採花 (Picking Flowers)" },
+            { value: "Squatting, arms wrapped around knees, shy pose (害羞蹲姿)", label: "害羞蹲姿 (Shy Squat)" },
+            { value: "Squatting low, head tilted, playful expression (歪頭俏皮蹲)", label: "歪頭俏皮蹲 (Playful Tilt)" }
         ]
     },
     {
@@ -158,7 +186,12 @@ export const poseDatabase = [
             { value: "ankle crossed (腳踝交叉)", label: "腳踝交叉 (Ankle Crossed)" },
             { value: "knees pulled to chest (抱膝特寫)", label: "抱膝特寫 (Knees to Chest)" },
             { value: "sitting on calves (壓腿坐)", label: "壓腿坐 (Sitting on Calves)" },
-            { value: "legs dangling off edge (懸空晃腿)", label: "懸空晃腿 (Legs Dangling)" }
+            { value: "legs dangling off edge (懸空晃腿)", label: "懸空晃腿 (Legs Dangling)" },
+            { value: "legs pressed together, knees slightly bent, feminine pose (雙腿併攏微彎)", label: "雙腿併攏微彎 (Legs Together Bent)" },
+            { value: "one leg bent, one straight, lying relaxed (一曲一直躺姿)", label: "一曲一直躺姿 (One Bent One Straight)" },
+            { value: "legs in butterfly stretch position, sitting (蝴蝶坐姿)", label: "蝴蝶坐姿 (Butterfly Sit)" },
+            { value: "standing, one foot touching other ankle, shy pose (單腳靠腳踝)", label: "單腳靠腳踝 (Foot on Ankle)" },
+            { value: "kneeling with thighs together, elegant and pure (併腿跪姿)", label: "併腿跪姿 (Thighs Together Kneel)" }
         ]
     }
 ];
