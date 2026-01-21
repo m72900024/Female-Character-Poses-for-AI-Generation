@@ -3,6 +3,13 @@ import { toggleSection } from '../utils.js';
 
 let updateCallback = null;
 
+// ★★★ 場景分類翻譯 (配合中文化) ★★★
+const stageTranslations = {
+    private: "居家私密 (Private)",
+    urban: "現代都市 (Urban)",
+    nature: "自然戶外 (Nature)"
+};
+
 export function init(callback) {
     updateCallback = callback;
 
@@ -10,15 +17,9 @@ export function init(callback) {
     const catSelect = document.getElementById('stageLocCategory');
     if (catSelect) {
         catSelect.innerHTML = '';
-        // 這裡我們直接使用 db_stage.js 的 key 當作分類
-        // 如果您有做翻譯表，可以在這裡加入，目前先直接讀取 key
         Object.keys(stageDatabase).forEach(key => {
-            // 簡單的英文轉中文對照 (可選)
-            let label = key;
-            if(key === 'private') label = "居家私密 (Private)";
-            if(key === 'urban') label = "現代都市 (Urban)";
-            if(key === 'nature') label = "自然戶外 (Nature)";
-            
+            // 使用翻譯表將 key (如 private) 轉為中文
+            const label = stageTranslations[key] || key;
             catSelect.add(new Option(label, key));
         });
         catSelect.addEventListener('change', updateLocations);
