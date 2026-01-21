@@ -3,32 +3,55 @@ import { toggleSection } from '../utils.js';
 
 let updateCallback = null;
 
+// ★★★ 媒材分類翻譯 ★★★
+const mediumTranslations = {
+    photorealistic: "真實照片 (Photorealistic)",
+    anime: "動漫二次元 (Anime)",
+    "3d_render": "3D 渲染 (3D Render)",
+    semi_real: "2.5D 半寫實 (Semi-Real)"
+};
+
 export function init(callback) {
     updateCallback = callback;
-    
+
     const catSelect = document.getElementById('renderMediumCategory');
     if(catSelect) {
-        Object.keys(mediumDatabase).forEach(k => catSelect.add(new Option(k, k)));
-        catSelect.addEventListener('change', updateStyle);
+        catSelect.innerHTML = '';
+        Object.keys(mediumDatabase).forEach(key => {
+            const label = mediumTranslations[key] || key;
+            catSelect.add(new Option(label, key));
+        });
+        catSelect.addEventListener('change', updateMediumStyle);
     }
-    document.getElementById('renderMediumStyle').addEventListener('change', notify);
-    document.getElementById('renderRatio').addEventListener('change', notify);
+
+    const styleSelect = document.getElementById('renderMediumStyle');
+    if(styleSelect) styleSelect.addEventListener('change', notify);
+
+    const ratioSelect = document.getElementById('renderRatio');
+    if(ratioSelect) ratioSelect.addEventListener('change', notify);
 
     ['toggleLayerRender', 'toggleRenderRatio', 'toggleRenderMedium'].forEach(id => {
-        document.getElementById(id).addEventListener('change', (e) => {
-            if(id === 'toggleLayerRender') toggleSection(id);
-            notify();
-        });
+        const el = document.getElementById(id);
+        if(el) {
+            el.addEventListener('change', () => {
+                if(id === 'toggleLayerRender') toggleSection(id);
+                notify();
+            });
+        }
     });
 
-    updateStyle();
+    updateMediumStyle();
 }
 
-function updateStyle() {
+function updateMediumStyle() {
     const cat = document.getElementById('renderMediumCategory').value;
+    const list = mediumDatabase[cat];
     const select = document.getElementById('renderMediumStyle');
+    
     select.innerHTML = '';
-    (mediumDatabase[cat] || []).forEach(s => select.add(new Option(s.label, s.value)));
+    if(list) {
+        list.forEach(item => select.add(new Option(item.label, item.value)));
+    }
     notify();
 }
 
@@ -36,14 +59,25 @@ function notify() { if(updateCallback) updateCallback(); }
 
 export function getData() {
     const data = {};
-    if(document.getElementById('toggleRenderRatio').checked)
-        data.ratio = document.getElementById('renderRatio').value;
     
-    if(document.getElementById('toggleRenderMedium').checked) {
-        data.medium = {
-            category: document.getElementById('renderMediumCategory').value,
-            style: document.getElementById('renderMediumStyle').value
-        };
+    if(document.getElementById('toggleRenderRatio').checked) {
+        data.ratio = document.getElementById('renderRatio').value;
     }
+
+    if(document.getElementById('toggleRenderMedium').checked) {
+        const cat = document.getElementById('renderMediumCategory').value;
+        const style = document.getElementById('renderMediumStyle').value;
+        
+        data.medium = { category: cat, style: style };
+
+        // 自動添加負面提示詞
+        let neg = "";
+        if (cat === 'photorealistic') neg = "(anime, manga, 2d, sketch), bad anatomy";
+        else if (cat === 'anime') neg = "(photorealistic, real life), 3d, bad hands";
+        else if (cat === '3d_render') neg = "(2d, sketch), low poly";
+        
+        data.negative_prompt = neg;
+    }
+
     return data;
 }
