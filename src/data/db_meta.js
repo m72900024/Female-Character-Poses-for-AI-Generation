@@ -1,3 +1,4 @@
+// --- 色盤定義 (Colors) ---
 export const macaronColors = [
     { hex: "#FFFFFF", name: "White (白)" },        
     { hex: "#0C0C0C", name: "Black (黑)" }, 
@@ -34,6 +35,32 @@ export const legwearColors = [
     { hex: "#E0E0E0", name: "Sheer (透膚)", display: "linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee)" } 
 ];
 
+// --- ★★★ 修復：補回風格濾鏡資料，並加入中文標籤 ★★★ ---
+export const filterDatabase = {
+    pastel: {
+        label: "日系夢幻 (Pastel Dream)", 
+        value: "pastel",
+        lighting: "Soft high-key lighting, diffuse studio lighting, no harsh shadows, bright and airy",
+        color_palette: ["Pastel Pink", "Cream White", "Beige", "Light Brown"],
+        aesthetic: "J-pop idol style, youthful, innocent, dreamy, soft focus, kawaii"
+    },
+    luxury: {
+        label: "高級質感 (Luxury Contrast)",
+        value: "luxury",
+        lighting: "Soft artificial indoor lighting, well-lit subject, slight chiaroscuro",
+        color_palette: ["Pure White", "Dark Wood Brown", "Jet Black", "Fair Skin Tone"],
+        aesthetic: "Gravure idol style, polished, high-fashion cosplay, glossy texture"
+    },
+    urban: {
+        label: "自然街拍 (Urban Realism)",
+        value: "urban",
+        lighting: "Soft diffuse daylight, even illumination, low contrast, no harsh shadows",
+        color_palette: ["Black", "Grey", "Beige"],
+        aesthetic: "Japanese street fashion, Ryousangata style, feminine, realistic photography"
+    }
+};
+
+// --- 渲染媒材 (Medium) ---
 export const mediumDatabase = {
     photorealistic: [
         { value: "Raw Photo, DSLR, 8k, Hyperrealistic, Realistic skin texture, Soft focus, High quality", label: "真實照片 (Raw Photo)" },
