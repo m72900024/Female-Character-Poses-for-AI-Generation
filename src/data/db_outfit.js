@@ -3,6 +3,17 @@
 // ==========================================
 
 export const costumeSetDatabase = {
+    // ★★★ 新增：日韓純欲風格 ★★★
+    sexy_fashion: [
+        { value: "Ribbed knit bodycon mini dress, sleeveless, accentuating curves, K-pop style (韓系緊身包臀裙)", label: "韓系緊身包臀裙 (K-Style Bodycon)" },
+        { value: "Keyhole turtleneck sweater, open chest, virgin killer sweater style, sideboob (日系開胸毛衣)", label: "日系開胸毛衣 (Keyhole Sweater)" },
+        { value: "Oversized white boyfriend shirt, unbuttoned, no pants, collarbone exposed, messy hair (寬鬆男友襯衫)", label: "寬鬆男友襯衫 (Boyfriend Shirt)" },
+        { value: "Sporty lingerie set, Calvin Klein style, denim shorts, unzipped hoodie, healthy sexy (運動內衣混搭)", label: "運動內衣混搭 (Sporty Lingerie)" },
+        { value: "High-cut school swimsuit, navy blue, sideboob, glistening skin (日系側開衩死庫水)", label: "側開衩死庫水 (High-cut Swimsuit)" },
+        { value: "Off-shoulder knit dress, tight fit, mini length, soft texture (露肩針織裙)", label: "露肩針織裙 (Off-shoulder Knit)" },
+        { value: "See-through lace camisole dress, silk slip underneath, morning vibe (透視蕾絲睡裙)", label: "透視蕾絲睡裙 (Sheer Lace)" },
+        { value: "Crop top and tennis skirt, high socks, K-pop idol stage outfit (女團打歌服)", label: "女團打歌服 (Idol Stage)" }
+    ],
     qipao: [
         { value: "Traditional red silk qipao, golden dragon embroidery, high slit, mandarin collar, sleeveless, red silk high heels (經典紅絲綢旗袍)", label: "經典紅絲綢旗袍 (Classic Red)" },
         { value: "Modified short qipao, white base with blue porcelain floral patterns, keyhole chest design, cap sleeves, white strappy heels (現代短款花旗袍)", label: "現代短款花旗袍 (Modern Floral)" },
@@ -68,7 +79,10 @@ export const topDatabase = [
     { value: "Backless halter top (露背繞頸背心)", label: "露背繞頸背心 (Halter Top)" },
     { value: "Bikini top (比基尼式上衣)", label: "比基尼式上衣 (Bikini Top)" },
     { value: "Oversized sweater (寬鬆毛衣)", label: "寬鬆毛衣 (Oversized Sweater)" },
-    { value: "Tight turtleneck (緊身套頭衫)", label: "緊身套頭衫 (Tight Turtleneck)" }
+    { value: "Tight turtleneck (緊身套頭衫)", label: "緊身套頭衫 (Tight Turtleneck)" },
+    // ★ 新增
+    { value: "Keyhole sweater (開胸毛衣)", label: "開胸毛衣 (Keyhole Sweater)" },
+    { value: "Oversized boyfriend shirt (男友襯衫)", label: "男友襯衫 (Boyfriend Shirt)" }
 ];
 
 export const outerDatabase = [
