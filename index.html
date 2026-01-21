@@ -47,6 +47,120 @@
 </head>
 <body class="bg-slate-50 text-slate-800 h-screen flex flex-col overflow-hidden">
 
+
+            /* === 美化樣式 === */
+            /* 整體背景漸層 */
+            body {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                min-height: 100vh;
+            }
+
+            /* 頂部 Header 美化 */
+            header {
+                background: rgba(255, 255, 255, 0.95) !important;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
+            }
+
+            /* 左側面板美化 */
+            aside, main > div:first-child {
+                background: rgba(255, 255, 255, 0.95) !important;
+                backdrop-filter: blur(10px);
+                border-radius: 20px !important;
+                box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15) !important;
+                border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            }
+
+            /* Layer 區塊美化 */
+            .layer-content > div:first-child {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                color: white !important;
+                border-radius: 12px !important;
+                padding: 16px !important;
+                margin-bottom: 12px !important;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+            }
+
+            /* 卡片樣式 */
+            .bg-slate-50 {
+                background: white !important;
+                border-radius: 12px !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+                transition: all 0.3s ease !important;
+            }
+
+            .bg-slate-50:hover {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+                transform: translateY(-2px) !important;
+            }
+
+            /* 按鈕美化 */
+            button {
+                transition: all 0.3s ease !important;
+                border-radius: 8px !important;
+            }
+
+            button:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+            }
+
+            /* 輸入框美化 */
+            select, input[type="text"] {
+                border-radius: 8px !important;
+                transition: all 0.3s ease !important;
+            }
+
+            select:focus, input[type="text"]:focus {
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2) !important;
+                border-color: #667eea !important;
+            }
+
+            /* Toggle Switch 美化 */
+            .sub-switch {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            }
+
+            /* JSON 輸出區域美化 */
+            #jsonOutput {
+                background: rgba(15, 23, 42, 0.95) !important;
+                backdrop-filter: blur(10px);
+                border-radius: 20px !important;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            }
+
+            /* 色票美化 */
+            .color-swatch {
+                transition: all 0.3s ease !important;
+                cursor: pointer;
+            }
+
+            .color-swatch:hover {
+                transform: scale(1.1) !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+            }
+
+            /* 滾動條美化 */
+            ::-webkit-scrollbar {
+                width: 10px;
+                height: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            }
     <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white px-6 py-3 rounded-full shadow-lg transition-all duration-300 translate-y-24 opacity-0 z-50 flex items-center gap-2">
         <i class="fa-solid fa-check-circle text-green-400"></i>
         <span id="toastMsg">通知訊息</span>
