@@ -14,14 +14,19 @@ const mixColors = { top:null, bottom:null, outer:null, shoes:null, legwear:null,
 
 // ★★★ 分類翻譯對照表 ★★★
 const categoryTranslations = {
-    // 套裝
-    sexy_fashion: "日韓純欲 (Sexy/Pure)",
-    sweet_sexy: "甜美辣妹 (Sweet & Spicy)",
-    qipao: "旗袍風格 (Qipao)",
-    xmas: "聖誕節慶 (Xmas)",
-    hanfu: "漢服古風 (Hanfu)",
-    kimono: "和服浴衣 (Kimono)",
-    professional: "職場制服 (Uniform)",
+    // 套裝分類 (按邏輯順序排列)
+    casual: "日常休閒 (Casual)",
+    sweet_cute: "甜美可愛 (Sweet & Cute)",
+    sexy_fashion: "性感時尚 (Sexy Fashion)",
+    swimwear: "泳裝比基尼 (Swimwear)",
+    uniform: "學生制服 (School Uniform)",
+    professional: "職業裝 (Professional)",
+    cosplay: "角色扮演 (Cosplay)",
+    sportswear: "運動服飾 (Sportswear)",
+    qipao: "旗袍 (Qipao)",
+    hanfu: "漢服 (Hanfu)",
+    kimono: "和服 (Kimono)",
+    seasonal: "節慶限定 (Seasonal)",
     // 下裝
     pants: "長褲/短褲 (Pants)",
     mini_skirt: "迷你裙 (Mini Skirt)",
