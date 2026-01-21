@@ -3,41 +3,69 @@ import { toggleSection } from '../utils.js';
 
 let updateCallback = null;
 
+// ★★★ 場景分類翻譯 ★★★
+const stageTranslations = {
+    private: "居家私密 (Private)",
+    urban: "現代都市 (Urban)",
+    nature: "自然戶外 (Nature)"
+};
+
 export function init(callback) {
     updateCallback = callback;
-    
+
     const catSelect = document.getElementById('stageLocCategory');
-    if(catSelect) {
-        Object.keys(stageDatabase).forEach(k => catSelect.add(new Option(k, k)));
-        catSelect.addEventListener('change', updateLoc);
+    if (catSelect) {
+        catSelect.innerHTML = '';
+        Object.keys(stageDatabase).forEach(key => {
+            const label = stageTranslations[key] || key;
+            catSelect.add(new Option(label, key));
+        });
+        catSelect.addEventListener('change', updateLocations);
     }
-    document.getElementById('stageLocStyle').addEventListener('change', updateProps);
-    document.getElementById('stageProps').addEventListener('input', notify);
 
-    document.getElementById('toggleLayerStage').addEventListener('change', () => {
-        toggleSection('toggleLayerStage');
-        notify();
-    });
+    const locSelect = document.getElementById('stageLocStyle');
+    if(locSelect) {
+        locSelect.addEventListener('change', updateProps);
+    }
 
-    updateLoc();
+    const propInput = document.getElementById('stageProps');
+    if(propInput) propInput.addEventListener('input', notify);
+
+    const toggle = document.getElementById('toggleLayerStage');
+    if(toggle) {
+        toggle.addEventListener('change', () => {
+            toggleSection('toggleLayerStage');
+            notify();
+        });
+    }
+
+    updateLocations();
 }
 
-function updateLoc() {
+function updateLocations() {
     const cat = document.getElementById('stageLocCategory').value;
+    const list = stageDatabase[cat];
     const select = document.getElementById('stageLocStyle');
+    
     select.innerHTML = '';
-    (stageDatabase[cat] || []).forEach(l => {
-        const opt = new Option(l.label, l.value);
-        opt.dataset.props = l.props;
-        select.add(opt);
-    });
+    if(list) {
+        list.forEach(item => {
+            const opt = new Option(item.label, item.value);
+            // 將預設道具存入 data attribute
+            opt.dataset.props = item.props || ""; 
+            select.add(opt);
+        });
+    }
     updateProps();
 }
 
 function updateProps() {
-    const sel = document.getElementById('stageLocStyle');
-    const opt = sel.options[sel.selectedIndex];
-    if(opt && opt.dataset.props) document.getElementById('stageProps').value = opt.dataset.props;
+    const select = document.getElementById('stageLocStyle');
+    const input = document.getElementById('stageProps');
+    if (select.selectedIndex >= 0) {
+        const props = select.options[select.selectedIndex].dataset.props;
+        input.value = props;
+    }
     notify();
 }
 
