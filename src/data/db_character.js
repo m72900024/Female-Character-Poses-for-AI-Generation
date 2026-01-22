@@ -1,41 +1,58 @@
 // ★★★ 結構已改為陣列，直接在此定義分類名稱 ★★★
 export const hairDatabase = [
     {
-        id: "short",
-        label: "短髮 (Short)", 
+        id: "ponytail",
+        label: "馬尾 (Ponytail)",
         options: [
-            { value: "Short bob cut (短髮鮑伯頭)", label: "鮑伯頭 (Bob Cut)" },
-            { value: "Pixie cut (精靈短髮)", label: "精靈短髮 (Pixie Cut)" },
-            { value: "Short curly hair (短捲髮)", label: "俏麗短捲髮 (Curly Short)" },
-            { value: "Shoulder length hair (齊肩髮)", label: "及肩短髮 (Shoulder Length)" },
-            { value: "Messy short hair (凌亂短髮)", label: "隨性凌亂短髮 (Messy Short)" },
-            { value: "Wolf cut (狼尾剪)", label: "狼尾剪 (Wolf Cut)" },
-            { value: "Bowl cut (鍋蓋頭)", label: "鍋蓋頭 (Bowl Cut)" },
-            { value: "Ear-length bob (耳下短髮)", label: "耳下短髮 (Ear-length)" }
+            { value: "High ponytail with ribbon (緞帶高馬尾)", label: "緞帶高馬尾 (Ribbon High)" },
+            { value: "High ponytail with scrunchie (髮圈高馬尾)", label: "髮圈高馬尾 (Scrunchie High)" },
+            { value: "Sleek high ponytail (俐落高馬尾)", label: "俐落高馬尾 (Sleek High)" },
+            { value: "Fluffy high ponytail (蓬鬆高馬尾)", label: "蓬鬆高馬尾 (Fluffy High)" },
+            { value: "Sport high ponytail (運動高馬尾)", label: "運動高馬尾 (Sport High)" },
+            { value: "Curly high ponytail (捲髮高馬尾)", label: "捲髮高馬尾 (Curly High)" },
+            { value: "Side ponytail (側馬尾)", label: "俏皮側馬尾 (Side Pony)" },
+            { value: "Low ponytail (低馬尾)", label: "溫柔低馬尾 (Low Pony)" },
+            { value: "Braided ponytail (編織馬尾)", label: "編織馬尾 (Braided Pony)" },
+            { value: "Twin tails with ribbon (緞帶雙馬尾)", label: "緞帶雙馬尾 (Twin Tails)" }
         ]
     },
     {
         id: "long",
         label: "長髮 (Long)",
         options: [
+            { value: "Long big wavy hair (大波浪長捲髮)", label: "大波浪捲髮 (Big Waves)" },
+            { value: "Elegant loose waves (優雅大捲)", label: "優雅大捲 (Elegant Waves)" },
+            { value: "Voluminous wavy hair (蓬鬆波浪長髮)", label: "蓬鬆波浪 (Voluminous Waves)" },
             { value: "Long straight hair (長直髮)", label: "長直髮 (Long Straight)" },
-            { value: "Long wavy hair (長捲髮)", label: "波浪長捲髮 (Long Wavy)" },
             { value: "Hime cut (姬髮式)", label: "姬髮式 (Hime Cut)" },
-            { value: "Twin tails (雙馬尾)", label: "雙馬尾 (Twin Tails)" },
             { value: "Braided hair (編髮)", label: "氣質編髮 (Braided)" },
             { value: "Loose hair with bangs (長髮瀏海)", label: "長髮齊瀏海 (Bangs)" },
             { value: "Half-up half-down (公主頭)", label: "公主頭 (Half-up)" }
         ]
     },
     {
-        id: "ponytail",
-        label: "馬尾 (Ponytail)",
+        id: "short",
+        label: "短髮 (Short)",
         options: [
-            { value: "High ponytail with ribbon (緞帶高馬尾)", label: "緞帶高馬尾 (Ribbon High Pony)" },
-            { value: "Simple sport high ponytail (運動風高馬尾)", label: "運動風高馬尾 (Sport Pony)" },
-            { value: "Side ponytail (側馬尾)", label: "俏皮側馬尾 (Side Pony)" },
-            { value: "Low ponytail (低馬尾)", label: "溫柔低馬尾 (Low Pony)" },
-            { value: "Braided ponytail (編織馬尾)", label: "編織馬尾 (Braided Pony)" }
+            { value: "Shoulder length straight hair (齊肩直髮)", label: "齊肩直髮 (Shoulder Straight)" },
+            { value: "Shoulder length bob (齊肩鮑伯)", label: "齊肩鮑伯 (Shoulder Bob)" },
+            { value: "Layered shoulder length hair (層次齊肩髮)", label: "層次齊肩 (Layered Shoulder)" },
+            { value: "Short bob cut (短髮鮑伯頭)", label: "俐落鮑伯 (Bob Cut)" },
+            { value: "Sleek lob haircut (俐落中長髮)", label: "俐落中長髮 (Sleek Lob)" },
+            { value: "Wolf cut (狼尾剪)", label: "狼尾剪 (Wolf Cut)" },
+            { value: "Pixie cut (精靈短髮)", label: "精靈短髮 (Pixie Cut)" }
+        ]
+    },
+    {
+        id: "updo",
+        label: "盤髮 (Updo)",
+        options: [
+            { value: "High bun with ribbon (緞帶丸子頭)", label: "緞帶丸子頭 (Ribbon Bun)" },
+            { value: "Messy high bun (隨性丸子頭)", label: "隨性丸子頭 (Messy Bun)" },
+            { value: "Elegant chignon (優雅包頭)", label: "優雅包頭 (Chignon)" },
+            { value: "Double buns (雙丸子頭)", label: "雙丸子頭 (Double Buns)" },
+            { value: "Low bun (低盤髮)", label: "低盤髮 (Low Bun)" },
+            { value: "French twist (法式盤髮)", label: "法式盤髮 (French Twist)" }
         ]
     }
 ];
