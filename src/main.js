@@ -67,6 +67,104 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // ★★★ 設定預設開啟狀態 ★★★
+    setDefaultState();
+
     // 初次執行
     updatePrompt();
 });
+
+// ★★★ 預設開啟狀態設定函式 ★★★
+function setDefaultState() {
+    // 1. 角色設定 - 開啟 Layer + 基礎描述 + 髮型 + 表情
+    setToggle('toggleLayerCharCore', true);
+    setToggle('toggleCharBase', true);
+    setToggle('toggleCharHair', true);
+    setToggle('toggleCharExpression', true);
+
+    // 2. 服裝設定 - 開啟 Layer + 服裝，設定旗袍分類 + 現代短款花旗袍
+    setToggle('toggleLayerOutfit', true);
+    setToggle('toggleCharCostume', true);
+    // 設定套裝分類為旗袍 (qipao)
+    const costumeCategory = document.getElementById('charCostumeSetCategory');
+    if (costumeCategory) {
+        costumeCategory.value = 'qipao';
+        costumeCategory.dispatchEvent(new Event('change'));
+    }
+    // 設定為「現代短款花旗袍」
+    setTimeout(() => {
+        const costumeStyle = document.getElementById('charCostumeSetStyle');
+        if (costumeStyle) {
+            for (let i = 0; i < costumeStyle.options.length; i++) {
+                if (costumeStyle.options[i].text.includes('現代短款花旗袍')) {
+                    costumeStyle.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+    }, 50);
+
+    // 3. 鏡頭設定 - 開啟 Layer，設定全身 + 正面 + 平視 + 動作：雙手叉腰
+    setToggle('toggleLayerCamera', true);
+    const camFraming = document.getElementById('camFraming');
+    const camPosition = document.getElementById('camPosition');
+    const camVertical = document.getElementById('camVertical');
+    const camPoseCategory = document.getElementById('camPoseCategory');
+    const camPoseStyle = document.getElementById('camPoseStyle');
+
+    if (camFraming) {
+        for (let i = 0; i < camFraming.options.length; i++) {
+            if (camFraming.options[i].text.includes('全身')) {
+                camFraming.selectedIndex = i;
+                break;
+            }
+        }
+    }
+    if (camPosition) camPosition.selectedIndex = 0; // 正面
+    if (camVertical) camVertical.selectedIndex = 0; // 平視
+
+    // 設定動作姿態：正面 > 雙手叉腰
+    if (camPoseCategory) {
+        camPoseCategory.value = 'front';
+        camPoseCategory.dispatchEvent(new Event('change'));
+    }
+    setTimeout(() => {
+        const poseStyle = document.getElementById('camPoseStyle');
+        if (poseStyle) {
+            for (let i = 0; i < poseStyle.options.length; i++) {
+                if (poseStyle.options[i].text.includes('雙手叉腰')) {
+                    poseStyle.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+    }, 50);
+
+    // 4. 物理環境 - 開啟 Layer，設定私密 + 臥室
+    setToggle('toggleLayerStage', true);
+    const stageCategory = document.getElementById('stageLocCategory');
+    if (stageCategory) {
+        stageCategory.value = 'private';
+        stageCategory.dispatchEvent(new Event('change'));
+    }
+
+    // 5. 風格濾鏡 - 開啟 Layer，設定日系夢幻 (pastel)
+    setToggle('toggleLayerFilter', true);
+    setTimeout(() => {
+        const pastelFilter = document.querySelector('[data-filter="pastel"]');
+        if (pastelFilter) pastelFilter.click();
+    }, 50);
+
+    // 6. 渲染設定 - 開啟 Layer + 畫幅比例 + 媒材風格
+    setToggle('toggleLayerRender', true);
+    setToggle('toggleRenderRatio', true);
+    setToggle('toggleRenderMedium', true);
+}
+
+function setToggle(id, checked) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.checked = checked;
+        toggleSection(id);
+    }
+}
