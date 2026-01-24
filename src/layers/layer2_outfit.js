@@ -27,6 +27,12 @@ const categoryTranslations = {
     qipao: "旗袍 (Qipao)",
     hanfu: "漢服 (Hanfu)",
     kimono: "和服 (Kimono)",
+    jk_style: "🇯🇵🇰🇷 日韓短裙風 (JK Style)",
+    cafe_date: "☕ 咖啡廳約會 (Cafe Date)",
+    summer_fresh: "🌊 夏日清涼 (Summer Fresh)",
+    autumn_winter: "🍂 秋冬溫暖 (Autumn Winter)",
+    office_chic: "💼 輕熟OL風 (Office Chic)",
+    party_concert: "🎵 派對演唱會 (Party Concert)",
     seasonal: "節慶限定 (Seasonal)",
     // 下裝
     pants: "長褲/短褲 (Pants)",

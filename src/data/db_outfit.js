@@ -5,12 +5,31 @@
 export const costumeSetDatabase = {
     // === 日常休閒 (Casual) ===
     casual: [
+        // 居家慵懶風
         { value: "Oversized white boyfriend shirt, unbuttoned, white lace panties visible, bare legs, messy hair, barefoot indoors (寬鬆男友襯衫)", label: "寬鬆男友襯衫 (Boyfriend Shirt)" },
         { value: "Oversized pastel pink hoodie, no pants style, white thigh high socks, cute long sleeves covering hands, bare legs (下衣失蹤風)", label: "下衣失蹤風 (Oversized Hoodie)" },
+        { value: "Grey cropped sweatshirt, matching grey sweatpants, messy bun, white fuzzy slippers, loungewear vibes (灰色運動套裝)", label: "灰色運動套裝 (Lounge Set)" },
+        { value: "White oversized band tee, black bike shorts, hair clip, barefoot at home (寬鬆樂團T)", label: "寬鬆樂團T (Band Tee)" },
+        { value: "Soft pink satin pajama set, button-up top, matching shorts, barefoot (粉色緞面睡衣)", label: "粉色緞面睡衣 (Satin PJs)" },
+        // T恤短褲風
         { value: "Simple white T-shirt, blue denim shorts, casual and fresh look, white canvas sneakers (休閒T恤短褲)", label: "休閒T恤短褲 (Casual Tee)" },
+        { value: "Vintage graphic tee, high-waisted denim shorts, white sneakers, casual cool (復古印花T恤)", label: "復古印花T恤 (Vintage Tee)" },
+        { value: "Cropped white tank top, high-waisted black shorts, white chunky sneakers, sporty casual (白色背心短褲)", label: "白色背心短褲 (Tank & Shorts)" },
+        { value: "Pastel tie-dye oversized tee, denim cutoff shorts, white platform sneakers (紮染寬T)", label: "紮染寬T (Tie-dye Tee)" },
+        // 針織搭配風
         { value: "Beige knit cardigan, white camisole underneath, high-waisted blue jeans, cozy style, white sneakers (針織外套搭配)", label: "針織外套搭配 (Cozy Cardigan)" },
+        { value: "Cream cable knit sweater, light wash mom jeans, white sneakers, cozy autumn (麻花針織毛衣)", label: "麻花針織毛衣 (Cable Knit)" },
+        { value: "Sage green knit vest over white tee, khaki wide-leg pants, beige loafers (針織背心疊穿)", label: "針織背心疊穿 (Knit Vest Layer)" },
+        // 裙裝休閒
         { value: "Blue and white striped long sleeve shirt, denim mini skirt, preppy casual style, white canvas shoes (條紋襯衫牛仔裙)", label: "條紋襯衫牛仔裙 (Preppy Casual)" },
-        { value: "Floral print sundress, spaghetti straps, flowy A-line skirt, light and airy, brown leather sandals (碎花洋裝)", label: "碎花洋裝 (Floral Sundress)" }
+        { value: "Floral print sundress, spaghetti straps, flowy A-line skirt, light and airy, brown leather sandals (碎花洋裝)", label: "碎花洋裝 (Floral Sundress)" },
+        { value: "White cotton blouse, flowy midi skirt, straw tote bag, tan sandals, breezy summer (白襯衫中長裙)", label: "白襯衫中長裙 (Blouse & Midi)" },
+        { value: "Denim jacket, white basic tee, pleated midi skirt, white sneakers (牛仔外套百褶裙)", label: "牛仔外套百褶裙 (Denim & Pleats)" },
+        { value: "Striped crop top, high-waisted linen shorts, straw hat, espadrilles, vacation casual (條紋短版上衣)", label: "條紋短版上衣 (Striped Crop)" },
+        // 運動休閒風
+        { value: "White sports bra visible under loose tank, black leggings, white sneakers, gym to street (運動風疊穿)", label: "運動風疊穿 (Athleisure Layer)" },
+        { value: "Pastel blue zip-up hoodie, matching joggers, white sneakers, sporty cute (粉藍運動套裝)", label: "粉藍運動套裝 (Sporty Set)" },
+        { value: "Black cropped hoodie, grey yoga pants, white running shoes, casual athletic (短版帽T瑜伽褲)", label: "短版帽T瑜伽褲 (Crop Hoodie Yoga)" }
     ],
 
     // === 網美風格 (Influencer Style) ===
@@ -163,6 +182,190 @@ export const costumeSetDatabase = {
         { value: "Traditional white haori jacket, red hakama pants, sacred and pure atmosphere, traditional zori with red straps (巫女服)", label: "巫女服 (Shrine Maiden Miko)" },
         { value: "Ninja Kunoichi style, short kimono tunic, mesh armor, ninja tabi boots (女忍短和服)", label: "女忍短和服 (Ninja Kunoichi)" },
         { value: "Modern lace kimono, fusion style, pastel colors, ribbon obi, lace gloves, western heels (蕾絲改良和服)", label: "蕾絲改良和服 (Modern Lace Fusion)" }
+    ],
+
+    // === 日系韓系 (Japanese & Korean Style) ===
+    jk_style: [
+        // 日系純欲風 Japanese Pure Desire Style
+        { value: "White fluffy mohair sweater, sheer lace bralette peeking, pink pleated mini skirt, white knee socks, pink mary janes (日系純欲毛衣裙)", label: "🇯🇵 日系純欲毛衣裙 (JP Pure Sweater)" },
+        { value: "Cream knit cardigan unbuttoned, white camisole, grey pleated mini skirt, white thigh highs, beige loafers (奶油色針織開衫)", label: "🇯🇵 奶油色針織開衫 (Cream Cardigan)" },
+        { value: "Oversized white shirt half tucked, beige knit vest, brown plaid mini skirt, cream knee socks, brown loafers (慵懶學院風)", label: "🇯🇵 慵懶學院風 (Lazy Academia)" },
+        { value: "Baby blue sailor collar blouse, navy pleated mini skirt, white ankle socks, white sneakers (水手領短裙)", label: "🇯🇵 水手領短裙 (Sailor Mini)" },
+        { value: "Pink cable knit sweater, white tennis mini skirt, white knee socks, pink platform sneakers (甜美運動風)", label: "🇯🇵 甜美運動風 (Sweet Sporty)" },
+        { value: "Sheer white blouse with ribbon bow, suspender mini skirt, white thigh highs, mary jane shoes (透膚蝴蝶結襯衫)", label: "🇯🇵 透膚蝴蝶結襯衫 (Sheer Ribbon)" },
+        // 韓系甜辣風 Korean Sweet Spicy Style
+        { value: "Cropped blazer, white tube top, high-waisted pleated mini skirt, white sneakers, gold jewelry (韓系甜辣西裝)", label: "🇰🇷 韓系甜辣西裝 (K-Sweet Blazer)" },
+        { value: "Off-shoulder knit top, high-waisted denim mini skirt, white ankle boots (露肩針織配牛仔裙)", label: "🇰🇷 露肩針織配牛仔裙 (Off-shoulder Denim)" },
+        { value: "White cropped cardigan with pearl buttons, matching pleated short skirt, pearl earrings, white mary janes (珍珠扣套裝)", label: "🇰🇷 珍珠扣套裝 (Pearl Button Set)" },
+        { value: "Pastel pink tweed jacket, matching mini skirt, pearl necklace, nude heels (粉色小香風套裝)", label: "🇰🇷 粉色小香風套裝 (Pink Tweed Set)" },
+        { value: "Oversized striped shirt dress belted, white sneakers, minimal makeup (韓系襯衫裙)", label: "🇰🇷 韓系襯衫裙 (K-Shirt Dress)" },
+        { value: "Black ribbed crop top, high-waisted cargo mini skirt, chunky sneakers (辣妹工裝風)", label: "🇰🇷 辣妹工裝風 (Spicy Cargo)" },
+        // 日系JK制服變體 Japanese JK Uniform Variants
+        { value: "White sailor top with navy trim, navy micro pleated skirt, loose socks, brown loafers (改良JK水手服)", label: "🇯🇵 改良JK水手服 (Modified JK Sailor)" },
+        { value: "Cream vest over white blouse, red ribbon tie, grey check mini skirt, black knee socks, brown loafers (奶茶JK制服)", label: "🇯🇵 奶茶JK制服 (Milk Tea JK)" },
+        { value: "Pink cardigan over sailor uniform, navy pleated skirt, white loose socks, white sneakers (粉紅針織JK)", label: "🇯🇵 粉紅針織JK (Pink Knit JK)" },
+        { value: "Summer JK uniform, short sleeve white blouse, navy ribbon, grey mini skirt, white ankle socks, white loafers (夏季清涼JK)", label: "🇯🇵 夏季清涼JK (Summer JK)" },
+        // 韓系學院風 Korean Academia Style
+        { value: "Navy blazer, white shirt, red plaid pleated skirt, white knee socks, black loafers (韓式學院制服)", label: "🇰🇷 韓式學院制服 (K-Academy Uniform)" },
+        { value: "Beige trench coat over white tee, tennis mini skirt, white sneakers (風衣網球裙)", label: "🇰🇷 風衣網球裙 (Trench Tennis)" },
+        { value: "Cropped hoodie, plaid pleated mini skirt, white tube socks, platform sneakers (帽T格紋裙)", label: "🇰🇷 帽T格紋裙 (Hoodie Plaid)" },
+        { value: "Oversized knit vest, white shirt collar peeking, grey shorts skirt, loafers (針織背心短裙)", label: "🇰🇷 針織背心短裙 (Knit Vest Short)" },
+        // 日系森女田園風 Japanese Mori Girl / Cottage Style
+        { value: "White cotton blouse with lace collar, floral print A-line skirt, straw hat, brown leather sandals (森系碎花裙)", label: "🇯🇵 森系碎花裙 (Mori Floral)" },
+        { value: "Cream linen apron dress, white puff sleeve blouse, brown leather mary janes (亞麻圍裙裙)", label: "🇯🇵 亞麻圍裙裙 (Linen Apron)" },
+        { value: "Gingham check dress, puff sleeves, peter pan collar, white ankle socks, brown oxford shoes (格紋洋裝)", label: "🇯🇵 格紋洋裝 (Gingham Dress)" },
+        { value: "Embroidered peasant blouse, tiered ruffle midi skirt, woven basket bag, espadrilles (刺繡田園風)", label: "🇯🇵 刺繡田園風 (Embroidered Cottage)" },
+        // 韓系約會穿搭 Korean Date Outfits
+        { value: "Light pink slip dress, white cardigan draped shoulders, pearl accessories, nude heels (約會吊帶裙)", label: "🇰🇷 約會吊帶裙 (Date Slip Dress)" },
+        { value: "White square neck puff sleeve top, lavender A-line mini skirt, white strappy heels (方領泡泡袖)", label: "🇰🇷 方領泡泡袖 (Square Neck Puff)" },
+        { value: "Soft blue knit set, cropped top and mini skirt, pearl earrings, white mules (藍色針織套裝)", label: "🇰🇷 藍色針織套裝 (Blue Knit Set)" },
+        { value: "Ruched bodycon mini dress, thin straps, nude heels, delicate jewelry (抓皺緊身裙)", label: "🇰🇷 抓皺緊身裙 (Ruched Bodycon)" },
+        { value: "Floral wrap mini dress, V-neck, puff sleeves, nude block heels (碎花裹身短裙)", label: "🇰🇷 碎花裹身短裙 (Floral Wrap Mini)" },
+        { value: "White eyelet lace mini dress, romantic feminine, nude sandals (蕾絲鏤空洋裝)", label: "🇰🇷 蕾絲鏤空洋裝 (Eyelet Lace Dress)" },
+        { value: "Off-shoulder ribbed top, satin mini skirt, strappy heels, elegant date look (一字領緞面裙)", label: "🇰🇷 一字領緞面裙 (Off-shoulder Satin)" },
+        { value: "Cropped cashmere sweater, high-waisted leather mini skirt, ankle boots (羊絨配皮裙)", label: "🇰🇷 羊絨配皮裙 (Cashmere Leather)" },
+        { value: "White lace blouse, pink tulle mini skirt, pearl headband, white heels (蕾絲紗裙約會)", label: "🇰🇷 蕾絲紗裙約會 (Lace Tulle Date)" },
+        { value: "Pastel mint knit top, white pleated tennis skirt, white sneakers, fresh date (薄荷綠約會風)", label: "🇰🇷 薄荷綠約會風 (Mint Fresh Date)" },
+        { value: "Black velvet camisole, grey plaid mini skirt, black ankle boots, chic evening (絲絨格紋約會)", label: "🇰🇷 絲絨格紋約會 (Velvet Plaid Date)" },
+        { value: "Cream silk blouse bow tie, camel A-line mini skirt, nude pumps, elegant lady (絲綢蝴蝶結約會)", label: "🇰🇷 絲綢蝴蝶結約會 (Silk Bow Date)" },
+        // 日系約會穿搭 Japanese Date Outfits
+        { value: "White lace camisole, baby pink flared mini skirt, pearl necklace, white mary janes (純欲約會風)", label: "🇯🇵 純欲約會風 (Pure Date Style)" },
+        { value: "Soft pink angora sweater, white pleated mini skirt, white knee socks, pink ballet flats (粉嫩天使約會)", label: "🇯🇵 粉嫩天使約會 (Angel Pink Date)" },
+        { value: "Cream chiffon blouse with ribbon, brown check mini skirt, beige loafers (奶茶系約會)", label: "🇯🇵 奶茶系約會 (Milk Tea Date)" },
+        { value: "Off-white knit dress, mini length, delicate gold jewelry, nude heels (針織連身裙約會)", label: "🇯🇵 針織連身裙約會 (Knit Dress Date)" },
+        { value: "Lavender satin camisole, white lace trim mini skirt, silver accessories, white mules (薰衣草約會)", label: "🇯🇵 薰衣草約會 (Lavender Date)" },
+        { value: "Sheer white blouse, high-waisted denim mini skirt, brown leather belt, white sneakers (清純牛仔約會)", label: "🇯🇵 清純牛仔約會 (Pure Denim Date)" },
+        { value: "Baby blue cardigan, white camisole, floral print mini skirt, white sandals (碎花清新約會)", label: "🇯🇵 碎花清新約會 (Floral Fresh Date)" },
+        { value: "Striped crop top, high-waisted white mini skirt, straw bag, espadrilles (海邊約會風)", label: "🇯🇵 海邊約會風 (Beach Date Style)" },
+        // 日系迷你裙特輯 Japanese Mini Skirt Special
+        { value: "Oversized cream sweater, grey micro pleated skirt, white thigh highs, brown loafers (毛衣配超短裙)", label: "🇯🇵 毛衣配超短裙 (Sweater Micro)" },
+        { value: "White crop tee with heart print, pink tennis mini skirt, white platform sneakers (愛心T配網球裙)", label: "🇯🇵 愛心T配網球裙 (Heart Tee Tennis)" },
+        { value: "Pink hoodie cropped, grey pleated micro skirt, white crew socks, pink sneakers (帽T超短裙)", label: "🇯🇵 帽T超短裙 (Hoodie Micro)" },
+        { value: "Sailor collar crop top, navy micro skirt, white loose socks, white sneakers (水手服迷你)", label: "🇯🇵 水手服迷你 (Sailor Micro)" },
+        { value: "Pastel rainbow striped sweater, white denim mini skirt, colorful sneakers (彩虹條紋迷你)", label: "🇯🇵 彩虹條紋迷你 (Rainbow Mini)" },
+        { value: "White off-shoulder knit, brown corduroy mini skirt, cream boots (露肩燈芯絨裙)", label: "🇯🇵 露肩燈芯絨裙 (Off-shoulder Cord)" },
+        // 韓系迷你裙特輯 Korean Mini Skirt Special
+        { value: "Black turtleneck crop top, red plaid mini skirt, black boots, edgy chic (高領格紋迷你)", label: "🇰🇷 高領格紋迷你 (Turtle Plaid Mini)" },
+        { value: "White oversized blazer, black micro mini skirt, black heels, boss girl (西裝超短裙)", label: "🇰🇷 西裝超短裙 (Blazer Micro)" },
+        { value: "Ribbed beige crop top, matching knit mini skirt, nude mules (米色針織套裝裙)", label: "🇰🇷 米色針織套裝裙 (Beige Knit Set)" },
+        { value: "Denim bustier top, white mini skirt, white sneakers, summer casual (牛仔馬甲白短裙)", label: "🇰🇷 牛仔馬甲白短裙 (Denim Bustier)" },
+        { value: "Cropped leather jacket, white tube top, black leather mini skirt, boots (皮衣皮裙辣妹)", label: "🇰🇷 皮衣皮裙辣妹 (Leather Spicy)" },
+        { value: "Pastel yellow knit vest, white shirt, grey check mini skirt, loafers (黃色背心學院)", label: "🇰🇷 黃色背心學院 (Yellow Vest Academy)" },
+        { value: "Square neck puff blouse, high-waisted black mini skirt, block heels (方領黑短裙)", label: "🇰🇷 方領黑短裙 (Square Neck Black)" },
+        { value: "Striped crop cardigan, matching mini skirt set, white sneakers (條紋套裝迷你)", label: "🇰🇷 條紋套裝迷你 (Stripe Set Mini)" }
+    ],
+
+    // === ☕ 咖啡廳約會風 (Cafe Date Style) ===
+    cafe_date: [
+        // 奶茶色系 Milk Tea Tones
+        { value: "Cream knit sweater, camel A-line mini skirt, beige ankle boots, tote bag (奶茶色針織套裝)", label: "☕ 奶茶色針織套裝 (Milk Tea Knit)" },
+        { value: "Beige turtleneck, brown plaid mini skirt, cream knee socks, brown loafers (焦糖格紋裙)", label: "☕ 焦糖格紋裙 (Caramel Plaid)" },
+        { value: "Off-white cardigan, latte brown camisole, beige pleated mini skirt, nude flats (拿鐵色層次)", label: "☕ 拿鐵色層次 (Latte Layer)" },
+        { value: "Mocha brown knit vest, white blouse, cream tennis skirt, brown mary janes (摩卡背心裙)", label: "☕ 摩卡背心裙 (Mocha Vest)" },
+        { value: "Oatmeal oversized sweater, brown corduroy mini skirt, cream boots (燕麥色毛衣)", label: "☕ 燕麥色毛衣 (Oatmeal Sweater)" },
+        { value: "Taupe silk blouse, caramel wrap mini skirt, nude heels (太妃糖裹裙)", label: "☕ 太妃糖裹裙 (Toffee Wrap)" },
+        // 溫柔甜美 Soft & Sweet
+        { value: "Baby pink cardigan, white lace camisole, cream mini skirt, white mary janes (粉嫩溫柔風)", label: "☕ 粉嫩溫柔風 (Soft Pink)" },
+        { value: "Lavender knit top, white pleated mini skirt, white sneakers (薰衣草清新)", label: "☕ 薰衣草清新 (Lavender Fresh)" },
+        { value: "Mint green blouse, white A-line mini skirt, beige sandals (薄荷清爽)", label: "☕ 薄荷清爽 (Mint Fresh)" },
+        { value: "Dusty rose sweater, grey check mini skirt, pink ballet flats (乾燥玫瑰)", label: "☕ 乾燥玫瑰 (Dusty Rose)" },
+        { value: "Peach satin camisole, cream cardigan, white tennis skirt, nude mules (蜜桃甜心)", label: "☕ 蜜桃甜心 (Peach Sweet)" },
+        { value: "Soft yellow knit top, white denim mini skirt, white sneakers (檸檬黃清新)", label: "☕ 檸檬黃清新 (Lemon Fresh)" },
+        // 氣質優雅 Elegant
+        { value: "Cream silk shirt, brown leather mini skirt, nude heels, gold jewelry (絲綢優雅)", label: "☕ 絲綢優雅 (Silk Elegant)" },
+        { value: "Beige linen blazer, white camisole, camel shorts, nude sandals (亞麻知性)", label: "☕ 亞麻知性 (Linen Smart)" },
+        { value: "White eyelet blouse, tan suede mini skirt, brown ankle boots (鏤空蕾絲)", label: "☕ 鏤空蕾絲 (Eyelet Lace)" },
+        { value: "Camel cashmere sweater, cream pleated mini skirt, brown loafers (羊絨質感)", label: "☕ 羊絨質感 (Cashmere Touch)" }
+    ],
+
+    // === 🌊 夏日清涼風 (Summer Fresh Style) ===
+    summer_fresh: [
+        // 露肩清涼 Off-shoulder Cool
+        { value: "White off-shoulder crop top, light blue denim mini skirt, white sandals (白色露肩清涼)", label: "🌊 白色露肩清涼 (White Off-shoulder)" },
+        { value: "Yellow gingham off-shoulder top, white shorts, straw sandals (黃格紋露肩)", label: "🌊 黃格紋露肩 (Yellow Gingham)" },
+        { value: "Pink ruffle off-shoulder blouse, white mini skirt, nude wedges (粉色荷葉邊露肩)", label: "🌊 粉色荷葉邊露肩 (Pink Ruffle)" },
+        { value: "Blue striped off-shoulder top, white linen shorts, espadrilles (藍白條紋露肩)", label: "🌊 藍白條紋露肩 (Blue Stripe)" },
+        { value: "Coral off-shoulder mini dress, straw bag, tan sandals (珊瑚色露肩裙)", label: "🌊 珊瑚色露肩裙 (Coral Dress)" },
+        // 清爽配色 Fresh Colors
+        { value: "White linen crop top, sky blue mini skirt, white sneakers (天空藍清爽)", label: "🌊 天空藍清爽 (Sky Blue Fresh)" },
+        { value: "Mint green tank top, white denim mini skirt, mint sandals (薄荷綠涼夏)", label: "🌊 薄荷綠涼夏 (Mint Summer)" },
+        { value: "Lemon yellow camisole, white pleated mini skirt, yellow flats (檸檬黃活力)", label: "🌊 檸檬黃活力 (Lemon Energy)" },
+        { value: "Watermelon pink crop tee, white shorts, pink sandals (西瓜粉夏日)", label: "🌊 西瓜粉夏日 (Watermelon Pink)" },
+        { value: "Ocean blue wrap top, white linen mini skirt, tan wedges (海洋藍清涼)", label: "🌊 海洋藍清涼 (Ocean Blue)" },
+        { value: "Peach halter top, white A-line mini skirt, nude sandals (蜜桃色涼夏)", label: "🌊 蜜桃色涼夏 (Peach Summer)" },
+        // 度假風情 Vacation Vibes
+        { value: "White crochet crop top, high-waisted denim shorts, brown sandals (鉤針海邊風)", label: "🌊 鉤針海邊風 (Crochet Beach)" },
+        { value: "Tropical print bandeau, white mini skirt, straw wedges (熱帶印花)", label: "🌊 熱帶印花 (Tropical Print)" },
+        { value: "White eyelet mini dress, tan belt, brown gladiator sandals (鏤空白裙)", label: "🌊 鏤空白裙 (Eyelet White)" },
+        { value: "Striped crop top, high-waisted white shorts, canvas sneakers (條紋海軍風)", label: "🌊 條紋海軍風 (Nautical Stripe)" },
+        { value: "Floral print sundress, mini length, straw hat, tan sandals (碎花陽光裙)", label: "🌊 碎花陽光裙 (Floral Sundress)" }
+    ],
+
+    // === 🍂 秋冬溫暖風 (Autumn Winter Cozy) ===
+    autumn_winter: [
+        // 毛衣短裙 Sweater & Skirt
+        { value: "Chunky cream cable knit sweater, brown plaid mini skirt, brown knee boots (麻花毛衣格紋裙)", label: "🍂 麻花毛衣格紋裙 (Cable Knit Plaid)" },
+        { value: "Burgundy oversized sweater, black leather mini skirt, black boots (酒紅毛衣皮裙)", label: "🍂 酒紅毛衣皮裙 (Burgundy Leather)" },
+        { value: "Mustard yellow knit, grey pleated mini skirt, brown ankle boots (芥末黃針織)", label: "🍂 芥末黃針織 (Mustard Knit)" },
+        { value: "Forest green turtleneck, camel A-line mini skirt, brown loafers (森林綠高領)", label: "🍂 森林綠高領 (Forest Turtle)" },
+        { value: "Rust orange sweater, dark denim mini skirt, tan boots (鏽橘色毛衣)", label: "🍂 鏽橘色毛衣 (Rust Sweater)" },
+        { value: "Oatmeal mohair sweater, chocolate brown mini skirt, cream boots (燕麥馬海毛)", label: "🍂 燕麥馬海毛 (Oatmeal Mohair)" },
+        // 層次穿搭 Layered Style
+        { value: "Beige trench coat, white turtleneck, plaid mini skirt, brown boots (風衣層次)", label: "🍂 風衣層次 (Trench Layer)" },
+        { value: "Camel coat, cream sweater, grey wool mini skirt, black boots (駝色大衣)", label: "🍂 駝色大衣 (Camel Coat)" },
+        { value: "Black leather jacket, striped top, red plaid mini skirt, boots (皮衣格紋)", label: "🍂 皮衣格紋 (Leather Plaid)" },
+        { value: "Olive green parka, white hoodie, black mini skirt, white sneakers (軍綠派克)", label: "🍂 軍綠派克 (Olive Parka)" },
+        { value: "Cream teddy coat, beige knit dress, mini length, brown boots (泰迪熊外套)", label: "🍂 泰迪熊外套 (Teddy Coat)" },
+        // 溫暖質感 Warm Textures
+        { value: "Grey wool blazer, white shirt, tartan mini skirt, black loafers (羊毛西裝格紋)", label: "🍂 羊毛西裝格紋 (Wool Blazer)" },
+        { value: "Bordeaux velvet top, black pleated mini skirt, black heels (波爾多絲絨)", label: "🍂 波爾多絲絨 (Bordeaux Velvet)" },
+        { value: "Caramel suede jacket, cream knit, brown suede mini skirt, boots (麂皮套裝)", label: "🍂 麂皮套裝 (Suede Set)" },
+        { value: "Navy peacoat, striped top, grey wool shorts, black tights, loafers (海軍藍雙排扣)", label: "🍂 海軍藍雙排扣 (Navy Peacoat)" }
+    ],
+
+    // === 💼 輕熟OL風 (Smart Casual Office) ===
+    office_chic: [
+        // 短裙西裝 Blazer & Mini Skirt
+        { value: "White blazer, black camisole, high-waisted black mini skirt, nude heels (白西裝黑短裙)", label: "💼 白西裝黑短裙 (White Blazer Black)" },
+        { value: "Beige blazer, white silk blouse, camel pencil mini skirt, nude pumps (米色西裝套)", label: "💼 米色西裝套 (Beige Blazer Set)" },
+        { value: "Black cropped blazer, white top, grey plaid mini skirt, black heels (黑短版西裝格紋)", label: "💼 黑短版西裝格紋 (Black Crop Plaid)" },
+        { value: "Dusty pink blazer, white camisole, matching pink mini skirt, nude heels (粉色套裝)", label: "💼 粉色套裝 (Pink Suit)" },
+        { value: "Navy blazer, striped shirt, navy mini skirt, brown loafers (海軍藍知性)", label: "💼 海軍藍知性 (Navy Smart)" },
+        { value: "Cream linen blazer, brown camisole, white mini skirt, tan sandals (亞麻夏日OL)", label: "💼 亞麻夏日OL (Linen Summer)" },
+        // 優雅襯衫 Elegant Shirts
+        { value: "White silk shirt, black leather mini skirt, black pumps (白絲綢配皮裙)", label: "💼 白絲綢配皮裙 (Silk Leather)" },
+        { value: "Striped button-down, high-waisted navy mini skirt, nude heels (條紋襯衫海軍裙)", label: "💼 條紋襯衫海軍裙 (Stripe Navy)" },
+        { value: "Pale blue blouse, white A-line mini skirt, nude flats (淺藍優雅)", label: "💼 淺藍優雅 (Pale Blue Elegant)" },
+        { value: "Cream satin blouse, brown wrap mini skirt, tan heels (緞面裹身裙)", label: "💼 緞面裹身裙 (Satin Wrap)" },
+        { value: "Bow-tie blouse, grey tweed mini skirt, black pumps (蝴蝶結小香風)", label: "💼 蝴蝶結小香風 (Bow Tweed)" },
+        // 知性氣質 Intellectual Chic
+        { value: "Camel turtleneck, black pencil mini skirt, black boots (高領窄裙)", label: "💼 高領窄裙 (Turtle Pencil)" },
+        { value: "Grey knit vest, white shirt, plaid mini skirt, loafers (針織背心學院)", label: "💼 針織背心學院 (Knit Vest Academy)" },
+        { value: "Black turtleneck, camel A-line mini skirt, brown boots (黑高領駝色裙)", label: "💼 黑高領駝色裙 (Black Camel)" },
+        { value: "White knit top, high-waisted grey shorts, nude heels (針織西裝短褲)", label: "💼 針織西裝短褲 (Knit Dress Shorts)" }
+    ],
+
+    // === 🎵 派對演唱會風 (Party & Concert Style) ===
+    party_concert: [
+        // 閃亮派對 Sparkle Party
+        { value: "Silver sequin crop top, black mini skirt, silver heels (銀色亮片派對)", label: "🎵 銀色亮片派對 (Silver Sequin)" },
+        { value: "Gold metallic camisole, black leather mini skirt, gold heels (金色金屬感)", label: "🎵 金色金屬感 (Gold Metallic)" },
+        { value: "Black sequin mini dress, thin straps, black strappy heels (黑亮片連身)", label: "🎵 黑亮片連身 (Black Sequin Dress)" },
+        { value: "Holographic crop top, white mini skirt, clear heels (幻彩鐳射)", label: "🎵 幻彩鐳射 (Holographic)" },
+        { value: "Pink glitter top, black pleated mini skirt, pink heels (粉紅閃粉)", label: "🎵 粉紅閃粉 (Pink Glitter)" },
+        // 性感派對 Sexy Party
+        { value: "Black lace crop top, red satin mini skirt, black heels (蕾絲緞面派對)", label: "🎵 蕾絲緞面派對 (Lace Satin)" },
+        { value: "Red velvet mini dress, deep V-neck, red heels (紅絲絨性感)", label: "🎵 紅絲絨性感 (Red Velvet)" },
+        { value: "Black mesh top over bralette, leather mini skirt, boots (網紗皮裙)", label: "🎵 網紗皮裙 (Mesh Leather)" },
+        { value: "White corset top, black mini skirt, black ankle boots (馬甲派對)", label: "🎵 馬甲派對 (Corset Party)" },
+        { value: "Black bodycon mini dress, cutout details, strappy heels (挖空緊身裙)", label: "🎵 挖空緊身裙 (Cutout Bodycon)" },
+        // 演唱會風 Concert Vibes
+        { value: "Band graphic tee cropped, denim mini skirt, chunky boots (樂團T牛仔裙)", label: "🎵 樂團T牛仔裙 (Band Tee Denim)" },
+        { value: "Neon pink crop top, black mini skirt, white sneakers (螢光粉活力)", label: "🎵 螢光粉活力 (Neon Pink)" },
+        { value: "Tie-dye crop top, black bike shorts, platform sneakers (紮染運動風)", label: "🎵 紮染運動風 (Tie-dye Sporty)" },
+        { value: "Oversized band hoodie, no pants style, thigh high boots (樂團帽T過膝靴)", label: "🎵 樂團帽T過膝靴 (Band Hoodie Boots)" },
+        { value: "Cropped leather jacket, white bralette, high-waisted shorts, boots (皮衣短褲)", label: "🎵 皮衣短褲 (Leather Shorts)" },
+        { value: "Metallic silver mini dress, combat boots, chain accessories (金屬銀軍靴)", label: "🎵 金屬銀軍靴 (Metallic Combat)" }
     ],
 
     // === 節慶限定 (Seasonal) ===
