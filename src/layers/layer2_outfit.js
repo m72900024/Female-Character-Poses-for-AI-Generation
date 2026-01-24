@@ -16,6 +16,7 @@ const mixColors = { top:null, bottom:null, outer:null, shoes:null, legwear:null,
 const categoryTranslations = {
     // 套裝分類 (按邏輯順序排列)
     casual: "日常休閒 (Casual)",
+    influencer: "網美風格 (Influencer)",
     sweet_cute: "甜美可愛 (Sweet & Cute)",
     sexy_fashion: "性感時尚 (Sexy Fashion)",
     swimwear: "泳裝比基尼 (Swimwear)",
@@ -33,6 +34,7 @@ const categoryTranslations = {
     short_skirt: "短裙 (Short Skirt)",
     midi_skirt: "中長裙 (Midi Skirt)",
     long_skirt: "長裙 (Long Skirt)",
+    influencer: "📸 網美風格 (Influencer)",
     // 鞋子
     sneakers: "運動休閒 (Sneakers)",
     heels: "高跟鞋 (Heels)",

@@ -13,6 +13,32 @@ export const costumeSetDatabase = {
         { value: "Floral print sundress, spaghetti straps, flowy A-line skirt, light and airy, brown leather sandals (碎花洋裝)", label: "碎花洋裝 (Floral Sundress)" }
     ],
 
+    // === 網美風格 (Influencer Style) ===
+    influencer: [
+        // 咖啡廳打卡風
+        { value: "Cream colored knit crop top, high-waisted beige wide-leg pants, gold hoop earrings, beige tote bag, nude strappy heels, minimalist chic (奶茶色系穿搭)", label: "奶茶色系穿搭 (Milk Tea Tone)" },
+        { value: "White off-shoulder ruffle top, light blue high-waisted jeans, straw hat, brown leather sandals, fresh and airy (清新露肩風)", label: "清新露肩風 (Fresh Off-shoulder)" },
+        { value: "Pastel lavender matching set, cropped blazer, high-waisted shorts, white sneakers, soft girl aesthetic (薰衣草套裝)", label: "薰衣草套裝 (Lavender Set)" },
+        // 街拍時尚風
+        { value: "Oversized white blazer, black bralette underneath, black cycling shorts, chunky white sneakers, boss girl style (白西裝混搭)", label: "白西裝混搭 (White Blazer Mix)" },
+        { value: "Cropped denim jacket, white tube top, high-waisted mom jeans, white chunky sneakers, effortless cool (牛仔外套街拍)", label: "牛仔外套街拍 (Denim Street)" },
+        { value: "Black leather jacket, white graphic tee, plaid mini skirt, black combat boots, edgy instagram style (皮衣酷女孩)", label: "皮衣酷女孩 (Leather Edgy)" },
+        // 度假風網美
+        { value: "White linen wrap dress, V-neckline, tie waist, straw bag, tan leather sandals, resort style (白色亞麻裹身裙)", label: "白色亞麻裹身裙 (Linen Wrap)" },
+        { value: "Bohemian floral maxi dress, off-shoulder, tiered ruffles, gold jewelry, brown gladiator sandals (波希米亞長裙)", label: "波希米亞長裙 (Boho Maxi)" },
+        { value: "Tropical print two-piece set, bandeau top, flowy palazzo pants, gold anklet, white platform sandals (熱帶印花套裝)", label: "熱帶印花套裝 (Tropical Set)" },
+        // 韓系網美
+        { value: "Oversized striped shirt dress, belt cinched waist, white sneakers, minimal makeup, Korean minimalist (韓系襯衫裙)", label: "韓系襯衫裙 (K-Shirt Dress)" },
+        { value: "Light pink slip dress, white cardigan draped over shoulders, pearl necklace, nude heels, soft feminine (粉色細肩帶裙)", label: "粉色細肩帶裙 (Pink Slip Dress)" },
+        { value: "White cropped cardigan, matching pleated midi skirt, pearl earrings, white mary janes, elegant lady (白色針織套裝)", label: "白色針織套裝 (White Knit Set)" },
+        // 運動休閒網美
+        { value: "Matching sage green sports bra and high-waisted leggings, white sneakers, high ponytail, athleisure chic (莫蘭迪綠運動套)", label: "莫蘭迪綠運動套 (Sage Athleisure)" },
+        { value: "Cropped white hoodie, grey bike shorts, chunky sneakers, messy bun, casual sporty (短版帽T單車褲)", label: "短版帽T單車褲 (Crop Hoodie Look)" },
+        // 約會穿搭
+        { value: "Soft pink satin midi dress, cowl neckline, thin straps, nude heels, romantic date night (粉緞面約會裙)", label: "粉緞面約會裙 (Satin Date Dress)" },
+        { value: "Black off-shoulder bodycon dress, gold chain necklace, black strappy heels, sultry evening look (黑色一字領洋裝)", label: "黑色一字領洋裝 (Black Off-shoulder)" }
+    ],
+
     // === 甜美可愛 (Sweet & Cute) ===
     sweet_cute: [
         { value: "White fluffy off-shoulder sweater, sheer white lace bralette peeking out, pink pleated mini skirt, white knee socks, pink ballet flats (日系純欲毛衣)", label: "日系純欲毛衣 (Pure Lust Sweater)" },
@@ -91,7 +117,7 @@ export const costumeSetDatabase = {
     // === 旗袍 (Qipao) ===
     qipao: [
         { value: "Traditional red silk qipao, golden dragon embroidery, high slit showing leg, mandarin collar, sleeveless, sheer nude stockings, red silk high heels (經典紅絲綢旗袍)", label: "經典紅絲綢旗袍 (Classic Red)" },
-        { value: "Short white qipao with blue porcelain floral patterns, keyhole chest cutout, cap sleeves, sheer stockings, white strappy heels (現代短款花旗袍)", label: "現代短款花旗袍 (Modern Floral)" },
+        { value: "Short white qipao with blue porcelain floral patterns, keyhole chest cutout, cap sleeves, white strappy heels (現代短款花旗袍)", label: "現代短款花旗袍 (Modern Floral)" },
         { value: "Elegant black velvet qipao, pearl buttons, gold trim piping, fitted silhouette, tea length, sheer black stockings, black velvet pumps (黑色絲絨旗袍)", label: "黑色絲絨旗袍 (Black Velvet)" },
         { value: "White satin qipao with intricate blue floral patterns, traditional cut, side slits, nude stockings, white satin heels (青花瓷旗袍)", label: "青花瓷旗袍 (Blue & White Porcelain)" },
         { value: "Pink lace overlay qipao, modern fusion style, sheer lace sleeves, romantic and soft aesthetic, nude stockings, nude high heels (蕾絲改良旗袍)", label: "蕾絲改良旗袍 (Lace Fusion)" },
@@ -136,8 +162,9 @@ export const costumeSetDatabase = {
     ]
 };
 
-// --- ★★★ 上衣 (Tops) - 增加甜美性感款 ★★★ ---
+// --- ★★★ 上衣 (Tops) - 增加甜美性感款 + 網美風格 ★★★ ---
 export const topDatabase = [
+    // === 基礎款 ===
     { value: "Tube top (平口小可愛)", label: "平口小可愛 (Tube top)" },
     { value: "Camisole (細肩帶背心)", label: "細肩帶背心 (Camisole)" },
     { value: "Off-shoulder blouse (露肩襯衫)", label: "露肩襯衫 (Off-shoulder)" },
@@ -153,10 +180,22 @@ export const topDatabase = [
     { value: "Tight turtleneck (緊身套頭衫)", label: "緊身套頭衫 (Tight Turtleneck)" },
     { value: "Keyhole sweater (開胸毛衣)", label: "開胸毛衣 (Keyhole Sweater)" },
     { value: "Oversized boyfriend shirt (男友襯衫)", label: "男友襯衫 (Boyfriend Shirt)" },
-    // ★ 新增
     { value: "Heart cutout knit top (愛心挖空上衣)", label: "愛心挖空上衣 (Heart Cutout)" },
     { value: "Sheer ribbon blouse (透視緞帶襯衫)", label: "透視緞帶襯衫 (Sheer Ribbon)" },
-    { value: "Corset top (馬甲上衣)", label: "馬甲上衣 (Corset Top)" }
+    { value: "Corset top (馬甲上衣)", label: "馬甲上衣 (Corset Top)" },
+    // === 網美風格 Influencer Style ===
+    { value: "Cream knit crop top, minimalist chic (奶茶色針織短版)", label: "📸 奶茶色針織短版 (Milk Tea Knit)" },
+    { value: "White ruffle off-shoulder top, romantic style (白色荷葉邊露肩)", label: "📸 白色荷葉邊露肩 (Ruffle Off-shoulder)" },
+    { value: "Pastel lavender cropped blazer, soft girl aesthetic (薰衣草短版西裝)", label: "📸 薰衣草短版西裝 (Lavender Blazer)" },
+    { value: "Oversized white blazer, boss girl style (白色寬鬆西裝)", label: "📸 白色寬鬆西裝 (White Blazer)" },
+    { value: "Cropped denim jacket, effortless cool (短版牛仔外套)", label: "📸 短版牛仔外套 (Crop Denim)" },
+    { value: "White linen wrap top, resort style (白色亞麻裹身上衣)", label: "📸 白色亞麻裹身上衣 (Linen Wrap)" },
+    { value: "Tropical print bandeau top, vacation vibes (熱帶印花平口)", label: "📸 熱帶印花平口 (Tropical Bandeau)" },
+    { value: "Light pink satin camisole, soft feminine (粉色緞面細肩帶)", label: "📸 粉色緞面細肩帶 (Pink Satin Cami)" },
+    { value: "White cropped cardigan with pearl buttons, elegant (珍珠扣短版針織)", label: "📸 珍珠扣短版針織 (Pearl Cardigan)" },
+    { value: "Sage green sports bra, athleisure chic (莫蘭迪綠運動上衣)", label: "📸 莫蘭迪綠運動上衣 (Sage Sports Top)" },
+    { value: "Cropped white hoodie, casual sporty (白色短版帽T)", label: "📸 白色短版帽T (Crop Hoodie)" },
+    { value: "Cowl neck satin top, date night ready (垂領緞面上衣)", label: "📸 垂領緞面上衣 (Cowl Satin)" }
 ];
 
 export const outerDatabase = [
@@ -265,5 +304,21 @@ export const bottomDatabase = {
         { value: "High-slit long skirt (高開衩長裙)", label: "高開衩長裙 (High-slit)" },
         { value: "Sheer tulle skirt (透視紗裙)", label: "透視紗裙 (Tulle Skirt)" },
         { value: "Mermaid skirt (魚尾長裙)", label: "魚尾長裙 (Mermaid Skirt)" }
+    ],
+    // === 網美風格 Influencer Style ===
+    influencer: [
+        { value: "High-waisted beige wide-leg pants, minimalist chic (奶茶色高腰寬褲)", label: "📸 奶茶色高腰寬褲 (Beige Wide-leg)" },
+        { value: "Light blue high-waisted jeans, fresh and clean (淺藍高腰牛仔褲)", label: "📸 淺藍高腰牛仔褲 (Light Blue Jeans)" },
+        { value: "Pastel lavender high-waisted shorts, soft girl (薰衣草高腰短褲)", label: "📸 薰衣草高腰短褲 (Lavender Shorts)" },
+        { value: "Black cycling shorts, athleisure style (黑色單車褲)", label: "📸 黑色單車褲 (Cycling Shorts)" },
+        { value: "High-waisted mom jeans, effortless cool (高腰老媽褲)", label: "📸 高腰老媽褲 (Mom Jeans)" },
+        { value: "Plaid mini skirt, edgy instagram (格紋迷你裙)", label: "📸 格紋迷你裙 (Plaid Mini)" },
+        { value: "White linen wrap skirt, resort style (白色亞麻裹裙)", label: "📸 白色亞麻裹裙 (Linen Wrap Skirt)" },
+        { value: "Flowy palazzo pants, bohemian vibes (波希米亞寬褲)", label: "📸 波希米亞寬褲 (Palazzo Pants)" },
+        { value: "Pleated midi skirt, korean elegant (百褶中長裙)", label: "📸 百褶中長裙 (Pleated Midi)" },
+        { value: "Pink satin midi skirt, date night (粉色緞面中長裙)", label: "📸 粉色緞面中長裙 (Pink Satin Midi)" },
+        { value: "High-waisted leggings, sage green athleisure (莫蘭迪綠高腰緊身褲)", label: "📸 莫蘭迪綠緊身褲 (Sage Leggings)" },
+        { value: "Grey bike shorts, casual sporty (灰色單車褲)", label: "📸 灰色單車褲 (Grey Bike Shorts)" },
+        { value: "Black bodycon mini skirt, sultry evening (黑色緊身短裙)", label: "📸 黑色緊身短裙 (Bodycon Mini)" }
     ]
 };
