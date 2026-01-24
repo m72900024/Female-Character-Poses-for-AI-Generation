@@ -86,33 +86,112 @@ export const costumeSetDatabase = {
 
     // === 性感時尚 (Sexy Fashion) ===
     sexy_fashion: [
+        // 緊身連身裙 Bodycon Dresses
         { value: "Black ribbed knit bodycon mini dress, sleeveless, tight fit accentuating curves, black stiletto heels (韓系緊身包臀裙)", label: "韓系緊身包臀裙 (K-Style Bodycon)" },
-        { value: "Beige keyhole turtleneck sweater, open chest cutout, tight fit, black leather mini skirt, black ankle boots (日系開胸毛衣)", label: "日系開胸毛衣 (Keyhole Sweater)" },
-        { value: "White sports bra, grey unzipped hoodie, blue denim shorts, white sneakers, healthy sexy athletic style (運動內衣混搭)", label: "運動內衣混搭 (Sporty Lingerie)" },
+        { value: "Red satin bodycon mini dress, spaghetti straps, cowl neckline, red heels (紅色緞面緊身裙)", label: "紅色緞面緊身裙 (Red Satin Bodycon)" },
+        { value: "White ribbed bodycon dress, halter neck, backless, nude heels (白色繞頸緊身裙)", label: "白色繞頸緊身裙 (White Halter Bodycon)" },
+        { value: "Nude mesh bodycon dress, strategic coverage, barely there illusion, clear heels (裸色透視緊身裙)", label: "裸色透視緊身裙 (Nude Mesh Bodycon)" },
+        // 開衩露背 Cutout & Backless
         { value: "Black backless halter dress, deep V neckline, high slit skirt, elegant sexy, black strappy heels (露背深V洋裝)", label: "露背深V洋裝 (Backless Halter)" },
+        { value: "White cutout mini dress, side cutouts exposing waist, strappy heels (側腰挖空洋裝)", label: "側腰挖空洋裝 (Side Cutout Dress)" },
+        { value: "Black asymmetric one-shoulder dress, thigh-high slit, black heels (斜肩開衩洋裝)", label: "斜肩開衩洋裝 (One-shoulder Slit)" },
+        { value: "Red backless mini dress, criss-cross straps, red stilettos (交叉綁帶露背裙)", label: "交叉綁帶露背裙 (Criss-cross Back)" },
+        // 性感毛衣風 Sexy Sweater Style
+        { value: "Beige keyhole turtleneck sweater, open chest cutout, tight fit, black leather mini skirt, black ankle boots (日系開胸毛衣)", label: "日系開胸毛衣 (Keyhole Sweater)" },
+        { value: "Virgin killer sweater, white backless knit, bare back, mini length, barefoot (純欲殺手毛衣)", label: "純欲殺手毛衣 (Virgin Killer)" },
+        { value: "Off-shoulder oversized sweater, no bra, sweater dress style, thigh high boots (寬鬆露肩毛衣裙)", label: "寬鬆露肩毛衣裙 (Off-shoulder Sweater)" },
+        { value: "Cream cropped cable knit, underboob visible, high-waisted mini skirt, boots (短版露下乳毛衣)", label: "短版露下乳毛衣 (Underboob Knit)" },
+        // 透視蕾絲風 Sheer & Lace
+        { value: "Black sheer mesh top, black bralette visible underneath, high-waisted black pants, black stiletto heels, club style (透視網紗上衣)", label: "透視網紗上衣 (Sheer Mesh)" },
+        { value: "White sheer lace blouse, visible white bra, high-waisted mini skirt, nude heels (透視蕾絲襯衫)", label: "透視蕾絲襯衫 (Sheer Lace Blouse)" },
+        { value: "Black lace bodysuit, sheer all over, high-waisted leather shorts, boots (蕾絲透膚連身衣)", label: "蕾絲透膚連身衣 (Lace Bodysuit)" },
+        { value: "Sheer black mini dress, strategic lace coverage, black heels (透視黑蕾絲裙)", label: "透視黑蕾絲裙 (Sheer Black Dress)" },
+        // 皮革辣妹風 Leather Edgy
         { value: "Black leather mini skirt, black lace crop top, edgy sexy style, black ankle boots with buckles (皮裙蕾絲上衣)", label: "皮裙蕾絲上衣 (Edgy Leather)" },
-        { value: "Black sheer mesh top, black bralette visible underneath, high-waisted black pants, black stiletto heels, club style (透視網紗上衣)", label: "透視網紗上衣 (Sheer Mesh)" }
+        { value: "Red leather mini dress, front zipper, fitted, red boots (紅色皮革連身裙)", label: "紅色皮革連身裙 (Red Leather Dress)" },
+        { value: "Black PVC mini skirt, black corset top, fishnet stockings, platform boots (PVC辣妹風)", label: "PVC辣妹風 (PVC Spicy)" },
+        { value: "Leather harness over white tee, black mini skirt, combat boots (皮革綁帶造型)", label: "皮革綁帶造型 (Leather Harness)" },
+        // 運動性感風 Sporty Sexy
+        { value: "White sports bra, grey unzipped hoodie, blue denim shorts, white sneakers, healthy sexy athletic style (運動內衣混搭)", label: "運動內衣混搭 (Sporty Lingerie)" },
+        { value: "Black sports bra, high-waisted bike shorts, mesh overlay jacket, white sneakers (健身辣妹)", label: "健身辣妹 (Gym Hottie)" },
+        { value: "Cropped athletic top, low-rise track pants, abs showing, sneakers (露腹運動風)", label: "露腹運動風 (Athletic Abs)" },
+        // 夜店風格 Club Style
+        { value: "Sequin bralette top, black mini skirt, strappy heels, club queen (亮片胸衣夜店風)", label: "亮片胸衣夜店風 (Sequin Club)" },
+        { value: "Black velvet mini dress, plunging neckline, gold chain belt, black heels (絲絨深V夜店裙)", label: "絲絨深V夜店裙 (Velvet Club Dress)" },
+        { value: "Metallic gold crop top, black leather mini skirt, gold heels (金屬感夜店)", label: "金屬感夜店 (Metallic Club)" }
     ],
 
     // === 泳裝比基尼 (Swimwear) ===
     swimwear: [
+        // 經典比基尼 Classic Bikinis
         { value: "Classic triangle bikini, white color, halter neck top, tie-side bottom, beach style, barefoot (經典三角比基尼)", label: "經典三角比基尼 (Triangle Bikini)" },
+        { value: "Black triangle bikini, gold ring details, tie sides, chic beach style, barefoot (黑金環扣比基尼)", label: "黑金環扣比基尼 (Black Gold Ring)" },
+        { value: "Red string bikini, minimal coverage, classic sexy, barefoot on beach (紅色細帶比基尼)", label: "紅色細帶比基尼 (Red String)" },
+        { value: "Navy blue classic bikini, sporty stripes, halter top, barefoot (海軍藍條紋比基尼)", label: "海軍藍條紋比基尼 (Navy Stripe)" },
+        // 平口繞頸款 Bandeau & Halter
+        { value: "Pink bandeau bikini top, matching brazilian cut bottom, strapless, trendy style, barefoot on beach (平口比基尼)", label: "平口比基尼 (Bandeau Bikini)" },
+        { value: "White bandeau bikini, twisted front detail, high-waisted bottom, barefoot (扭結平口比基尼)", label: "扭結平口比基尼 (Twist Bandeau)" },
+        { value: "Neon green halter bikini, push-up top, brazilian bottom, barefoot (螢光綠繞頸比基尼)", label: "螢光綠繞頸比基尼 (Neon Green Halter)" },
+        { value: "Coral halter bikini, underwire support, moderate coverage, barefoot (珊瑚色繞頸托高)", label: "珊瑚色繞頸托高 (Coral Halter)" },
+        // 甜美可愛款 Cute & Sweet
+        { value: "Pastel pink ruffle bikini, feminine ruffled edges on top and bottom, cute and flirty, barefoot (荷葉邊比基尼)", label: "荷葉邊比基尼 (Ruffle Bikini)" },
+        { value: "Gingham check bikini, red and white, vintage sweet, barefoot (格紋復古比基尼)", label: "格紋復古比基尼 (Gingham Check)" },
+        { value: "Floral print bikini, tropical flowers, high-waisted bottom, barefoot (碎花比基尼)", label: "碎花比基尼 (Floral Print)" },
+        { value: "Polka dot bikini, retro style, high-waisted, barefoot (波點復古比基尼)", label: "波點復古比基尼 (Polka Dot Retro)" },
+        { value: "Pastel rainbow bikini, tie-dye style, festival vibes, barefoot (彩虹紮染比基尼)", label: "彩虹紮染比基尼 (Rainbow Tie-dye)" },
+        // 性感款 Sexy Styles
+        { value: "Red micro bikini, thin string ties, triangle top, minimal coverage bottom, barefoot (極小比基尼)", label: "極小比基尼 (Micro Bikini)" },
+        { value: "Black thong bikini, high-cut legs, minimal back coverage, barefoot (丁字褲比基尼)", label: "丁字褲比基尼 (Thong Bikini)" },
+        { value: "White mesh bikini, see-through when wet, daring style, barefoot (透視網紗比基尼)", label: "透視網紗比基尼 (Mesh See-through)" },
+        { value: "Metallic gold bikini, chain details, glamorous beach, barefoot (金色金屬感比基尼)", label: "金色金屬感比基尼 (Gold Metallic)" },
+        { value: "Black cut-out bikini, strategic cutouts, edgy sexy, barefoot (挖空設計比基尼)", label: "挖空設計比基尼 (Cutout Bikini)" },
+        // 連身泳衣 One-Piece Swimsuits
         { value: "Navy blue high-cut one-piece school swimsuit, name tag on chest, high leg cut, glistening wet skin, barefoot (日系競泳水著)", label: "日系競泳水著 (School Swimsuit)" },
         { value: "Black one-piece swimsuit, high leg cut, plunging V neckline, sleek design, barefoot by pool (連身高衩泳衣)", label: "連身高衩泳衣 (One-piece)" },
-        { value: "Pink bandeau bikini top, matching brazilian cut bottom, strapless, trendy style, barefoot on beach (平口比基尼)", label: "平口比基尼 (Bandeau Bikini)" },
-        { value: "Red micro bikini, thin string ties, triangle top, minimal coverage bottom, barefoot (極小比基尼)", label: "極小比基尼 (Micro Bikini)" },
+        { value: "White one-piece, plunging neckline, belted waist, elegant, barefoot (白色V領連身泳衣)", label: "白色V領連身泳衣 (White V-neck One-piece)" },
+        { value: "Red baywatch style one-piece, high-cut legs, lifeguard aesthetic, barefoot (紅色救生員泳衣)", label: "紅色救生員泳衣 (Baywatch Red)" },
+        { value: "Black backless one-piece, criss-cross straps, sophisticated, barefoot (露背交叉帶泳衣)", label: "露背交叉帶泳衣 (Backless Cross-strap)" },
+        { value: "Floral one-piece, tropical print, sweetheart neckline, barefoot (碎花連身泳衣)", label: "碎花連身泳衣 (Floral One-piece)" },
+        // 運動泳裝 Sporty Swimwear
         { value: "Black sporty bikini, racerback top with zipper, boy shorts bottom, athletic look, barefoot (運動比基尼)", label: "運動比基尼 (Sporty Bikini)" },
-        { value: "Pastel pink ruffle bikini, feminine ruffled edges on top and bottom, cute and flirty, barefoot (荷葉邊比基尼)", label: "荷葉邊比基尼 (Ruffle Bikini)" }
+        { value: "Blue athletic swimsuit, racing style, streamlined, barefoot (競技泳衣)", label: "競技泳衣 (Athletic Racer)" },
+        { value: "Triathlon suit, sporty two-piece, zipper front, barefoot (鐵人三項泳裝)", label: "鐵人三項泳裝 (Triathlon Suit)" },
+        // 罩衫搭配 Cover-ups
+        { value: "White crochet bikini with matching cover-up, bohemian beach, barefoot (鉤針比基尼配罩衫)", label: "鉤針比基尼配罩衫 (Crochet with Cover-up)" },
+        { value: "Black bikini with sheer sarong wrap, beach elegant, barefoot (比基尼配紗籠)", label: "比基尼配紗籠 (Bikini with Sarong)" }
     ],
 
     // === 學生制服 (School Uniform) ===
     uniform: [
+        // 日系水手服 Japanese Sailor Uniforms
         { value: "Japanese sailor uniform, white short-sleeve top with navy collar, navy pleated skirt, red ribbon bow, white socks, brown loafers (日系水手服)", label: "日系水手服 (Sailor Uniform)" },
         { value: "Sexy sailor crop top with navy collar, navy blue pleated mini skirt, black garter belt with stockings, black heels, absolute territory (改良水手服)", label: "改良水手服 (Sexy Sailor)" },
+        { value: "Classic navy sailor uniform, white scarf, navy pleated midi skirt, white knee socks, brown loafers (經典藍色水手服)", label: "經典藍色水手服 (Classic Navy Sailor)" },
+        { value: "White sailor uniform, light blue collar and skirt, summer fresh, white ankle socks, white sneakers (白色夏季水手服)", label: "白色夏季水手服 (White Summer Sailor)" },
+        { value: "Green sailor uniform, emerald collar, grey pleated skirt, white socks, brown loafers (綠色水手服)", label: "綠色水手服 (Green Sailor)" },
+        // 韓系校服 Korean School Uniforms
         { value: "Korean school uniform, navy blazer, white shirt, plaid pleated skirt, navy knee socks, black loafers (韓系校服)", label: "韓系校服 (Korean Uniform)" },
+        { value: "Korean winter uniform, grey cardigan over white shirt, navy tie, plaid mini skirt, black tights, loafers (韓系冬季校服)", label: "韓系冬季校服 (Korean Winter)" },
+        { value: "Korean summer uniform, short sleeve white blouse, checkered mini skirt, white ankle socks, white sneakers (韓系夏季校服)", label: "韓系夏季校服 (Korean Summer)" },
+        { value: "Korean elite school uniform, beige blazer, white shirt, brown plaid skirt, knee socks, brown loafers (韓系名校制服)", label: "韓系名校制服 (Korean Elite)" },
+        // 英倫學院風 British Style
         { value: "British school uniform, grey plaid skirt, white button-up shirt, striped tie, navy blazer, white knee socks, black oxford shoes (英倫校服)", label: "英倫校服 (British Uniform)" },
+        { value: "British prep school, burgundy blazer, grey pleated skirt, house tie, white knee socks, black mary janes (英倫名校制服)", label: "英倫名校制服 (British Prep)" },
+        { value: "Scottish academy, tartan plaid skirt, white blouse, green cardigan, knee socks, oxford shoes (蘇格蘭學院)", label: "蘇格蘭學院 (Scottish Academy)" },
+        // 夏季制服 Summer Uniforms
         { value: "Summer school uniform, white short sleeve blouse, navy pleated short skirt, white ankle socks, white sneakers (夏季制服)", label: "夏季制服 (Summer Uniform)" },
-        { value: "Japanese gym uniform, white T-shirt with name tag, navy bloomers, white crew socks, white indoor shoes (體育服)", label: "體育服 (Gym Uniform)" }
+        { value: "Summer sailor dress, one-piece navy collar dress, white with blue trim, white socks, brown loafers (夏季水手連身裙)", label: "夏季水手連身裙 (Summer Sailor Dress)" },
+        { value: "Tropical summer uniform, light blue polo shirt, white pleated mini skirt, white sneakers (熱帶夏季制服)", label: "熱帶夏季制服 (Tropical Summer)" },
+        // 體育服 Gym Uniforms
+        { value: "Japanese gym uniform, white T-shirt with name tag, navy bloomers, white crew socks, white indoor shoes (體育服)", label: "體育服 (Gym Uniform)" },
+        { value: "Modern gym uniform, white polo shirt, navy shorts, white athletic socks, white sneakers (現代體育服)", label: "現代體育服 (Modern Gym)" },
+        { value: "Track and field uniform, cropped athletic top, tight shorts, running shoes (田徑服)", label: "田徑服 (Track Uniform)" },
+        { value: "Swimming class, navy one-piece school swimsuit, swim cap, barefoot (游泳課泳裝)", label: "游泳課泳裝 (Swim Class)" },
+        // 改良制服 Modified Uniforms
+        { value: "JK uniform loose socks style, shortened skirt, oversized cardigan, brown loafers (寬鬆襪JK風)", label: "寬鬆襪JK風 (Loose Socks JK)" },
+        { value: "Sexy school uniform, cropped white shirt tied at waist, micro mini plaid skirt, thigh highs, heels (性感改良制服)", label: "性感改良制服 (Sexy Modified)" },
+        { value: "Gyaru school uniform, bleached cardigan, shortened plaid skirt, loose socks, platform loafers (辣妹制服)", label: "辣妹制服 (Gyaru Uniform)" },
+        { value: "Cute school uniform, pink cardigan, white blouse with bow, grey pleated skirt, knee socks, mary janes (可愛粉紅制服)", label: "可愛粉紅制服 (Cute Pink Uniform)" }
     ],
 
     // === 職業裝 (Professional) ===
@@ -130,23 +209,74 @@ export const costumeSetDatabase = {
 
     // === 角色扮演 (Cosplay) ===
     cosplay: [
+        // 女僕系列 Maid Series
         { value: "Classic black and white french maid dress, white lace apron, lace headband, puffed short sleeves, white stockings, black mary jane shoes (女僕裝)", label: "女僕裝 (Maid Outfit)" },
-        { value: "Black strapless bunny girl bodysuit, white fluffy cottontail, black bunny ears headband, white collar with bow tie, black fishnet stockings, black high heels (兔女郎)", label: "兔女郎 (Bunny Girl)" },
-        { value: "Black fitted bodysuit, cat ear headband, long cat tail, paw print gloves, collar with golden bell, black thigh high stockings, black heels (貓女裝)", label: "貓女裝 (Cat Girl)" },
-        { value: "Red and white cheerleader crop top, matching pleated mini skirt, holding pom poms, white ankle socks, white sneakers (啦啦隊服)", label: "啦啦隊服 (Cheerleader)" },
         { value: "Black bikini with white frilly maid apron, lace headband, white thigh high stockings with lace trim, black heels (女僕比基尼)", label: "女僕比基尼 (Maid Bikini)" },
+        { value: "Pink maid dress, white apron with heart pocket, pink headband, white knee socks, pink mary janes (粉紅女僕)", label: "粉紅女僕 (Pink Maid)" },
+        { value: "Gothic lolita maid, black and red dress, black lace details, black platform boots (哥德女僕)", label: "哥德女僕 (Gothic Maid)" },
+        // 動物擬人 Animal Girls
+        { value: "Black strapless bunny girl bodysuit, white fluffy cottontail, black bunny ears headband, white collar with bow tie, black fishnet stockings, black high heels (兔女郎)", label: "兔女郎 (Bunny Girl)" },
+        { value: "Pink bunny girl costume, plush rabbit ears, fluffy tail, pink fishnet stockings, pink heels (粉紅兔女郎)", label: "粉紅兔女郎 (Pink Bunny)" },
+        { value: "Black fitted bodysuit, cat ear headband, long cat tail, paw print gloves, collar with golden bell, black thigh high stockings, black heels (貓女裝)", label: "貓女裝 (Cat Girl)" },
+        { value: "White cat girl outfit, fluffy white cat ears, white tail, white stockings, white heels (白色貓娘)", label: "白色貓娘 (White Cat Girl)" },
+        { value: "Fox girl costume, orange fluffy ears, big fluffy tail, orange kimono style dress, barefoot (狐狸娘)", label: "狐狸娘 (Fox Girl)" },
+        { value: "Wolf girl costume, grey wolf ears, fluffy grey tail, grey fur trim outfit, boots (狼女)", label: "狼女 (Wolf Girl)" },
+        // 奇幻角色 Fantasy Characters
         { value: "Purple succubus costume, black demon wings, pointed tail, revealing black bodysuit, thigh high boots, seductive pose (魅魔裝)", label: "魅魔裝 (Succubus)" },
-        { value: "Black witch dress, pointed witch hat, purple cape, holding magic wand, black and purple striped stockings, black boots (魔女裝)", label: "魔女裝 (Witch)" }
+        { value: "Black witch dress, pointed witch hat, purple cape, holding magic wand, black and purple striped stockings, black boots (魔女裝)", label: "魔女裝 (Witch)" },
+        { value: "White angel costume, fluffy white wings, golden halo, white flowing dress, barefoot (天使裝)", label: "天使裝 (Angel)" },
+        { value: "Dark angel costume, black feathered wings, black corset dress, black boots (墮天使)", label: "墮天使 (Dark Angel)" },
+        { value: "Elf costume, pointed ears, green fantasy dress, flower crown, barefoot (精靈裝)", label: "精靈裝 (Elf)" },
+        { value: "Fairy costume, iridescent wings, pastel mini dress, flower accessories, barefoot (仙子裝)", label: "仙子裝 (Fairy)" },
+        { value: "Vampire countess, gothic black gown, red cape, fangs, pale makeup, black heels (吸血鬼女伯爵)", label: "吸血鬼女伯爵 (Vampire Countess)" },
+        // 遊戲動漫風 Game & Anime Style
+        { value: "Red and white cheerleader crop top, matching pleated mini skirt, holding pom poms, white ankle socks, white sneakers (啦啦隊服)", label: "啦啦隊服 (Cheerleader)" },
+        { value: "School idol costume, frilly dress, microphone, thigh high boots, idol stage outfit (偶像服)", label: "偶像服 (Idol Costume)" },
+        { value: "Magical girl costume, frilly skirt, ribbon details, magic wand, knee high boots (魔法少女)", label: "魔法少女 (Magical Girl)" },
+        { value: "RPG warrior princess, armor bikini, sword, fantasy boots (RPG戰士公主)", label: "RPG戰士公主 (Warrior Princess)" },
+        { value: "Racing queen outfit, tight bodysuit, sponsor logos, high heels (賽車女郎)", label: "賽車女郎 (Racing Queen)" },
+        // 特殊角色 Special Characters
+        { value: "Princess costume, pink ball gown, tiara, long gloves, glass slippers (公主裝)", label: "公主裝 (Princess)" },
+        { value: "Pirate wench costume, corset top, ragged skirt, bandana, boots (海盜女郎)", label: "海盜女郎 (Pirate Wench)" },
+        { value: "Cowgirl costume, plaid shirt tied at waist, denim shorts, cowboy hat, boots (牛仔女郎)", label: "牛仔女郎 (Cowgirl)" },
+        { value: "Schoolgirl zombie costume, torn uniform, fake blood, disheveled look (殭屍女學生)", label: "殭屍女學生 (Zombie Schoolgirl)" }
     ],
 
     // === 運動服飾 (Sportswear) ===
     sportswear: [
+        // 網球高爾夫 Tennis & Golf
         { value: "White polo shirt, white pleated tennis mini skirt, white visor cap, white ankle socks, white tennis shoes (網球選手)", label: "網球選手 (Tennis Player)" },
-        { value: "Grey sports bra, high-waisted black leggings, athletic fit, hair in ponytail, barefoot on yoga mat (瑜伽服)", label: "瑜伽服 (Yoga Outfit)" },
-        { value: "Pink tank top, black running shorts, armband phone holder, white running socks, pink running shoes (跑步服)", label: "跑步服 (Running Outfit)" },
+        { value: "Pink tennis dress, built-in shorts, white visor, white sneakers (粉紅網球裙)", label: "粉紅網球裙 (Pink Tennis Dress)" },
+        { value: "Navy blue tennis outfit, pleated skort, matching top, white shoes (海軍藍網球裝)", label: "海軍藍網球裝 (Navy Tennis)" },
         { value: "Pink polo shirt, white pleated golf skirt, white visor, white ankle socks, white golf shoes (高爾夫服)", label: "高爾夫服 (Golf Outfit)" },
+        { value: "White golf dress, A-line silhouette, sporty elegant, white golf shoes (高爾夫連身裙)", label: "高爾夫連身裙 (Golf Dress)" },
+        // 瑜伽健身 Yoga & Fitness
+        { value: "Grey sports bra, high-waisted black leggings, athletic fit, hair in ponytail, barefoot on yoga mat (瑜伽服)", label: "瑜伽服 (Yoga Outfit)" },
+        { value: "Pastel purple sports bra, matching lavender leggings, zen style, barefoot (薰衣草瑜伽套)", label: "薰衣草瑜伽套 (Lavender Yoga)" },
+        { value: "Black seamless sports set, long sleeve crop top, high-waisted shorts, minimal (黑色無縫運動套)", label: "黑色無縫運動套 (Black Seamless)" },
+        { value: "Sage green workout set, cropped tank, bike shorts, white sneakers (莫蘭迪綠健身套)", label: "莫蘭迪綠健身套 (Sage Green Workout)" },
+        { value: "Hot pink sports bra, black high-waisted leggings, energetic gym look, white trainers (桃紅健身風)", label: "桃紅健身風 (Hot Pink Gym)" },
+        // 跑步田徑 Running & Track
+        { value: "Pink tank top, black running shorts, armband phone holder, white running socks, pink running shoes (跑步服)", label: "跑步服 (Running Outfit)" },
+        { value: "Neon yellow running top, black compression shorts, reflective details, running shoes (螢光跑步裝)", label: "螢光跑步裝 (Neon Running)" },
+        { value: "Light blue running dress, built-in shorts, breathable fabric, white running shoes (跑步連身裙)", label: "跑步連身裙 (Running Dress)" },
+        { value: "Track and field uniform, crop top and briefs, racing number, track spikes (田徑比賽服)", label: "田徑比賽服 (Track Racing)" },
+        // 舞蹈體操 Dance & Gymnastics
         { value: "Pink ballet leotard, matching pink tutu skirt, pink ballet tights, pink satin pointe shoes, hair in bun (舞蹈服)", label: "舞蹈服 (Dance Leotard)" },
-        { value: "White and blue striped swimsuit one-piece, swim cap, swimming goggles, athletic swimmer body, barefoot by pool (競泳選手)", label: "競泳選手 (Swimmer)" }
+        { value: "Black leotard, sheer mesh skirt overlay, ballet slippers, elegant practice (黑色芭蕾練習服)", label: "黑色芭蕾練習服 (Black Ballet)" },
+        { value: "Sparkly gymnastics leotard, competition style, barefoot (亮片體操服)", label: "亮片體操服 (Sparkly Gymnastics)" },
+        { value: "Rhythmic gymnastics unitard, flowing ribbon accessory, barefoot (藝術體操服)", label: "藝術體操服 (Rhythmic Gymnastics)" },
+        { value: "Jazz dance outfit, black crop top, high-waisted jazz pants, dance heels (爵士舞服)", label: "爵士舞服 (Jazz Dance)" },
+        // 水上運動 Water Sports
+        { value: "White and blue striped swimsuit one-piece, swim cap, swimming goggles, athletic swimmer body, barefoot by pool (競泳選手)", label: "競泳選手 (Swimmer)" },
+        { value: "Surfing rash guard, long sleeve top, bikini bottom, barefoot on beach (衝浪防磨衣)", label: "衝浪防磨衣 (Surf Rash Guard)" },
+        { value: "Diving suit, wetsuit style, zipper front, barefoot (潛水服)", label: "潛水服 (Diving Suit)" },
+        // 啦啦隊 Cheerleading
+        { value: "Red and white cheerleader uniform, crop top, pleated mini skirt, pom poms, white sneakers (啦啦隊制服紅白)", label: "啦啦隊制服紅白 (Cheer Red White)" },
+        { value: "Blue and gold cheerleader outfit, matching bow, white cheer shoes (藍金啦啦隊)", label: "藍金啦啦隊 (Cheer Blue Gold)" },
+        // 其他運動 Other Sports
+        { value: "Volleyball uniform, tight jersey top, spandex shorts, knee pads, athletic shoes (排球服)", label: "排球服 (Volleyball)" },
+        { value: "Boxing outfit, sports bra, boxing shorts, hand wraps, bare feet (拳擊服)", label: "拳擊服 (Boxing Outfit)" }
     ],
 
     // === 旗袍 (Qipao) ===
@@ -527,23 +657,44 @@ export const bottomDatabase = {
         { value: "Cargo pants (工裝褲)", label: "工裝褲 (Cargo Pants)" }
     ],
     mini_skirt: [
+        // 基本款 Basic Styles
         { value: "Micro mini skirt (超短迷你裙)", label: "超短迷你裙 (Micro Mini)" },
         { value: "Pleated mini skirt (百褶迷你裙)", label: "百褶迷你裙 (Pleated Mini)" },
+        { value: "A-line mini skirt (A字迷你裙)", label: "A字迷你裙 (A-line Mini)" },
+        { value: "Bodycon mini skirt (緊身迷你裙)", label: "緊身迷你裙 (Bodycon Mini)" },
+        // 牛仔系列 Denim Series
         { value: "Denim mini skirt (牛仔迷你裙)", label: "牛仔迷你裙 (Denim Mini)" },
-        { value: "Leather mini skirt (皮質迷你裙)", label: "皮質迷你裙 (Leather Mini)" },
-        { value: "Ruffled mini skirt (荷葉邊迷你裙)", label: "荷葉邊迷你裙 (Ruffled Mini)" },
-        { value: "Denim mini skirt (丹寧短裙)", label: "丹寧短裙 (Denim Mini)" },
-        { value: "Lace tiered skirt (蕾絲蛋糕裙)", label: "蕾絲蛋糕裙 (Lace Tiered)" },
-        { value: "Black velvet mini skirt (黑色絲絨短裙)", label: "黑色絲絨短裙 (Black Velvet)" },
         { value: "Low-rise denim mini skirt (低腰牛仔裙)", label: "低腰牛仔裙 (Low-rise Y2K)" },
-        { value: "Checkered pleated skirt (格紋百褶裙)", label: "格紋百褶裙 (Schoolgirl Check)" },
-        { value: "Slit mini skirt (開衩迷你裙)", label: "開衩迷你裙 (Slit Mini)" },
+        { value: "Distressed denim mini skirt (破損牛仔迷你裙)", label: "破損牛仔迷你裙 (Distressed Denim)" },
+        { value: "White denim mini skirt (白色牛仔迷你裙)", label: "白色牛仔迷你裙 (White Denim Mini)" },
+        // 材質特色 Special Materials
+        { value: "Leather mini skirt (皮質迷你裙)", label: "皮質迷你裙 (Leather Mini)" },
+        { value: "PU leather mini skirt (PU皮迷你裙)", label: "PU皮迷你裙 (PU Leather Mini)" },
+        { value: "Black velvet mini skirt (黑色絲絨短裙)", label: "黑色絲絨短裙 (Black Velvet)" },
         { value: "Satin slip skirt (緞面短裙)", label: "緞面短裙 (Satin Slip)" },
-        { value: "Wrap mini skirt (一片式圍裹裙)", label: "一片式短裙 (Wrap Mini)" },
         { value: "Metallic mini skirt (金屬光澤裙)", label: "金屬光澤裙 (Metallic)" },
-        // ★ 新增
+        { value: "Sequin mini skirt (亮片迷你裙)", label: "亮片迷你裙 (Sequin Mini)" },
+        { value: "Mesh overlay mini skirt (網紗迷你裙)", label: "網紗迷你裙 (Mesh Mini)" },
+        // 設計款 Design Features
+        { value: "Ruffled mini skirt (荷葉邊迷你裙)", label: "荷葉邊迷你裙 (Ruffled Mini)" },
+        { value: "Lace tiered skirt (蕾絲蛋糕裙)", label: "蕾絲蛋糕裙 (Lace Tiered)" },
+        { value: "Checkered pleated skirt (格紋百褶裙)", label: "格紋百褶裙 (Schoolgirl Check)" },
+        { value: "Tartan plaid mini skirt (蘇格蘭格紋裙)", label: "蘇格蘭格紋裙 (Tartan Plaid)" },
+        { value: "Slit mini skirt (開衩迷你裙)", label: "開衩迷你裙 (Slit Mini)" },
+        { value: "Wrap mini skirt (一片式圍裹裙)", label: "一片式短裙 (Wrap Mini)" },
+        { value: "Button-front mini skirt (排扣迷你裙)", label: "排扣迷你裙 (Button-front Mini)" },
+        { value: "Zipper detail mini skirt (拉鍊裝飾迷你裙)", label: "拉鍊裝飾迷你裙 (Zipper Detail)" },
+        // 甜美可愛 Sweet & Cute
+        { value: "Tulle mini skirt (紗裙迷你)", label: "紗裙迷你 (Tulle Mini)" },
+        { value: "Bow detail mini skirt (蝴蝶結迷你裙)", label: "蝴蝶結迷你裙 (Bow Detail Mini)" },
+        { value: "Heart buckle mini skirt (愛心扣環裙)", label: "愛心扣環裙 (Heart Buckle)" },
+        { value: "Suspender mini skirt (吊帶迷你裙)", label: "吊帶迷你裙 (Suspender Mini)" },
+        { value: "Floral print mini skirt (碎花迷你裙)", label: "碎花迷你裙 (Floral Mini)" },
+        // 性感款 Sexy Styles
         { value: "Skirt with garter straps (吊襪帶短裙)", label: "吊襪帶短裙 (Garter Skirt)" },
-        { value: "Heart buckle mini skirt (愛心扣環裙)", label: "愛心扣環裙 (Heart Buckle)" }
+        { value: "Lace-up mini skirt (綁帶迷你裙)", label: "綁帶迷你裙 (Lace-up Mini)" },
+        { value: "Cut-out mini skirt (挖空迷你裙)", label: "挖空迷你裙 (Cut-out Mini)" },
+        { value: "Chain detail mini skirt (鏈條裝飾迷你裙)", label: "鏈條裝飾迷你裙 (Chain Detail)" }
     ],
     short_skirt: [
         { value: "A-line skirt (A字裙)", label: "A字裙 (A-line Skirt)" },
