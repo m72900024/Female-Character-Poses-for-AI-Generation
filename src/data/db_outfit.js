@@ -370,14 +370,58 @@ export const costumeSetDatabase = {
 
     // === 節慶限定 (Seasonal) ===
     seasonal: [
-        { value: "Red velvet mini dress with white faux fur trim, black belt cinched waist, red santa hat, festive and cute, red stockings, black fur-trimmed ankle boots (聖誕女郎洋裝)", label: "聖誕女郎洋裝 (Santa Girl)" },
-        { value: "Brown hooded dress with plush reindeer antlers and ears, white fur cuffs, cute bell choker, brown knee socks, brown suede ankle boots (馴鹿造型)", label: "馴鹿造型 (Reindeer)" },
-        { value: "Oversized red knit sweater with white snowflake patterns, white pleated mini skirt, white thigh high socks, white fur-lined winter boots (雪花毛衣)", label: "雪花毛衣 (Snowflake Sweater)" },
-        { value: "Red velvet Santa bikini set with white fur trim, matching top and bottom, red santa hat, white fur leg warmers, barefoot (聖誕比基尼)", label: "聖誕比基尼 (Santa Bikini)" },
-        { value: "Red and white candy cane striped bodysuit, festive bow on chest, red santa hat, white patent leather knee-high boots (糖果手杖連體衣)", label: "糖果手杖連體衣 (Candy Cane)" },
-        { value: "Green tiered Christmas tree costume dress with ornament decorations, star headband, green stockings, red patent leather pumps (聖誕樹造型裙)", label: "聖誕樹造型裙 (Christmas Tree)" },
-        { value: "Black witch costume dress, purple accents, pointed witch hat, holding broomstick, purple and black striped stockings, black pointed boots (萬聖女巫)", label: "萬聖女巫 (Halloween Witch)" },
-        { value: "Pink satin lingerie set with heart patterns, lace trim bralette and panties, sheer pink robe, romantic Valentine style, barefoot (情人節內衣)", label: "情人節內衣 (Valentine Lingerie)" }
+        // 🎄 聖誕節 Christmas
+        { value: "Red velvet mini dress with white faux fur trim, black belt cinched waist, red santa hat, festive and cute, red stockings, black fur-trimmed ankle boots (聖誕女郎洋裝)", label: "🎄 聖誕女郎洋裝 (Santa Girl)" },
+        { value: "Brown hooded dress with plush reindeer antlers and ears, white fur cuffs, cute bell choker, brown knee socks, brown suede ankle boots (馴鹿造型)", label: "🎄 馴鹿造型 (Reindeer)" },
+        { value: "Oversized red knit sweater with white snowflake patterns, white pleated mini skirt, white thigh high socks, white fur-lined winter boots (雪花毛衣)", label: "🎄 雪花毛衣 (Snowflake Sweater)" },
+        { value: "Red velvet Santa bikini set with white fur trim, matching top and bottom, red santa hat, white fur leg warmers, barefoot (聖誕比基尼)", label: "🎄 聖誕比基尼 (Santa Bikini)" },
+        { value: "Red and white candy cane striped bodysuit, festive bow on chest, red santa hat, white patent leather knee-high boots (糖果手杖連體衣)", label: "🎄 糖果手杖連體衣 (Candy Cane)" },
+        { value: "Green tiered Christmas tree costume dress with ornament decorations, star headband, green stockings, red patent leather pumps (聖誕樹造型裙)", label: "🎄 聖誕樹造型裙 (Christmas Tree)" },
+        { value: "White angora sweater, red plaid mini skirt, red knee socks, brown boots, cozy christmas (白毛衣紅格紋)", label: "🎄 白毛衣紅格紋 (Cozy Christmas)" },
+        { value: "Green velvet crop top, red satin mini skirt, gold jewelry, red heels (綠絲絨紅緞面)", label: "🎄 綠絲絨紅緞面 (Green Velvet Red)" },
+        { value: "Red off-shoulder sweater dress, mini length, white fur trim, red ankle boots (紅色露肩毛衣裙)", label: "🎄 紅色露肩毛衣裙 (Red Off-shoulder)" },
+        { value: "White lace top, red velvet mini skirt, candy cane stockings, white boots (蕾絲紅絲絨裙)", label: "🎄 蕾絲紅絲絨裙 (Lace Velvet)" },
+        // 🎃 萬聖節 Halloween
+        { value: "Black witch costume dress, purple accents, pointed witch hat, holding broomstick, purple and black striped stockings, black pointed boots (萬聖女巫)", label: "🎃 萬聖女巫 (Halloween Witch)" },
+        { value: "Orange pumpkin print crop top, black tulle mini skirt, black cat ears headband, black boots (南瓜甜心)", label: "🎃 南瓜甜心 (Pumpkin Sweet)" },
+        { value: "Black cat costume bodysuit, cat ears, tail, black mini skirt, black boots (黑貓女郎)", label: "🎃 黑貓女郎 (Black Cat)" },
+        { value: "Purple witch crop top, black lace mini skirt, witch hat, purple stockings, black heels (紫色小魔女)", label: "🎃 紫色小魔女 (Purple Witch)" },
+        { value: "Orange and black striped top, black pleated mini skirt, spider web stockings, black boots (蜘蛛網萬聖)", label: "🎃 蜘蛛網萬聖 (Spider Web)" },
+        { value: "White ghost costume mini dress, tattered hem, pale makeup, barefoot (可愛小鬼)", label: "🎃 可愛小鬼 (Cute Ghost)" },
+        { value: "Red devil costume, horn headband, red mini dress, pitchfork, red heels (小惡魔)", label: "🎃 小惡魔 (Little Devil)" },
+        { value: "Vampire costume, black cape, red corset, black mini skirt, fangs, black boots (吸血鬼女郎)", label: "🎃 吸血鬼女郎 (Vampire Girl)" },
+        // 💝 情人節 Valentine's Day
+        { value: "Pink satin lingerie set with heart patterns, lace trim bralette and panties, sheer pink robe, romantic Valentine style, barefoot (情人節內衣)", label: "💝 情人節內衣 (Valentine Lingerie)" },
+        { value: "Red heart print mini dress, sweetheart neckline, red heels (紅色愛心裙)", label: "💝 紅色愛心裙 (Red Heart Dress)" },
+        { value: "Pink lace crop top, white pleated mini skirt, heart accessories, pink heels (粉紅蕾絲愛心)", label: "💝 粉紅蕾絲愛心 (Pink Lace Heart)" },
+        { value: "White blouse with red ribbon bow, red A-line mini skirt, white knee socks, red mary janes (紅白情人節)", label: "💝 紅白情人節 (Red White Valentine)" },
+        { value: "Red velvet bodycon mini dress, gold heart necklace, red stilettos (紅絲絨約會)", label: "💝 紅絲絨約會 (Red Velvet Date)" },
+        { value: "Pink tulle mini skirt, white knit top, heart hair clips, pink ballet flats (粉紅紗裙甜心)", label: "💝 粉紅紗裙甜心 (Pink Tulle Sweet)" },
+        // 🎆 新年跨年 New Year
+        { value: "Gold sequin mini dress, thin straps, gold heels, sparkle earrings (金色亮片跨年)", label: "🎆 金色亮片跨年 (Gold Sequin NYE)" },
+        { value: "Black velvet crop top, silver sequin mini skirt, black heels (黑絲絨銀亮片)", label: "🎆 黑絲絨銀亮片 (Black Silver)" },
+        { value: "Champagne colored satin mini dress, off-shoulder, nude heels (香檳色緞面)", label: "🎆 香檳色緞面 (Champagne Satin)" },
+        { value: "Red satin camisole, black leather mini skirt, gold jewelry, black heels (紅緞面皮裙)", label: "🎆 紅緞面皮裙 (Red Satin Leather)" },
+        { value: "White feather trim crop top, silver mini skirt, clear heels (羽毛銀裙)", label: "🎆 羽毛銀裙 (Feather Silver)" },
+        { value: "Holographic mini dress, futuristic style, silver boots (幻彩未來感)", label: "🎆 幻彩未來感 (Holographic Future)" },
+        // 🌸 春節 Chinese New Year
+        { value: "Red cheongsam mini dress, gold embroidery, side slit, red heels (紅色迷你旗袍)", label: "🌸 紅色迷你旗袍 (Red Mini Qipao)" },
+        { value: "Red knit sweater, gold pleated mini skirt, red ankle boots (紅金喜氣)", label: "🌸 紅金喜氣 (Red Gold Lucky)" },
+        { value: "Burgundy velvet top, red plaid mini skirt, gold accessories, burgundy boots (酒紅新春)", label: "🌸 酒紅新春 (Burgundy New Year)" },
+        { value: "Red and gold brocade crop top, red satin mini skirt, gold heels (織錦緞面)", label: "🌸 織錦緞面 (Brocade Satin)" },
+        { value: "Pink hanfu style top, red embroidered mini skirt, traditional hair accessories (改良漢服短裙)", label: "🌸 改良漢服短裙 (Modern Hanfu Mini)" },
+        // 🐰 復活節 Easter
+        { value: "Pastel pink bunny ear headband, white fluffy sweater, pink pleated mini skirt, white mary janes (粉紅兔女郎)", label: "🐰 粉紅兔女郎 (Pink Bunny)" },
+        { value: "Lavender knit top, pastel yellow mini skirt, bunny tail, white flats (薰衣草彩蛋)", label: "🐰 薰衣草彩蛋 (Lavender Easter)" },
+        { value: "White lace dress, mini length, pastel flower crown, nude sandals (白蕾絲春日)", label: "🐰 白蕾絲春日 (White Lace Spring)" },
+        { value: "Pastel rainbow striped top, white denim mini skirt, pastel sneakers (彩虹復活節)", label: "🐰 彩虹復活節 (Rainbow Easter)" },
+        { value: "Mint green cardigan, white camisole, pastel pink mini skirt, white loafers (薄荷粉嫩)", label: "🐰 薄荷粉嫩 (Mint Pastel)" },
+        // 🎓 畢業季 Graduation
+        { value: "White blouse, navy pleated mini skirt, graduation cap, black heels (畢業典禮)", label: "🎓 畢業典禮 (Graduation Ceremony)" },
+        { value: "Cream blazer, white top, beige mini skirt, nude pumps (知性畢業風)", label: "🎓 知性畢業風 (Smart Graduate)" },
+        { value: "Light blue shirt dress, mini length, white sneakers, diploma (清新畢業裝)", label: "🎓 清新畢業裝 (Fresh Graduate)" },
+        { value: "White lace mini dress, graduation sash, nude heels (白蕾絲畢業)", label: "🎓 白蕾絲畢業 (White Lace Grad)" },
+        { value: "Navy sailor uniform modernized, short pleated skirt, graduation cap, white sneakers (水手服畢業)", label: "🎓 水手服畢業 (Sailor Grad)" }
     ]
 };
 
