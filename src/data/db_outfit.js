@@ -41,12 +41,28 @@ export const costumeSetDatabase = {
 
     // === 甜美可愛 (Sweet & Cute) ===
     sweet_cute: [
+        // 經典甜美
         { value: "White fluffy off-shoulder sweater, sheer white lace bralette peeking out, pink pleated mini skirt, white knee socks, pink ballet flats (日系純欲毛衣)", label: "日系純欲毛衣 (Pure Lust Sweater)" },
         { value: "Pastel pink crop cardigan with pearl buttons, white pleated mini skirt, white knee high socks, pink platform mary janes (韓系甜辣高校風)", label: "韓系甜辣高校 (K-High Teen)" },
         { value: "White lace camisole with pink satin ribbons, pink silk mini skirt, sheer white stockings, pink strappy heels (純欲蕾絲風)", label: "純欲蕾絲風 (Coquette Lace)" },
         { value: "Denim corset top with front lacing, low-rise denim mini skirt, chunky platform sneakers, Y2K aesthetic (Y2K 甜酷辣妹)", label: "Y2K 甜酷辣妹 (Y2K Denim)" },
         { value: "Pink gingham check dress, puff sleeves, sweetheart neckline, A-line skirt, white ankle socks, pink mary jane shoes (粉色格紋洋裝)", label: "粉色格紋洋裝 (Gingham Dress)" },
-        { value: "Black and white Lolita dress, lace trim, layered petticoat, bow headband, white knee socks, black platform mary janes (蘿莉塔洋裝)", label: "蘿莉塔洋裝 (Lolita Dress)" }
+        { value: "Black and white Lolita dress, lace trim, layered petticoat, bow headband, white knee socks, black platform mary janes (蘿莉塔洋裝)", label: "蘿莉塔洋裝 (Lolita Dress)" },
+        // 迷你裙穿搭
+        { value: "White lace crop top, pink tulle mini skirt, ribbon hair accessories, white ankle socks, pink ballet flats (粉色紗裙甜心)", label: "粉色紗裙甜心 (Tulle Mini)" },
+        { value: "Pastel blue knit vest over white blouse, navy pleated mini skirt, white knee socks, brown loafers (學院風針織)", label: "學院風針織 (Preppy Knit)" },
+        { value: "Pink ribbon bow top, white ruffled mini skirt, pearl accessories, white mary janes (緞帶蝴蝶結風)", label: "緞帶蝴蝶結風 (Ribbon Bow)" },
+        { value: "Cream puff sleeve blouse, strawberry print mini skirt, white ankle socks, red mary janes (草莓印花裙)", label: "草莓印花裙 (Strawberry Print)" },
+        { value: "White eyelet lace top, lavender tiered mini skirt, flower hair clip, white platform sandals (薰衣草蛋糕裙)", label: "薰衣草蛋糕裙 (Lavender Tiered)" },
+        { value: "Baby pink cropped sweater, white tennis mini skirt, hair ribbons, white sneakers (粉嫩運動甜心)", label: "粉嫩運動甜心 (Sporty Sweet)" },
+        { value: "Off-shoulder ruffle top, cherry print A-line mini skirt, red headband, white flats (櫻桃甜美風)", label: "櫻桃甜美風 (Cherry Sweet)" },
+        // 短裙穿搭
+        { value: "Peter pan collar blouse, plaid suspender skirt, white knee socks, black mary janes (格紋吊帶裙)", label: "格紋吊帶裙 (Plaid Suspender)" },
+        { value: "Pastel yellow cardigan, white camisole, floral short skirt, straw hat, white sandals (小雛菊短裙)", label: "小雛菊短裙 (Daisy Skirt)" },
+        { value: "Heart cutout pink top, denim short skirt with lace hem, heart shaped bag, pink sneakers (愛心甜妹風)", label: "愛心甜妹風 (Heart Cutout)" },
+        { value: "Sailor collar top with bow, navy pleated short skirt, white thigh highs, brown loafers (水手領甜美)", label: "水手領甜美 (Sailor Sweet)" },
+        { value: "Crochet crop top, high-waisted gingham short skirt, daisy earrings, white platform sandals (鉤針田園風)", label: "鉤針田園風 (Crochet Cottage)" },
+        { value: "Puff sleeve smocked top, tiered ruffle short skirt, pearl necklace, white ballet flats (公主風荷葉裙)", label: "公主風荷葉裙 (Princess Ruffle)" }
     ],
 
     // === 性感時尚 (Sexy Fashion) ===
@@ -307,18 +323,33 @@ export const bottomDatabase = {
     ],
     // === 網美風格 Influencer Style ===
     influencer: [
+        // 褲裝
         { value: "High-waisted beige wide-leg pants, minimalist chic (奶茶色高腰寬褲)", label: "📸 奶茶色高腰寬褲 (Beige Wide-leg)" },
         { value: "Light blue high-waisted jeans, fresh and clean (淺藍高腰牛仔褲)", label: "📸 淺藍高腰牛仔褲 (Light Blue Jeans)" },
-        { value: "Pastel lavender high-waisted shorts, soft girl (薰衣草高腰短褲)", label: "📸 薰衣草高腰短褲 (Lavender Shorts)" },
-        { value: "Black cycling shorts, athleisure style (黑色單車褲)", label: "📸 黑色單車褲 (Cycling Shorts)" },
         { value: "High-waisted mom jeans, effortless cool (高腰老媽褲)", label: "📸 高腰老媽褲 (Mom Jeans)" },
+        { value: "Black cycling shorts, athleisure style (黑色單車褲)", label: "📸 黑色單車褲 (Cycling Shorts)" },
+        { value: "Pastel lavender high-waisted shorts, soft girl (薰衣草高腰短褲)", label: "📸 薰衣草高腰短褲 (Lavender Shorts)" },
+        // 迷你裙 Mini Skirts
+        { value: "White pleated tennis mini skirt, sporty chic (白色百褶網球裙)", label: "📸 白色百褶網球裙 (Tennis Mini)" },
         { value: "Plaid mini skirt, edgy instagram (格紋迷你裙)", label: "📸 格紋迷你裙 (Plaid Mini)" },
-        { value: "White linen wrap skirt, resort style (白色亞麻裹裙)", label: "📸 白色亞麻裹裙 (Linen Wrap Skirt)" },
-        { value: "Flowy palazzo pants, bohemian vibes (波希米亞寬褲)", label: "📸 波希米亞寬褲 (Palazzo Pants)" },
+        { value: "Black bodycon mini skirt, sultry evening (黑色緊身短裙)", label: "📸 黑色緊身短裙 (Bodycon Mini)" },
+        { value: "Denim mini skirt with raw hem, casual cute (毛邊牛仔迷你裙)", label: "📸 毛邊牛仔迷你裙 (Raw Denim Mini)" },
+        { value: "White ruffled mini skirt, feminine sweet (白色荷葉邊迷你裙)", label: "📸 白色荷葉邊迷你裙 (Ruffle Mini)" },
+        { value: "Pink satin mini skirt, date night glam (粉色緞面迷你裙)", label: "📸 粉色緞面迷你裙 (Pink Satin Mini)" },
+        { value: "Beige knit mini skirt, cozy aesthetic (奶茶色針織迷你裙)", label: "📸 奶茶色針織迷你裙 (Knit Mini)" },
+        { value: "Leopard print mini skirt, bold statement (豹紋迷你裙)", label: "📸 豹紋迷你裙 (Leopard Mini)" },
+        { value: "High-waisted A-line mini skirt, classic cute (高腰A字迷你裙)", label: "📸 高腰A字迷你裙 (A-line Mini)" },
+        { value: "Floral print mini skirt, spring vibes (碎花迷你裙)", label: "📸 碎花迷你裙 (Floral Mini)" },
+        // 短裙 Short Skirts
+        { value: "White linen wrap skirt, resort style (白色亞麻裹裙)", label: "📸 白色亞麻裹裙 (Linen Wrap)" },
+        { value: "Button-front denim skirt, retro casual (排扣牛仔短裙)", label: "📸 排扣牛仔短裙 (Button Denim)" },
+        { value: "Tiered ruffle short skirt, playful feminine (層次荷葉短裙)", label: "📸 層次荷葉短裙 (Tiered Ruffle)" },
+        { value: "Asymmetric wrap skirt, chic modern (不對稱裹身短裙)", label: "📸 不對稱裹身短裙 (Asymmetric Wrap)" },
+        { value: "Tweed short skirt, elegant lady (小香風短裙)", label: "📸 小香風短裙 (Tweed Short)" },
+        { value: "Cargo mini skirt with pockets, street style (口袋工裝短裙)", label: "📸 口袋工裝短裙 (Cargo Short)" },
+        // 中長裙
         { value: "Pleated midi skirt, korean elegant (百褶中長裙)", label: "📸 百褶中長裙 (Pleated Midi)" },
         { value: "Pink satin midi skirt, date night (粉色緞面中長裙)", label: "📸 粉色緞面中長裙 (Pink Satin Midi)" },
-        { value: "High-waisted leggings, sage green athleisure (莫蘭迪綠高腰緊身褲)", label: "📸 莫蘭迪綠緊身褲 (Sage Leggings)" },
-        { value: "Grey bike shorts, casual sporty (灰色單車褲)", label: "📸 灰色單車褲 (Grey Bike Shorts)" },
-        { value: "Black bodycon mini skirt, sultry evening (黑色緊身短裙)", label: "📸 黑色緊身短裙 (Bodycon Mini)" }
+        { value: "Flowy palazzo pants, bohemian vibes (波希米亞寬褲)", label: "📸 波希米亞寬褲 (Palazzo Pants)" }
     ]
 };
