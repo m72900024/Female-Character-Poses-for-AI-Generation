@@ -22,7 +22,12 @@ export const braDatabase = [
     { value: "Cotton bra (棉質內衣)", label: "棉質內衣 (Cotton)" },
     { value: "Sports bra (運動內衣)", label: "運動內衣 (Sports)" },
     { value: "Strapless bra (無肩帶內衣)", label: "無肩帶內衣 (Strapless)" },
-    { value: "Push-up bra (集中托高內衣)", label: "集中托高內衣 (Push-up)" }
+    { value: "Push-up bra (集中托高內衣)", label: "集中托高內衣 (Push-up)" },
+    { value: "Sheer lace bralette (透明蕾絲)", label: "透明蕾絲 (Sheer Lace)" },
+    { value: "Satin bralette (緞面)", label: "緞面 (Satin)" },
+    { value: "Triangle bikini top, string ties (三角綁帶上身)", label: "三角綁帶 (Triangle Top)" },
+    { value: "Halter bikini top (繞頸綁帶上身)", label: "繞頸綁帶 (Halter Top)" },
+    { value: "Bandeau top, strapless (平口抹胸)", label: "平口抹胸 (Bandeau)" }
 ];
 
 export const pantiesDatabase = [
@@ -31,7 +36,13 @@ export const pantiesDatabase = [
     { value: "Cotton panties (棉質內褲)", label: "棉質內褲 (Cotton)" },
     { value: "Sports panties (運動內褲)", label: "運動內褲 (Sports)" },
     { value: "Thong (丁字褲)", label: "丁字褲 (Thong)" },
-    { value: "High-waisted panties (高腰內褲)", label: "高腰內褲 (High-waisted)" }
+    { value: "High-waisted panties (高腰內褲)", label: "高腰內褲 (High-waisted)" },
+    { value: "Low-rise lace briefs (低腰蕾絲)", label: "低腰蕾絲 (Low-rise Lace)" },
+    { value: "Sheer mesh briefs (透明薄紗)", label: "透明薄紗 (Sheer Mesh)" },
+    { value: "Triangle bottom, string ties (三角綁帶下身)", label: "三角綁帶 (Triangle Bottom)" },
+    { value: "Brazilian cut bottom, minimal coverage (巴西剪裁下身)", label: "巴西剪裁 (Brazilian Cut)" },
+    { value: "Side-tie bottom, adjustable (側綁帶下身)", label: "側綁帶 (Side-tie)" },
+    { value: "High-cut bottom, elongates legs (高衩下身)", label: "高衩款 (High-cut)" }
 ];
 
 export const accessoriesDatabase = [
