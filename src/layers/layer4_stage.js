@@ -5,9 +5,11 @@ let updateCallback = null;
 
 // ★★★ 場景分類翻譯 (配合中文化) ★★★
 const stageTranslations = {
-    private: "居家私密 (Private)",
-    urban: "現代都市 (Urban)",
-    nature: "自然戶外 (Nature)"
+    private: "🏠 居家私密 (Private)",
+    urban: "🏙️ 現代都市 (Urban)",
+    nature: "🌿 自然戶外 (Nature)",
+    entertainment: "🎉 娛樂場所 (Entertainment)",
+    commercial: "🛍️ 商業空間 (Commercial)"
 };
 
 export function init(callback) {

@@ -53,7 +53,15 @@ export const poseDatabase = [
             { value: "Standing, twirling hair with finger, shy expression (撥弄髮絲)", label: "撥弄髮絲 (Twirling Hair)" },
             { value: "Standing, both hands on cheeks, surprised cute expression (雙手捧臉驚喜)", label: "雙手捧臉驚喜 (Surprised Cute)" },
             { value: "Standing, one hand behind head, stretching, casual sexy (單手撐頭伸展)", label: "單手撐頭伸展 (Casual Stretch)" },
-            { value: "Standing, blowing kiss to camera, playful wink (飛吻)", label: "飛吻 (Blowing Kiss)" }
+            { value: "Standing, blowing kiss to camera, playful wink (飛吻)", label: "飛吻 (Blowing Kiss)" },
+            // 動態姿勢 Dynamic Poses
+            { value: "Riding bicycle, school uniform, Tokyo street, natural lighting, soft transparent colors (騎腳踏車)", label: "騎腳踏車 (Riding Bicycle)" },
+            { value: "Walking with books in arms, school hallway, student pose (抱書走路)", label: "抱書走路 (Walking with Books)" },
+            { value: "Running playfully, hair flowing, looking back with smile (俏皮奔跑)", label: "俏皮奔跑 (Playful Running)" },
+            { value: "Dancing with arms raised, joyful expression, dynamic movement (跳舞舉手)", label: "跳舞舉手 (Dancing Arms Up)" },
+            { value: "Standing on one leg, other leg kicked forward playfully, arms slightly spread for balance, joyful smile, snowy platform (單腳站立踢腿)", label: "單腳站立踢腿 (Playful Kick)" },
+            { value: "Standing on stairs, hand near head, gentle smile, soft daylight, charming pose (階梯扶頭站姿)", label: "階梯扶頭站姿 (Stairs Hand Head)" },
+            { value: "Standing in garden, holding bag, facing camera, natural greenery backdrop (花園持包站姿)", label: "花園持包站姿 (Garden Bag Pose)" }
         ]
     },
     {
@@ -79,7 +87,8 @@ export const poseDatabase = [
             { value: "Back view, peeking over shoulder with shy smile (害羞回眸)", label: "害羞回眸 (Shy Peek)" },
             { value: "Back view, hands touching own shoulders, elegant pose (雙手撫肩)", label: "雙手撫肩 (Touching Shoulders)" },
             { value: "Back view, adjusting hair in ponytail, nape exposed (整理馬尾)", label: "整理馬尾 (Adjusting Ponytail)" },
-            { value: "Back view, glancing back with finger on lips, secretive (神秘回眸)", label: "神秘回眸 (Mysterious Glance)" }
+            { value: "Back view, glancing back with finger on lips, secretive (神秘回眸)", label: "神秘回眸 (Mysterious Glance)" },
+            { value: "Back view, looking back over shoulder, holding bag, 3/4 rear view, JK style (背影回眸持包)", label: "背影回眸持包 (Back Holding Bag)" }
         ]
     },
     {
@@ -104,7 +113,14 @@ export const poseDatabase = [
             { value: "Sitting with legs to side, hands on lap, elegant and demure (淑女側坐)", label: "淑女側坐 (Elegant Side Sit)" },
             { value: "Sitting on floor, leaning back on hands, legs extended, relaxed (後仰撐地)", label: "後仰撐地 (Leaning Back)" },
             { value: "Sitting, knees up, arms wrapped around legs, innocent look (抱膝望向鏡頭)", label: "抱膝望向鏡頭 (Knees Up Looking)" },
-            { value: "Sitting on edge of bed, feet playfully swinging, cheerful (床邊甜美坐姿)", label: "床邊甜美坐姿 (Sweet Bed Edge)" }
+            { value: "Sitting on edge of bed, feet playfully swinging, cheerful (床邊甜美坐姿)", label: "床邊甜美坐姿 (Sweet Bed Edge)" },
+            { value: "Sitting on stairs, legs extended to side and crossed, one hand raised touching ponytail, other hand raised in soft gesture, slight smile, looking at camera (階梯側坐撩髮)", label: "階梯側坐撩髮 (Stairs Side Sit)" },
+            { value: "Sitting casually on brick windowsill, one leg raised high against window frame, hand in hair, neutral expression, facing camera, natural daylight (窗台抬腿撩髮)", label: "窗台抬腿撩髮 (Windowsill Leg Raise)" },
+            { value: "Sitting on desk, legs crossed elegantly, confident pose, looking at camera (坐課桌優雅翹腳)", label: "坐課桌優雅翹腳 (Desk Cross-legged)" },
+            { value: "Sitting on sofa, legs tucked to side, one arm on armrest, elegant relaxed (沙發優雅側坐)", label: "沙發優雅側坐 (Sofa Elegant Sit)" },
+            { value: "Sitting on sofa, legs extended, one hand touching face, looking at camera, cozy home style (沙發手摸臉)", label: "沙發手摸臉 (Sofa Hand on Face)" },
+            { value: "Sitting on edge of bathtub, legs extended elegantly, relaxed bathroom pose, morning light (浴缸邊坐姿)", label: "浴缸邊坐姿 (Bathtub Edge Sit)" },
+            { value: "Reclining on bed, legs crossed and extended, hand touching forehead, soft smile, direct eye contact (床上斜躺交腳)", label: "床上斜躺交腳 (Bed Recline Cross)" }
         ]
     },
     {

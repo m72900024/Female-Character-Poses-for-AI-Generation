@@ -20,6 +20,7 @@ export const costumeSetDatabase = {
         { value: "Beige knit cardigan, white camisole underneath, high-waisted blue jeans, cozy style, white sneakers (針織外套搭配)", label: "針織外套搭配 (Cozy Cardigan)" },
         { value: "Cream cable knit sweater, light wash mom jeans, white sneakers, cozy autumn (麻花針織毛衣)", label: "麻花針織毛衣 (Cable Knit)" },
         { value: "Sage green knit vest over white tee, khaki wide-leg pants, beige loafers (針織背心疊穿)", label: "針織背心疊穿 (Knit Vest Layer)" },
+        { value: "Red fluffy knit sweater, loose fit, white shorts, white sheer stockings, soft cozy style (紅色蓬鬆毛衣)", label: "紅色蓬鬆毛衣 (Red Fluffy Knit)" },
         // 裙裝休閒
         { value: "Blue and white striped long sleeve shirt, denim mini skirt, preppy casual style, white canvas shoes (條紋襯衫牛仔裙)", label: "條紋襯衫牛仔裙 (Preppy Casual)" },
         { value: "Floral print sundress, spaghetti straps, flowy A-line skirt, light and airy, brown leather sandals (碎花洋裝)", label: "碎花洋裝 (Floral Sundress)" },
@@ -29,7 +30,10 @@ export const costumeSetDatabase = {
         // 運動休閒風
         { value: "White sports bra visible under loose tank, black leggings, white sneakers, gym to street (運動風疊穿)", label: "運動風疊穿 (Athleisure Layer)" },
         { value: "Pastel blue zip-up hoodie, matching joggers, white sneakers, sporty cute (粉藍運動套裝)", label: "粉藍運動套裝 (Sporty Set)" },
-        { value: "Black cropped hoodie, grey yoga pants, white running shoes, casual athletic (短版帽T瑜伽褲)", label: "短版帽T瑜伽褲 (Crop Hoodie Yoga)" }
+        { value: "Black cropped hoodie, grey yoga pants, white running shoes, casual athletic (短版帽T瑜伽褲)", label: "短版帽T瑜伽褲 (Crop Hoodie Yoga)" },
+        // 優雅居家 Elegant Home
+        { value: "White flowing long dress, soft natural daylight, elegant posture, barefoot, window light (白色長裙居家)", label: "白色長裙居家 (White Long Dress)" },
+        { value: "Cream silk maxi dress, V-neck, flowy fabric, minimalist elegant, barefoot (奶油色絲質長裙)", label: "奶油色絲質長裙 (Cream Silk Maxi)" }
     ],
 
     // === 網美風格 (Influencer Style) ===
@@ -81,7 +85,14 @@ export const costumeSetDatabase = {
         { value: "Heart cutout pink top, denim short skirt with lace hem, heart shaped bag, pink sneakers (愛心甜妹風)", label: "愛心甜妹風 (Heart Cutout)" },
         { value: "Sailor collar top with bow, navy pleated short skirt, white thigh highs, brown loafers (水手領甜美)", label: "水手領甜美 (Sailor Sweet)" },
         { value: "Crochet crop top, high-waisted gingham short skirt, daisy earrings, white platform sandals (鉤針田園風)", label: "鉤針田園風 (Crochet Cottage)" },
-        { value: "Puff sleeve smocked top, tiered ruffle short skirt, pearl necklace, white ballet flats (公主風荷葉裙)", label: "公主風荷葉裙 (Princess Ruffle)" }
+        { value: "Puff sleeve smocked top, tiered ruffle short skirt, pearl necklace, white ballet flats (公主風荷葉裙)", label: "公主風荷葉裙 (Princess Ruffle)" },
+        // 格紋洋裝系列
+        { value: "Red and white gingham check mini dress, square neckline, fitted waist, small red ribbon bows on straps, flared skirt, nude pink strappy heels, delicate chain necklace (紅白格紋甜美洋裝)", label: "紅白格紋甜美洋裝 (Red Gingham Dress)" },
+        // Y2K 風格
+        { value: "Pink floral print mini dress, sweetheart neckline, ruffle bust detail, tie shoulder straps, gold chain belt with seashell charms, silver digital camera, Y2K flash photography aesthetic (Y2K粉色花卉洋裝)", label: "Y2K粉色花卉洋裝 (Y2K Floral Dress)" },
+        // 學院甜美風
+        { value: "Black off-shoulder long sleeve top, wide white collar accent, dark plaid pleated mini skirt, black sheer stockings, black pointed low heels, sweet academy style (一字領學院甜美)", label: "一字領學院甜美 (Off-shoulder Academy)" },
+        { value: "Yellow cropped short sleeve shirt with collar, dark grey plaid pleated mini skirt, black sheer stockings, black chunky loafers, JK style (黃色短版襯衫JK)", label: "黃色短版襯衫JK (Yellow Crop JK)" }
     ],
 
     // === 性感時尚 (Sexy Fashion) ===
@@ -106,6 +117,24 @@ export const costumeSetDatabase = {
         { value: "White sheer lace blouse, visible white bra, high-waisted mini skirt, nude heels (透視蕾絲襯衫)", label: "透視蕾絲襯衫 (Sheer Lace Blouse)" },
         { value: "Black lace bodysuit, sheer all over, high-waisted leather shorts, boots (蕾絲透膚連身衣)", label: "蕾絲透膚連身衣 (Lace Bodysuit)" },
         { value: "Sheer black mini dress, strategic lace coverage, black heels (透視黑蕾絲裙)", label: "透視黑蕾絲裙 (Sheer Black Dress)" },
+        { value: "White strapless corset top with black halter straps and buttons, black pinstripe mini skirt, black sheer thigh-high stockings with lace tops, black patent leather stilettos (白色馬甲綁帶上衣)", label: "白色馬甲綁帶上衣 (White Corset Halter)" },
+        { value: "Black sheer mesh long sleeve top, black velvet layered mini skirt, white platform ankle strap sandals, beige quilted crossbody bag (黑色透視絲絨裙)", label: "黑色透視絲絨裙 (Sheer Mesh Velvet)" },
+        // 透明感白衣 Sheer White Clothing
+        { value: "Thin white cotton shirt, slightly transparent, white bra visible underneath, backlit, natural light, white mini skirt, barefoot (純欲透白襯衫)", label: "純欲透白襯衫 (Sheer White Shirt)" },
+        { value: "White wet T-shirt, clinging to body, bra outline visible, damp fabric texture, denim shorts, barefoot (濕身白T恤)", label: "濕身白T恤 (Wet White Tee)" },
+        { value: "Sheer white chiffon blouse, delicate see-through fabric, lace bralette visible, flowy, white shorts, nude heels (透膚雪紡襯衫)", label: "透膚雪紡襯衫 (Sheer Chiffon)" },
+        { value: "White linen dress, backlit silhouette visible, thin fabric, body outline, barefoot on beach (逆光白麻洋裝)", label: "逆光白麻洋裝 (Backlit Linen)" },
+        { value: "White oversized boyfriend shirt, thin fabric, underwear faintly visible, unbuttoned, morning light, barefoot (透光男友襯衫)", label: "透光男友襯衫 (Sheer Boyfriend Shirt)" },
+        { value: "White ribbed tank top, no bra, nipple outline visible, high-waisted jeans, casual sexy (無內衣白背心)", label: "無內衣白背心 (Braless White Tank)" },
+        // 透明薄紗裙 Sheer Skirts
+        { value: "White sheer tulle mini skirt, layered transparent fabric, white panties visible underneath, white crop top, barefoot (白色透明薄紗短裙)", label: "白色透明薄紗短裙 (White Tulle Mini)" },
+        { value: "Black sheer organza midi skirt, see-through flowing fabric, black thong visible, black bralette top, heels (黑色透視歐根紗裙)", label: "黑色透視歐根紗裙 (Black Organza Midi)" },
+        { value: "Sheer chiffon maxi skirt, white flowy transparent layers, silhouette visible, bikini underneath, beach style, barefoot (透明雪紡長裙)", label: "透明雪紡長裙 (Sheer Chiffon Maxi)" },
+        { value: "Pink tulle ballerina skirt, multiple sheer layers, panties peeking through, white bodysuit, ballet flats (粉色芭蕾薄紗裙)", label: "粉色芭蕾薄紗裙 (Pink Tulle Ballerina)" },
+        { value: "Black mesh overlay mini skirt, completely see-through, lace panties visible, corset top, heels (網紗透視迷你裙)", label: "網紗透視迷你裙 (Mesh Overlay Mini)" },
+        { value: "White sheer wrap skirt, side slit, bikini bottom visible, resort style, barefoot on beach (透明圍裹裙)", label: "透明圍裹裙 (Sheer Wrap Skirt)" },
+        { value: "Layered tulle high-low skirt, front short back long, sheer white, underwear visible, crop top, heels (前短後長薄紗裙)", label: "前短後長薄紗裙 (Tulle Hi-Lo Skirt)" },
+        { value: "Sheer pleated midi skirt, delicate transparent pleats, backlit silhouette, elegant sexy, blouse, heels (透視百褶中長裙)", label: "透視百褶中長裙 (Sheer Pleated Midi)" },
         // 皮革辣妹風 Leather Edgy
         { value: "Black leather mini skirt, black lace crop top, edgy sexy style, black ankle boots with buckles (皮裙蕾絲上衣)", label: "皮裙蕾絲上衣 (Edgy Leather)" },
         { value: "Red leather mini dress, front zipper, fitted, red boots (紅色皮革連身裙)", label: "紅色皮革連身裙 (Red Leather Dress)" },
@@ -204,7 +233,14 @@ export const costumeSetDatabase = {
         { value: "Beige cardigan, white blouse, grey pencil skirt, glasses, holding pointer stick, nude stockings, black flat shoes (氣質女教師)", label: "氣質女教師 (Teacher)" },
         { value: "White silk blouse, black tight mini skirt, reading glasses, professional yet sexy, sheer black stockings, black high heels (性感秘書)", label: "性感秘書 (Secretary)" },
         { value: "Pink diner waitress uniform dress, white apron, name tag, retro style, white ankle socks, white sneakers (餐廳女服務生)", label: "餐廳女服務生 (Diner Waitress)" },
-        { value: "Black tactical vest, navy blue police uniform, utility belt with equipment, cargo pants, black combat boots (特警戰術裝)", label: "特警戰術裝 (SWAT Tactical)" }
+        { value: "Black tactical vest, navy blue police uniform, utility belt with equipment, cargo pants, black combat boots (特警戰術裝)", label: "特警戰術裝 (SWAT Tactical)" },
+        // 商務OL系列 Business OL Series
+        { value: "Fitted white long-sleeve dress shirt, black pencil skirt knee-length, black opaque pantyhose, black stiletto heels, professional office look (商務OL白襯衫黑窄裙)", label: "商務OL白襯衫黑窄裙 (Business OL Classic)" },
+        { value: "Light blue V-neck blouse with lace details and sheer sleeves, white ruched mini skirt high-waisted, nude pointed heels, elegant office style (蕾絲V領上衣白皺褶裙)", label: "蕾絲V領上衣白皺褶裙 (Lace V-neck Office)" },
+        { value: "Cream silk blouse, high-waisted black wide-leg trousers, nude heels, minimalist chic (奶油色絲質上衣闊腿褲)", label: "奶油色絲質上衣闊腿褲 (Silk Blouse Wide Leg)" },
+        { value: "Grey fitted blazer dress, V-neckline, belt waist, sheer black stockings, black pumps (灰色西裝連身裙)", label: "灰色西裝連身裙 (Blazer Dress)" },
+        { value: "Black turtleneck sweater, camel pencil skirt, brown leather belt, nude stockings, brown heels (黑高領毛衣駝色窄裙)", label: "黑高領毛衣駝色窄裙 (Turtleneck Pencil)" },
+        { value: "White button-down shirt, dark camisole visible underneath, black mini skirt, sheer black pantyhose, black heels, professional sexy OL (白襯衫透出深色吊帶)", label: "白襯衫透出深色吊帶 (White Shirt Dark Cami)" }
     ],
 
     // === 角色扮演 (Cosplay) ===
@@ -235,6 +271,22 @@ export const costumeSetDatabase = {
         { value: "Magical girl costume, frilly skirt, ribbon details, magic wand, knee high boots (魔法少女)", label: "魔法少女 (Magical Girl)" },
         { value: "RPG warrior princess, armor bikini, sword, fantasy boots (RPG戰士公主)", label: "RPG戰士公主 (Warrior Princess)" },
         { value: "Racing queen outfit, tight bodysuit, sponsor logos, high heels (賽車女郎)", label: "賽車女郎 (Racing Queen)" },
+        // ACG 角色 Cosplay - ACG Character Cosplay
+        { value: "Tifa Lockhart cosplay, white cropped tank top, black leather mini skirt, black suspenders, red fingerless gloves, black knee-high stockings, brown boots, long dark hair (蒂法·洛克哈特)", label: "蒂法 Tifa (FF7)" },
+        { value: "2B cosplay, black gothic mini dress with high slit, white wig bob cut, black blindfold visor, black thigh-high boots, katana (2B 尼爾)", label: "2B (NieR)" },
+        { value: "Hatsune Miku cosplay, black and grey sleeveless top with teal accents, black mini skirt, teal detached sleeves, thigh-high black boots, turquoise twin tails (初音未來)", label: "初音未來 (Miku)" },
+        { value: "Zero Two cosplay, red military uniform dress, white accents, black stockings, red horns headband, long pink hair (02 零二)", label: "零二 (02 DITF)" },
+        { value: "Rem cosplay, blue and white maid dress, white headdress, short blue hair, black Mary Jane shoes (雷姆)", label: "雷姆 Rem (Re:Zero)" },
+        { value: "Ram cosplay, pink and white maid dress, white headdress, short pink hair, black Mary Jane shoes (拉姆)", label: "拉姆 Ram (Re:Zero)" },
+        { value: "Asuka cosplay, red and orange plugsuit bodysuit, neural connectors, red hair with interface headset (明日香)", label: "明日香 Asuka (EVA)" },
+        { value: "Rei cosplay, white plugsuit bodysuit, blue hair short bob, red eyes, neural connectors (綾波零)", label: "綾波零 Rei (EVA)" },
+        { value: "Sailor Moon cosplay, white leotard, blue pleated mini skirt, red bow, blonde twin tails with odango buns, red boots (美少女戰士)", label: "美少女戰士 (Sailor Moon)" },
+        { value: "Chun-Li cosplay, blue qipao dress with gold trim, white combat boots, hair buns with silk covers, spiked bracelets (春麗)", label: "春麗 (Street Fighter)" },
+        { value: "Mai Shiranui cosplay, red kunoichi outfit, white trim, ponytail with red ribbon, Japanese fan (不知火舞)", label: "不知火舞 (KOF)" },
+        { value: "Makima cosplay, white long sleeve shirt, black tie, black pants, ringed eyes, braided red hair (瑪奇瑪)", label: "瑪奇瑪 Makima (CSM)" },
+        { value: "Power cosplay, white shirt partially unbuttoned, black pants, red horns, blonde messy hair with bangs (乙女帕瓦)", label: "乙女帕瓦 Power (CSM)" },
+        { value: "Yor Forger cosplay, black form-fitting dress with rose patterns, red earrings, black hair with headband, assassin style (乙女約爾)", label: "約爾 Yor (SPY×FAMILY)" },
+        { value: "Marin Kitagawa cosplay, school uniform with loose tie, blonde hair, gyaru makeup, energetic expression (喜多川海夢)", label: "喜多川海夢 (My Dress-Up)" },
         // 特殊角色 Special Characters
         { value: "Princess costume, pink ball gown, tiara, long gloves, glass slippers (公主裝)", label: "公主裝 (Princess)" },
         { value: "Pirate wench costume, corset top, ragged skirt, bandana, boots (海盜女郎)", label: "海盜女郎 (Pirate Wench)" },
@@ -335,6 +387,10 @@ export const costumeSetDatabase = {
         { value: "Cream vest over white blouse, red ribbon tie, grey check mini skirt, black knee socks, brown loafers (奶茶JK制服)", label: "🇯🇵 奶茶JK制服 (Milk Tea JK)" },
         { value: "Pink cardigan over sailor uniform, navy pleated skirt, white loose socks, white sneakers (粉紅針織JK)", label: "🇯🇵 粉紅針織JK (Pink Knit JK)" },
         { value: "Summer JK uniform, short sleeve white blouse, navy ribbon, grey mini skirt, white ankle socks, white loafers (夏季清涼JK)", label: "🇯🇵 夏季清涼JK (Summer JK)" },
+        { value: "Beige sweater vest, white long-sleeved shirt, red tie, plaid mini skirt, sheer pantyhose, white low-heel slingback shoes, J-pop idol style (米色針織背心學院風)", label: "🇯🇵 米色針織背心學院風 (Beige Vest JK)" },
+        { value: "Black sailor uniform with red trim, black tights, chunky loafers, classic seifuku style (黑色紅邊水手服)", label: "🇯🇵 黑色紅邊水手服 (Black Sailor Red Trim)" },
+        { value: "Brown Japanese school blazer, light brown cardigan, white shirt, plaid mini skirt, black mid-calf socks, black loafers (棕色西裝外套學院風)", label: "🇯🇵 棕色西裝外套學院風 (Brown Blazer JK)" },
+        { value: "Grey skirt, black thigh-high socks, white blouse, school uniform style (灰裙黑膝上襪制服)", label: "🇯🇵 灰裙黑膝上襪制服 (Grey Skirt Thigh Highs)" },
         // 韓系學院風 Korean Academia Style
         { value: "Navy blazer, white shirt, red plaid pleated skirt, white knee socks, black loafers (韓式學院制服)", label: "🇰🇷 韓式學院制服 (K-Academy Uniform)" },
         { value: "Beige trench coat over white tee, tennis mini skirt, white sneakers (風衣網球裙)", label: "🇰🇷 風衣網球裙 (Trench Tennis)" },
@@ -345,6 +401,10 @@ export const costumeSetDatabase = {
         { value: "Cream linen apron dress, white puff sleeve blouse, brown leather mary janes (亞麻圍裙裙)", label: "🇯🇵 亞麻圍裙裙 (Linen Apron)" },
         { value: "Gingham check dress, puff sleeves, peter pan collar, white ankle socks, brown oxford shoes (格紋洋裝)", label: "🇯🇵 格紋洋裝 (Gingham Dress)" },
         { value: "Embroidered peasant blouse, tiered ruffle midi skirt, woven basket bag, espadrilles (刺繡田園風)", label: "🇯🇵 刺繡田園風 (Embroidered Cottage)" },
+        // 維多利亞優雅風 Victorian Elegant Style
+        { value: "Black lace camisole, light grey ruffled bolero cardigan, black and white striped tiered mini skirt, black sheer pantyhose, black ribbon hair clip, gold necklace, black handbag (維多利亞蕾絲條紋裙)", label: "🇪🇺 維多利亞蕾絲條紋裙 (Victorian Lace Stripe)" },
+        { value: "Cream lace blouse with high collar, black velvet ribbon choker, blush pink layered tulle skirt, nude heels (維多利亞蕾絲高領)", label: "🇪🇺 維多利亞蕾絲高領 (Victorian High Collar)" },
+        { value: "White ruffle front blouse with puff sleeves, black corset waist belt, black A-line midi skirt, black ankle boots (維多利亞荷葉邊襯衫)", label: "🇪🇺 維多利亞荷葉邊襯衫 (Victorian Ruffle Blouse)" },
         // 韓系約會穿搭 Korean Date Outfits
         { value: "Light pink slip dress, white cardigan draped shoulders, pearl accessories, nude heels (約會吊帶裙)", label: "🇰🇷 約會吊帶裙 (Date Slip Dress)" },
         { value: "White square neck puff sleeve top, lavender A-line mini skirt, white strappy heels (方領泡泡袖)", label: "🇰🇷 方領泡泡袖 (Square Neck Puff)" },
@@ -353,6 +413,13 @@ export const costumeSetDatabase = {
         { value: "Floral wrap mini dress, V-neck, puff sleeves, nude block heels (碎花裹身短裙)", label: "🇰🇷 碎花裹身短裙 (Floral Wrap Mini)" },
         { value: "White eyelet lace mini dress, romantic feminine, nude sandals (蕾絲鏤空洋裝)", label: "🇰🇷 蕾絲鏤空洋裝 (Eyelet Lace Dress)" },
         { value: "Off-shoulder ribbed top, satin mini skirt, strappy heels, elegant date look (一字領緞面裙)", label: "🇰🇷 一字領緞面裙 (Off-shoulder Satin)" },
+        // 精緻小香風 Elegant Chanel Style
+        { value: "Cream white tweed jacket with black trim and gold buttons, black pleated mini skirt, barefoot, elegant fashion lookbook style (奶油白粗花呢外套黑裙)", label: "🇰🇷 奶油白粗花呢外套黑裙 (Cream Tweed Jacket)" },
+        { value: "Black tweed jacket with gold buttons, matching black tweed mini skirt, pearl necklace, black heels (黑色小香風套裝)", label: "🇰🇷 黑色小香風套裝 (Black Tweed Set)" },
+        { value: "White tweed cropped jacket, high-waisted A-line skirt, pearl earrings, nude pumps (白色粗花呢短外套)", label: "🇰🇷 白色粗花呢短外套 (White Cropped Tweed)" },
+        // OL性感風 Sexy Office Style
+        { value: "Black satin blouse with pussy bow tie, bright red high-waisted mini skirt, sheer black pantyhose, black patent leather stilettos, modern office style (黑緞面蝴蝶結領紅裙)", label: "🇰🇷 黑緞面蝴蝶結領紅裙 (Satin Bow Red Skirt)" },
+        { value: "White satin blouse, black pencil skirt with side slit, sheer stockings, black heels (白緞面襯衫開衩裙)", label: "🇰🇷 白緞面襯衫開衩裙 (Satin Blouse Slit Skirt)" },
         { value: "Cropped cashmere sweater, high-waisted leather mini skirt, ankle boots (羊絨配皮裙)", label: "🇰🇷 羊絨配皮裙 (Cashmere Leather)" },
         { value: "White lace blouse, pink tulle mini skirt, pearl headband, white heels (蕾絲紗裙約會)", label: "🇰🇷 蕾絲紗裙約會 (Lace Tulle Date)" },
         { value: "Pastel mint knit top, white pleated tennis skirt, white sneakers, fresh date (薄荷綠約會風)", label: "🇰🇷 薄荷綠約會風 (Mint Fresh Date)" },

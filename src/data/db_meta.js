@@ -35,28 +35,127 @@ export const legwearColors = [
     { hex: "#E0E0E0", name: "Sheer (透膚)", display: "linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee)" } 
 ];
 
-// --- ★★★ 修復：補回風格濾鏡資料，並加入中文標籤 ★★★ ---
+// --- ★★★ 風格濾鏡資料庫 (Filter Presets) ★★★ ---
 export const filterDatabase = {
+    // === 日系風格 Japanese Styles ===
     pastel: {
-        label: "日系夢幻 (Pastel Dream)", 
+        label: "🌸 日系夢幻 (Pastel Dream)",
         value: "pastel",
         lighting: "Soft high-key lighting, diffuse studio lighting, no harsh shadows, bright and airy",
         color_palette: ["Pastel Pink", "Cream White", "Beige", "Light Brown"],
         aesthetic: "J-pop idol style, youthful, innocent, dreamy, soft focus, kawaii"
     },
+    pure_desire: {
+        label: "💫 純欲風 (Pure Desire)",
+        value: "pure_desire",
+        lighting: "Soft natural window light, gentle highlights, ethereal glow, slight overexposure",
+        color_palette: ["White", "Cream", "Pale Pink", "Soft Lavender"],
+        aesthetic: "Japanese pure desire style, innocent yet alluring, soft skin texture, dreamy atmosphere"
+    },
+    // === 韓系風格 Korean Styles ===
+    korean_fresh: {
+        label: "🇰🇷 韓系清新 (K-Fresh)",
+        value: "korean_fresh",
+        lighting: "Bright even lighting, minimal shadows, clean and polished, studio quality",
+        color_palette: ["Milk Tea Beige", "Soft White", "Light Grey", "Muted Pastels"],
+        aesthetic: "Korean beauty style, glass skin, clean makeup, Instagram aesthetic, milky tone"
+    },
+    korean_moody: {
+        label: "🎭 韓系情緒 (K-Moody)",
+        value: "korean_moody",
+        lighting: "Soft side lighting, gentle shadows, warm undertones, intimate atmosphere",
+        color_palette: ["Warm Beige", "Soft Brown", "Muted Orange", "Cream"],
+        aesthetic: "Korean drama style, emotional, cinematic, warm and cozy, cafe mood"
+    },
+    // === 質感風格 Premium Styles ===
     luxury: {
-        label: "高級質感 (Luxury Contrast)",
+        label: "💎 高級質感 (Luxury)",
         value: "luxury",
         lighting: "Soft artificial indoor lighting, well-lit subject, slight chiaroscuro",
         color_palette: ["Pure White", "Dark Wood Brown", "Jet Black", "Fair Skin Tone"],
         aesthetic: "Gravure idol style, polished, high-fashion cosplay, glossy texture"
     },
+    cinematic: {
+        label: "🎬 電影感 (Cinematic)",
+        value: "cinematic",
+        lighting: "Dramatic lighting, film grain, color graded, anamorphic lens flare",
+        color_palette: ["Teal", "Orange", "Deep Shadows", "Warm Highlights"],
+        aesthetic: "Movie still quality, cinematic color grading, shallow depth of field, professional"
+    },
+    // === 時段光線 Time-based Lighting ===
+    golden_hour: {
+        label: "🌅 黃金時刻 (Golden Hour)",
+        value: "golden_hour",
+        lighting: "Golden hour sunlight, warm orange glow, long shadows, backlit silhouette",
+        color_palette: ["Golden Yellow", "Warm Orange", "Soft Pink", "Deep Amber"],
+        aesthetic: "Magic hour photography, romantic sunset, warm skin tones, dreamy lens flare"
+    },
+    blue_hour: {
+        label: "🌙 藍調時刻 (Blue Hour)",
+        value: "blue_hour",
+        lighting: "Cool blue twilight, soft ambient light, city lights beginning, moody atmosphere",
+        color_palette: ["Deep Blue", "Purple Haze", "Cool Grey", "Soft Cyan"],
+        aesthetic: "Twilight mood, melancholic beauty, cool tones, urban evening"
+    },
+    // === 都市風格 Urban Styles ===
     urban: {
-        label: "自然街拍 (Urban Realism)",
+        label: "📷 自然街拍 (Street)",
         value: "urban",
         lighting: "Soft diffuse daylight, even illumination, low contrast, no harsh shadows",
         color_palette: ["Black", "Grey", "Beige"],
         aesthetic: "Japanese street fashion, Ryousangata style, feminine, realistic photography"
+    },
+    neon_cyberpunk: {
+        label: "🌃 霓虹夜景 (Neon Night)",
+        value: "neon_cyberpunk",
+        lighting: "Neon lights, pink and blue glow, reflections on wet streets, high contrast",
+        color_palette: ["Hot Pink", "Electric Blue", "Purple", "Black"],
+        aesthetic: "Cyberpunk aesthetic, rain reflections, city nightlife, futuristic mood"
+    },
+    // === 復古風格 Vintage Styles ===
+    film_analog: {
+        label: "📼 底片復古 (Film)",
+        value: "film_analog",
+        lighting: "Natural light, slight underexposure, film grain texture, warm color cast",
+        color_palette: ["Faded Warm Tones", "Vintage Green", "Soft Yellow", "Muted Colors"],
+        aesthetic: "Analog film photography, nostalgic, 35mm grain, Kodak Portra style"
+    },
+    polaroid: {
+        label: "📸 拍立得 (Polaroid)",
+        value: "polaroid",
+        lighting: "Flash photography, slight overexposure, instant film colors, casual snapshot",
+        color_palette: ["Faded White", "Warm Yellow", "Soft Blue", "Vintage Pink"],
+        aesthetic: "Polaroid instant photo, white border, casual candid, retro charm"
+    },
+    // === 藝術風格 Artistic Styles ===
+    noir: {
+        label: "🖤 黑白經典 (Noir)",
+        value: "noir",
+        lighting: "High contrast black and white, dramatic shadows, film noir style",
+        color_palette: ["Pure Black", "Pure White", "Silver Grey"],
+        aesthetic: "Monochrome elegance, timeless classic, dramatic contrast, artistic photography"
+    },
+    soft_glamour: {
+        label: "✨ 柔焦魅力 (Soft Glamour)",
+        value: "soft_glamour",
+        lighting: "Soft diffused lighting, slight glow effect, flattering skin, minimal shadows",
+        color_palette: ["Soft Pink", "Champagne", "Pearl White", "Blush"],
+        aesthetic: "Beauty photography, soft focus, glamorous, magazine editorial, flawless skin"
+    },
+    // === 特殊氛圍 Special Moods ===
+    sexy_boudoir: {
+        label: "🔥 性感暗調 (Boudoir)",
+        value: "sexy_boudoir",
+        lighting: "Low key lighting, warm shadows, intimate mood, single light source",
+        color_palette: ["Deep Red", "Black", "Gold", "Warm Skin"],
+        aesthetic: "Boudoir photography, sensual, mysterious, intimate atmosphere, elegant"
+    },
+    dreamy_bokeh: {
+        label: "💭 夢幻虛化 (Dreamy)",
+        value: "dreamy_bokeh",
+        lighting: "Backlit with bokeh, fairy lights, soft glow, ethereal atmosphere",
+        color_palette: ["Soft Gold", "Warm White", "Pastel Colors", "Light Leaks"],
+        aesthetic: "Dreamy photography, beautiful bokeh, light leaks, magical atmosphere"
     }
 };
 

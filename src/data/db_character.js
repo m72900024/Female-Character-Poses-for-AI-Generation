@@ -27,7 +27,9 @@ export const hairDatabase = [
             { value: "Hime cut (姬髮式)", label: "姬髮式 (Hime Cut)" },
             { value: "Braided hair (編髮)", label: "氣質編髮 (Braided)" },
             { value: "Loose hair with bangs (長髮瀏海)", label: "長髮齊瀏海 (Bangs)" },
-            { value: "Half-up half-down (公主頭)", label: "公主頭 (Half-up)" }
+            { value: "Half-up half-down (公主頭)", label: "公主頭 (Half-up)" },
+            { value: "Long dark hair with bangs, tied back, sleek professional style (黑長髮瀏海綁髮)", label: "黑長髮瀏海綁髮 (Dark Bangs Tied)" },
+            { value: "Long black straight hair with see-through bangs (黑長直髮空氣瀏海)", label: "黑長直髮空氣瀏海 (Black See-through Bangs)" }
         ]
     },
     {
@@ -83,7 +85,9 @@ export const expressionDatabase = [
             { value: "Screaming in anger, mouth wide open (憤怒怒吼)", label: "憤怒怒吼 (Screaming)" },
             { value: "Glaring, fierce eyes (不爽瞪視)", label: "不爽瞪視 (Glaring)" },
             { value: "Pouty face, puffed cheeks (傲嬌嘟嘴)", label: "傲嬌嘟嘴 (Pouty)" },
-            { value: "Murderous look, dark aura (陰沉殺氣)", label: "陰沉殺氣 (Murderous)" }
+            { value: "Murderous look, dark aura (陰沉殺氣)", label: "陰沉殺氣 (Murderous)" },
+            { value: "Serious expression, focused eyes, looking directly at camera (認真專注)", label: "認真專注 (Serious Focus)" },
+            { value: "Stern professional look, neutral expression, confident gaze (嚴肅專業)", label: "嚴肅專業 (Stern Pro)" }
         ]
     },
     {
