@@ -26,38 +26,39 @@ export const positionDatabase = [
 ];
 
 // ====== 垂直角度 Vertical Angle (鏡頭高低) ======
+// ★ 提示詞加強版 - 更明確的視角描述
 export const verticalAngleDatabase = [
-    { value: "eye level, straight on (平視)", label: "➖ 平視-自然視角" },
-    { value: "low angle, looking up, legs look longer (低角度仰拍)", label: "⬆️ 仰拍-腿長顯高" },
-    { value: "slightly low angle, subtle upward (微仰拍)", label: "↗️ 微仰拍-自然增高" },
-    { value: "high angle, looking down, cute and vulnerable (高角度俯拍)", label: "⬇️ 俯拍-顯臉小可愛" },
-    { value: "slightly high angle, subtle downward (微俯拍)", label: "↘️ 微俯拍-自然小臉" },
-    { value: "bird's eye view, top down, directly above (鳥瞰)", label: "🦅 鳥瞰-正上方往下" },
-    { value: "worm's eye view, ground level, looking up (蟲視角)", label: "🐛 蟲視角-地面仰望超長腿" }
+    { value: "eye level shot, camera at eye height, straight on, natural perspective (平視)", label: "➖ 平視-自然視角" },
+    { value: "low angle shot, camera below eye level, looking up at subject, legs appear longer, powerful stance, dramatic upward perspective (低角度仰拍)", label: "⬆️ 仰拍-腿長顯高" },
+    { value: "slightly low angle, camera slightly below eye level, subtle upward tilt, flattering angle (微仰拍)", label: "↗️ 微仰拍-自然增高" },
+    { value: "high angle shot, camera above subject, looking down, face appears smaller, cute and vulnerable, submissive angle (高角度俯拍)", label: "⬇️ 俯拍-顯臉小可愛" },
+    { value: "slightly high angle, camera slightly above eye level, gentle downward tilt, slimming effect (微俯拍)", label: "↘️ 微俯拍-自然小臉" },
+    { value: "bird's eye view, extreme high angle, camera directly above looking straight down, top-down perspective, aerial view (鳥瞰)", label: "🦅 鳥瞰-正上方往下" },
+    { value: "worm's eye view, extreme low angle, camera on ground level looking straight up, towering perspective, legs extremely elongated, dramatic upward shot, ant's perspective (蟲視角)", label: "🐛 蟲視角-地面仰望超長腿" }
 ];
 
 // ====== 特殊效果 Special (可選) ======
 export const specialAngleDatabase = [
     { value: "", label: "❌ 無特效" },
-    { value: "Dutch angle, tilted frame, dynamic tension (荷蘭式傾斜)", label: "📐 傾斜-不安感張力" },
-    { value: "dynamic angle, motion blur, action shot (動態視角)", label: "💨 動態-速度感模糊" },
-    { value: "fish eye lens, distorted wide angle (魚眼鏡頭)", label: "🐟 魚眼-誇張變形" },
-    { value: "bokeh background, shallow depth of field (背景虛化)", label: "✨ 背景虛化-突出主體" },
-    { value: "reflection shot, mirror or water (鏡面反射)", label: "🪞 鏡面反射-藝術感" }
+    { value: "Dutch angle, tilted frame 15-30 degrees, diagonal composition, dynamic tension, unsettling mood (荷蘭式傾斜)", label: "📐 傾斜-不安感張力" },
+    { value: "dynamic angle, motion blur effect, action shot, sense of movement, speed lines (動態視角)", label: "💨 動態-速度感模糊" },
+    { value: "fish eye lens, extreme wide angle distortion, barrel distortion, exaggerated perspective, 180 degree view (魚眼鏡頭)", label: "🐟 魚眼-誇張變形" },
+    { value: "bokeh background, shallow depth of field, blurred background, subject in sharp focus, creamy bokeh balls (背景虛化)", label: "✨ 背景虛化-突出主體" },
+    { value: "reflection shot, mirror reflection, water reflection, symmetrical composition, artistic double image (鏡面反射)", label: "🪞 鏡面反射-藝術感" }
 ];
 
 // ====== 保留舊的 angleDatabase 以維持向後相容 ======
 export const angleDatabase = [
-    { value: "Eye level shot, straight on (平視)", label: "➖ 平視-自然視角" },
-    { value: "Low angle shot, looking up, imposing (低角度仰拍)", label: "⬆️ 仰拍-腿長顯高" },
-    { value: "High angle shot, looking down, vulnerable (高角度俯拍)", label: "⬇️ 俯拍-顯臉小可愛" },
-    { value: "Bird's eye view, top down shot (鳥瞰/上帝視角)", label: "🦅 鳥瞰-正上方往下" },
-    { value: "Worm's eye view, ground level shot (蟲視角)", label: "🐛 蟲視角-地面仰望超長腿" },
-    { value: "Dutch angle, tilted frame, dynamic (荷蘭式傾斜)", label: "📐 傾斜-不安感張力" },
-    { value: "POV, first person view, looking at hands (第一人稱)", label: "👀 第一人稱-你的視角" },
-    { value: "Selfie angle, holding camera, slightly high (自拍視角)", label: "🤳 自拍-手持微俯" },
-    { value: "Profile view, side face (側面視角)", label: "➡️ 側面-側臉輪廓" },
-    { value: "Over the shoulder shot (過肩視角)", label: "🔄 過肩-窺視感" },
-    { value: "Back view, from behind (背後視角)", label: "⬇️ 背面-背對鏡頭" },
-    { value: "Dynamic angle, motion blur (動態視角)", label: "💨 動態-速度感模糊" }
+    { value: "eye level shot, camera at eye height, straight on, natural perspective (平視)", label: "➖ 平視-自然視角" },
+    { value: "low angle shot, camera below eye level, looking up at subject, legs appear longer, powerful stance (低角度仰拍)", label: "⬆️ 仰拍-腿長顯高" },
+    { value: "high angle shot, camera above subject, looking down, face appears smaller, cute and vulnerable (高角度俯拍)", label: "⬇️ 俯拍-顯臉小可愛" },
+    { value: "bird's eye view, extreme high angle, camera directly above, top-down perspective, aerial view (鳥瞰)", label: "🦅 鳥瞰-正上方往下" },
+    { value: "worm's eye view, extreme low angle, camera on ground level looking straight up, towering perspective, legs extremely elongated, ant's perspective (蟲視角)", label: "🐛 蟲視角-地面仰望超長腿" },
+    { value: "Dutch angle, tilted frame 15-30 degrees, diagonal composition, dynamic tension (荷蘭式傾斜)", label: "📐 傾斜-不安感張力" },
+    { value: "POV shot, first person view, subjective camera, viewer's perspective, looking at subject (第一人稱)", label: "👀 第一人稱-你的視角" },
+    { value: "selfie angle, arm extended holding camera, slightly high angle, close to face, smartphone perspective (自拍視角)", label: "🤳 自拍-手持微俯" },
+    { value: "profile view, side angle, silhouette visible, face in profile, 90 degree side shot (側面視角)", label: "➡️ 側面-側臉輪廓" },
+    { value: "over the shoulder shot, camera behind subject, looking past shoulder, voyeuristic feel (過肩視角)", label: "🔄 過肩-窺視感" },
+    { value: "back view, camera behind subject, rear perspective, showing back of body (背後視角)", label: "⬇️ 背面-背對鏡頭" },
+    { value: "dynamic angle, motion blur effect, action shot, sense of movement (動態視角)", label: "💨 動態-速度感模糊" }
 ];
