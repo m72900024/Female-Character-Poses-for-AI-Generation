@@ -354,8 +354,9 @@ export const handActionList = [
      { value: "shushing gesture, finger on lips (噓聲手勢)", label: "🤫 噓聲手勢 (Shushing)" },
      { value: "waving hand, friendly greeting (揮手打招呼)", label: "👋 揮手打招呼 (Waving)" },
      // ===== 性感系 Sexy =====
-     { value: "lifting skirt hem slightly, showing thighs (微掀裙角)", label: "👗 微掀裙角 (Lifting Skirt)" },
-     { value: "skirt lift high, showing more (掀裙角 - 高)", label: "👗 高掀裙 (High Skirt Lift)" },
+     { value: "lifting skirt hem slightly, showing a bit of thigh, teasing peek (微掀裙角)", label: "👗 微掀裙-若隱若現 (Slight Lift)" },
+     { value: "lifting skirt to mid-thigh level, showing thighs clearly (掀裙露大腿)", label: "👗 掀裙-露大腿 (Medium Lift)" },
+     { value: "lifting skirt high, showing upper thighs and more, provocative (高掀裙)", label: "👗 高掀裙-大膽展露 (High Lift)" },
      { value: "pulling down collar, showing cleavage (拉開領口)", label: "👚 拉開領口 (Pulling Collar)" },
      { value: "shirt lift, showing stomach (掀上衣 - 露腹部用)", label: "👕 掀上衣 (Shirt Lift)" },
      { value: "biting finger, seductive look (咬手指)", label: "😏 咬手指 (Biting Finger)" },
