@@ -52,6 +52,7 @@ const categoryTranslations = {
     heels: "👠 高跟鞋 (Heels)",
     boots: "👢 靴子 (Boots)",
     flats: "🥿 平底鞋 (Flats)",
+    qipao_heels: "🏮 旗袍鞋款 (Qipao Heels)",
     barefoot: "🦶 赤腳 (Barefoot)",
     none: "❌ 不指定 (None)"
 };

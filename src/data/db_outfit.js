@@ -837,7 +837,25 @@ export const shoeDatabase = {
         { value: "Ballet flats (芭蕾平底鞋)", label: "平底鞋 (Flats)" },
         { value: "Platform loafers (厚底樂福鞋)", label: "厚底樂福 (Platform Loafers)" },
         // ★ 新增
-        { value: "Platform Mary Janes (厚底瑪莉珍)", label: "厚底瑪莉珍 (Platform MJ)" } 
+        { value: "Platform Mary Janes (厚底瑪莉珍)", label: "厚底瑪莉珍 (Platform MJ)" }
+    ],
+    // ═══════════════════════════════════════
+    // 🏮 旗袍鞋款 Qipao Style Heels
+    // 專為旗袍、漢服、和服等東方風格設計
+    // ═══════════════════════════════════════
+    qipao_heels: [
+        { value: "Red silk high heels, elegant pointed toe (紅色絲質高跟鞋)", label: "紅色絲質高跟鞋 (Red Silk Heels)" },
+        { value: "White strappy heels, delicate ankle straps (白色綁帶高跟鞋)", label: "白色綁帶高跟鞋 (White Strappy)" },
+        { value: "Black velvet pumps, classic elegant (黑色絲絨高跟鞋)", label: "黑色絲絨高跟鞋 (Black Velvet Pumps)" },
+        { value: "White satin heels, lustrous finish (白色緞面高跟鞋)", label: "白色緞面高跟鞋 (White Satin)" },
+        { value: "Nude high heels, skin tone elegant (裸色高跟鞋)", label: "裸色高跟鞋 (Nude Heels)" },
+        { value: "Black stiletto heels, sleek pointed (黑色細跟高跟鞋)", label: "黑色細跟高跟鞋 (Black Stilettos)" },
+        { value: "Black strappy sandal heels, sexy elegant (黑色綁帶涼鞋高跟)", label: "黑色綁帶涼鞋高跟 (Black Strappy Sandals)" },
+        { value: "Gold strappy heels, luxurious glamour (金色綁帶高跟鞋)", label: "金色綁帶高跟鞋 (Gold Strappy)" },
+        { value: "Red pointed toe pumps, classic cheongsam style (紅色尖頭高跟鞋)", label: "紅色尖頭高跟鞋 (Red Pointed Pumps)" },
+        { value: "Champagne satin heels, subtle shimmer (香檳色緞面高跟鞋)", label: "香檳色緞面高跟鞋 (Champagne Satin)" },
+        { value: "Pearl embellished heels, oriental elegance (珍珠裝飾高跟鞋)", label: "珍珠裝飾高跟鞋 (Pearl Embellished)" },
+        { value: "Embroidered silk heels, traditional craft (刺繡絲質高跟鞋)", label: "刺繡絲質高跟鞋 (Embroidered Silk)" }
     ],
     none: [
         { value: "None", label: "無 (None)" }
