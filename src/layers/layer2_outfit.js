@@ -18,6 +18,7 @@ const categoryTranslations = {
     casual: "日常休閒 (Casual)",
     influencer: "網美風格 (Influencer)",
     sweet_cute: "甜美可愛 (Sweet & Cute)",
+    subtle_sheer: "🌸 若隱若現 (Subtle Sheer)",
     sexy_fashion: "性感時尚 (Sexy Fashion)",
     swimwear: "泳裝比基尼 (Swimwear)",
     uniform: "學生制服 (School Uniform)",
@@ -41,6 +42,7 @@ const categoryTranslations = {
     midi_skirt: "中長裙 (Midi Skirt)",
     long_skirt: "長裙 (Long Skirt)",
     influencer: "📸 網美風格 (Influencer)",
+    subtle_sheer: "🌸 微透下裝 (Subtle Sheer)",
     // 鞋子
     sneakers: "運動休閒 (Sneakers)",
     heels: "高跟鞋 (Heels)",

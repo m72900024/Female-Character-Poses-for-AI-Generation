@@ -95,6 +95,28 @@ export const costumeSetDatabase = {
         { value: "Yellow cropped short sleeve shirt with collar, dark grey plaid pleated mini skirt, black sheer stockings, black chunky loafers, JK style (黃色短版襯衫JK)", label: "黃色短版襯衫JK (Yellow Crop JK)" }
     ],
 
+    // === 若隱若現 (Subtle Sheer) ===
+    subtle_sheer: [
+        // 微透上衣 Subtle Sheer Tops
+        { value: "White thin knit sweater, bra faintly visible through fabric, subtle sheer effect, high-waisted jeans, elegant casual (微透白色針織衫)", label: "微透白色針織衫 (Subtle White Knit)" },
+        { value: "Cream sheer knit top, skin tone barely visible, delicate texture, midi skirt, feminine elegant (奶油色薄針織)", label: "奶油色薄針織 (Cream Sheer Knit)" },
+        { value: "Light pink semi-sheer blouse, soft bra outline hint, romantic lighting, white skirt, sweet style (淡粉微透襯衫)", label: "淡粉微透襯衫 (Pink Semi-sheer)" },
+        { value: "White linen shirt, slightly translucent in sunlight, bra shadow visible, natural casual, denim shorts (陽光透白麻襯衫)", label: "陽光透白麻襯衫 (Sunlit Linen)" },
+        { value: "Ivory silk camisole, subtle skin glow underneath, delicate straps, high-waisted pants, refined sexy (象牙絲質小可愛)", label: "象牙絲質小可愛 (Ivory Silk Cami)" },
+        { value: "Beige sheer ribbed top, skin peeking through ribs, layered necklaces, mini skirt, chic style (米色微透羅紋上衣)", label: "米色微透羅紋上衣 (Beige Sheer Rib)" },
+        { value: "White cotton voile blouse, airy light fabric, bra shadow when backlit, flowy feminine, skirt (棉紗透光襯衫)", label: "棉紗透光襯衫 (Voile Blouse)" },
+        { value: "Lavender semi-sheer knit, subtle body outline, dreamy soft focus, white pants, gentle feminine (薰衣草微透針織)", label: "薰衣草微透針織 (Lavender Semi-sheer)" },
+        // 微透下裝 Subtle Sheer Bottoms
+        { value: "White layered tulle skirt, many layers creating semi-opaque effect, silhouette hint only, crop top, romantic (多層次白紗裙)", label: "多層次白紗裙 (Layered Tulle)" },
+        { value: "Cream chiffon midi skirt, leg silhouette faintly visible when walking, elegant flow, blouse, heels (奶油雪紡中長裙)", label: "奶油雪紡中長裙 (Cream Chiffon Midi)" },
+        { value: "White linen A-line skirt, slightly translucent in bright light, underwear hint only, casual elegant (白麻微透A字裙)", label: "白麻微透A字裙 (Linen A-line)" },
+        { value: "Pale pink organza overlay skirt, solid slip underneath, romantic layered effect, feminine top (粉色歐根紗疊層裙)", label: "粉色歐根紗疊層裙 (Pink Organza Layer)" },
+        { value: "Ivory pleated sheer skirt with nude slip, legs subtly visible, sophisticated elegant, silk blouse (象牙百褶微透裙)", label: "象牙百褶微透裙 (Ivory Pleated Sheer)" },
+        { value: "White mesh panel skirt, strategic sheer sections, teasing glimpse of skin, modern chic (白色網紗拼接裙)", label: "白色網紗拼接裙 (Mesh Panel Skirt)" },
+        { value: "Light grey sheer wrap skirt, inner lining visible, elegant drape, office appropriate sexy (淺灰微透圍裹裙)", label: "淺灰微透圍裹裙 (Grey Sheer Wrap)" },
+        { value: "Champagne satin-lined chiffon skirt, subtle shimmer through layers, evening elegant, silk top (香檳雪紡內襯裙)", label: "香檳雪紡內襯裙 (Champagne Chiffon)" }
+    ],
+
     // === 性感時尚 (Sexy Fashion) ===
     sexy_fashion: [
         // 緊身連身裙 Bodycon Dresses
@@ -112,24 +134,6 @@ export const costumeSetDatabase = {
         { value: "Virgin killer sweater, white backless knit, bare back, mini length, barefoot (純欲殺手毛衣)", label: "純欲殺手毛衣 (Virgin Killer)" },
         { value: "Off-shoulder oversized sweater, no bra, sweater dress style, thigh high boots (寬鬆露肩毛衣裙)", label: "寬鬆露肩毛衣裙 (Off-shoulder Sweater)" },
         { value: "Cream cropped cable knit, underboob visible, high-waisted mini skirt, boots (短版露下乳毛衣)", label: "短版露下乳毛衣 (Underboob Knit)" },
-        // 若隱若現微透視 Subtle See-through (上衣)
-        { value: "White thin knit sweater, bra faintly visible through fabric, subtle sheer effect, high-waisted jeans, elegant casual (微透白色針織衫)", label: "微透白色針織衫 (Subtle White Knit)" },
-        { value: "Cream sheer knit top, skin tone barely visible, delicate texture, midi skirt, feminine elegant (奶油色薄針織)", label: "奶油色薄針織 (Cream Sheer Knit)" },
-        { value: "Light pink semi-sheer blouse, soft bra outline hint, romantic lighting, white skirt, sweet style (淡粉微透襯衫)", label: "淡粉微透襯衫 (Pink Semi-sheer)" },
-        { value: "White linen shirt, slightly translucent in sunlight, bra shadow visible, natural casual, denim shorts (陽光透白麻襯衫)", label: "陽光透白麻襯衫 (Sunlit Linen)" },
-        { value: "Ivory silk camisole, subtle skin glow underneath, delicate straps, high-waisted pants, refined sexy (象牙絲質小可愛)", label: "象牙絲質小可愛 (Ivory Silk Cami)" },
-        { value: "Beige sheer ribbed top, skin peeking through ribs, layered necklaces, mini skirt, chic style (米色微透羅紋上衣)", label: "米色微透羅紋上衣 (Beige Sheer Rib)" },
-        { value: "White cotton voile blouse, airy light fabric, bra shadow when backlit, flowy feminine, skirt (棉紗透光襯衫)", label: "棉紗透光襯衫 (Voile Blouse)" },
-        { value: "Lavender semi-sheer knit, subtle body outline, dreamy soft focus, white pants, gentle feminine (薰衣草微透針織)", label: "薰衣草微透針織 (Lavender Semi-sheer)" },
-        // 若隱若現微透視 Subtle See-through (下裝)
-        { value: "White layered tulle skirt, many layers creating semi-opaque effect, silhouette hint only, crop top, romantic (多層次白紗裙)", label: "多層次白紗裙 (Layered Tulle)" },
-        { value: "Cream chiffon midi skirt, leg silhouette faintly visible when walking, elegant flow, blouse, heels (奶油雪紡中長裙)", label: "奶油雪紡中長裙 (Cream Chiffon Midi)" },
-        { value: "White linen A-line skirt, slightly translucent in bright light, underwear hint only, casual elegant (白麻微透A字裙)", label: "白麻微透A字裙 (Linen A-line)" },
-        { value: "Pale pink organza overlay skirt, solid slip underneath, romantic layered effect, feminine top (粉色歐根紗疊層裙)", label: "粉色歐根紗疊層裙 (Pink Organza Layer)" },
-        { value: "Ivory pleated sheer skirt with nude slip, legs subtly visible, sophisticated elegant, silk blouse (象牙百褶微透裙)", label: "象牙百褶微透裙 (Ivory Pleated Sheer)" },
-        { value: "White mesh panel skirt, strategic sheer sections, teasing glimpse of skin, modern chic (白色網紗拼接裙)", label: "白色網紗拼接裙 (Mesh Panel Skirt)" },
-        { value: "Light grey sheer wrap skirt, inner lining visible, elegant drape, office appropriate sexy (淺灰微透圍裹裙)", label: "淺灰微透圍裹裙 (Grey Sheer Wrap)" },
-        { value: "Champagne satin-lined chiffon skirt, subtle shimmer through layers, evening elegant, silk top (香檳雪紡內襯裙)", label: "香檳雪紡內襯裙 (Champagne Chiffon)" },
         // 透視蕾絲風 Sheer & Lace
         { value: "Black sheer mesh top, black bralette visible underneath, high-waisted black pants, black stiletto heels, club style (透視網紗上衣)", label: "透視網紗上衣 (Sheer Mesh)" },
         { value: "White sheer lace blouse, visible white bra, high-waisted mini skirt, nude heels (透視蕾絲襯衫)", label: "透視蕾絲襯衫 (Sheer Lace Blouse)" },
@@ -751,7 +755,16 @@ export const topDatabase = [
     { value: "White cropped cardigan with pearl buttons, elegant (珍珠扣短版針織)", label: "📸 珍珠扣短版針織 (Pearl Cardigan)" },
     { value: "Sage green sports bra, athleisure chic (莫蘭迪綠運動上衣)", label: "📸 莫蘭迪綠運動上衣 (Sage Sports Top)" },
     { value: "Cropped white hoodie, casual sporty (白色短版帽T)", label: "📸 白色短版帽T (Crop Hoodie)" },
-    { value: "Cowl neck satin top, date night ready (垂領緞面上衣)", label: "📸 垂領緞面上衣 (Cowl Satin)" }
+    { value: "Cowl neck satin top, date night ready (垂領緞面上衣)", label: "📸 垂領緞面上衣 (Cowl Satin)" },
+    // === 🌸 微透上衣 Subtle Sheer Tops ===
+    { value: "White thin knit sweater, bra faintly visible through fabric, subtle sheer effect (微透白色針織衫)", label: "🌸 微透白色針織衫 (Subtle White Knit)" },
+    { value: "Cream sheer knit top, skin tone barely visible, delicate texture (奶油色薄針織)", label: "🌸 奶油色薄針織 (Cream Sheer Knit)" },
+    { value: "Light pink chiffon blouse, bra silhouette hint, soft romantic (粉色薄雪紡)", label: "🌸 粉色薄雪紡 (Pink Chiffon)" },
+    { value: "Off-white lace-trim camisole, subtle peek-a-boo lace edges (蕾絲邊細肩帶)", label: "🌸 蕾絲邊細肩帶 (Lace Trim Cami)" },
+    { value: "Lavender gauze blouse, dreamy translucent, modest yet alluring (薰衣草薄紗上衣)", label: "🌸 薰衣草薄紗上衣 (Lavender Gauze)" },
+    { value: "White ribbed tank, thin fabric showing bra outline, casual chic (薄款羅紋背心)", label: "🌸 薄款羅紋背心 (Thin Ribbed Tank)" },
+    { value: "Beige mesh-panel top, strategic sheer inserts, elegant (網紗拼接上衣)", label: "🌸 網紗拼接上衣 (Mesh Panel Top)" },
+    { value: "Ivory silk blouse, light filtering through fabric, refined subtle (象牙絲質襯衫)", label: "🌸 象牙絲質襯衫 (Ivory Silk Blouse)" }
 ];
 
 export const outerDatabase = [
@@ -912,5 +925,16 @@ export const bottomDatabase = {
         { value: "Pleated midi skirt, korean elegant (百褶中長裙)", label: "📸 百褶中長裙 (Pleated Midi)" },
         { value: "Pink satin midi skirt, date night (粉色緞面中長裙)", label: "📸 粉色緞面中長裙 (Pink Satin Midi)" },
         { value: "Flowy palazzo pants, bohemian vibes (波希米亞寬褲)", label: "📸 波希米亞寬褲 (Palazzo Pants)" }
+    ],
+    // === 🌸 微透下裝 Subtle Sheer Bottoms ===
+    subtle_sheer: [
+        { value: "White layered tulle skirt, semi-opaque multiple layers, silhouette hint only (多層次白紗裙)", label: "🌸 多層次白紗裙 (Layered Tulle)" },
+        { value: "Light pink chiffon midi skirt, flowing, subtle skin glow underneath (粉色雪紡中長裙)", label: "🌸 粉色雪紡中長裙 (Pink Chiffon Midi)" },
+        { value: "Ivory lace A-line skirt, lining visible through delicate pattern (象牙蕾絲A字裙)", label: "🌸 象牙蕾絲A字裙 (Ivory Lace A-line)" },
+        { value: "White eyelet mini skirt, subtle peek through embroidered holes (繡花鏤空短裙)", label: "🌸 繡花鏤空短裙 (Eyelet Mini)" },
+        { value: "Cream organza wrap skirt, dreamy layered, modest sheer (奶油歐根紗裹裙)", label: "🌸 奶油歐根紗裹裙 (Cream Organza Wrap)" },
+        { value: "Lavender pleated chiffon skirt, light filtering through folds (薰衣草雪紡百褶)", label: "🌸 薰衣草雪紡百褶 (Lavender Chiffon Pleated)" },
+        { value: "White mesh overlay mini, solid lining with sheer top layer (網紗疊層短裙)", label: "🌸 網紗疊層短裙 (Mesh Overlay Mini)" },
+        { value: "Pale blue gauze maxi skirt, ethereal, gentle transparency (淺藍薄紗長裙)", label: "🌸 淺藍薄紗長裙 (Pale Blue Gauze Maxi)" }
     ]
 };
