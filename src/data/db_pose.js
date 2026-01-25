@@ -209,6 +209,115 @@ export const poseDatabase = [
             { value: "standing, one foot touching other ankle, shy pose (單腳靠腳踝)", label: "單腳靠腳踝 (Foot on Ankle)" },
             { value: "kneeling with thighs together, elegant and pure (併腿跪姿)", label: "併腿跪姿 (Thighs Together Kneel)" }
         ]
+    },
+    // ====== 新增：互動姿勢 (Interactive Poses) ======
+    {
+        id: "interactive",
+        label: "🤝 互動姿勢 (Interactive)",
+        options: [
+            // 靠牆系列 Wall Series
+            { value: "Leaning back against wall, one foot on wall, casual cool pose (背靠牆單腳踩牆)", label: "背靠牆踩牆 (Wall Lean Foot)" },
+            { value: "Hands pressed against wall, back arched, looking back (雙手撐牆回眸)", label: "雙手撐牆回眸 (Wall Push Back)" },
+            { value: "Side leaning on wall, arms crossed, confident (側身靠牆抱胸)", label: "側身靠牆抱胸 (Side Wall Lean)" },
+            { value: "Back against wall, sliding down, knees up (背靠牆滑坐)", label: "背靠牆滑坐 (Wall Slide Sit)" },
+            { value: "Facing wall, hands on wall above head, vulnerable pose (面牆舉手)", label: "面牆舉手 (Facing Wall Arms Up)" },
+            // 欄杆系列 Railing Series
+            { value: "Leaning on railing, looking at view, hair blowing (倚欄遠眺)", label: "倚欄遠眺 (Railing Gaze)" },
+            { value: "Sitting on railing, legs dangling, playful (坐欄杆晃腿)", label: "坐欄杆晃腿 (Railing Sit)" },
+            { value: "Hands on railing, leaning forward, wind in hair (扶欄前傾)", label: "扶欄前傾 (Railing Lean)" },
+            { value: "Back against railing, elbows resting, relaxed (背靠欄杆)", label: "背靠欄杆 (Back on Railing)" },
+            // 門框/窗邊 Door & Window
+            { value: "Leaning on doorframe, one hand up, flirty pose (倚門框撩人)", label: "倚門框撩人 (Doorframe Lean)" },
+            { value: "Peeking from behind door, shy expression (門後探頭)", label: "門後探頭 (Peek Behind Door)" },
+            { value: "Sitting on windowsill, looking outside, dreamy (坐窗台望外)", label: "坐窗台望外 (Windowsill Dream)" },
+            { value: "Standing by window, curtain draped, silhouette (窗邊剪影)", label: "窗邊剪影 (Window Silhouette)" },
+            // 傢俱互動 Furniture
+            { value: "Lying on sofa armrest, legs up, playful (趴沙發扶手)", label: "趴沙發扶手 (Sofa Armrest)" },
+            { value: "Sitting backwards on chair, arms on backrest, chin resting (反坐椅托腮)", label: "反坐椅托腮 (Reverse Chair)" },
+            { value: "Leaning on table, elbows down, looking up (趴桌仰望)", label: "趴桌仰望 (Table Lean Up)" },
+            { value: "Standing behind chair, hands on backrest (站椅子後扶椅背)", label: "站椅後扶背 (Behind Chair)" },
+            { value: "Sitting on desk edge, legs crossed elegantly (坐桌邊翹腳)", label: "坐桌邊翹腳 (Desk Edge Sit)" },
+            // 鏡子互動 Mirror
+            { value: "Looking at mirror, adjusting hair (照鏡整理頭髮)", label: "照鏡整髮 (Mirror Hair)" },
+            { value: "Mirror selfie, peace sign, cute expression (鏡子自拍比耶)", label: "鏡子自拍比耶 (Mirror Selfie V)" },
+            { value: "Touching mirror, looking at reflection (觸摸鏡面)", label: "觸摸鏡面 (Touch Mirror)" },
+            // 電線桿/路燈 Pole
+            { value: "Holding onto pole, swinging around playfully (抱電線桿轉圈)", label: "抱桿轉圈 (Pole Swing)" },
+            { value: "Leaning on lamppost, waiting pose (靠路燈等待)", label: "靠路燈等待 (Lamppost Wait)" }
+        ]
+    },
+    // ====== 新增：季節場景姿勢 (Seasonal Poses) ======
+    {
+        id: "seasonal",
+        label: "🌸 季節場景 (Seasonal)",
+        options: [
+            // 春天 Spring
+            { value: "Holding cherry blossom branch, smelling flowers, spring (賞櫻聞花)", label: "🌸 賞櫻聞花 (Cherry Blossom)" },
+            { value: "Sitting under cherry tree, petals falling, peaceful (櫻花樹下坐)", label: "🌸 櫻花樹下坐 (Under Sakura)" },
+            { value: "Twirling in flower field, arms spread, joyful (花田轉圈)", label: "🌷 花田轉圈 (Flower Twirl)" },
+            { value: "Picking flowers in garden, bending down, gentle (花園採花)", label: "🌷 花園採花 (Picking Flowers)" },
+            { value: "Blowing dandelion, making wish, dreamy (吹蒲公英許願)", label: "🌼 吹蒲公英 (Dandelion Wish)" },
+            // 夏天 Summer
+            { value: "Holding watermelon slice, summer beach, refreshing (吃西瓜消暑)", label: "🍉 吃西瓜消暑 (Watermelon)" },
+            { value: "Splashing in water, bikini, playful summer (戲水潑水)", label: "💦 戲水潑水 (Water Splash)" },
+            { value: "Holding sparkler at night, summer festival, yukata (拿仙女棒)", label: "✨ 拿仙女棒 (Sparkler)" },
+            { value: "Fanning self with hand fan, hot summer day (搧扇子納涼)", label: "🪭 搧扇子納涼 (Hand Fan)" },
+            { value: "Eating shaved ice, summer treat, happy expression (吃刨冰)", label: "🍧 吃刨冰 (Shaved Ice)" },
+            { value: "Under beach umbrella, lying on towel, sunbathing (陽傘下日光浴)", label: "⛱️ 陽傘下日光浴 (Beach Umbrella)" },
+            // 秋天 Autumn
+            { value: "Holding autumn leaves, looking at them, nostalgic (手持楓葉)", label: "🍁 手持楓葉 (Maple Leaf)" },
+            { value: "Walking through fallen leaves, kicking leaves playfully (踩落葉漫步)", label: "🍂 踩落葉漫步 (Leaf Walk)" },
+            { value: "Throwing leaves in air, happy autumn mood (拋落葉)", label: "🍂 拋落葉 (Throw Leaves)" },
+            { value: "Sitting on park bench, autumn scenery, scarf (秋日公園長椅)", label: "🍁 秋日長椅 (Autumn Bench)" },
+            { value: "Holding hot drink, both hands, warming up (雙手捧熱飲)", label: "☕ 雙手捧熱飲 (Hot Drink)" },
+            // 冬天 Winter
+            { value: "Holding umbrella in snow, looking up at falling snow (撐傘賞雪)", label: "❄️ 撐傘賞雪 (Snow Umbrella)" },
+            { value: "Making snowball, playful winter, mittens (堆雪球)", label: "⛄ 堆雪球 (Snowball)" },
+            { value: "Catching snowflakes with tongue, childlike joy (伸舌接雪)", label: "❄️ 伸舌接雪 (Catch Snow)" },
+            { value: "Blowing warm breath into cold hands, winter (哈氣暖手)", label: "🧤 哈氣暖手 (Warm Breath)" },
+            { value: "Wrapping scarf tightly, cold weather, cozy (圍圍巾取暖)", label: "🧣 圍巾取暖 (Wrap Scarf)" },
+            { value: "Ice skating pose, graceful glide, winter rink (溜冰姿勢)", label: "⛸️ 溜冰姿勢 (Ice Skating)" },
+            // 雨天 Rainy
+            { value: "Holding umbrella, rainy day, looking up at sky (撐傘望天)", label: "☔ 撐傘望天 (Umbrella Sky)" },
+            { value: "Running in rain without umbrella, hair wet, free (雨中奔跑)", label: "🌧️ 雨中奔跑 (Rain Run)" },
+            { value: "Splashing in puddle, childlike joy, rain boots (踩水坑)", label: "💧 踩水坑 (Puddle Splash)" },
+            { value: "Standing under awning, waiting for rain to stop (屋簷下躲雨)", label: "🏠 屋簷下躲雨 (Shelter Rain)" }
+        ]
+    },
+    // ====== 新增：特殊角度姿勢 (Special Angle Poses) ======
+    {
+        id: "special_angle",
+        label: "📐 特殊角度 (Special Angle)",
+        options: [
+            // 蟲視角專用 For Worm's Eye View
+            { value: "Standing tall, looking down at camera, powerful pose, shot from below (俯視鏡頭女王姿)", label: "🐛 俯視鏡頭女王姿 (Queen Look Down)" },
+            { value: "Standing with legs apart, hands on hips, towering over camera, from below (叉腰俯視)", label: "🐛 叉腰俯視 (Hands Hip Tower)" },
+            { value: "One foot stepping forward toward camera, from ground level (踩向鏡頭)", label: "🐛 踩向鏡頭 (Step to Camera)" },
+            { value: "Standing on tiptoes, looking down, elongated legs, from below (墊腳俯視超長腿)", label: "🐛 墊腳俯視 (Tiptoe Look Down)" },
+            { value: "Walking over camera, stepping across, from below view (跨越鏡頭)", label: "🐛 跨越鏡頭 (Step Over)" },
+            { value: "Standing with crossed arms, chin up, arrogant pose from below (高傲抱胸)", label: "🐛 高傲抱胸 (Arrogant Arms Cross)" },
+            { value: "Leaning forward looking down at camera, bending at waist, from below (彎腰俯看)", label: "🐛 彎腰俯看 (Bend Look Down)" },
+            // 鳥瞰專用 For Bird's Eye View
+            { value: "Lying on back, looking up at camera, arms spread (仰躺望向上方)", label: "🦅 仰躺望上 (Lying Look Up)" },
+            { value: "Lying on floor, curled up cute pose, from above (地板蜷縮俯拍)", label: "🦅 地板蜷縮 (Floor Curl)" },
+            { value: "Sitting and looking up at camera, head tilted, from above (坐姿仰望)", label: "🦅 坐姿仰望 (Sit Look Up)" },
+            { value: "Lying in bathtub, looking up, from directly above (浴缸仰望)", label: "🦅 浴缸仰望 (Bath Look Up)" },
+            { value: "Lying on bed, arms above head, from bird's eye view (床上舉手俯拍)", label: "🦅 床上舉手俯拍 (Bed Arms Up)" },
+            { value: "Floating in pool, looking up, from above (泳池漂浮仰望)", label: "🦅 泳池漂浮 (Pool Float)" },
+            // 俯拍專用 For High Angle
+            { value: "Looking up at camera with puppy eyes, cute pleading (無辜仰望)", label: "⬇️ 無辜仰望 (Puppy Eyes)" },
+            { value: "Sitting on floor, hugging knees, looking up, vulnerable (抱膝仰望)", label: "⬇️ 抱膝仰望 (Hug Knees Up)" },
+            { value: "Kneeling, looking up at camera, submissive angle (跪地仰望)", label: "⬇️ 跪地仰望 (Kneel Look Up)" },
+            { value: "Squatting, chin on hands, looking up cutely (蹲姿托腮仰望)", label: "⬇️ 蹲姿托腮仰望 (Squat Chin Up)" },
+            // 仰拍專用 For Low Angle
+            { value: "Standing confidently, chin slightly down, looking at camera (自信低頭視)", label: "⬆️ 自信低頭視 (Confident Down)" },
+            { value: "Hands behind head, elbows out, looking down at camera (抱頭俯視)", label: "⬆️ 抱頭俯視 (Arms Head Down)" },
+            { value: "Standing with wind blowing skirt, from below (裙擺飄揚仰拍)", label: "⬆️ 裙擺飄揚 (Skirt Wind)" },
+            // 側面專用 For Profile/Side
+            { value: "Side profile, chin up, elegant silhouette (側臉仰頭剪影)", label: "➡️ 側臉仰頭 (Profile Chin Up)" },
+            { value: "Side view walking, mid-stride, dynamic (側面行走中)", label: "➡️ 側面行走 (Side Walk)" },
+            { value: "Side sitting, legs extended, elegant curves (側坐伸腿曲線)", label: "➡️ 側坐曲線 (Side Sit Curves)" }
+        ]
     }
 ];
 
