@@ -802,42 +802,127 @@ export const outerDatabase = [
 
 // --- ★★★ 鞋子 (Shoes) - 增加甜美厚底款 ★★★ ---
 export const shoeDatabase = {
+    // ═══════════════════════════════════════
+    // 👟 運動休閒 Sneakers
+    // ═══════════════════════════════════════
     sneakers: [
-        { value: "Sneakers (運動鞋)", label: "基本款 (Basic)" },
-        { value: "High-top sneakers (高筒運動鞋)", label: "高筒 (High-tops)" },
-        { value: "Chunky sneakers (老爹鞋)", label: "老爹鞋 (Chunky)" },
-        { value: "Canvas shoes (帆布鞋)", label: "帆布鞋 (Canvas)" },
-        { value: "Retro running shoes (復古跑鞋)", label: "復古跑鞋 (Retro)" }, 
-        { value: "Slip-on sneakers (懶人鞋)", label: "懶人鞋 (Slip-on)" } 
+        // 基本款 Basic
+        { value: "White sneakers, clean minimal style (白色運動鞋)", label: "白色基本款 (White Basic)" },
+        { value: "Black sneakers, versatile casual (黑色運動鞋)", label: "黑色基本款 (Black Basic)" },
+        { value: "High-top sneakers (高筒運動鞋)", label: "高筒運動鞋 (High-tops)" },
+        // 🇯🇵 日系風格
+        { value: "White canvas sneakers, Japanese street style, clean and simple (日系帆布鞋)", label: "🇯🇵 日系帆布鞋 (JP Canvas)" },
+        { value: "Pastel pink sneakers, kawaii style, cute and girly (粉色可愛運動鞋)", label: "🇯🇵 粉色可愛款 (Kawaii Pink)" },
+        { value: "Platform sneakers, Harajuku style, white with colorful accents (原宿厚底鞋)", label: "🇯🇵 原宿厚底鞋 (Harajuku Platform)" },
+        // 🇰🇷 韓系風格
+        { value: "Chunky white sneakers, Korean street fashion, dad shoes style (韓系老爹鞋)", label: "🇰🇷 韓系老爹鞋 (K-Chunky)" },
+        { value: "Minimalist white sneakers, Korean clean style, slim profile (韓系簡約白鞋)", label: "🇰🇷 韓系簡約白鞋 (K-Minimal)" },
+        { value: "Beige toned sneakers, Korean neutral aesthetic (韓系奶茶色運動鞋)", label: "🇰🇷 奶茶色運動鞋 (K-Beige)" },
+        // 🎀 甜美風格
+        { value: "Pink and white sneakers with ribbon laces, sweet girly style (粉白蝴蝶結運動鞋)", label: "🎀 蝴蝶結運動鞋 (Ribbon Laces)" },
+        { value: "Pastel lavender sneakers, soft dreamy aesthetic (薰衣草紫運動鞋)", label: "🎀 薰衣草紫款 (Lavender)" },
+        { value: "White sneakers with heart details, cute romantic (愛心裝飾運動鞋)", label: "🎀 愛心裝飾款 (Heart Detail)" },
+        // 🔥 性感運動風
+        { value: "Sleek black sneakers, sporty sexy, form-fitting (黑色貼腿運動鞋)", label: "🔥 性感黑色款 (Sexy Black)" },
+        { value: "White platform sneakers, leg-lengthening effect (增高厚底運動鞋)", label: "🔥 增高厚底款 (Platform Lift)" }
     ],
+    // ═══════════════════════════════════════
+    // 👠 高跟鞋 Heels
+    // ═══════════════════════════════════════
     heels: [
-        { value: "High heels (高跟鞋)", label: "基本高跟 (Basic Heels)" },
-        { value: "Stilettos (細跟高跟鞋)", label: "細跟 (Stilettos)" },
-        { value: "Ankle strap heels (踝帶高跟鞋)", label: "踝帶 (Ankle Strap)" },
-        { value: "Platform heels (厚底高跟鞋)", label: "厚底 (Platform)" },
-        { value: "Clear strap heels (透明跟鞋)", label: "透明跟鞋 (Clear Strap)" }, 
-        { value: "Kitten heels (低跟鞋)", label: "低跟鞋 (Kitten Heels)" }, 
-        { value: "Lace-up gladiator heels (綁帶羅馬跟鞋)", label: "綁帶羅馬鞋 (Gladiator)" } 
+        // 基本款 Basic
+        { value: "Classic black high heels, elegant pointed toe (經典黑色高跟鞋)", label: "經典黑色 (Classic Black)" },
+        { value: "Nude high heels, skin tone elegant (裸色高跟鞋)", label: "裸色基本款 (Nude Basic)" },
+        { value: "White high heels, clean sophisticated (白色高跟鞋)", label: "白色基本款 (White Basic)" },
+        // 🇯🇵 日系風格
+        { value: "Low kitten heels, Japanese office lady style, elegant and modest (日系低跟鞋)", label: "🇯🇵 日系低跟鞋 (JP Kitten)" },
+        { value: "Nude pointed heels, Japanese feminine style, delicate (日系裸色尖頭跟鞋)", label: "🇯🇵 日系裸色尖頭 (JP Nude Pointed)" },
+        { value: "Ankle strap heels, Japanese date style, romantic (日系踝帶約會鞋)", label: "🇯🇵 日系約會踝帶 (JP Date Strap)" },
+        // 🇰🇷 韓系風格
+        { value: "Slim stiletto heels, Korean chic style, sharp and elegant (韓系細跟高跟鞋)", label: "🇰🇷 韓系細跟鞋 (K-Stiletto)" },
+        { value: "Slingback heels, Korean minimalist, modern sophisticated (韓系後空高跟鞋)", label: "🇰🇷 韓系後空鞋 (K-Slingback)" },
+        { value: "Square toe heels, Korean trendy style, fashion forward (韓系方頭高跟鞋)", label: "🇰🇷 韓系方頭鞋 (K-Square Toe)" },
+        { value: "Mule heels, Korean effortless chic (韓系穆勒高跟鞋)", label: "🇰🇷 韓系穆勒鞋 (K-Mules)" },
+        // 🎀 甜美風格
+        { value: "Pink satin heels with bow, princess style, romantic (粉色緞面蝴蝶結高跟鞋)", label: "🎀 粉色蝴蝶結 (Pink Bow)" },
+        { value: "White heels with pearl strap, elegant sweet (珍珠裝飾白色高跟鞋)", label: "🎀 珍珠裝飾款 (Pearl Strap)" },
+        { value: "Pastel blue heels, dreamy fairy tale style (夢幻粉藍高跟鞋)", label: "🎀 夢幻粉藍款 (Dreamy Blue)" },
+        { value: "Lace overlay heels, romantic feminine (蕾絲覆蓋高跟鞋)", label: "🎀 蕾絲浪漫款 (Lace Overlay)" },
+        { value: "Mary Jane heels with ribbon, sweet lolita (瑪莉珍緞帶高跟鞋)", label: "🎀 緞帶瑪莉珍 (Ribbon Mary Jane)" },
+        // 🔥 性感風格
+        { value: "Black stiletto heels, sexy pointed toe, leg-lengthening (性感黑色細跟鞋)", label: "🔥 性感黑細跟 (Sexy Stiletto)" },
+        { value: "Red high heels, seductive classic, bold statement (性感紅色高跟鞋)", label: "🔥 性感紅色款 (Sexy Red)" },
+        { value: "Clear transparent heels, sexy modern, see-through (透明性感高跟鞋)", label: "🔥 透明高跟鞋 (Clear Heels)" },
+        { value: "Ankle strap stilettos, sexy restraint aesthetic (踝帶細跟性感款)", label: "🔥 踝帶性感款 (Sexy Ankle Strap)" },
+        { value: "Platform stilettos, ultra high sexy, dramatic height (超高厚底細跟鞋)", label: "🔥 超高厚底款 (Ultra Platform)" },
+        { value: "Strappy sandal heels, sexy minimal, leg showcase (細帶涼鞋高跟)", label: "🔥 細帶涼鞋款 (Strappy Sandal)" },
+        { value: "Lace-up gladiator heels, sexy warrior style (綁帶羅馬性感鞋)", label: "🔥 綁帶羅馬款 (Gladiator)" }
     ],
-    barefoot: [
-        { value: "Barefoot (赤腳)", label: "赤腳 (Barefoot)" }
-    ],
+    // ═══════════════════════════════════════
+    // 👢 靴子 Boots
+    // ═══════════════════════════════════════
     boots: [
-        { value: "Ankle boots (踝靴)", label: "踝靴 (Ankle Boots)" },
-        { value: "Knee-high boots (膝下靴)", label: "膝下靴 (Knee-high)" },
-        { value: "Thigh-high boots (過膝靴)", label: "過膝靴 (Thigh-high)" },
-        { value: "Combat boots (軍靴)", label: "軍靴/馬汀 (Combat)" }, 
-        { value: "Platform boots (厚底靴)", label: "厚底靴 (Platform)" }, 
-        { value: "Sock boots (襪靴)", label: "貼腿襪靴 (Sock Boots)" } 
+        // 基本款 Basic
+        { value: "Black ankle boots, classic versatile (黑色踝靴)", label: "黑色踝靴 (Black Ankle)" },
+        { value: "Brown leather boots, classic casual (棕色皮靴)", label: "棕色皮靴 (Brown Leather)" },
+        // 🇯🇵 日系風格
+        { value: "Brown suede ankle boots, Japanese autumn style (日系棕色麂皮短靴)", label: "🇯🇵 日系麂皮短靴 (JP Suede)" },
+        { value: "White boots, Japanese street fashion, clean cute (日系白色短靴)", label: "🇯🇵 日系白色短靴 (JP White)" },
+        { value: "Lace-up boots, Japanese girly style, sweet combat (日系甜美綁帶靴)", label: "🇯🇵 日系甜美綁帶 (JP Lace-up)" },
+        // 🇰🇷 韓系風格
+        { value: "Sleek black ankle boots, Korean minimal chic (韓系簡約黑短靴)", label: "🇰🇷 韓系簡約短靴 (K-Minimal)" },
+        { value: "Chelsea boots, Korean androgynous style (韓系切爾西靴)", label: "🇰🇷 韓系切爾西 (K-Chelsea)" },
+        { value: "Square toe boots, Korean trendy modern (韓系方頭短靴)", label: "🇰🇷 韓系方頭靴 (K-Square)" },
+        { value: "Western boots, Korean cowgirl trend (韓系西部靴)", label: "🇰🇷 韓系西部靴 (K-Western)" },
+        // 🎀 甜美風格
+        { value: "White lace-up boots, sweet princess style (白色甜美綁帶靴)", label: "🎀 白色公主靴 (Sweet White)" },
+        { value: "Pink ankle boots, kawaii girly (粉紅可愛短靴)", label: "🎀 粉紅可愛靴 (Pink Kawaii)" },
+        { value: "Bow detail boots, romantic feminine (蝴蝶結裝飾靴)", label: "🎀 蝴蝶結短靴 (Bow Detail)" },
+        { value: "Fur trim boots, soft cute winter (毛毛裝飾甜美靴)", label: "🎀 毛毛甜美靴 (Fur Trim)" },
+        // 🔥 性感風格
+        { value: "Thigh-high boots, sexy leg-lengthening, sleek black (性感過膝長靴)", label: "🔥 性感過膝靴 (Sexy Thigh-high)" },
+        { value: "Stiletto ankle boots, sexy pointed (細跟尖頭性感短靴)", label: "🔥 細跟性感短靴 (Stiletto Ankle)" },
+        { value: "Patent leather boots, shiny sexy, bold (亮皮性感靴)", label: "🔥 亮皮性感靴 (Patent Leather)" },
+        { value: "Lace-up thigh boots, dominatrix style (綁帶過膝性感靴)", label: "🔥 綁帶過膝靴 (Lace-up Thigh)" },
+        { value: "Platform knee boots, sexy powerful (厚底及膝性感靴)", label: "🔥 厚底及膝靴 (Platform Knee)" },
+        { value: "Red thigh-high boots, bold seductive (紅色過膝性感靴)", label: "🔥 紅色過膝靴 (Red Thigh-high)" }
     ],
+    // ═══════════════════════════════════════
+    // 🥿 平底鞋 Flats
+    // ═══════════════════════════════════════
     flats: [
-        { value: "Loafers (樂福鞋)", label: "樂福鞋 (Loafers)" },
-        { value: "Mary Jane shoes (瑪莉珍鞋)", label: "瑪莉珍 (Mary Jane)" },
-        { value: "Sandals (涼鞋)", label: "涼鞋 (Sandals)" },
-        { value: "Ballet flats (芭蕾平底鞋)", label: "平底鞋 (Flats)" },
-        { value: "Platform loafers (厚底樂福鞋)", label: "厚底樂福 (Platform Loafers)" },
-        // ★ 新增
-        { value: "Platform Mary Janes (厚底瑪莉珍)", label: "厚底瑪莉珍 (Platform MJ)" }
+        // 基本款 Basic
+        { value: "Black loafers, classic casual (黑色樂福鞋)", label: "黑色樂福鞋 (Black Loafers)" },
+        { value: "White ballet flats, simple elegant (白色芭蕾平底鞋)", label: "白色平底鞋 (White Flats)" },
+        // 🇯🇵 日系風格
+        { value: "Brown leather loafers, Japanese preppy style (日系棕色樂福鞋)", label: "🇯🇵 日系學院樂福 (JP Preppy Loafer)" },
+        { value: "White Mary Jane flats, Japanese sweet innocent (日系白色瑪莉珍)", label: "🇯🇵 日系白瑪莉珍 (JP White MJ)" },
+        { value: "Canvas slip-ons, Japanese casual effortless (日系帆布懶人鞋)", label: "🇯🇵 日系帆布懶人 (JP Canvas Slip-on)" },
+        { value: "Ballet flats with ribbon, Japanese feminine (日系緞帶芭蕾鞋)", label: "🇯🇵 日系緞帶芭蕾 (JP Ribbon Ballet)" },
+        // 🇰🇷 韓系風格
+        { value: "Pointed loafers, Korean chic minimal (韓系尖頭樂福鞋)", label: "🇰🇷 韓系尖頭樂福 (K-Pointed Loafer)" },
+        { value: "Slingback flats, Korean elegant casual (韓系後空平底鞋)", label: "🇰🇷 韓系後空平底 (K-Slingback)" },
+        { value: "Mule flats, Korean effortless style (韓系穆勒平底鞋)", label: "🇰🇷 韓系穆勒鞋 (K-Mule Flats)" },
+        { value: "Square toe flats, Korean trendy modern (韓系方頭平底鞋)", label: "🇰🇷 韓系方頭鞋 (K-Square Toe)" },
+        // 🎀 甜美風格
+        { value: "Pink Mary Jane shoes, sweet girly style (粉紅瑪莉珍鞋)", label: "🎀 粉紅瑪莉珍 (Pink Mary Jane)" },
+        { value: "Ballet flats with bow, romantic feminine (蝴蝶結芭蕾平底鞋)", label: "🎀 蝴蝶結芭蕾鞋 (Bow Ballet)" },
+        { value: "Pearl strap flats, elegant sweet (珍珠帶平底鞋)", label: "🎀 珍珠帶平底鞋 (Pearl Strap)" },
+        { value: "Lace ballet flats, delicate romantic (蕾絲芭蕾平底鞋)", label: "🎀 蕾絲芭蕾鞋 (Lace Ballet)" },
+        { value: "Heart buckle Mary Janes, cute kawaii (愛心扣瑪莉珍)", label: "🎀 愛心扣瑪莉珍 (Heart Buckle MJ)" },
+        { value: "Platform Mary Janes, sweet doll style (厚底瑪莉珍鞋)", label: "🎀 厚底瑪莉珍 (Platform MJ)" },
+        // 🔥 性感風格
+        { value: "Pointed toe flats, sexy elegant minimal (性感尖頭平底鞋)", label: "🔥 性感尖頭平底 (Sexy Pointed)" },
+        { value: "Strappy sandals, sexy minimal summer (細帶性感涼鞋)", label: "🔥 細帶性感涼鞋 (Strappy Sandals)" },
+        { value: "Ankle strap flats, subtle sexy detail (踝帶性感平底鞋)", label: "🔥 踝帶性感平底 (Ankle Strap)" }
+    ],
+    // ═══════════════════════════════════════
+    // 🦶 赤腳 Barefoot
+    // ═══════════════════════════════════════
+    barefoot: [
+        { value: "Barefoot, natural and free (赤腳)", label: "赤腳 (Barefoot)" },
+        { value: "Barefoot with anklet, bohemian style (赤腳配腳鍊)", label: "🎀 赤腳配腳鍊 (With Anklet)" },
+        { value: "Barefoot on tiptoes, elegant pose (踮腳尖赤腳)", label: "🔥 踮腳尖 (On Tiptoes)" }
     ],
     // ═══════════════════════════════════════
     // 🏮 旗袍鞋款 Qipao Style Heels
