@@ -34,7 +34,7 @@ export const verticalAngleDatabase = [
     { value: "high angle shot, camera above subject, looking down, face appears smaller, cute and vulnerable, submissive angle (高角度俯拍)", label: "⬇️ 俯拍-顯臉小可愛" },
     { value: "slightly high angle, camera slightly above eye level, gentle downward tilt, slimming effect (微俯拍)", label: "↘️ 微俯拍-自然小臉" },
     { value: "bird's eye view, extreme high angle, camera directly above looking straight down, top-down perspective, aerial view (鳥瞰)", label: "🦅 鳥瞰-正上方往下" },
-    { value: "worm's eye view, extreme low angle shot, camera placed on floor looking straight up, ground level perspective, subject towering above, legs dominating frame, extremely elongated legs, foreshortening effect, giant perspective, looking up from below feet, ant's eye view, dramatic upward composition (蟲視角)", label: "🐛 蟲視角-地面仰望超長腿" }
+    { value: "from below, shot from ground, looking up at subject, worm's eye view, camera at feet level shooting upward, view from floor, legs look extremely long, low angle from ground (蟲視角)", label: "🐛 蟲視角-地面仰望超長腿" }
 ];
 
 // ====== 特殊效果 Special (可選) ======
@@ -53,7 +53,7 @@ export const angleDatabase = [
     { value: "low angle shot, camera below eye level, looking up at subject, legs appear longer, powerful stance (低角度仰拍)", label: "⬆️ 仰拍-腿長顯高" },
     { value: "high angle shot, camera above subject, looking down, face appears smaller, cute and vulnerable (高角度俯拍)", label: "⬇️ 俯拍-顯臉小可愛" },
     { value: "bird's eye view, extreme high angle, camera directly above, top-down perspective, aerial view (鳥瞰)", label: "🦅 鳥瞰-正上方往下" },
-    { value: "worm's eye view, extreme low angle shot, camera placed on floor looking straight up, ground level perspective, subject towering above, legs dominating frame, extremely elongated legs, foreshortening effect, giant perspective, looking up from below feet, ant's eye view, dramatic upward composition (蟲視角)", label: "🐛 蟲視角-地面仰望超長腿" },
+    { value: "from below, shot from ground, looking up at subject, worm's eye view, camera at feet level shooting upward, view from floor, legs look extremely long, low angle from ground (蟲視角)", label: "🐛 蟲視角-地面仰望超長腿" },
     { value: "Dutch angle, tilted frame 15-30 degrees, diagonal composition, dynamic tension (荷蘭式傾斜)", label: "📐 傾斜-不安感張力" },
     { value: "POV shot, first person view, subjective camera, viewer's perspective, looking at subject (第一人稱)", label: "👀 第一人稱-你的視角" },
     { value: "selfie angle, arm extended holding camera, slightly high angle, close to face, smartphone perspective (自拍視角)", label: "🤳 自拍-手持微俯" },
