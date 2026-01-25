@@ -119,36 +119,36 @@ export const costumeSetDatabase = {
 
     // === 性感時尚 (Sexy Fashion) ===
     sexy_fashion: [
-        // 緊身連身裙 Bodycon Dresses
+        // ★ 緊身連身裙 Bodycon Dresses ★
         { value: "Black ribbed knit bodycon mini dress, sleeveless, tight fit accentuating curves, black stiletto heels (韓系緊身包臀裙)", label: "韓系緊身包臀裙 (K-Style Bodycon)" },
         { value: "Red satin bodycon mini dress, spaghetti straps, cowl neckline, red heels (紅色緞面緊身裙)", label: "紅色緞面緊身裙 (Red Satin Bodycon)" },
         { value: "White ribbed bodycon dress, halter neck, backless, nude heels (白色繞頸緊身裙)", label: "白色繞頸緊身裙 (White Halter Bodycon)" },
         { value: "Nude mesh bodycon dress, strategic coverage, barely there illusion, clear heels (裸色透視緊身裙)", label: "裸色透視緊身裙 (Nude Mesh Bodycon)" },
-        // 開衩露背 Cutout & Backless
+        // ★ 開衩露背 Cutout & Backless ★
         { value: "Black backless halter dress, deep V neckline, high slit skirt, elegant sexy, black strappy heels (露背深V洋裝)", label: "露背深V洋裝 (Backless Halter)" },
         { value: "White cutout mini dress, side cutouts exposing waist, strappy heels (側腰挖空洋裝)", label: "側腰挖空洋裝 (Side Cutout Dress)" },
         { value: "Black asymmetric one-shoulder dress, thigh-high slit, black heels (斜肩開衩洋裝)", label: "斜肩開衩洋裝 (One-shoulder Slit)" },
         { value: "Red backless mini dress, criss-cross straps, red stilettos (交叉綁帶露背裙)", label: "交叉綁帶露背裙 (Criss-cross Back)" },
-        // 性感毛衣風 Sexy Sweater Style
+        // ★ 性感毛衣風 Sexy Sweater Style ★
         { value: "Beige keyhole turtleneck sweater, open chest cutout, tight fit, black leather mini skirt, black ankle boots (日系開胸毛衣)", label: "日系開胸毛衣 (Keyhole Sweater)" },
         { value: "Virgin killer sweater, white backless knit, bare back, mini length, barefoot (純欲殺手毛衣)", label: "純欲殺手毛衣 (Virgin Killer)" },
         { value: "Off-shoulder oversized sweater, no bra, sweater dress style, thigh high boots (寬鬆露肩毛衣裙)", label: "寬鬆露肩毛衣裙 (Off-shoulder Sweater)" },
         { value: "Cream cropped cable knit, underboob visible, high-waisted mini skirt, boots (短版露下乳毛衣)", label: "短版露下乳毛衣 (Underboob Knit)" },
-        // 透視蕾絲風 Sheer & Lace
+        // ★ 透視蕾絲風 Sheer & Lace ★
         { value: "Black sheer mesh top, black bralette visible underneath, high-waisted black pants, black stiletto heels, club style (透視網紗上衣)", label: "透視網紗上衣 (Sheer Mesh)" },
         { value: "White sheer lace blouse, visible white bra, high-waisted mini skirt, nude heels (透視蕾絲襯衫)", label: "透視蕾絲襯衫 (Sheer Lace Blouse)" },
         { value: "Black lace bodysuit, sheer all over, high-waisted leather shorts, boots (蕾絲透膚連身衣)", label: "蕾絲透膚連身衣 (Lace Bodysuit)" },
         { value: "Sheer black mini dress, strategic lace coverage, black heels (透視黑蕾絲裙)", label: "透視黑蕾絲裙 (Sheer Black Dress)" },
         { value: "White strapless corset top with black halter straps and buttons, black pinstripe mini skirt, black sheer thigh-high stockings with lace tops, black patent leather stilettos (白色馬甲綁帶上衣)", label: "白色馬甲綁帶上衣 (White Corset Halter)" },
-        { value: "Black sheer mesh long sleeve top, black velvet layered mini skirt, white platform ankle strap sandals, beige quilted crossbody bag (黑色透視絲絨裙)", label: "黑色透視絲絨裙 (Sheer Mesh Velvet)" },
-        // 透明感白衣 Sheer White Clothing
+        { value: "Black sheer mesh long sleeve top, black velvet layered mini skirt, white platform ankle strap sandals (黑色透視絲絨裙)", label: "黑色透視絲絨裙 (Sheer Mesh Velvet)" },
+        // ★ 透明感白衣 Sheer White Clothing ★
         { value: "Thin white cotton shirt, slightly transparent, white bra visible underneath, backlit, natural light, white mini skirt, barefoot (純欲透白襯衫)", label: "純欲透白襯衫 (Sheer White Shirt)" },
         { value: "White wet T-shirt, clinging to body, bra outline visible, damp fabric texture, denim shorts, barefoot (濕身白T恤)", label: "濕身白T恤 (Wet White Tee)" },
         { value: "Sheer white chiffon blouse, delicate see-through fabric, lace bralette visible, flowy, white shorts, nude heels (透膚雪紡襯衫)", label: "透膚雪紡襯衫 (Sheer Chiffon)" },
         { value: "White linen dress, backlit silhouette visible, thin fabric, body outline, barefoot on beach (逆光白麻洋裝)", label: "逆光白麻洋裝 (Backlit Linen)" },
         { value: "White oversized boyfriend shirt, thin fabric, underwear faintly visible, unbuttoned, morning light, barefoot (透光男友襯衫)", label: "透光男友襯衫 (Sheer Boyfriend Shirt)" },
         { value: "White ribbed tank top, no bra, nipple outline visible, high-waisted jeans, casual sexy (無內衣白背心)", label: "無內衣白背心 (Braless White Tank)" },
-        // 透明薄紗裙 Sheer Skirts
+        // ★ 透明薄紗裙 Sheer Skirts ★
         { value: "White sheer tulle mini skirt, layered transparent fabric, white panties visible underneath, white crop top, barefoot (白色透明薄紗短裙)", label: "白色透明薄紗短裙 (White Tulle Mini)" },
         { value: "Black sheer organza midi skirt, see-through flowing fabric, black thong visible, black bralette top, heels (黑色透視歐根紗裙)", label: "黑色透視歐根紗裙 (Black Organza Midi)" },
         { value: "Sheer chiffon maxi skirt, white flowy transparent layers, silhouette visible, bikini underneath, beach style, barefoot (透明雪紡長裙)", label: "透明雪紡長裙 (Sheer Chiffon Maxi)" },
@@ -157,19 +157,31 @@ export const costumeSetDatabase = {
         { value: "White sheer wrap skirt, side slit, bikini bottom visible, resort style, barefoot on beach (透明圍裹裙)", label: "透明圍裹裙 (Sheer Wrap Skirt)" },
         { value: "Layered tulle high-low skirt, front short back long, sheer white, underwear visible, crop top, heels (前短後長薄紗裙)", label: "前短後長薄紗裙 (Tulle Hi-Lo Skirt)" },
         { value: "Sheer pleated midi skirt, delicate transparent pleats, backlit silhouette, elegant sexy, blouse, heels (透視百褶中長裙)", label: "透視百褶中長裙 (Sheer Pleated Midi)" },
-        // 皮革辣妹風 Leather Edgy
+        // ★ 皮革辣妹風 Leather Edgy ★
         { value: "Black leather mini skirt, black lace crop top, edgy sexy style, black ankle boots with buckles (皮裙蕾絲上衣)", label: "皮裙蕾絲上衣 (Edgy Leather)" },
         { value: "Red leather mini dress, front zipper, fitted, red boots (紅色皮革連身裙)", label: "紅色皮革連身裙 (Red Leather Dress)" },
         { value: "Black PVC mini skirt, black corset top, fishnet stockings, platform boots (PVC辣妹風)", label: "PVC辣妹風 (PVC Spicy)" },
         { value: "Leather harness over white tee, black mini skirt, combat boots (皮革綁帶造型)", label: "皮革綁帶造型 (Leather Harness)" },
-        // 運動性感風 Sporty Sexy
-        { value: "White sports bra, grey unzipped hoodie, blue denim shorts, white sneakers, healthy sexy athletic style (運動內衣混搭)", label: "運動內衣混搭 (Sporty Lingerie)" },
-        { value: "Black sports bra, high-waisted bike shorts, mesh overlay jacket, white sneakers (健身辣妹)", label: "健身辣妹 (Gym Hottie)" },
-        { value: "Cropped athletic top, low-rise track pants, abs showing, sneakers (露腹運動風)", label: "露腹運動風 (Athletic Abs)" },
-        // 夜店風格 Club Style
-        { value: "Sequin bralette top, black mini skirt, strappy heels, club queen (亮片胸衣夜店風)", label: "亮片胸衣夜店風 (Sequin Club)" },
-        { value: "Black velvet mini dress, plunging neckline, gold chain belt, black heels (絲絨深V夜店裙)", label: "絲絨深V夜店裙 (Velvet Club Dress)" },
-        { value: "Metallic gold crop top, black leather mini skirt, gold heels (金屬感夜店)", label: "金屬感夜店 (Metallic Club)" }
+        // ★ 運動性感風 Sporty Sexy (健康性感) ★
+        { value: "White sports bra, grey unzipped hoodie, blue denim shorts, white sneakers, healthy sexy athletic style (運動內衣混搭)", label: "🏃 運動內衣混搭 (Sporty Lingerie)" },
+        { value: "Black sports bra, high-waisted bike shorts, mesh overlay jacket, white sneakers (健身辣妹)", label: "🏃 健身辣妹 (Gym Hottie)" },
+        { value: "Cropped athletic top, low-rise track pants, abs showing, sneakers (露腹運動風)", label: "🏃 露腹運動風 (Athletic Abs)" },
+        { value: "Neon pink sports bra, black leggings with mesh panels, ponytail, sneakers (螢光運動風)", label: "🏃 螢光運動風 (Neon Athletic)" },
+        { value: "White tennis dress, pleated mini skirt attached, low-cut back, white sneakers (網球性感裙)", label: "🏃 網球性感裙 (Sexy Tennis)" },
+        { value: "Yoga outfit, fitted sports bra, high-waisted leggings, body curves visible, barefoot (瑜伽辣妹)", label: "🏃 瑜伽辣妹 (Yoga Babe)" },
+        { value: "Cheerleader crop top, mini pleated skirt, exposed midriff, white sneakers (啦啦隊風)", label: "🏃 啦啦隊風 (Cheerleader)" },
+        { value: "Boxing style sports bra, satin boxing shorts, boxing gloves, sneakers (拳擊女郎)", label: "🏃 拳擊女郎 (Boxing Girl)" },
+        { value: "Racing swimsuit style bodysuit, high-cut legs, sporty zipper front, barefoot (競速泳衣風)", label: "🏃 競速泳衣風 (Racing Suit)" },
+        { value: "Jogger crop hoodie, ultra short running shorts, toned legs, sneakers (慢跑辣妹)", label: "🏃 慢跑辣妹 (Jogging Hottie)" },
+        { value: "Dance leotard, sheer tights, ballet leg warmers, dance sneakers (舞者性感)", label: "🏃 舞者性感 (Dancer Sexy)" },
+        { value: "Golf mini skirt, fitted polo shirt unbuttoned, visor, golf shoes (高爾夫甜心)", label: "🏃 高爾夫甜心 (Golf Sweetie)" },
+        // ★ 夜店風格 Club Style ★
+        { value: "Sequin bralette top, black mini skirt, strappy heels, club queen (亮片胸衣夜店風)", label: "💃 亮片胸衣夜店風 (Sequin Club)" },
+        { value: "Black velvet mini dress, plunging neckline, gold chain belt, black heels (絲絨深V夜店裙)", label: "💃 絲絨深V夜店裙 (Velvet Club Dress)" },
+        { value: "Metallic gold crop top, black leather mini skirt, gold heels (金屬感夜店)", label: "💃 金屬感夜店 (Metallic Club)" },
+        { value: "Holographic mini dress, iridescent fabric, futuristic club style, platform boots (幻彩夜店裙)", label: "💃 幻彩夜店裙 (Holographic Club)" },
+        { value: "Black fishnet dress over bralette and shorts, edgy club style, combat boots (漁網夜店風)", label: "💃 漁網夜店風 (Fishnet Club)" },
+        { value: "Neon tube dress, ultra tight fit, glow under UV light, clear heels (螢光緊身夜店)", label: "💃 螢光緊身夜店 (Neon Tube Dress)" }
     ],
 
     // === 泳裝比基尼 (Swimwear) ===
