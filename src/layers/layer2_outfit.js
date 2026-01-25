@@ -42,7 +42,7 @@ const categoryTranslations = {
     midi_skirt: "中長裙 (Midi Skirt)",
     long_skirt: "長裙 (Long Skirt)",
     influencer: "📸 網美風格 (Influencer)",
-    subtle_sheer: "🌸 微透下裝 (Subtle Sheer)",
+    subtle_sheer: "🌸 若隱若現 (Subtle Sheer)",
     // 鞋子
     sneakers: "運動休閒 (Sneakers)",
     heels: "高跟鞋 (Heels)",
