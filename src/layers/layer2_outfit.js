@@ -13,10 +13,11 @@ let costumeMode = 'set';
 const mixColors = { top:null, bottom:null, outer:null, shoes:null, legwear:null, bra:null, panties:null, set:null };
 
 // ★★★ 分類翻譯對照表 ★★★
+// 注意：套裝和下裝共用 subtle_sheer key，統一翻譯為「若隱若現」
 const categoryTranslations = {
     // 套裝分類 (按邏輯順序排列)
     casual: "日常休閒 (Casual)",
-    influencer: "網美風格 (Influencer)",
+    influencer: "📸 網美風格 (Influencer)",
     sweet_cute: "甜美可愛 (Sweet & Cute)",
     subtle_sheer: "🌸 若隱若現 (Subtle Sheer)",
     sexy_fashion: "性感時尚 (Sexy Fashion)",
@@ -41,8 +42,6 @@ const categoryTranslations = {
     short_skirt: "短裙 (Short Skirt)",
     midi_skirt: "中長裙 (Midi Skirt)",
     long_skirt: "長裙 (Long Skirt)",
-    influencer: "📸 網美風格 (Influencer)",
-    subtle_sheer: "🌸 微透下裝 (Subtle Sheer)",
     // 鞋子
     sneakers: "運動休閒 (Sneakers)",
     heels: "高跟鞋 (Heels)",
