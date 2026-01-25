@@ -28,40 +28,32 @@ export const poseDatabase = [
         id: "front",
         label: "正面 (Front)",
         options: [
-            { value: "Holding phone, mirror selfie, hip popped out, looking at phone screen (對鏡自拍)", label: "對鏡自拍 (Mirror Selfie)" }, // ★
+            // 基本站姿 Basic Standing (手部動作請用 handActionList 疊加)
             { value: "Standing straight, hands behind back, shy smile (正面站立藏手)", label: "正面站立藏手 (Shy Standing)" },
-            { value: "Standing confident, hands on hips, chest out (雙手叉腰)", label: "雙手叉腰 (Hands on Hips)" },
             { value: "Standing, leaning forward slightly, welcoming (身體前傾)", label: "身體前傾 (Leaning Forward)" },
-            { value: "Standing, arms crossed, serious expression (雙手抱胸)", label: "雙手抱胸 (Arms Crossed)" },
-            { value: "Standing, one hand on cheek, thinking (單手托腮站姿)", label: "單手托腮站姿 (Hand on Cheek)" },
-            { value: "Standing, twisting torso (扭腰)", label: "扭腰 (Twisting Torso)" },
-            { value: "Standing, leaning forward (前傾)", label: "前傾 (Leaning Forward)" },
-            { value: "Standing, contrapposto (S型站姿/重心偏移)", label: "S型站姿 (Contrapposto)" },
-            { value: "Standing, bent over (彎腰翹臀)", label: "彎腰翹臀 (Bent Over)" },
-            { value: "Standing, arched back (拱背)", label: "拱背 (Arched Back)" },
-            { value: "Standing, lifting skirt hem high (正面高掀裙)", label: "正面高掀裙 (High Skirt Lift)" },
-            { value: "Standing, pulling down shirt collar (拉領口)", label: "拉領口 (Pulling Collar)" },
-            { value: "Standing, squeezing breasts with arms (雙臂擠胸)", label: "雙臂擠胸 (Squeezing Breasts)" },
+            { value: "Standing, twisting torso, showing curves (扭腰展曲線)", label: "扭腰展曲線 (Twisting Torso)" },
+            { value: "Standing, contrapposto, weight on one leg (S型站姿/重心偏移)", label: "S型站姿 (Contrapposto)" },
+            { value: "Standing, bent over at waist (彎腰翹臀)", label: "彎腰翹臀 (Bent Over)" },
+            { value: "Standing, arched back, chest forward (拱背挺胸)", label: "拱背挺胸 (Arched Back)" },
             { value: "Standing, one leg lifted up (站立抬腿)", label: "站立抬腿 (One Leg Up)" },
-            { value: "Standing, hands behind head, armpits exposed (抱頭露腋)", label: "抱頭露腋 (Armpits Exposed)" },
-            { value: "Standing, leaning forward, cleavage view (前傾視角)", label: "前傾視角 (Cleavage View)" },
-            { value: "Standing, pulling pantyhose waistband (拉扯絲襪頭)", label: "拉扯絲襪頭 (Pulling Waistband)" },
-            { value: "Standing, biting finger, seductive look (咬手指站姿)", label: "咬手指站姿 (Biting Finger)" },
-            { value: "Standing, hands on wall, body arched (靠牆拱身)", label: "靠牆拱身 (Wall Arch)" },
-            { value: "Standing, making heart shape on chest (胸前比心)", label: "胸前比心 (Heart on Chest)" },
+            { value: "Standing, leaning forward, looking up (前傾仰視)", label: "前傾仰視 (Lean Forward Up)" },
+            // 特殊正面姿勢 Special Front Poses
+            { value: "Holding phone, mirror selfie, hip popped out (對鏡自拍)", label: "對鏡自拍 (Mirror Selfie)" },
             { value: "Standing, hands clasped in front, head tilted, sweet smile (雙手交握甜笑)", label: "雙手交握甜笑 (Sweet Clasped)" },
-            { value: "Standing, twirling hair with finger, shy expression (撥弄髮絲)", label: "撥弄髮絲 (Twirling Hair)" },
-            { value: "Standing, both hands on cheeks, surprised cute expression (雙手捧臉驚喜)", label: "雙手捧臉驚喜 (Surprised Cute)" },
-            { value: "Standing, one hand behind head, stretching, casual sexy (單手撐頭伸展)", label: "單手撐頭伸展 (Casual Stretch)" },
-            { value: "Standing, blowing kiss to camera, playful wink (飛吻)", label: "飛吻 (Blowing Kiss)" },
+            { value: "Standing, hands on wall, body arched (靠牆拱身)", label: "靠牆拱身 (Wall Arch)" },
+            { value: "Standing, one hand behind head, stretching (單手撐頭伸展)", label: "單手撐頭伸展 (Casual Stretch)" },
+            { value: "Standing, adjusting stockings, one leg raised (調整絲襪抬腿)", label: "調整絲襪抬腿 (Adjust Stockings)" },
+            { value: "Standing with legs crossed, feminine pose (交叉腿站姿)", label: "交叉腿站姿 (Crossed Legs Stand)" },
+            { value: "Standing, weight on heels, body leaning back slightly (後仰站姿)", label: "後仰站姿 (Leaning Back)" },
             // 動態姿勢 Dynamic Poses
-            { value: "Riding bicycle, school uniform, Tokyo street, natural lighting, soft transparent colors (騎腳踏車)", label: "騎腳踏車 (Riding Bicycle)" },
-            { value: "Walking with books in arms, school hallway, student pose (抱書走路)", label: "抱書走路 (Walking with Books)" },
-            { value: "Running playfully, hair flowing, looking back with smile (俏皮奔跑)", label: "俏皮奔跑 (Playful Running)" },
-            { value: "Dancing with arms raised, joyful expression, dynamic movement (跳舞舉手)", label: "跳舞舉手 (Dancing Arms Up)" },
-            { value: "Standing on one leg, other leg kicked forward playfully, arms slightly spread for balance, joyful smile, snowy platform (單腳站立踢腿)", label: "單腳站立踢腿 (Playful Kick)" },
-            { value: "Standing on stairs, hand near head, gentle smile, soft daylight, charming pose (階梯扶頭站姿)", label: "階梯扶頭站姿 (Stairs Hand Head)" },
-            { value: "Standing in garden, holding bag, facing camera, natural greenery backdrop (花園持包站姿)", label: "花園持包站姿 (Garden Bag Pose)" }
+            { value: "Riding bicycle, natural movement (騎腳踏車)", label: "騎腳踏車 (Riding Bicycle)" },
+            { value: "Walking with books in arms, student pose (抱書走路)", label: "抱書走路 (Walking with Books)" },
+            { value: "Running playfully, hair flowing, looking back (俏皮奔跑)", label: "俏皮奔跑 (Playful Running)" },
+            { value: "Dancing with arms raised, joyful movement (跳舞舉手)", label: "跳舞舉手 (Dancing Arms Up)" },
+            { value: "Standing on one leg, playful kick forward (單腳站立踢腿)", label: "單腳站立踢腿 (Playful Kick)" },
+            { value: "Jumping in air, arms up, joyful expression (跳躍歡呼)", label: "跳躍歡呼 (Jumping Joy)" },
+            { value: "Spinning around, skirt flaring out (旋轉裙擺飛揚)", label: "旋轉裙擺 (Spinning Skirt)" },
+            { value: "Walking towards camera, confident stride (自信走來)", label: "自信走來 (Confident Walk)" }
         ]
     },
     {
@@ -89,6 +81,34 @@ export const poseDatabase = [
             { value: "Back view, adjusting hair in ponytail, nape exposed (整理馬尾)", label: "整理馬尾 (Adjusting Ponytail)" },
             { value: "Back view, glancing back with finger on lips, secretive (神秘回眸)", label: "神秘回眸 (Mysterious Glance)" },
             { value: "Back view, looking back over shoulder, holding bag, 3/4 rear view, JK style (背影回眸持包)", label: "背影回眸持包 (Back Holding Bag)" }
+        ]
+    },
+    // ====== 新增：側面站姿 (Side Standing) ======
+    {
+        id: "side",
+        label: "➡️ 側面站姿 (Side)",
+        options: [
+            // 基本側面 Basic Side
+            { value: "Side view standing, elegant profile, chin slightly up (側面站立優雅)", label: "側面站立優雅 (Elegant Profile)" },
+            { value: "Side view, looking over shoulder at camera, mysterious (側身回眸)", label: "側身回眸 (Side Glance)" },
+            { value: "Side standing, one hand on hip, confident pose (側身單手叉腰)", label: "側身單手叉腰 (Side Hip)" },
+            { value: "Side view, arching back, showing curves (側身拱背曲線)", label: "側身拱背曲線 (Side Arch)" },
+            { value: "Side standing, arms behind back, chest out (側身背手挺胸)", label: "側身背手挺胸 (Side Chest Out)" },
+            // 動態側面 Dynamic Side
+            { value: "Side view walking, mid-stride, hair flowing (側面走路中)", label: "側面走路 (Side Walking)" },
+            { value: "Side view, turning head to camera, hair flip (側身甩髮)", label: "側身甩髮 (Side Hair Flip)" },
+            { value: "Side standing, stretching arms up, showing silhouette (側身伸展)", label: "側身伸展 (Side Stretch)" },
+            { value: "Side view, leaning forward slightly, elegant pose (側身微前傾)", label: "側身微前傾 (Side Lean)" },
+            { value: "Side standing on tiptoes, elongated silhouette (側身墊腳)", label: "側身墊腳 (Side Tiptoe)" },
+            // 特殊側面 Special Side
+            { value: "Three-quarter view, body angled 45 degrees, flattering angle (斜側身45度)", label: "斜側身45度 (3/4 View)" },
+            { value: "Side view, one leg lifted back, ballet pose (側身後抬腿)", label: "側身後抬腿 (Side Leg Back)" },
+            { value: "Side view, touching own face, dreamy expression (側身撫臉)", label: "側身撫臉 (Side Touch Face)" },
+            { value: "Side standing, looking down, contemplative (側身低頭沉思)", label: "側身低頭沉思 (Side Contemplative)" },
+            { value: "Side view, hands clasped behind, innocent pose (側身背手純真)", label: "側身背手純真 (Side Hands Back)" },
+            { value: "Side profile silhouette, dramatic lighting, elegant contour (側臉剪影輪廓)", label: "側臉剪影輪廓 (Silhouette Profile)" },
+            { value: "Side view, adjusting earring, feminine gesture (側身整理耳環)", label: "側身整理耳環 (Side Earring)" },
+            { value: "Side standing, wind blowing hair and clothes (側身迎風)", label: "側身迎風 (Side Wind)" }
         ]
     },
     {
@@ -323,36 +343,50 @@ export const poseDatabase = [
 
 export const handActionList = [
      { value: "None", label: "無 (None)" },
-     { value: "lifting skirt hem slightly, showing thighs (微掀裙角)", label: "微掀裙角 (Lifting Skirt)" }, // ★
-     { value: "pulling down collar, showing cleavage (拉開領口)", label: "拉開領口 (Pulling Collar)" }, // ★
-     { value: "hands on hips (插腰)", label: "插腰 (Hands on Hips)" },
-     { value: "hand on face (摸臉)", label: "摸臉 (Hand on Face)" },
-     { value: "hair pull / grabbing hair (抓頭髮)", label: "抓頭髮 (Grabbing Hair)" },
-     { value: "finger on lips (手指抵唇)", label: "手指抵唇 (Finger on Lips)" },
-     { value: "arms behind head (雙手抱頭)", label: "雙手抱頭 (Arms Behind Head)" },
-     { value: "adjusting thighhighs (調整大腿襪)", label: "調整大腿襪 (Adjusting Stockings)" },
-     { value: "skirt lift (掀裙角 - 高)", label: "掀裙角 (High Skirt Lift)" },
-     { value: "shirt lift (掀上衣 - 露腹部用)", label: "掀上衣 (Shirt Lift)" },
-     { value: "hands on knees (雙手扶膝)", label: "雙手扶膝 (Hands on Knees)" },
-     { value: "biting finger (咬手指)", label: "咬手指 (Biting Finger)" },
-     { value: "covering breasts (雙手遮胸)", label: "雙手遮胸 (Covering Breasts)" },
-     { value: "pulling straps (拉肩帶)", label: "拉肩帶 (Pulling Straps)" },
-     { value: "hands between legs (手放腿間)", label: "手放腿間 (Hands Between Legs)" },
-     { value: "holding own face (捧臉)", label: "捧臉 (Holding Face)" },
-     { value: "stretching clothes (拉扯衣服)", label: "拉扯衣服 (Stretching Clothes)" },
-     { value: "peace sign near eye (眼邊比耶)", label: "眼邊比耶 (Peace Eye)" },
-     { value: "shushing gesture (噓聲手勢)", label: "噓聲手勢 (Shushing)" },
-     { value: "heart hands (愛心手勢)", label: "愛心手勢 (Heart Hands)" },
-     { value: "finger gun (手槍手勢)", label: "手槍手勢 (Finger Gun)" },
-     { value: "arms crossed under breasts (雙手抱胸托胸)", label: "雙手抱胸 (Arms Crossed)" },
-     { value: "squeezing breasts with arms (雙臂擠胸)", label: "雙臂擠胸 (Squeezing Breasts)" },
-     { value: "hands lifting breasts (雙手托胸)", label: "雙手托胸 (Lifting Breasts)" },
-     { value: "finger in mouth (手指含口)", label: "手指含口 (Finger in Mouth)" },
-     { value: "pulling panty waistband (拉扯內褲頭)", label: "拉內褲頭 (Pulling Panties)" },
-     { value: "finger hooking bra strap (手指勾肩帶)", label: "手指勾肩帶 (Hooking Bra Strap)" },
-     { value: "hands holding ponytail (雙手抓馬尾)", label: "雙手抓馬尾 (Holding Ponytail)" },
-     { value: "hands covering crotch (雙手遮擋私處)", label: "遮擋私處 (Covering Crotch)" },
-     { value: "hands tied up (雙手高舉被縛)", label: "雙手被縛 (Hands Bound)" },
-     { value: "reaching out to camera (伸手求抱)", label: "伸手求抱 (Reaching Out)" },
-     { value: "hand touching neck (撫摸頸部)", label: "撫摸頸部 (Touching Neck)" }
+     // ===== 可愛系 Cute =====
+     { value: "peace sign near eye, cute wink (眼邊比耶)", label: "✌️ 眼邊比耶 (Peace Eye)" },
+     { value: "heart hands, making heart shape (愛心手勢)", label: "💕 愛心手勢 (Heart Hands)" },
+     { value: "blowing kiss to camera, playful wink (飛吻)", label: "💋 飛吻 (Blowing Kiss)" },
+     { value: "finger gun, playful pointing (手槍手勢)", label: "👉 手槍手勢 (Finger Gun)" },
+     { value: "holding own face with both hands, surprised cute (雙手捧臉)", label: "🥺 雙手捧臉 (Holding Face)" },
+     { value: "one hand on cheek, thinking pose (單手托腮)", label: "🤔 單手托腮 (Hand on Cheek)" },
+     { value: "twirling hair with finger, shy expression (撥弄髮絲)", label: "💇 撥弄髮絲 (Twirling Hair)" },
+     { value: "shushing gesture, finger on lips (噓聲手勢)", label: "🤫 噓聲手勢 (Shushing)" },
+     { value: "waving hand, friendly greeting (揮手打招呼)", label: "👋 揮手打招呼 (Waving)" },
+     // ===== 性感系 Sexy =====
+     { value: "lifting skirt hem slightly, showing thighs (微掀裙角)", label: "👗 微掀裙角 (Lifting Skirt)" },
+     { value: "skirt lift high, showing more (掀裙角 - 高)", label: "👗 高掀裙 (High Skirt Lift)" },
+     { value: "pulling down collar, showing cleavage (拉開領口)", label: "👚 拉開領口 (Pulling Collar)" },
+     { value: "shirt lift, showing stomach (掀上衣 - 露腹部用)", label: "👕 掀上衣 (Shirt Lift)" },
+     { value: "biting finger, seductive look (咬手指)", label: "😏 咬手指 (Biting Finger)" },
+     { value: "finger in mouth, teasing (手指含口)", label: "👄 手指含口 (Finger in Mouth)" },
+     { value: "arms behind head, armpits exposed (雙手抱頭露腋)", label: "🙆 雙手抱頭 (Arms Behind Head)" },
+     { value: "arms crossed under breasts (雙手抱胸托胸)", label: "💪 雙手抱胸 (Arms Crossed)" },
+     { value: "squeezing breasts with arms (雙臂擠胸)", label: "👙 雙臂擠胸 (Squeezing Breasts)" },
+     { value: "hands lifting breasts (雙手托胸)", label: "🙌 雙手托胸 (Lifting Breasts)" },
+     { value: "hand touching neck sensually (撫摸頸部)", label: "✋ 撫摸頸部 (Touching Neck)" },
+     // ===== 調整服裝 Adjusting Clothes =====
+     { value: "adjusting thighhighs (調整大腿襪)", label: "🧦 調整大腿襪 (Adjusting Stockings)" },
+     { value: "pulling straps on shoulder (拉肩帶)", label: "👙 拉肩帶 (Pulling Straps)" },
+     { value: "finger hooking bra strap (手指勾肩帶)", label: "👙 手指勾肩帶 (Hooking Bra Strap)" },
+     { value: "pulling panty waistband (拉扯內褲頭)", label: "🩲 拉內褲頭 (Pulling Panties)" },
+     { value: "stretching clothes (拉扯衣服)", label: "👔 拉扯衣服 (Stretching Clothes)" },
+     // ===== 身體部位 Body Touch =====
+     { value: "hands on hips, confident pose (插腰)", label: "💃 插腰 (Hands on Hips)" },
+     { value: "hand on face, gentle touch (摸臉)", label: "🤚 摸臉 (Hand on Face)" },
+     { value: "hands on knees, bending forward (雙手扶膝)", label: "🦵 雙手扶膝 (Hands on Knees)" },
+     { value: "hands between legs, shy pose (手放腿間)", label: "🙈 手放腿間 (Hands Between Legs)" },
+     { value: "covering breasts with hands (雙手遮胸)", label: "🙊 雙手遮胸 (Covering Breasts)" },
+     { value: "hands covering crotch (雙手遮擋私處)", label: "🙈 遮擋私處 (Covering Crotch)" },
+     // ===== 頭髮相關 Hair =====
+     { value: "hair pull / grabbing hair (抓頭髮)", label: "💇 抓頭髮 (Grabbing Hair)" },
+     { value: "hands holding ponytail (雙手抓馬尾)", label: "💇 雙手抓馬尾 (Holding Ponytail)" },
+     { value: "running fingers through hair (手指穿過髮間)", label: "💇 手穿髮間 (Fingers Through Hair)" },
+     { value: "tucking hair behind ear (撥髮耳後)", label: "💇 撥髮耳後 (Tuck Behind Ear)" },
+     // ===== 特殊動作 Special =====
+     { value: "reaching out to camera, inviting (伸手求抱)", label: "🤗 伸手求抱 (Reaching Out)" },
+     { value: "hands tied up, arms above head (雙手高舉被縛)", label: "🙆 雙手被縛 (Hands Bound)" },
+     { value: "salute pose, hand to forehead (敬禮)", label: "🫡 敬禮 (Salute)" },
+     { value: "cat paw pose, cute gesture (貓爪手勢)", label: "🐱 貓爪手勢 (Cat Paw)" },
+     { value: "praying hands, innocent look (雙手合十)", label: "🙏 雙手合十 (Praying)" }
 ];
