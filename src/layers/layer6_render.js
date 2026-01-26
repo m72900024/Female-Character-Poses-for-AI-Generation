@@ -72,10 +72,14 @@ export function getData() {
 
         // 自動添加負面提示詞
         let neg = "";
-        if (cat === 'photorealistic') neg = "(anime, manga, 2d, sketch), bad anatomy";
-        else if (cat === 'anime') neg = "(photorealistic, real life), 3d, bad hands";
-        else if (cat === '3d_render') neg = "(2d, sketch), low poly";
-        
+        // 基礎視角排除 (避免生成側面/斜角)
+        const angleNeg = "(side view:1.2), (3/4 view:1.2), (profile:1.1), (angled shot:1.1), (from side:1.1)";
+
+        if (cat === 'photorealistic') neg = `(anime, manga, 2d, sketch), bad anatomy, ${angleNeg}`;
+        else if (cat === 'anime') neg = `(photorealistic, real life), 3d, bad hands, ${angleNeg}`;
+        else if (cat === '3d_render') neg = `(2d, sketch), low poly, ${angleNeg}`;
+        else neg = angleNeg; // 其他分類也加入視角排除
+
         data.negative_prompt = neg;
     }
 
