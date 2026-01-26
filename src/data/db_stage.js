@@ -27,7 +27,14 @@ export const stageDatabase = {
         // 泳池系列 Pool Series
         { value: "Indoor swimming pool, blue tiles (室內泳池)", label: "室內泳池 (Indoor Pool)", props: "blue water, pool ladder, lounge chair, towel" },
         { value: "Rooftop infinity pool, city skyline (頂樓無邊際泳池)", label: "頂樓無邊際泳池 (Infinity Pool)", props: "infinity edge, city skyline, lounge beds, cocktails" },
-        { value: "Private villa pool, tropical garden (私人別墅泳池)", label: "私人別墅泳池 (Villa Pool)", props: "palm trees, pool float, tropical plants, cabana" }
+        { value: "Private villa pool, tropical garden (私人別墅泳池)", label: "私人別墅泳池 (Villa Pool)", props: "palm trees, pool float, tropical plants, cabana" },
+        // 新增：更多私密空間
+        { value: "Cozy attic room, sloped ceiling, warm fairy lights, vintage furniture (閣樓小屋)", label: "閣樓小屋 (Attic Room)", props: "sloped ceiling, fairy lights, vintage trunk, small window" },
+        { value: "Luxury penthouse, panoramic city view, modern furniture (頂層豪宅)", label: "頂層豪宅 (Penthouse)", props: "floor-to-ceiling windows, city skyline, designer sofa, wine bar" },
+        { value: "Cozy reading nook by window, cushions, bookshelves (窗邊閱讀角)", label: "窗邊閱讀角 (Reading Nook)", props: "window seat, cushions, bookshelves, warm blanket, tea cup" },
+        { value: "Vintage dressing room, antique vanity, soft lighting (復古化妝間)", label: "復古化妝間 (Vintage Dressing)", props: "antique vanity, round mirror, perfume bottles, jewelry box" },
+        { value: "Laundry room, washing machine, clean towels (洗衣間)", label: "洗衣間 (Laundry Room)", props: "washing machine, laundry basket, detergent, folded towels" },
+        { value: "Home cinema room, large screen, comfortable sofa (家庭影院)", label: "家庭影院 (Home Cinema)", props: "large screen, reclining sofa, popcorn, dim lighting" }
     ],
 
     // === 都市場景 (Urban Spaces) ===
@@ -62,7 +69,22 @@ export const stageDatabase = {
         // 運動健身 Sports & Fitness
         { value: "Gym with workout equipment, mirrors (健身房)", label: "健身房 (Gym)", props: "dumbbell, treadmill, yoga mat, mirror wall" },
         { value: "Dance studio, wooden floor, mirrors (舞蹈教室)", label: "舞蹈教室 (Dance Studio)", props: "ballet barre, mirrors, wooden floor, speaker" },
-        { value: "Indoor basketball court, scoreboard (室內籃球場)", label: "室內籃球場 (Basketball Court)", props: "basketball hoop, scoreboard, bench, water bottles" }
+        { value: "Indoor basketball court, scoreboard (室內籃球場)", label: "室內籃球場 (Basketball Court)", props: "basketball hoop, scoreboard, bench, water bottles" },
+        // 新增：更多都市場景
+        { value: "Rainy city street at night, reflections, umbrellas (雨夜街頭)", label: "雨夜街頭 (Rainy Night Street)", props: "wet pavement, reflections, umbrella, street lights, rain" },
+        { value: "Shibuya crossing, crowds, neon billboards (澀谷十字路口)", label: "澀谷十字路口 (Shibuya Crossing)", props: "crowds, neon billboards, traffic lights, famous crossing" },
+        { value: "Korean hanok village, traditional houses (韓屋村)", label: "韓屋村 (Hanok Village)", props: "traditional korean houses, stone walls, wooden gates, lanterns" },
+        { value: "Hong Kong street, neon signs, dense buildings (香港街頭)", label: "香港街頭 (Hong Kong Street)", props: "neon signs, dense buildings, taxis, bamboo scaffolding" },
+        { value: "Parking garage, concrete pillars, cars (停車場)", label: "停車場 (Parking Garage)", props: "concrete pillars, parked cars, fluorescent lights, exit signs" },
+        { value: "Elevator interior, mirror walls, modern design (電梯內)", label: "電梯內 (Elevator)", props: "mirror walls, buttons panel, handrail, metallic finish" },
+        { value: "Stairwell, handrail, concrete steps (樓梯間)", label: "樓梯間 (Stairwell)", props: "concrete steps, metal handrail, emergency exit sign, pipes" },
+        { value: "Laundromat, washing machines, fluorescent lights (自助洗衣店)", label: "自助洗衣店 (Laundromat)", props: "row of washing machines, plastic chairs, vending machine, magazines" },
+        { value: "Bus stop shelter, advertisement poster, bench (公車站)", label: "公車站 (Bus Stop)", props: "glass shelter, bench, advertisement, schedule board" },
+        { value: "Rooftop helipad, city skyline, night lights (直升機停機坪)", label: "直升機停機坪 (Helipad)", props: "landing circle, city skyline, wind, night lights" },
+        { value: "University lecture hall, tiered seating, projector (大學講堂)", label: "大學講堂 (Lecture Hall)", props: "tiered seating, projector screen, podium, desks" },
+        { value: "Hospital corridor, white walls, medical equipment (醫院走廊)", label: "醫院走廊 (Hospital Corridor)", props: "white walls, medical cart, wheelchair, fluorescent lights" },
+        { value: "Tennis court, net, green surface (網球場)", label: "網球場 (Tennis Court)", props: "tennis net, racket, green court, white lines, bench" },
+        { value: "Yoga studio, wooden floor, plants, natural light (瑜伽教室)", label: "瑜伽教室 (Yoga Studio)", props: "yoga mats, plants, mirrors, natural light, incense" }
     ],
 
     // === 自然場景 (Nature Spaces) ===
@@ -94,7 +116,20 @@ export const stageDatabase = {
         { value: "Starry night field, milky way, grass (星空草原)", label: "星空草原 (Starry Field)", props: "stars, milky way, grass, blanket, lantern" },
         // 花園步道 Garden Paths
         { value: "Stone path garden, lush greenery, natural sunlight, peaceful walkway (石板步道花園)", label: "石板步道花園 (Stone Garden Path)", props: "stone pavers, green bushes, trees, dappled sunlight, garden" },
-        { value: "Outdoor stone stairs with greenery, natural setting, soft daylight, bokeh background (戶外綠意階梯)", label: "戶外綠意階梯 (Outdoor Green Stairs)", props: "stone steps, green plants, natural light, bokeh" }
+        { value: "Outdoor stone stairs with greenery, natural setting, soft daylight, bokeh background (戶外綠意階梯)", label: "戶外綠意階梯 (Outdoor Green Stairs)", props: "stone steps, green plants, natural light, bokeh" },
+        // 新增：更多自然場景
+        { value: "Misty morning forest, fog, soft light (晨霧森林)", label: "晨霧森林 (Misty Forest)", props: "fog, soft sunlight, tall trees, dew drops, mystical" },
+        { value: "Desert sand dunes, golden hour, endless sand (沙漠沙丘)", label: "沙漠沙丘 (Desert Dunes)", props: "golden sand, blue sky, shadows, wind patterns" },
+        { value: "Cliffside ocean view, dramatic waves (懸崖海景)", label: "懸崖海景 (Cliffside Ocean)", props: "cliff edge, crashing waves, dramatic sky, wind" },
+        { value: "Moonlit garden, flowers, romantic night (月光花園)", label: "月光花園 (Moonlit Garden)", props: "moonlight, white flowers, garden bench, fireflies" },
+        { value: "Rainy forest, wet leaves, puddles (雨中森林)", label: "雨中森林 (Rainy Forest)", props: "rain drops, wet leaves, puddles, misty atmosphere" },
+        { value: "Wisteria tunnel, purple hanging flowers (紫藤花隧道)", label: "紫藤花隧道 (Wisteria Tunnel)", props: "purple wisteria, flower tunnel, romantic, dreamy light" },
+        { value: "Rose garden, red roses, stone path (玫瑰花園)", label: "玫瑰花園 (Rose Garden)", props: "red roses, stone path, garden arch, romantic" },
+        { value: "Vineyard, grape vines, rolling hills (葡萄園)", label: "葡萄園 (Vineyard)", props: "grape vines, wooden posts, rolling hills, sunset" },
+        { value: "Japanese zen garden, rock garden, raked sand (日式枯山水)", label: "日式枯山水 (Zen Garden)", props: "raked sand, stones, minimal, peaceful, bamboo fence" },
+        { value: "Firefly field at night, glowing lights (螢火蟲草原)", label: "螢火蟲草原 (Firefly Field)", props: "fireflies, tall grass, night sky, magical glow" },
+        { value: "Autumn pathway, fallen leaves, golden trees (秋日小徑)", label: "秋日小徑 (Autumn Path)", props: "fallen leaves, golden trees, park bench, warm light" },
+        { value: "Spring meadow, wildflowers, butterflies (春日草原)", label: "春日草原 (Spring Meadow)", props: "wildflowers, butterflies, blue sky, fresh green grass" }
     ],
 
     // === 娛樂場所 (Entertainment Venues) ===
@@ -116,7 +151,16 @@ export const stageDatabase = {
         // 攝影棚 Studios
         { value: "Photo studio, white backdrop, lights (攝影棚白背景)", label: "攝影棚白背景 (White Studio)", props: "white backdrop, softbox lights, camera" },
         { value: "Photo studio, pink backdrop, props (攝影棚粉背景)", label: "攝影棚粉背景 (Pink Studio)", props: "pink backdrop, props, ring light" },
-        { value: "Glamour studio, elegant backdrop, furniture (時尚攝影棚)", label: "時尚攝影棚 (Glamour Studio)", props: "elegant backdrop, chaise lounge, professional lighting" }
+        { value: "Glamour studio, elegant backdrop, furniture (時尚攝影棚)", label: "時尚攝影棚 (Glamour Studio)", props: "elegant backdrop, chaise lounge, professional lighting" },
+        // 新增：更多娛樂場所
+        { value: "Pool hall, billiard tables, dim lighting (撞球間)", label: "撞球間 (Pool Hall)", props: "billiard table, cue stick, hanging lamp, chalk" },
+        { value: "Movie theater, red seats, big screen (電影院)", label: "電影院 (Movie Theater)", props: "red velvet seats, big screen, popcorn, dim lights" },
+        { value: "Casino floor, slot machines, neon lights (賭場)", label: "賭場 (Casino)", props: "slot machines, card tables, neon lights, chips" },
+        { value: "Escape room, mysterious decor, puzzles (密室逃脫)", label: "密室逃脫 (Escape Room)", props: "mysterious decor, locks, clues, dim lighting" },
+        { value: "VR arcade, headsets, futuristic (VR遊樂場)", label: "VR遊樂場 (VR Arcade)", props: "VR headsets, neon lights, futuristic decor, gaming chairs" },
+        { value: "Music recording studio, microphone, soundproof (錄音室)", label: "錄音室 (Recording Studio)", props: "microphone, mixing console, headphones, soundproof walls" },
+        { value: "Fashion runway, catwalk, spotlights (時裝伸展台)", label: "時裝伸展台 (Fashion Runway)", props: "catwalk, spotlights, audience, dramatic lighting" },
+        { value: "Backstage makeup room, vanity lights, mirrors (後台化妝室)", label: "後台化妝室 (Backstage Makeup)", props: "vanity mirrors, makeup brushes, costumes, bright lights" }
     ],
 
     // === 商業空間 (Commercial Spaces) ===
@@ -143,6 +187,63 @@ export const stageDatabase = {
         // 歐式優雅 European Elegant
         { value: "European Victorian tea room, beige Rococo style sofa with gold trim, wooden floor, large grid-pane windows, tea set on round table, vases with pink and white roses, afternoon tea ambiance (歐式維多利亞茶室)", label: "歐式維多利亞茶室 (Victorian Tea Room)", props: "Victorian sofa, gold trim furniture, tea set, rose vases, grid-pane windows, wooden floor" },
         { value: "Parisian salon, ornate mirrors, velvet chairs, chandelier, elegant European decor (巴黎沙龍)", label: "巴黎沙龍 (Parisian Salon)", props: "ornate mirrors, velvet chairs, chandelier, gilded frames, marble fireplace" },
-        { value: "English manor library, leather armchairs, bookshelves, fireplace (英式莊園書房)", label: "英式莊園書房 (English Library)", props: "leather armchairs, tall bookshelves, fireplace, globe, reading lamp" }
+        { value: "English manor library, leather armchairs, bookshelves, fireplace (英式莊園書房)", label: "英式莊園書房 (English Library)", props: "leather armchairs, tall bookshelves, fireplace, globe, reading lamp" },
+        // 新增：更多商業空間
+        { value: "Jewelry store, diamond displays, elegant lighting (珠寶店)", label: "珠寶店 (Jewelry Store)", props: "diamond displays, velvet cushions, glass cases, elegant lighting" },
+        { value: "Perfume boutique, glass bottles, luxurious decor (香水店)", label: "香水店 (Perfume Boutique)", props: "perfume bottles, mirrors, flowers, elegant displays" },
+        { value: "Dessert cafe, colorful cakes, pastel decor (甜點咖啡廳)", label: "甜點咖啡廳 (Dessert Cafe)", props: "colorful cakes, macarons, pastel decor, display case" },
+        { value: "Bubble tea shop, colorful drinks, cute decor (珍珠奶茶店)", label: "珍珠奶茶店 (Bubble Tea Shop)", props: "bubble tea cups, colorful menu, cute decor, straws" },
+        { value: "Traditional Chinese tea house, wooden furniture (中式茶館)", label: "中式茶館 (Chinese Tea House)", props: "tea set, wooden furniture, calligraphy, bamboo" },
+        { value: "Japanese izakaya, paper lanterns, sake (日式居酒屋)", label: "日式居酒屋 (Izakaya)", props: "paper lanterns, sake bottles, wooden counter, small dishes" },
+        { value: "Korean BBQ restaurant, grill table, side dishes (韓式燒烤店)", label: "韓式燒烤店 (Korean BBQ)", props: "table grill, meat, side dishes, soju bottles" },
+        { value: "Antique shop, old items, dusty atmosphere (古董店)", label: "古董店 (Antique Shop)", props: "old clocks, vintage items, dusty shelves, curiosities" }
+    ],
+
+    // === 幻想場景 (Fantasy Spaces) ===
+    fantasy: [
+        { value: "Magical library, floating books, mystical light (魔法圖書館)", label: "魔法圖書館 (Magical Library)", props: "floating books, mystical light, ancient tomes, candles" },
+        { value: "Fairy tale castle interior, grand hall (童話城堡)", label: "童話城堡 (Fairy Tale Castle)", props: "grand hall, chandeliers, red carpet, throne" },
+        { value: "Enchanted forest, glowing mushrooms, fairy lights (魔幻森林)", label: "魔幻森林 (Enchanted Forest)", props: "glowing mushrooms, fairy lights, ancient trees, magical creatures" },
+        { value: "Underwater palace, coral, blue light (海底宮殿)", label: "海底宮殿 (Underwater Palace)", props: "coral, seashells, blue light, bubbles, fish" },
+        { value: "Cloud kingdom, fluffy clouds, golden light (雲上王國)", label: "雲上王國 (Cloud Kingdom)", props: "fluffy clouds, golden light, rainbow, floating islands" },
+        { value: "Cyberpunk city, holographic ads, flying cars (賽博龐克都市)", label: "賽博龐克都市 (Cyberpunk City)", props: "holographic ads, neon lights, flying cars, rain" },
+        { value: "Space station interior, stars outside window (太空站)", label: "太空站 (Space Station)", props: "control panels, stars, zero gravity, futuristic" },
+        { value: "Ancient temple ruins, mysterious symbols (古代神殿)", label: "古代神殿 (Ancient Temple)", props: "stone pillars, mysterious symbols, vines, shaft of light" },
+        { value: "Gothic cathedral, stained glass, candles (哥德式教堂)", label: "哥德式教堂 (Gothic Cathedral)", props: "stained glass windows, candles, stone arches, altar" },
+        { value: "Japanese shrine, torii gate, sacred atmosphere (日本神社)", label: "日本神社 (Japanese Shrine)", props: "torii gate, stone lanterns, ema boards, sacred rope" },
+        { value: "Witch's cottage, potion bottles, cauldron (女巫小屋)", label: "女巫小屋 (Witch Cottage)", props: "potion bottles, cauldron, spell books, herbs, black cat" },
+        { value: "Steampunk workshop, gears, brass machines (蒸氣龐克工坊)", label: "蒸氣龐克工坊 (Steampunk Workshop)", props: "gears, brass machines, steam pipes, goggles, clocks" }
+    ],
+
+    // === 攝影棚/簡潔背景 (Studio & Simple Backgrounds) ===
+    studio: [
+        // 純色背景 Solid Color Backgrounds
+        { value: "Pure white studio background, clean seamless, soft even lighting (純白背景)", label: "⬜ 純白背景 (Pure White)", props: "none, clean seamless backdrop" },
+        { value: "Soft cream white background, warm tone, studio lighting (奶油白背景)", label: "🤍 奶油白背景 (Cream White)", props: "none, warm seamless backdrop" },
+        { value: "Light grey studio background, neutral tone, professional (淺灰背景)", label: "🔘 淺灰背景 (Light Grey)", props: "none, neutral grey backdrop" },
+        { value: "Pastel pink studio background, soft feminine (粉色背景)", label: "💗 粉色背景 (Pastel Pink)", props: "none, pink seamless backdrop" },
+        { value: "Pastel blue studio background, calm serene (淺藍背景)", label: "💙 淺藍背景 (Pastel Blue)", props: "none, blue seamless backdrop" },
+        { value: "Pastel lavender studio background, dreamy purple (薰衣草背景)", label: "💜 薰衣草背景 (Lavender)", props: "none, lavender seamless backdrop" },
+        { value: "Mint green studio background, fresh cool (薄荷綠背景)", label: "💚 薄荷綠背景 (Mint Green)", props: "none, mint seamless backdrop" },
+        { value: "Warm beige studio background, cozy neutral (米色背景)", label: "🟤 米色背景 (Beige)", props: "none, beige seamless backdrop" },
+        { value: "Pure black studio background, dramatic dark (純黑背景)", label: "⬛ 純黑背景 (Pure Black)", props: "none, black seamless backdrop" },
+        // 圖案背景 Pattern Backgrounds
+        { value: "Notebook grid paper background, blue lines on white, school style (筆記本格子)", label: "📓 筆記本格子 (Notebook Grid)", props: "blue grid lines, white paper texture" },
+        { value: "Graph paper background, small squares grid pattern (方格紙背景)", label: "📐 方格紙背景 (Graph Paper)", props: "small grid squares, technical drawing style" },
+        { value: "Lined notebook paper background, horizontal lines (橫線筆記本)", label: "📝 橫線筆記本 (Lined Paper)", props: "horizontal blue lines, margin line, paper texture" },
+        { value: "Dotted grid background, bullet journal style (點點格背景)", label: "📋 點點格背景 (Dot Grid)", props: "dot grid pattern, minimal clean" },
+        { value: "Checkered pattern background, classic squares (格紋背景)", label: "🏁 格紋背景 (Checkered)", props: "checkered squares pattern" },
+        { value: "Polka dot background, cute circles pattern (點點背景)", label: "⚪ 點點背景 (Polka Dots)", props: "polka dot pattern, playful cute" },
+        { value: "Striped background, vertical lines pattern (條紋背景)", label: "📊 條紋背景 (Stripes)", props: "vertical stripe pattern" },
+        // 漸層背景 Gradient Backgrounds
+        { value: "Pink to white gradient background, soft ombre (粉白漸層)", label: "🌸 粉白漸層 (Pink Gradient)", props: "none, pink to white ombre" },
+        { value: "Blue to white gradient background, sky fade (藍白漸層)", label: "🌊 藍白漸層 (Blue Gradient)", props: "none, blue to white ombre" },
+        { value: "Sunset gradient background, orange pink purple (夕陽漸層)", label: "🌅 夕陽漸層 (Sunset Gradient)", props: "none, warm sunset colors ombre" },
+        { value: "Pastel rainbow gradient background, soft colors (彩虹漸層)", label: "🌈 彩虹漸層 (Rainbow Gradient)", props: "none, pastel rainbow ombre" },
+        // 特殊攝影棚 Special Studio
+        { value: "Professional photo studio, softbox lights, white backdrop (專業攝影棚)", label: "📸 專業攝影棚 (Photo Studio)", props: "softbox lights, light stands, reflector" },
+        { value: "Cyclorama studio, curved white infinity wall (無縫攝影棚)", label: "🎬 無縫攝影棚 (Cyclorama)", props: "curved infinity wall, professional lighting" },
+        { value: "Minimal white room, empty space, clean aesthetic (極簡白房)", label: "🏢 極簡白房 (Minimal White Room)", props: "empty white space, minimal furniture" },
+        { value: "Bokeh light background, blurred fairy lights (光斑背景)", label: "✨ 光斑背景 (Bokeh Lights)", props: "blurred bokeh circles, fairy lights effect" }
     ]
-};
+}

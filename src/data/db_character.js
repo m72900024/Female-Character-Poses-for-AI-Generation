@@ -1,4 +1,19 @@
 // ★★★ 結構已改為陣列，直接在此定義分類名稱 ★★★
+
+// === 人種/族裔資料庫 ===
+export const ethnicityDatabase = [
+    { value: "Asian woman, East Asian features, delicate facial features, fair skin", label: "🇯🇵 東亞人 (East Asian)" },
+    { value: "Japanese woman, Japanese facial features, fair porcelain skin, delicate face", label: "🇯🇵 日本人 (Japanese)" },
+    { value: "Korean woman, Korean facial features, glass skin, high cheekbones", label: "🇰🇷 韓國人 (Korean)" },
+    { value: "Chinese woman, Chinese facial features, elegant appearance", label: "🇨🇳 中國人 (Chinese)" },
+    { value: "Taiwanese woman, Taiwanese features, natural beauty, clear skin", label: "🇹🇼 台灣人 (Taiwanese)" },
+    { value: "Southeast Asian woman, Southeast Asian features, tan skin, exotic beauty", label: "🌏 東南亞人 (Southeast Asian)" },
+    { value: "Caucasian woman, Western features, European appearance", label: "🇺🇸 歐美白人 (Caucasian)" },
+    { value: "Latina woman, Latin American features, warm skin tone, passionate beauty", label: "🌎 拉丁美洲人 (Latina)" },
+    { value: "Mixed race woman, Eurasian features, exotic mixed beauty", label: "🌍 混血兒 (Mixed/Eurasian)" },
+    { value: "Anime style girl, 2D anime features, large eyes, small nose", label: "🎨 動漫風格 (Anime Style)" }
+];
+
 export const hairDatabase = [
     {
         id: "ponytail",
