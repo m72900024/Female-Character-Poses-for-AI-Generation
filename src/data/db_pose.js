@@ -124,7 +124,7 @@ export const poseDatabase = [
             { value: "jack-o-lantern pose, hugging knees tightly (抱膝蜷縮)", label: "🟫 抱膝蜷縮 (Jack-o-lantern)" },
             { value: "sitting hugging one knee on floor (單腿抱膝)", label: "🟫 單腿抱膝 (Hugging One Knee)" },
             { value: "Sitting with legs to side, hands on lap, elegant (淑女側坐)", label: "🟫 淑女側坐 (Elegant Side)" },
-            { value: "sitting legs spread on floor, M-shape (M字開腿坐)", label: "🟫 M字開腿坐 (Legs Spread)" },
+            { value: "sitting on floor with legs in M-shape, relaxed (M字腿坐姿)", label: "🟫 M字腿坐姿 (M-shape Sit)" },
             { value: "Sitting on floor, legs stretched out, relaxed (伸腿地板坐)", label: "🟫 伸腿地板坐 (Legs Stretched)" },
             // ===== 椅子坐 Chair Sitting =====
             { value: "Sitting on chair, thighs together, calves spread inverted V (內八夾腿倒V)", label: "🪑 內八夾腿倒V (Inverted V)" },
@@ -150,12 +150,12 @@ export const poseDatabase = [
             // ===== 跪姿 Kneeling =====
             { value: "kneeling, sitting on heels, formal (正跪坐)", label: "🧎 正跪坐 (Seiza)" },
             { value: "kneeling upright, thighs vertical (高跪姿)", label: "🧎 高跪姿 (High Kneel)" },
-            { value: "kneeling with wide knees, provocative (跪姿開腿)", label: "🧎 跪姿開腿 (Wide Kneeling)" },
+            { value: "kneeling with knees apart, confident pose (跪姿寬膝)", label: "🧎 跪姿寬膝 (Wide Kneeling)" },
             { value: "kneeling, leaning forward, submissive (跪姿前傾)", label: "🧎 跪姿前傾 (Kneel Forward)" },
             { value: "kneeling, looking up at camera, innocent (跪姿仰望)", label: "🧎 跪姿仰望 (Kneel Look Up)" },
             { value: "kneeling on one knee, proposal pose (單膝跪)", label: "🧎 單膝跪 (One Knee)" },
             // ===== 特殊坐姿 Special Sitting =====
-            { value: "sitting on camera, straddling POV (騎乘視角)", label: "⭐ 騎乘視角 (Sitting on Camera)" },
+            { value: "sitting facing camera, intimate POV angle (騎乘視角)", label: "⭐ 騎乘視角 (Intimate POV)" },
             { value: "sitting with legs dangling off edge (坐姿晃腿)", label: "⭐ 坐姿晃腿 (Legs Dangling)" },
             { value: "Sitting on stairs, legs to side (階梯側坐)", label: "⭐ 階梯側坐 (Stairs Side Sit)" },
             { value: "Sitting on windowsill, leg raised (窗台抬腿)", label: "⭐ 窗台抬腿 (Windowsill Sit)" },
@@ -176,7 +176,7 @@ export const poseDatabase = [
             { value: "Lying on back, upside down face to camera (倒頭視角)", label: "⬆️ 倒頭視角 (Upside Down)" },
             { value: "Lying on back, legs up against wall (抬腿仰躺)", label: "⬆️ 抬腿仰躺 (Legs Up)" },
             { value: "Lying on back, holding a book (仰躺看書)", label: "⬆️ 仰躺看書 (Reading)" },
-            { value: "Lying on back, legs spread V-shape (仰臥V字開腿)", label: "⬆️ 仰臥V字開腿 (V-Legs)" },
+            { value: "Lying on back, legs in V-shape position, relaxed (仰臥V字腿)", label: "⬆️ 仰臥V字腿 (V-shape Lying)" },
             { value: "Lying on back, pulling knees to chest (仰臥抱腿)", label: "⬆️ 仰臥抱腿 (Knees to Chest)" },
             { value: "Lying on back, looking down at camera (仰視鏡頭)", label: "⬆️ 仰視鏡頭 (Looking Down)" },
             { value: "Lying on back, arching chest (仰臥挺胸)", label: "⬆️ 仰臥挺胸 (Arching Chest)" },
@@ -396,7 +396,7 @@ export const handActionList = [
      // ===== 性感系 Sexy =====
      { value: "lifting skirt hem slightly, showing a bit of thigh, teasing peek (微掀裙角)", label: "👗 微掀裙-若隱若現 (Slight Lift)" },
      { value: "lifting skirt to mid-thigh level, showing thighs clearly (掀裙露大腿)", label: "👗 掀裙-露大腿 (Medium Lift)" },
-     { value: "lifting skirt high, showing upper thighs and more, provocative (高掀裙)", label: "👗 高掀裙-大膽展露 (High Lift)" },
+     { value: "lifting skirt high, showing upper thighs, bold pose (高掀裙)", label: "👗 高掀裙-大膽展露 (High Lift)" },
      { value: "pulling down collar, showing cleavage (拉開領口)", label: "👚 拉開領口 (Pulling Collar)" },
      { value: "shirt lift, showing stomach (掀上衣 - 露腹部用)", label: "👕 掀上衣 (Shirt Lift)" },
      { value: "biting finger, seductive look (咬手指)", label: "😏 咬手指 (Biting Finger)" },
