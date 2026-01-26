@@ -5,7 +5,7 @@ export const poseDatabase = [
         options: [
             { value: "Cat pose, arching back on bed, crawling forward, looking at viewer (貓式伸展)", label: "貓式伸展 (Cat Pose)" }, // ★
             { value: "Lying on stomach, propping chin with hands, legs kicking up (趴著托腮翹腳)", label: "趴著托腮翹腳 (Prop Chin)" },
-            { value: "Crawling forward on knees, seductive gaze (膝蓋爬行)", label: "膝蓋爬行 (Crawling)" },
+            { value: "Crawling forward on knees, alluring look (膝蓋爬行)", label: "膝蓋爬行 (Crawling)" },
             { value: "Lying on stomach, reading a book on the floor (趴著看書)", label: "趴著看書 (Reading)" },
             { value: "Lying on stomach, stretching arms forward on bed (趴床伸懶腰)", label: "趴床伸懶腰 (Stretching)" },
             { value: "Lying prone, head resting on crossed arms (趴著休息)", label: "趴著休息 (Resting)" },
@@ -192,7 +192,7 @@ export const poseDatabase = [
             { value: "Lying sideways, propping head with hand (側臥托頭)", label: "➡️ 側臥托頭 (Propping Head)" },
             { value: "Lying on side, top leg raised (側臥抬腿)", label: "➡️ 側臥抬腿 (Side Leg Lift)" },
             { value: "Lying on side, hand running through hair (側臥撩髮)", label: "➡️ 側臥撩髮 (Hand in Hair)" },
-            { value: "Lying on side, sexy S-curve pose (性感側臥)", label: "➡️ 性感側臥 (Sexy Side)" },
+            { value: "Lying on side, elegant S-curve pose (性感側臥)", label: "➡️ 性感側臥 (Elegant Side)" },
             { value: "Lying on side, hugging pillow, dreamy (側臥抱枕)", label: "➡️ 側臥抱枕 (Hugging Pillow)" },
             { value: "Lying on side, back to camera, looking over shoulder (側臥回眸)", label: "➡️ 側臥回眸 (Side Glance)" },
             { value: "Lying on side, legs crossed elegantly (側臥交腿)", label: "➡️ 側臥交腿 (Crossed Legs)" },
