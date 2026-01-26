@@ -949,14 +949,62 @@ export const shoeDatabase = {
 
 // --- ★★★ 下裝 (Bottoms) - 增加甜美短裙 ★★★ ---
 export const bottomDatabase = {
+    // === 短褲 Shorts ===
+    shorts: [
+        // 牛仔短褲 Denim Shorts
+        { value: "High-waisted denim shorts, classic blue (高腰牛仔短褲)", label: "👖 高腰牛仔短褲 (High-waist Denim)" },
+        { value: "Low-rise denim shorts, Y2K style (低腰牛仔短褲)", label: "👖 低腰牛仔短褲 (Low-rise Denim)" },
+        { value: "Distressed denim shorts, ripped details (破洞牛仔短褲)", label: "👖 破洞牛仔短褲 (Distressed Denim)" },
+        { value: "White denim shorts, summer fresh (白色牛仔短褲)", label: "👖 白色牛仔短褲 (White Denim)" },
+        { value: "Light wash denim shorts, vintage (淺色牛仔短褲)", label: "👖 淺色牛仔短褲 (Light Wash)" },
+        { value: "Denim cutoff shorts, frayed hem (毛邊牛仔短褲)", label: "👖 毛邊牛仔短褲 (Cutoff Denim)" },
+        // 熱褲 Hot Pants
+        { value: "Black hot pants, ultra short, tight fit (黑色熱褲)", label: "🔥 黑色熱褲 (Black Hot Pants)" },
+        { value: "Denim hot pants, minimal coverage (牛仔熱褲)", label: "🔥 牛仔熱褲 (Denim Hot Pants)" },
+        { value: "Leather hot pants, edgy style (皮革熱褲)", label: "🔥 皮革熱褲 (Leather Hot Pants)" },
+        { value: "Shiny PU hot pants, club style (亮面PU熱褲)", label: "🔥 亮面PU熱褲 (Shiny PU Hot Pants)" },
+        // 運動短褲 Athletic Shorts
+        { value: "Black bike shorts, cycling style (黑色單車褲)", label: "🏃 黑色單車褲 (Bike Shorts)" },
+        { value: "Running shorts, athletic fit (跑步短褲)", label: "🏃 跑步短褲 (Running Shorts)" },
+        { value: "Yoga shorts, high-waisted, stretchy (瑜伽短褲)", label: "🏃 瑜伽短褲 (Yoga Shorts)" },
+        { value: "Tennis shorts, sporty white (網球短褲)", label: "🏃 網球短褲 (Tennis Shorts)" },
+        { value: "Gym shorts, breathable fabric (健身短褲)", label: "🏃 健身短褲 (Gym Shorts)" },
+        { value: "Compression shorts, form-fitting (緊身運動短褲)", label: "🏃 緊身運動短褲 (Compression)" },
+        // 休閒短褲 Casual Shorts
+        { value: "Linen shorts, relaxed fit, summer vibes (亞麻休閒短褲)", label: "🌴 亞麻休閒短褲 (Linen Shorts)" },
+        { value: "Cotton shorts, comfortable casual (棉質休閒短褲)", label: "🌴 棉質休閒短褲 (Cotton Shorts)" },
+        { value: "Cargo shorts, multiple pockets (工裝短褲)", label: "🌴 工裝短褲 (Cargo Shorts)" },
+        { value: "Paper bag shorts, tie waist (紙袋短褲)", label: "🌴 紙袋短褲 (Paper Bag)" },
+        { value: "Drawstring shorts, casual comfort (鬆緊短褲)", label: "🌴 鬆緊短褲 (Drawstring)" },
+        // 甜美可愛 Cute Shorts
+        { value: "High-waisted shorts with bow, cute style (蝴蝶結高腰短褲)", label: "🎀 蝴蝶結高腰短褲 (Bow Shorts)" },
+        { value: "Pastel pink shorts, soft girl (粉色甜美短褲)", label: "🎀 粉色甜美短褲 (Pink Cute)" },
+        { value: "Gingham check shorts, vintage cute (格紋短褲)", label: "🎀 格紋短褲 (Gingham Check)" },
+        { value: "Ruffle hem shorts, feminine (荷葉邊短褲)", label: "🎀 荷葉邊短褲 (Ruffle Hem)" },
+        { value: "Overall shorts, playful style (吊帶短褲)", label: "🎀 吊帶短褲 (Overall Shorts)" },
+        { value: "Floral print shorts, spring vibes (碎花短褲)", label: "🎀 碎花短褲 (Floral Print)" },
+        // 正裝短褲 Dress Shorts
+        { value: "Tailored shorts, office appropriate (西裝短褲)", label: "💼 西裝短褲 (Tailored Shorts)" },
+        { value: "High-waisted pleated shorts, elegant (高腰打褶短褲)", label: "💼 高腰打褶短褲 (Pleated Shorts)" },
+        { value: "Bermuda shorts, knee-length smart (百慕達短褲)", label: "💼 百慕達短褲 (Bermuda)" },
+        // 性感短褲 Sexy Shorts
+        { value: "Micro shorts, ultra revealing (超短迷你短褲)", label: "💋 超短迷你短褲 (Micro Shorts)" },
+        { value: "Side tie shorts, adjustable (側綁帶短褲)", label: "💋 側綁帶短褲 (Side Tie)" },
+        { value: "Cut-out detail shorts, edgy (挖空設計短褲)", label: "💋 挖空設計短褲 (Cut-out Shorts)" },
+        { value: "Lace-up front shorts, sexy detail (前綁帶短褲)", label: "💋 前綁帶短褲 (Lace-up Front)" },
+        { value: "Satin sleep shorts, intimate (緞面睡褲)", label: "💋 緞面睡褲 (Satin Sleep)" }
+    ],
     pants: [
-        { value: "Denim shorts (牛仔短褲)", label: "牛仔短褲 (Denim Shorts)" },
-        { value: "Hot pants (熱褲)", label: "熱褲 (Hot Pants)" },
         { value: "Skinny jeans (緊身牛仔褲)", label: "緊身牛仔褲 (Skinny Jeans)" },
         { value: "Wide-leg pants (寬褲)", label: "寬褲 (Wide-leg Pants)" },
         { value: "Leather pants (皮褲)", label: "皮褲 (Leather Pants)" },
-        { value: "Leggings (內搭褲)", label: "內搭褲 (Leggings)" }, 
-        { value: "Cargo pants (工裝褲)", label: "工裝褲 (Cargo Pants)" }
+        { value: "Leggings (內搭褲)", label: "內搭褲 (Leggings)" },
+        { value: "Cargo pants (工裝褲)", label: "工裝褲 (Cargo Pants)" },
+        { value: "High-waisted jeans (高腰牛仔褲)", label: "高腰牛仔褲 (High-waisted Jeans)" },
+        { value: "Mom jeans, relaxed fit (老媽褲)", label: "老媽褲 (Mom Jeans)" },
+        { value: "Flare pants, 70s style (喇叭褲)", label: "喇叭褲 (Flare Pants)" },
+        { value: "Jogger pants, casual sporty (運動棉褲)", label: "運動棉褲 (Joggers)" },
+        { value: "Yoga pants, high-waisted (瑜伽褲)", label: "瑜伽褲 (Yoga Pants)" }
     ],
     mini_skirt: [
         // 基本款 Basic Styles
