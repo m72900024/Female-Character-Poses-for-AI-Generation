@@ -575,6 +575,76 @@ export const costumeSetDatabase = {
         { value: "Striped crop cardigan, matching mini skirt set, white sneakers (條紋套裝迷你)", label: "🇰🇷 條紋套裝迷你 (Stripe Set Mini)" }
     ],
 
+    // === 🩳 短褲套裝搭配 (Shorts Outfits) ===
+    shorts_outfits: [
+        // ────────────────────────────────────────
+        // 🎀 日系甜美短褲 Japanese Sweet Shorts
+        // ────────────────────────────────────────
+        { value: "White lace crop top, high-waisted pink gingham shorts, white knee socks, pink mary janes, sweet summer style (日系粉格紋甜美短褲)", label: "🎀🇯🇵 粉格紋甜美短褲 (Pink Gingham Sweet)" },
+        { value: "Cream knit cardigan with pearl buttons, white camisole, light blue denim shorts, white sneakers, soft feminine (日系珍珠扣針織短褲)", label: "🎀🇯🇵 珍珠扣針織短褲 (Pearl Knit Shorts)" },
+        { value: "Baby pink off-shoulder top with ruffles, white high-waisted shorts with bow, white sandals (日系粉色荷葉邊短褲)", label: "🎀🇯🇵 粉色荷葉邊短褲 (Pink Ruffle Shorts)" },
+        { value: "White sailor collar blouse with navy ribbon, navy pleated shorts, white knee socks, brown loafers (日系水手風短褲)", label: "🎀🇯🇵 水手風短褲 (Sailor Shorts)" },
+        { value: "Pastel lavender oversized sweater, white denim shorts, white platform sneakers, cute casual (日系薰衣草毛衣短褲)", label: "🎀🇯🇵 薰衣草毛衣短褲 (Lavender Sweater Shorts)" },
+        { value: "Strawberry print crop top, red high-waisted shorts, white ankle socks, red mary janes (日系草莓甜心短褲)", label: "🎀🇯🇵 草莓甜心短褲 (Strawberry Sweet Shorts)" },
+        { value: "White puff sleeve blouse with ribbon, pastel yellow shorts with lace trim, white ballet flats (日系蕾絲邊黃色短褲)", label: "🎀🇯🇵 蕾絲邊黃色短褲 (Lace Trim Yellow)" },
+        { value: "Pink gingham crop top with bow, matching pink gingham shorts set, white sneakers, summer date (日系粉格紋套裝)", label: "🎀🇯🇵 粉格紋短褲套裝 (Gingham Set)" },
+        // ────────────────────────────────────────
+        // 🎀 韓系甜美短褲 Korean Sweet Shorts
+        // ────────────────────────────────────────
+        { value: "White cropped cardigan with gold buttons, cream camisole, high-waisted beige shorts, nude mules, elegant casual (韓系奶茶甜美短褲)", label: "🎀🇰🇷 奶茶甜美短褲 (Milk Tea Sweet Shorts)" },
+        { value: "Soft pink tweed cropped jacket, matching pink tweed shorts, pearl accessories, nude heels (韓系粉色小香風短褲套裝)", label: "🎀🇰🇷 粉色小香風短褲套裝 (Pink Tweed Shorts Set)" },
+        { value: "White square neck puff sleeve top, lavender paper bag shorts, strappy sandals, romantic date (韓系薰衣草紙袋短褲)", label: "🎀🇰🇷 薰衣草紙袋短褲 (Lavender Paper Bag)" },
+        { value: "Baby blue knit vest over white shirt, matching blue tailored shorts, white sneakers, preppy cute (韓系學院風藍色短褲)", label: "🎀🇰🇷 學院風藍色短褲 (Preppy Blue Shorts)" },
+        { value: "Cream silk camisole, high-waisted linen shorts with belt, straw bag, nude sandals, summer elegant (韓系亞麻優雅短褲)", label: "🎀🇰🇷 亞麻優雅短褲 (Linen Elegant Shorts)" },
+        { value: "Pastel mint cropped hoodie, white denim shorts, white chunky sneakers, sporty cute (韓系薄荷休閒短褲)", label: "🎀🇰🇷 薄荷休閒短褲 (Mint Casual Shorts)" },
+        { value: "White eyelet lace top, high-waisted cream shorts with bow, nude block heels (韓系蕾絲蝴蝶結短褲)", label: "🎀🇰🇷 蕾絲蝴蝶結短褲 (Lace Bow Shorts)" },
+        { value: "Peach ruched crop top, matching peach shorts set, gold jewelry, nude heels (韓系蜜桃套裝短褲)", label: "🎀🇰🇷 蜜桃套裝短褲 (Peach Set Shorts)" },
+        // ────────────────────────────────────────
+        // 💋 性感辣妹短褲 Sexy Shorts Outfits
+        // ────────────────────────────────────────
+        { value: "Black lace bralette, high-waisted black leather shorts, fishnet stockings, black stiletto heels (性感皮革蕾絲短褲)", label: "💋🔥 皮革蕾絲短褲 (Leather Lace Shorts)" },
+        { value: "White cropped tube top, ultra low-rise denim hot pants, chunky silver chain belt, clear heels (性感低腰牛仔熱褲)", label: "💋🔥 低腰牛仔熱褲 (Low-rise Denim Hot)" },
+        { value: "Red satin crop top with tie front, black micro shorts, black ankle boots (性感紅緞面短褲)", label: "💋🔥 紅緞面短褲 (Red Satin Shorts)" },
+        { value: "Sheer mesh long sleeve top, black bralette visible, high-waisted black shorts, black heels (性感透視網紗短褲)", label: "💋🔥 透視網紗短褲 (Sheer Mesh Shorts)" },
+        { value: "Black velvet bustier top, matching velvet micro shorts, choker necklace, black stilettos (性感絲絨套裝短褲)", label: "💋🔥 絲絨套裝短褲 (Velvet Set Shorts)" },
+        { value: "White bodysuit with deep V, distressed denim shorts, black ankle boots, edgy sexy (性感深V連身短褲)", label: "💋🔥 深V連身短褲 (Deep V Shorts)" },
+        { value: "Sequin bralette top, black satin shorts, strappy heels, night out style (性感亮片夜店短褲)", label: "💋🔥 亮片夜店短褲 (Sequin Club Shorts)" },
+        { value: "Off-shoulder crop sweater, high-waisted PU leather shorts, over-the-knee boots (性感露肩皮短褲)", label: "💋🔥 露肩皮短褲 (Off-shoulder Leather)" },
+        // ────────────────────────────────────────
+        // 🇯🇵 日系辣妹短褲 Japanese Spicy Shorts
+        // ────────────────────────────────────────
+        { value: "White halter neck crop top, ultra high-waisted denim shorts, white platform sneakers, gyaru style (日系辣妹高腰牛仔短褲)", label: "🔥🇯🇵 辣妹高腰牛仔短褲 (Gyaru Denim)" },
+        { value: "Pink cropped hoodie, black micro shorts, white thigh-high socks, pink platform sneakers (日系甜辣帽T短褲)", label: "🔥🇯🇵 甜辣帽T短褲 (Sweet Spicy Hoodie)" },
+        { value: "Black tube top with rhinestones, white hot pants, clear platform heels, Y2K gyaru (日系Y2K辣妹熱褲)", label: "🔥🇯🇵 Y2K辣妹熱褲 (Y2K Gyaru Hot)" },
+        { value: "White off-shoulder ruffle top, light blue denim shorts, white knee-high boots, summer spicy (日系露肩辣妹短褲)", label: "🔥🇯🇵 露肩辣妹短褲 (Off-shoulder Spicy)" },
+        { value: "Cropped sailor top, navy micro pleated shorts, white loose socks, platform loafers (日系改良水手短褲)", label: "🔥🇯🇵 改良水手短褲 (Modified Sailor Shorts)" },
+        // ────────────────────────────────────────
+        // 🇰🇷 韓系辣妹短褲 Korean Spicy Shorts
+        // ────────────────────────────────────────
+        { value: "Black cropped blazer, white bralette visible, high-waisted tailored shorts, black heels (韓系辣妹西裝短褲)", label: "🔥🇰🇷 辣妹西裝短褲 (Spicy Blazer Shorts)" },
+        { value: "Ribbed white crop top, high-waisted cargo shorts, chunky sneakers, street style (韓系工裝辣妹短褲)", label: "🔥🇰🇷 工裝辣妹短褲 (Cargo Spicy Shorts)" },
+        { value: "Black one-shoulder top, leather shorts with belt, ankle boots, chic edgy (韓系單肩皮革短褲)", label: "🔥🇰🇷 單肩皮革短褲 (One-shoulder Leather)" },
+        { value: "White cropped shirt tied at waist, high-waisted black shorts, white sneakers, casual sexy (韓系綁結短褲)", label: "🔥🇰🇷 綁結短褲 (Tied Shirt Shorts)" },
+        { value: "Oversized graphic tee tucked in, ultra high-waisted denim shorts, white dad sneakers (韓系寬T高腰短褲)", label: "🔥🇰🇷 寬T高腰短褲 (Oversized Tee Shorts)" },
+        { value: "Off-shoulder knit crop top, high-waisted pleated shorts, strappy heels, date night (韓系露肩約會短褲)", label: "🔥🇰🇷 露肩約會短褲 (Off-shoulder Date Shorts)" },
+        // ────────────────────────────────────────
+        // 🌸 日韓運動休閒短褲 JK Sporty Casual Shorts
+        // ────────────────────────────────────────
+        { value: "White cropped zip hoodie, matching white bike shorts, white chunky sneakers, athleisure (日系運動甜心短褲)", label: "🏃🇯🇵 運動甜心短褲 (Sporty Sweet Shorts)" },
+        { value: "Pink sports bra, high-waisted grey yoga shorts, white sneakers, gym cute (韓系健身辣妹短褲)", label: "🏃🇰🇷 健身辣妹短褲 (Gym Girl Shorts)" },
+        { value: "Oversized team jersey, black bike shorts peeking out, white high-top sneakers (日系球衣單車褲)", label: "🏃🇯🇵 球衣單車褲 (Jersey Bike Shorts)" },
+        { value: "Cropped tennis sweater, white pleated tennis shorts, white sneakers, sporty preppy (韓系網球甜心短褲)", label: "🏃🇰🇷 網球甜心短褲 (Tennis Sweet Shorts)" },
+        { value: "Pastel blue cropped tee, matching blue running shorts, white sneakers, summer active (日系馬卡龍運動短褲)", label: "🏃🇯🇵 馬卡龍運動短褲 (Macaron Sport Shorts)" },
+        // ────────────────────────────────────────
+        // ☀️ 夏日清涼短褲 Summer Fresh Shorts
+        // ────────────────────────────────────────
+        { value: "White crochet crop top, light wash denim shorts, tan sandals, beach casual (日系夏日沙灘短褲)", label: "☀️🇯🇵 夏日沙灘短褲 (Beach Casual Shorts)" },
+        { value: "Yellow gingham bikini top with cover-up shirt, white shorts, straw hat, sandals (韓系度假風短褲)", label: "☀️🇰🇷 度假風短褲 (Vacation Shorts)" },
+        { value: "Off-shoulder white eyelet top, light blue linen shorts, espadrilles, summer romance (日系清涼亞麻短褲)", label: "☀️🇯🇵 清涼亞麻短褲 (Fresh Linen Shorts)" },
+        { value: "Striped crop tank, white high-waisted shorts, white canvas sneakers, casual summer (韓系條紋夏日短褲)", label: "☀️🇰🇷 條紋夏日短褲 (Stripe Summer Shorts)" },
+        { value: "Floral print tube top, denim cutoff shorts, tan wedge sandals, tropical vibes (日系碎花度假短褲)", label: "☀️🇯🇵 碎花度假短褲 (Floral Vacation Shorts)" }
+    ],
+
     // === ☕ 咖啡廳約會風 (Cafe Date Style) ===
     cafe_date: [
         // 奶茶色系 Milk Tea Tones

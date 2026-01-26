@@ -31,6 +31,7 @@ const categoryTranslations = {
     hanfu: "🏯 漢服 (Hanfu)",
     kimono: "👘 和服 (Kimono)",
     jk_style: "🇯🇵 日韓短裙風 (JK Style)",
+    shorts_outfits: "🩳 日韓短褲風 (Shorts Outfits)",
     cafe_date: "☕ 咖啡廳約會 (Cafe Date)",
     summer_fresh: "🌊 夏日清涼 (Summer Fresh)",
     autumn_winter: "🍂 秋冬溫暖 (Autumn Winter)",
