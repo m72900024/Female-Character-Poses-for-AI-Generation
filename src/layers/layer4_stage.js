@@ -9,7 +9,8 @@ const stageTranslations = {
     urban: "🏙️ 現代都市 (Urban)",
     nature: "🌿 自然戶外 (Nature)",
     entertainment: "🎉 娛樂場所 (Entertainment)",
-    commercial: "🛍️ 商業空間 (Commercial)"
+    commercial: "🛍️ 商業空間 (Commercial)",
+    fantasy: "🔮 奇幻場景 (Fantasy)"
 };
 
 export function init(callback) {
@@ -72,11 +73,11 @@ function updateLocations() {
 function updateProps() {
     const select = document.getElementById('stageLocStyle');
     const input = document.getElementById('stageProps');
-    
+
     // 當切換地點時，自動帶入該地點的建議道具 (Props)
     if (select && select.selectedIndex >= 0 && input) {
-        const props = select.options[select.selectedIndex].dataset.props;
-        if(props) input.value = props;
+        const props = select.options[select.selectedIndex].dataset.props || '';
+        input.value = props;  // 無論是否有值都更新
     }
     notify();
 }
