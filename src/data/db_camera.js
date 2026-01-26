@@ -17,7 +17,7 @@ export const framingDatabase = [
 // ====== 鏡頭位置 Position (鏡頭在哪裡) ======
 // ★ 加強版提示詞 - 確保視角準確
 export const positionDatabase = [
-    { value: "front view, facing camera, looking at viewer, perfectly centered composition, mirror symmetry, subject directly facing camera, straight on frontal shot, no angle (正面)", label: "⬆️ 正面-面對鏡頭" },
+    { value: "(front view:1.3), (facing camera:1.2), looking at viewer, (perfectly centered composition:1.2), (mirror symmetry:1.2), (subject directly facing camera:1.3), (straight on frontal shot:1.2), (no angle:1.1) (正面)", label: "⬆️ 正面-面對鏡頭" },
     { value: "back view, from behind, rear view, showing back, facing away from camera (背面)", label: "⬇️ 背面-背對鏡頭" },
     { value: "side view, profile shot, 90 degree angle, side profile, lateral view (側面)", label: "➡️ 側面-側臉輪廓" },
     { value: "three-quarter view, 45 degree angle, semi-profile, angled view (斜側面)", label: "↗️ 斜側面-45度最美" },
