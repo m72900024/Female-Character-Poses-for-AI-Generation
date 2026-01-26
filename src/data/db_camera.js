@@ -15,14 +15,15 @@ export const framingDatabase = [
 ];
 
 // ====== 鏡頭位置 Position (鏡頭在哪裡) ======
+// ★ 加強版提示詞 - 確保視角準確
 export const positionDatabase = [
-    { value: "front view, facing camera (正面)", label: "⬆️ 正面-面對鏡頭" },
-    { value: "back view, from behind (背面)", label: "⬇️ 背面-背對鏡頭" },
-    { value: "side view, profile (側面)", label: "➡️ 側面-側臉輪廓" },
-    { value: "three-quarter view, 45 degree angle (斜側面)", label: "↗️ 斜側面-45度最美" },
-    { value: "over the shoulder shot (過肩)", label: "🔄 過肩-窺視感" },
-    { value: "POV, first person view (第一人稱)", label: "👀 第一人稱-你的視角" },
-    { value: "selfie angle, holding camera (自拍)", label: "🤳 自拍-手持相機" }
+    { value: "front view, facing camera, looking at viewer, symmetrical composition, directly facing forward, frontal shot (正面)", label: "⬆️ 正面-面對鏡頭" },
+    { value: "back view, from behind, rear view, showing back, facing away from camera (背面)", label: "⬇️ 背面-背對鏡頭" },
+    { value: "side view, profile shot, 90 degree angle, side profile, lateral view (側面)", label: "➡️ 側面-側臉輪廓" },
+    { value: "three-quarter view, 45 degree angle, semi-profile, angled view (斜側面)", label: "↗️ 斜側面-45度最美" },
+    { value: "over the shoulder shot, looking back, from behind shoulder (過肩)", label: "🔄 過肩-窺視感" },
+    { value: "POV shot, first person view, point of view, subjective camera, viewer perspective (第一人稱)", label: "👀 第一人稱-你的視角" },
+    { value: "selfie angle, holding camera, arm extended, smartphone perspective, self portrait (自拍)", label: "🤳 自拍-手持相機" }
 ];
 
 // ====== 垂直角度 Vertical Angle (鏡頭高低) ======
