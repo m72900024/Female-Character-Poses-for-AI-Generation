@@ -70,6 +70,14 @@ function updatePrompt() {
     if (enL5) schema.filter_preset = L5.getData();
     if (enL6) schema.render_settings = L6.getData();
 
+    // ★ 正面視角時自動加入角度排除負面提示詞
+    if (schema.camera_work?.camera?.position?.includes('front view') && schema.render_settings?.negative_prompt !== undefined) {
+        const angleNeg = "(side view:1.2), (3/4 view:1.2), (profile:1.1), (angled shot:1.1), (from side:1.1)";
+        schema.render_settings.negative_prompt = schema.render_settings.negative_prompt
+            ? `${schema.render_settings.negative_prompt}, ${angleNeg}`
+            : angleNeg;
+    }
+
     const output = document.getElementById('jsonOutput');
     if (output) {
         if (outputFormat === 'json') {
