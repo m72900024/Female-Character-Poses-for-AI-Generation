@@ -60,9 +60,15 @@
                 <p class="text-xs text-slate-500">Modular Edition (Clean)</p>
             </div>
         </div>
-        <button id="btnCopyJson" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition flex items-center gap-2 active:scale-95">
-            <i class="fa-regular fa-copy"></i> 複製 JSON
-        </button>
+        <div class="flex items-center gap-3">
+            <div class="flex bg-slate-100 p-1 rounded-lg">
+                <button id="btnFormatJson" class="px-3 py-1.5 text-xs font-bold rounded-md bg-white shadow text-blue-600 transition">JSON</button>
+                <button id="btnFormatSD" class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-500 hover:bg-white/50 transition">SD Prompt</button>
+            </div>
+            <button id="btnCopyJson" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition flex items-center gap-2 active:scale-95">
+                <i class="fa-regular fa-copy"></i> <span id="btnCopyText">複製 JSON</span>
+            </button>
+        </div>
     </header>
 
     <main class="flex-1 flex overflow-hidden">
@@ -293,7 +299,7 @@
         </div>
 
         <div class="w-full md:w-1/2 lg:w-7/12 bg-slate-900 text-slate-300 p-6 flex flex-col">
-            <div class="flex justify-between items-center mb-4"><h2 class="font-bold text-white"><i class="fa-solid fa-code mr-2"></i>JSON Output</h2><span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Live Preview</span></div>
+            <div class="flex justify-between items-center mb-4"><h2 id="outputTitle" class="font-bold text-white"><i class="fa-solid fa-code mr-2"></i>JSON Output</h2><span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Live Preview</span></div>
             <div class="flex-1 bg-slate-950 rounded-lg p-4 border border-slate-800 overflow-auto font-mono text-sm shadow-inner custom-scrollbar relative">
                 <pre id="jsonOutput" class="text-green-400"></pre>
             </div>
