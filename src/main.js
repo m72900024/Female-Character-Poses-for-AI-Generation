@@ -99,8 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCopyText = document.getElementById('btnCopyText');
     const outputTitle = document.getElementById('outputTitle');
 
+    console.log('Format buttons found:', !!btnFormatJson, !!btnFormatSD);
+
     if (btnFormatJson && btnFormatSD) {
-        btnFormatJson.addEventListener('click', () => {
+        console.log('Attaching event listeners to format buttons');
+        btnFormatJson.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('JSON button clicked');
             outputFormat = 'json';
             btnFormatJson.classList.add('bg-white', 'shadow', 'text-blue-600');
             btnFormatJson.classList.remove('text-slate-500');
@@ -111,7 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
             updatePrompt();
         });
 
-        btnFormatSD.addEventListener('click', () => {
+        btnFormatSD.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('SD button clicked');
             outputFormat = 'sd';
             btnFormatSD.classList.add('bg-white', 'shadow', 'text-blue-600');
             btnFormatSD.classList.remove('text-slate-500');
