@@ -213,5 +213,37 @@ export const stageDatabase = {
         { value: "Japanese shrine, torii gate, sacred atmosphere (日本神社)", label: "日本神社 (Japanese Shrine)", props: "torii gate, stone lanterns, ema boards, sacred rope" },
         { value: "Witch's cottage, potion bottles, cauldron (女巫小屋)", label: "女巫小屋 (Witch Cottage)", props: "potion bottles, cauldron, spell books, herbs, black cat" },
         { value: "Steampunk workshop, gears, brass machines (蒸氣龐克工坊)", label: "蒸氣龐克工坊 (Steampunk Workshop)", props: "gears, brass machines, steam pipes, goggles, clocks" }
+    ],
+
+    // === 攝影棚/簡潔背景 (Studio & Simple Backgrounds) ===
+    studio: [
+        // 純色背景 Solid Color Backgrounds
+        { value: "Pure white studio background, clean seamless, soft even lighting (純白背景)", label: "⬜ 純白背景 (Pure White)", props: "none, clean seamless backdrop" },
+        { value: "Soft cream white background, warm tone, studio lighting (奶油白背景)", label: "🤍 奶油白背景 (Cream White)", props: "none, warm seamless backdrop" },
+        { value: "Light grey studio background, neutral tone, professional (淺灰背景)", label: "🔘 淺灰背景 (Light Grey)", props: "none, neutral grey backdrop" },
+        { value: "Pastel pink studio background, soft feminine (粉色背景)", label: "💗 粉色背景 (Pastel Pink)", props: "none, pink seamless backdrop" },
+        { value: "Pastel blue studio background, calm serene (淺藍背景)", label: "💙 淺藍背景 (Pastel Blue)", props: "none, blue seamless backdrop" },
+        { value: "Pastel lavender studio background, dreamy purple (薰衣草背景)", label: "💜 薰衣草背景 (Lavender)", props: "none, lavender seamless backdrop" },
+        { value: "Mint green studio background, fresh cool (薄荷綠背景)", label: "💚 薄荷綠背景 (Mint Green)", props: "none, mint seamless backdrop" },
+        { value: "Warm beige studio background, cozy neutral (米色背景)", label: "🟤 米色背景 (Beige)", props: "none, beige seamless backdrop" },
+        { value: "Pure black studio background, dramatic dark (純黑背景)", label: "⬛ 純黑背景 (Pure Black)", props: "none, black seamless backdrop" },
+        // 圖案背景 Pattern Backgrounds
+        { value: "Notebook grid paper background, blue lines on white, school style (筆記本格子)", label: "📓 筆記本格子 (Notebook Grid)", props: "blue grid lines, white paper texture" },
+        { value: "Graph paper background, small squares grid pattern (方格紙背景)", label: "📐 方格紙背景 (Graph Paper)", props: "small grid squares, technical drawing style" },
+        { value: "Lined notebook paper background, horizontal lines (橫線筆記本)", label: "📝 橫線筆記本 (Lined Paper)", props: "horizontal blue lines, margin line, paper texture" },
+        { value: "Dotted grid background, bullet journal style (點點格背景)", label: "📋 點點格背景 (Dot Grid)", props: "dot grid pattern, minimal clean" },
+        { value: "Checkered pattern background, classic squares (格紋背景)", label: "🏁 格紋背景 (Checkered)", props: "checkered squares pattern" },
+        { value: "Polka dot background, cute circles pattern (點點背景)", label: "⚪ 點點背景 (Polka Dots)", props: "polka dot pattern, playful cute" },
+        { value: "Striped background, vertical lines pattern (條紋背景)", label: "📊 條紋背景 (Stripes)", props: "vertical stripe pattern" },
+        // 漸層背景 Gradient Backgrounds
+        { value: "Pink to white gradient background, soft ombre (粉白漸層)", label: "🌸 粉白漸層 (Pink Gradient)", props: "none, pink to white ombre" },
+        { value: "Blue to white gradient background, sky fade (藍白漸層)", label: "🌊 藍白漸層 (Blue Gradient)", props: "none, blue to white ombre" },
+        { value: "Sunset gradient background, orange pink purple (夕陽漸層)", label: "🌅 夕陽漸層 (Sunset Gradient)", props: "none, warm sunset colors ombre" },
+        { value: "Pastel rainbow gradient background, soft colors (彩虹漸層)", label: "🌈 彩虹漸層 (Rainbow Gradient)", props: "none, pastel rainbow ombre" },
+        // 特殊攝影棚 Special Studio
+        { value: "Professional photo studio, softbox lights, white backdrop (專業攝影棚)", label: "📸 專業攝影棚 (Photo Studio)", props: "softbox lights, light stands, reflector" },
+        { value: "Cyclorama studio, curved white infinity wall (無縫攝影棚)", label: "🎬 無縫攝影棚 (Cyclorama)", props: "curved infinity wall, professional lighting" },
+        { value: "Minimal white room, empty space, clean aesthetic (極簡白房)", label: "🏢 極簡白房 (Minimal White Room)", props: "empty white space, minimal furniture" },
+        { value: "Bokeh light background, blurred fairy lights (光斑背景)", label: "✨ 光斑背景 (Bokeh Lights)", props: "blurred bokeh circles, fairy lights effect" }
     ]
 }

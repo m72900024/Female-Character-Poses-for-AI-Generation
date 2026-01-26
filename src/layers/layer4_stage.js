@@ -10,7 +10,8 @@ const stageTranslations = {
     nature: "🌿 自然戶外 (Nature)",
     entertainment: "🎉 娛樂場所 (Entertainment)",
     commercial: "🛍️ 商業空間 (Commercial)",
-    fantasy: "🔮 奇幻場景 (Fantasy)"
+    fantasy: "🔮 奇幻場景 (Fantasy)",
+    studio: "📷 攝影棚/簡潔背景 (Studio)"
 };
 
 export function init(callback) {

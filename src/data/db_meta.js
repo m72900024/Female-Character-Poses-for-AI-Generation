@@ -156,6 +156,114 @@ export const filterDatabase = {
         lighting: "Backlit with bokeh, fairy lights, soft glow, ethereal atmosphere",
         color_palette: ["Soft Gold", "Warm White", "Pastel Colors", "Light Leaks"],
         aesthetic: "Dreamy photography, beautiful bokeh, light leaks, magical atmosphere"
+    },
+    // === 🎨 動漫風格 Anime Styles ===
+    anime_cel: {
+        label: "🎨 賽璐珞動畫",
+        value: "anime_cel",
+        lighting: "Flat anime lighting, cel shaded shadows, clean edges, vibrant colors",
+        color_palette: ["Vibrant Primary Colors", "Clean White", "Bold Shadows", "Saturated Tones"],
+        aesthetic: "Classic anime cel shading, flat coloring, sharp shadow edges, 90s anime style, hand-drawn look"
+    },
+    anime_soft: {
+        label: "🌸 柔和動漫風",
+        value: "anime_soft",
+        lighting: "Soft diffused anime lighting, gentle gradients, pastel glow",
+        color_palette: ["Soft Pastels", "Light Pink", "Lavender", "Cream White"],
+        aesthetic: "Modern moe anime style, soft shading, big sparkly eyes, cute kawaii, shoujo manga"
+    },
+    anime_ghibli: {
+        label: "🏔️ 吉卜力風",
+        value: "anime_ghibli",
+        lighting: "Warm natural lighting, soft clouds, gentle sunlight, ambient glow",
+        color_palette: ["Sky Blue", "Grass Green", "Warm Earth Tones", "Soft White Clouds"],
+        aesthetic: "Studio Ghibli style, hand-painted backgrounds, nostalgic warm, Miyazaki inspired, watercolor texture"
+    },
+    anime_makoto: {
+        label: "✨ 新海誠風",
+        value: "anime_makoto",
+        lighting: "Dramatic golden hour, lens flare, volumetric light rays, sparkle effects",
+        color_palette: ["Deep Blue Sky", "Golden Sunlight", "Vibrant Sunset", "Starry Night"],
+        aesthetic: "Makoto Shinkai style, photorealistic backgrounds, beautiful sky, dramatic lighting, Your Name aesthetic"
+    },
+    manga_bw: {
+        label: "📖 黑白漫畫",
+        value: "manga_bw",
+        lighting: "High contrast black and white, screen tone shading, ink line art",
+        color_palette: ["Pure Black", "Pure White", "Grey Screen Tones"],
+        aesthetic: "Japanese manga style, monochrome, hatching, screen tones, dynamic ink lines, comic panel"
+    },
+    // === 🖌️ 繪畫風格 Painting Styles ===
+    watercolor: {
+        label: "💧 水彩風格",
+        value: "watercolor",
+        lighting: "Soft diffused light, transparent washes, wet edges, organic bleeding",
+        color_palette: ["Transparent Washes", "Soft Blues", "Warm Yellows", "Bleeding Edges"],
+        aesthetic: "Watercolor painting, wet on wet technique, soft edges, paper texture, artistic bleeding, traditional art"
+    },
+    oil_painting: {
+        label: "🖼️ 油畫風格",
+        value: "oil_painting",
+        lighting: "Rich dramatic lighting, Rembrandt style, warm golden tones, deep shadows",
+        color_palette: ["Rich Amber", "Deep Browns", "Golden Highlights", "Velvet Shadows"],
+        aesthetic: "Classical oil painting, visible brushstrokes, rich textures, Renaissance inspired, museum quality"
+    },
+    gouache: {
+        label: "🎨 不透明水彩",
+        value: "gouache",
+        lighting: "Flat matte lighting, opaque colors, poster-like quality",
+        color_palette: ["Matte Pastels", "Opaque Colors", "Flat Tones", "Chalky Finish"],
+        aesthetic: "Gouache illustration, matte finish, flat colors, children's book style, vintage poster art"
+    },
+    digital_painting: {
+        label: "🖥️ 數位繪畫",
+        value: "digital_painting",
+        lighting: "Dramatic rim lighting, subsurface scattering, ambient occlusion",
+        color_palette: ["Rich Saturated", "Glowing Highlights", "Deep Shadows", "Vibrant Accents"],
+        aesthetic: "Digital art, concept art style, detailed rendering, ArtStation quality, professional illustration"
+    },
+    sketch: {
+        label: "✏️ 素描風格",
+        value: "sketch",
+        lighting: "Minimal shading, line weight variation, cross-hatching shadows",
+        color_palette: ["Graphite Grey", "Paper White", "Charcoal Black"],
+        aesthetic: "Pencil sketch, hand-drawn lines, gestural strokes, sketchbook style, rough artistic"
+    },
+    // === 🌟 特殊藝術風格 Special Art Styles ===
+    pixel_art: {
+        label: "👾 像素風格",
+        value: "pixel_art",
+        lighting: "Flat pixel shading, limited color palette, retro game aesthetic",
+        color_palette: ["16-bit Colors", "Retro Palette", "Dithered Gradients"],
+        aesthetic: "Pixel art, 16-bit style, retro game graphics, nostalgic, low resolution charm"
+    },
+    art_nouveau: {
+        label: "🌺 新藝術風格",
+        value: "art_nouveau",
+        lighting: "Decorative flat lighting, ornate patterns, flowing organic lines",
+        color_palette: ["Muted Golds", "Sage Greens", "Dusty Roses", "Ivory"],
+        aesthetic: "Art Nouveau style, Alphonse Mucha inspired, decorative borders, flowing lines, organic patterns"
+    },
+    ukiyo_e: {
+        label: "🗾 浮世繪風格",
+        value: "ukiyo_e",
+        lighting: "Flat traditional lighting, woodblock print style, bold outlines",
+        color_palette: ["Indigo Blue", "Vermillion Red", "Rice Paper White", "Black Ink"],
+        aesthetic: "Japanese Ukiyo-e, woodblock print, Hokusai style, traditional Japanese art, flat perspective"
+    },
+    pop_art: {
+        label: "🎪 普普藝術",
+        value: "pop_art",
+        lighting: "High contrast flat lighting, bold shadows, graphic style",
+        color_palette: ["Hot Pink", "Electric Yellow", "Cyan Blue", "Pure Black"],
+        aesthetic: "Pop art style, Andy Warhol inspired, Ben-Day dots, bold colors, comic book halftone"
+    },
+    vaporwave: {
+        label: "🌴 蒸氣波風格",
+        value: "vaporwave",
+        lighting: "Neon glow, pink and blue gradient, retro digital aesthetic",
+        color_palette: ["Hot Pink", "Cyan", "Purple", "Sunset Orange"],
+        aesthetic: "Vaporwave aesthetic, 80s retro, Greek statues, palm trees, nostalgic digital, synthwave"
     }
 };
 
