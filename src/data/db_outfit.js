@@ -6,8 +6,8 @@ export const costumeSetDatabase = {
     // === 日常休閒 (Casual) ===
     casual: [
         // 居家慵懶風
-        { value: "Oversized white boyfriend shirt, unbuttoned, white lace panties visible, bare legs, messy hair, barefoot indoors (寬鬆男友襯衫)", label: "寬鬆男友襯衫 (Boyfriend Shirt)" },
-        { value: "Oversized pastel pink hoodie, no pants style, white thigh high socks, cute long sleeves covering hands, bare legs (下衣失蹤風)", label: "下衣失蹤風 (Oversized Hoodie)" },
+        { value: "Oversized white boyfriend shirt, loose fit, long sleeves covering hands, shirt hem reaching mid-thigh, bare legs, messy hair, cozy morning aesthetic, barefoot indoors (寬鬆男友襯衫)", label: "寬鬆男友襯衫 (Boyfriend Shirt)" },
+        { value: "Oversized pastel pink hoodie, hoodie dress style, white thigh high socks, cute long sleeves covering hands, cozy aesthetic (下衣失蹤風)", label: "下衣失蹤風 (Oversized Hoodie)" },
         { value: "Grey cropped sweatshirt, matching grey sweatpants, messy bun, white fuzzy slippers, loungewear vibes (灰色運動套裝)", label: "灰色運動套裝 (Lounge Set)" },
         { value: "White oversized band tee, black bike shorts, hair clip, barefoot at home (寬鬆樂團T)", label: "寬鬆樂團T (Band Tee)" },
         { value: "Soft pink satin pajama set, button-up top, matching shorts, barefoot (粉色緞面睡衣)", label: "粉色緞面睡衣 (Satin PJs)" },
