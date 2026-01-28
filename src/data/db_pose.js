@@ -217,7 +217,7 @@ export const poseDatabase = [
         id: "squatting",
         label: "蹲姿 (Squatting)",
         options: [
-            { value: "Squatting down, knees together, cute pose (雙膝併攏蹲姿)", label: "雙膝併攏蹲姿 (Knees Together)" },
+            { value: "Squatting down, (knees together:1.8), (knees touching:1.5), closed knees, legs closed, cute pose (雙膝併攏蹲姿)", label: "雙膝併攏蹲姿 (Knees Together)" },
             { value: "Asian squat, heels flat on ground, relaxed casual (亞洲蹲)", label: "亞洲蹲 (Asian Squat)" },
             { value: "Squatting, one knee touching ground, kneeling squat (單膝跪蹲)", label: "單膝跪蹲 (One Knee Down)" },
             { value: "Squatting, looking up at camera, innocent eyes (蹲姿仰視)", label: "蹲姿仰視 (Looking Up)" },
