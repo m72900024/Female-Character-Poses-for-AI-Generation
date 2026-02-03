@@ -60,9 +60,15 @@
                 <p class="text-xs text-slate-500">Modular Edition (Clean)</p>
             </div>
         </div>
-        <button id="btnCopyJson" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition flex items-center gap-2 active:scale-95">
-            <i class="fa-regular fa-copy"></i> 複製 JSON
-        </button>
+        <div class="flex items-center gap-3">
+            <div class="flex bg-slate-100 p-1 rounded-lg">
+                <button id="btnFormatJson" class="px-3 py-1.5 text-xs font-bold rounded-md bg-white shadow text-blue-600 transition">JSON</button>
+                <button id="btnFormatSD" class="px-3 py-1.5 text-xs font-medium rounded-md text-slate-500 hover:bg-white/50 transition">SD Prompt</button>
+            </div>
+            <button id="btnCopyJson" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition flex items-center gap-2 active:scale-95">
+                <i class="fa-regular fa-copy"></i> <span id="btnCopyText">複製 JSON</span>
+            </button>
+        </div>
     </header>
 
     <main class="flex-1 flex overflow-hidden">
@@ -71,9 +77,15 @@
             <section>
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-2"><span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">LAYER 1</span><h2 class="font-bold text-lg">角色設定 (Character)</h2></div>
-                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerCharCore" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
+                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerCharCore" class="sr-only peer" data-layer="1" aria-label="Layer 1 - 角色設定 Character"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
                 </div>
                 <div id="contentLayerCharCore" class="layer-content collapsed space-y-5 pl-1">
+                    <div class="relative border-l-2 border-blue-200 pl-3">
+                        <div class="flex justify-between items-center mb-1"><label class="text-sm font-medium text-blue-700">🌍 人種/族裔</label><label class="relative inline-flex items-center cursor-pointer sub-switch"><input type="checkbox" id="toggleCharEthnicity" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label></div>
+                        <div id="boxCharEthnicity" class="layer-content collapsed">
+                            <select id="charEthnicity" class="w-full p-2 border border-slate-300 rounded-md text-sm text-slate-800 outline-none focus:ring-2 focus:ring-blue-500"></select>
+                        </div>
+                    </div>
                     <div class="relative border-l-2 border-slate-100 pl-3">
                         <div class="flex justify-between items-center mb-1"><label class="text-sm font-medium text-slate-700">基礎描述</label><label class="relative inline-flex items-center cursor-pointer sub-switch"><input type="checkbox" id="toggleCharBase" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label></div>
                         <div id="boxCharBase" class="layer-content collapsed">
@@ -117,7 +129,7 @@
             <section>
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-2"><span class="bg-indigo-100 text-indigo-600 text-xs font-bold px-2 py-1 rounded">LAYER 2</span><h2 class="font-bold text-lg">服裝與配件 (Outfit)</h2></div>
-                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerOutfit" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-indigo-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
+                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerOutfit" class="sr-only peer" data-layer="2" aria-label="Layer 2 - 服裝與配件 Outfit"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-indigo-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
                 </div>
                 <div id="contentLayerOutfit" class="layer-content collapsed space-y-5 pl-1">
                     <div class="relative border-l-2 border-indigo-100 pl-3">
@@ -196,7 +208,7 @@
             <section>
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-2"><span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">LAYER 3</span><h2 class="font-bold text-lg">鏡頭與動作 (Camera)</h2></div>
-                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerCamera" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
+                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerCamera" class="sr-only peer" data-layer="3" aria-label="Layer 3 - 鏡頭與動作 Camera"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
                 </div>
                 <div id="contentLayerCamera" class="layer-content collapsed">
                     <div class="grid grid-cols-2 gap-4 mb-4">
@@ -228,7 +240,7 @@
             <section>
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-2"><span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">LAYER 4</span><h2 class="font-bold text-lg">物理環境 (Stage)</h2></div>
-                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerStage" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
+                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerStage" class="sr-only peer" data-layer="4" aria-label="Layer 4 - 物理環境 Stage"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
                 </div>
                 <div id="contentLayerStage" class="layer-content collapsed space-y-4">
                     <div>
@@ -240,7 +252,7 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-1">場景元素</label>
-                        <input type="text" id="stageProps" class="w-full p-2 border border-slate-300 rounded-md text-sm text-slate-800 bg-white" value="Wooden school desks and chairs">
+                        <input type="text" id="stageProps" class="w-full p-2 border border-slate-300 rounded-md text-sm text-slate-800 bg-white" value="">
                     </div>
                 </div>
             </section>
@@ -250,7 +262,7 @@
             <section>
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-2"><span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">LAYER 5</span><h2 class="font-bold text-lg text-blue-800">風格濾鏡 (Filter)</h2></div>
-                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerFilter" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
+                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerFilter" class="sr-only peer" data-layer="5" aria-label="Layer 5 - 風格濾鏡 Filter"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
                 </div>
                 <div id="contentLayerFilter" class="layer-content collapsed">
                     <div class="grid grid-cols-1 gap-3">
@@ -272,7 +284,7 @@
              <section>
                 <div class="flex justify-between items-center mb-4">
                     <div class="flex items-center gap-2"><span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">LAYER 6</span><h2 class="font-bold text-lg">渲染設定 (Render)</h2></div>
-                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerRender" class="sr-only peer"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
+                    <label class="relative inline-flex items-center cursor-pointer"><input type="checkbox" id="toggleLayerRender" class="sr-only peer" data-layer="6" aria-label="Layer 6 - 渲染設定 Render"><div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div></label>
                 </div>
                 <div id="contentLayerRender" class="layer-content collapsed space-y-4">
                       <div class="bg-slate-50 p-2 rounded border border-slate-200">
@@ -293,7 +305,7 @@
         </div>
 
         <div class="w-full md:w-1/2 lg:w-7/12 bg-slate-900 text-slate-300 p-6 flex flex-col">
-            <div class="flex justify-between items-center mb-4"><h2 class="font-bold text-white"><i class="fa-solid fa-code mr-2"></i>JSON Output</h2><span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Live Preview</span></div>
+            <div class="flex justify-between items-center mb-4"><h2 id="outputTitle" class="font-bold text-white"><i class="fa-solid fa-code mr-2"></i>JSON Output</h2><span class="text-xs bg-slate-800 px-2 py-1 rounded text-slate-400">Live Preview</span></div>
             <div class="flex-1 bg-slate-950 rounded-lg p-4 border border-slate-800 overflow-auto font-mono text-sm shadow-inner custom-scrollbar relative">
                 <pre id="jsonOutput" class="text-green-400"></pre>
             </div>

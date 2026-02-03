@@ -70,12 +70,12 @@ export function getData() {
         
         data.medium = { category: cat, style: style };
 
-        // 自動添加負面提示詞
+        // 自動添加負面提示詞 (基於媒材分類)
         let neg = "";
         if (cat === 'photorealistic') neg = "(anime, manga, 2d, sketch), bad anatomy";
         else if (cat === 'anime') neg = "(photorealistic, real life), 3d, bad hands";
         else if (cat === '3d_render') neg = "(2d, sketch), low poly";
-        
+
         data.negative_prompt = neg;
     }
 

@@ -14,42 +14,48 @@ const mixColors = { top:null, bottom:null, outer:null, shoes:null, legwear:null,
 
 // ★★★ 分類翻譯對照表 ★★★
 const categoryTranslations = {
-    // 套裝分類 (按邏輯順序排列)
-    casual: "日常休閒 (Casual)",
-    influencer: "網美風格 (Influencer)",
-    sweet_cute: "甜美可愛 (Sweet & Cute)",
+    // ═══════════════════════════════════════
+    // 套裝分類 Costume Sets
+    // ═══════════════════════════════════════
+    casual: "🏠 日常休閒 (Casual)",
+    influencer: "📸 網美風格 (Influencer)",
+    sweet_cute: "🎀 甜美可愛 (Sweet & Cute)",
     subtle_sheer: "🌸 若隱若現 (Subtle Sheer)",
-    sexy_fashion: "性感時尚 (Sexy Fashion)",
-    swimwear: "泳裝比基尼 (Swimwear)",
-    uniform: "學生制服 (School Uniform)",
-    professional: "職業裝 (Professional)",
-    cosplay: "角色扮演 (Cosplay)",
-    sportswear: "運動服飾 (Sportswear)",
-    qipao: "旗袍 (Qipao)",
-    hanfu: "漢服 (Hanfu)",
-    kimono: "和服 (Kimono)",
-    jk_style: "🇯🇵🇰🇷 日韓短裙風 (JK Style)",
+    sexy_fashion: "🔥 性感時尚 (Sexy Fashion)",
+    swimwear: "👙 泳裝比基尼 (Swimwear)",
+    uniform: "🎓 學生制服 (School Uniform)",
+    professional: "💼 職業裝 (Professional)",
+    cosplay: "🎭 角色扮演 (Cosplay)",
+    sportswear: "🏃 運動服飾 (Sportswear)",
+    qipao: "🏮 旗袍 (Qipao)",
+    hanfu: "🏯 漢服 (Hanfu)",
+    kimono: "👘 和服 (Kimono)",
+    jk_style: "🇯🇵 日韓短裙風 (JK Style)",
+    shorts_outfits: "🩳 日韓短褲風 (Shorts Outfits)",
     cafe_date: "☕ 咖啡廳約會 (Cafe Date)",
     summer_fresh: "🌊 夏日清涼 (Summer Fresh)",
     autumn_winter: "🍂 秋冬溫暖 (Autumn Winter)",
-    office_chic: "💼 輕熟OL風 (Office Chic)",
+    office_chic: "👩‍💼 輕熟OL風 (Office Chic)",
     party_concert: "🎵 派對演唱會 (Party Concert)",
-    seasonal: "節慶限定 (Seasonal)",
-    // 下裝
-    pants: "長褲/短褲 (Pants)",
-    mini_skirt: "迷你裙 (Mini Skirt)",
-    short_skirt: "短裙 (Short Skirt)",
-    midi_skirt: "中長裙 (Midi Skirt)",
-    long_skirt: "長裙 (Long Skirt)",
-    influencer: "📸 網美風格 (Influencer)",
-    subtle_sheer: "🌸 微透下裝 (Subtle Sheer)",
-    // 鞋子
-    sneakers: "運動休閒 (Sneakers)",
-    heels: "高跟鞋 (Heels)",
-    boots: "靴子 (Boots)",
-    flats: "平底鞋 (Flats)",
-    barefoot: "赤腳 (Barefoot)",
-    none: "不指定 (None)"
+    seasonal: "🎄 節慶限定 (Seasonal)",
+    // ═══════════════════════════════════════
+    // 下裝分類 Bottoms
+    // ═══════════════════════════════════════
+    pants: "👖 長褲/短褲 (Pants)",
+    mini_skirt: "💃 迷你裙 (Mini Skirt)",
+    short_skirt: "👗 短裙 (Short Skirt)",
+    midi_skirt: "🩱 中長裙 (Midi Skirt)",
+    long_skirt: "👘 長裙 (Long Skirt)",
+    // ═══════════════════════════════════════
+    // 鞋子分類 Shoes
+    // ═══════════════════════════════════════
+    sneakers: "👟 運動休閒 (Sneakers)",
+    heels: "👠 高跟鞋 (Heels)",
+    boots: "👢 靴子 (Boots)",
+    flats: "🥿 平底鞋 (Flats)",
+    qipao_heels: "🏮 旗袍鞋款 (Qipao Heels)",
+    barefoot: "🦶 赤腳 (Barefoot)",
+    none: "❌ 不指定 (None)"
 };
 
 export function init(callback) {

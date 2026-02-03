@@ -6,8 +6,8 @@ export const costumeSetDatabase = {
     // === 日常休閒 (Casual) ===
     casual: [
         // 居家慵懶風
-        { value: "Oversized white boyfriend shirt, unbuttoned, white lace panties visible, bare legs, messy hair, barefoot indoors (寬鬆男友襯衫)", label: "寬鬆男友襯衫 (Boyfriend Shirt)" },
-        { value: "Oversized pastel pink hoodie, no pants style, white thigh high socks, cute long sleeves covering hands, bare legs (下衣失蹤風)", label: "下衣失蹤風 (Oversized Hoodie)" },
+        { value: "Oversized white boyfriend shirt, loose fit, long sleeves covering hands, shirt hem reaching mid-thigh, bare legs, messy hair, cozy morning aesthetic, barefoot indoors (寬鬆男友襯衫)", label: "寬鬆男友襯衫 (Boyfriend Shirt)" },
+        { value: "Oversized pastel pink hoodie, hoodie dress style, white thigh high socks, cute long sleeves covering hands, cozy aesthetic (下衣失蹤風)", label: "下衣失蹤風 (Oversized Hoodie)" },
         { value: "Grey cropped sweatshirt, matching grey sweatpants, messy bun, white fuzzy slippers, loungewear vibes (灰色運動套裝)", label: "灰色運動套裝 (Lounge Set)" },
         { value: "White oversized band tee, black bike shorts, hair clip, barefoot at home (寬鬆樂團T)", label: "寬鬆樂團T (Band Tee)" },
         { value: "Soft pink satin pajama set, button-up top, matching shorts, barefoot (粉色緞面睡衣)", label: "粉色緞面睡衣 (Satin PJs)" },
@@ -96,25 +96,36 @@ export const costumeSetDatabase = {
     ],
 
     // === 若隱若現 (Subtle Sheer) ===
+    // ★ 設計理念：含蓄的性感，透過薄透材質在特定光線下產生微妙透視效果
+    // ★ 透視程度：微透 (faintly visible / subtle hint) — 非完全透視
+    // ★ 適用場合：日常穿搭、約會、輕正式場合
     subtle_sheer: [
+        // ────────────────────────────────────────
         // 微透上衣 Subtle Sheer Tops
-        { value: "White thin knit sweater, bra faintly visible through fabric, subtle sheer effect, high-waisted jeans, elegant casual (微透白色針織衫)", label: "微透白色針織衫 (Subtle White Knit)" },
-        { value: "Cream sheer knit top, skin tone barely visible, delicate texture, midi skirt, feminine elegant (奶油色薄針織)", label: "奶油色薄針織 (Cream Sheer Knit)" },
-        { value: "Light pink semi-sheer blouse, soft bra outline hint, romantic lighting, white skirt, sweet style (淡粉微透襯衫)", label: "淡粉微透襯衫 (Pink Semi-sheer)" },
-        { value: "White linen shirt, slightly translucent in sunlight, bra shadow visible, natural casual, denim shorts (陽光透白麻襯衫)", label: "陽光透白麻襯衫 (Sunlit Linen)" },
-        { value: "Ivory silk camisole, subtle skin glow underneath, delicate straps, high-waisted pants, refined sexy (象牙絲質小可愛)", label: "象牙絲質小可愛 (Ivory Silk Cami)" },
-        { value: "Beige sheer ribbed top, skin peeking through ribs, layered necklaces, mini skirt, chic style (米色微透羅紋上衣)", label: "米色微透羅紋上衣 (Beige Sheer Rib)" },
-        { value: "White cotton voile blouse, airy light fabric, bra shadow when backlit, flowy feminine, skirt (棉紗透光襯衫)", label: "棉紗透光襯衫 (Voile Blouse)" },
-        { value: "Lavender semi-sheer knit, subtle body outline, dreamy soft focus, white pants, gentle feminine (薰衣草微透針織)", label: "薰衣草微透針織 (Lavender Semi-sheer)" },
+        // 材質：薄針織、絲綢、亞麻、棉紗
+        // 效果：內衣輪廓隱約可見、膚色若隱若現
+        // ────────────────────────────────────────
+        { value: "White thin knit sweater, delicate loose weave fabric, bra faintly visible through material, subtle sheer effect, paired with high-waisted blue jeans, nude heels, elegant casual daytime look, soft natural lighting (微透白色針織衫)", label: "微透白色針織衫 (Subtle White Knit)" },
+        { value: "Cream sheer knit top, fine gauge knit with skin tone barely visible underneath, delicate feminine texture, paired with beige midi skirt, nude pumps, soft focus romantic lighting (奶油色薄針織)", label: "奶油色薄針織 (Cream Sheer Knit)" },
+        { value: "Light pink semi-sheer chiffon blouse, soft white bra outline hint beneath fabric, romantic golden hour lighting, paired with white pleated skirt, pink heels, sweet date style (淡粉微透襯衫)", label: "淡粉微透襯衫 (Pink Semi-sheer)" },
+        { value: "White linen button-up shirt, slightly translucent when sunlight passes through, bra shadow subtly visible, natural casual summer vibe, paired with denim shorts, white sandals, outdoor setting (陽光透白麻襯衫)", label: "陽光透白麻襯衫 (Sunlit Linen)" },
+        { value: "Ivory silk camisole top, lustrous fabric with subtle skin glow underneath, delicate spaghetti straps, paired with high-waisted tailored pants, strappy heels, refined understated sexy (象牙絲質小可愛)", label: "象牙絲質小可愛 (Ivory Silk Cami)" },
+        { value: "Beige sheer ribbed knit top, vertical rib texture with skin peeking through gaps, layered gold necklaces, paired with black mini skirt, ankle boots, trendy chic street style (米色微透羅紋上衣)", label: "米色微透羅紋上衣 (Beige Sheer Rib)" },
+        { value: "White cotton voile blouse, lightweight airy semi-transparent fabric, bra shadow visible when backlit by window light, flowy romantic silhouette, paired with cream skirt, nude flats (棉紗透光襯衫)", label: "棉紗透光襯衫 (Voile Blouse)" },
+        { value: "Lavender semi-sheer mohair knit sweater, fuzzy texture with subtle body outline visible, dreamy soft focus aesthetic, paired with white wide-leg pants, lavender heels, gentle feminine mood (薰衣草微透針織)", label: "薰衣草微透針織 (Lavender Semi-sheer)" },
+        // ────────────────────────────────────────
         // 微透下裝 Subtle Sheer Bottoms
-        { value: "White layered tulle skirt, many layers creating semi-opaque effect, silhouette hint only, crop top, romantic (多層次白紗裙)", label: "多層次白紗裙 (Layered Tulle)" },
-        { value: "Cream chiffon midi skirt, leg silhouette faintly visible when walking, elegant flow, blouse, heels (奶油雪紡中長裙)", label: "奶油雪紡中長裙 (Cream Chiffon Midi)" },
-        { value: "White linen A-line skirt, slightly translucent in bright light, underwear hint only, casual elegant (白麻微透A字裙)", label: "白麻微透A字裙 (Linen A-line)" },
-        { value: "Pale pink organza overlay skirt, solid slip underneath, romantic layered effect, feminine top (粉色歐根紗疊層裙)", label: "粉色歐根紗疊層裙 (Pink Organza Layer)" },
-        { value: "Ivory pleated sheer skirt with nude slip, legs subtly visible, sophisticated elegant, silk blouse (象牙百褶微透裙)", label: "象牙百褶微透裙 (Ivory Pleated Sheer)" },
-        { value: "White mesh panel skirt, strategic sheer sections, teasing glimpse of skin, modern chic (白色網紗拼接裙)", label: "白色網紗拼接裙 (Mesh Panel Skirt)" },
-        { value: "Light grey sheer wrap skirt, inner lining visible, elegant drape, office appropriate sexy (淺灰微透圍裹裙)", label: "淺灰微透圍裹裙 (Grey Sheer Wrap)" },
-        { value: "Champagne satin-lined chiffon skirt, subtle shimmer through layers, evening elegant, silk top (香檳雪紡內襯裙)", label: "香檳雪紡內襯裙 (Champagne Chiffon)" }
+        // 材質：雪紡、歐根紗、薄紗、網紗拼接
+        // 效果：腿部輪廓若隱若現、內襯隱約可見
+        // ────────────────────────────────────────
+        { value: "White layered tulle midi skirt, multiple sheer layers creating semi-opaque dreamy effect, leg silhouette hint only, paired with fitted crop top, ballet flats, romantic fairy-like aesthetic (多層次白紗裙)", label: "多層次白紗裙 (Layered Tulle)" },
+        { value: "Cream chiffon midi skirt, flowing lightweight fabric with leg silhouette faintly visible when walking, elegant movement, paired with silk blouse, nude pointed heels, sophisticated feminine (奶油雪紡中長裙)", label: "奶油雪紡中長裙 (Cream Chiffon Midi)" },
+        { value: "White linen A-line skirt, natural fabric slightly translucent in bright sunlight, underwear hint only visible in strong backlight, paired with simple tank top, sandals, casual summer elegant (白麻微透A字裙)", label: "白麻微透A字裙 (Linen A-line)" },
+        { value: "Pale pink organza overlay skirt, sheer outer layer over solid nude slip underneath, romantic layered translucent effect, paired with white feminine blouse, pink heels, dreamy princess style (粉色歐根紗疊層裙)", label: "粉色歐根紗疊層裙 (Pink Organza Layer)" },
+        { value: "Ivory pleated sheer chiffon skirt with nude slip lining, legs subtly visible through delicate pleats, sophisticated elegant drape, paired with cream silk blouse, gold heels, evening cocktail appropriate (象牙百褶微透裙)", label: "象牙百褶微透裙 (Ivory Pleated Sheer)" },
+        { value: "White pencil skirt with mesh panel inserts, strategic sheer sections on sides, teasing glimpse of skin, modern minimalist design, paired with black crop top, black heels, contemporary chic (白色網紗拼接裙)", label: "白色網紗拼接裙 (Mesh Panel Skirt)" },
+        { value: "Light grey sheer chiffon wrap skirt, inner lining visible through outer layer, elegant asymmetric drape, office appropriate subtle sexy, paired with white blouse, grey pumps, professional feminine (淺灰微透圍裹裙)", label: "淺灰微透圍裹裙 (Grey Sheer Wrap)" },
+        { value: "Champagne satin-lined chiffon maxi skirt, subtle golden shimmer visible through sheer layers, evening elegant movement, paired with matching silk camisole top, gold strappy heels, formal event ready (香檳雪紡內襯裙)", label: "香檳雪紡內襯裙 (Champagne Chiffon)" }
     ],
 
     // === 性感時尚 (Sexy Fashion) ===
@@ -564,6 +575,76 @@ export const costumeSetDatabase = {
         { value: "Striped crop cardigan, matching mini skirt set, white sneakers (條紋套裝迷你)", label: "🇰🇷 條紋套裝迷你 (Stripe Set Mini)" }
     ],
 
+    // === 🩳 短褲套裝搭配 (Shorts Outfits) ===
+    shorts_outfits: [
+        // ────────────────────────────────────────
+        // 🎀 日系甜美短褲 Japanese Sweet Shorts
+        // ────────────────────────────────────────
+        { value: "White lace crop top, high-waisted pink gingham shorts, white knee socks, pink mary janes, sweet summer style (日系粉格紋甜美短褲)", label: "🎀🇯🇵 粉格紋甜美短褲 (Pink Gingham Sweet)" },
+        { value: "Cream knit cardigan with pearl buttons, white camisole, light blue denim shorts, white sneakers, soft feminine (日系珍珠扣針織短褲)", label: "🎀🇯🇵 珍珠扣針織短褲 (Pearl Knit Shorts)" },
+        { value: "Baby pink off-shoulder top with ruffles, white high-waisted shorts with bow, white sandals (日系粉色荷葉邊短褲)", label: "🎀🇯🇵 粉色荷葉邊短褲 (Pink Ruffle Shorts)" },
+        { value: "White sailor collar blouse with navy ribbon, navy pleated shorts, white knee socks, brown loafers (日系水手風短褲)", label: "🎀🇯🇵 水手風短褲 (Sailor Shorts)" },
+        { value: "Pastel lavender oversized sweater, white denim shorts, white platform sneakers, cute casual (日系薰衣草毛衣短褲)", label: "🎀🇯🇵 薰衣草毛衣短褲 (Lavender Sweater Shorts)" },
+        { value: "Strawberry print crop top, red high-waisted shorts, white ankle socks, red mary janes (日系草莓甜心短褲)", label: "🎀🇯🇵 草莓甜心短褲 (Strawberry Sweet Shorts)" },
+        { value: "White puff sleeve blouse with ribbon, pastel yellow shorts with lace trim, white ballet flats (日系蕾絲邊黃色短褲)", label: "🎀🇯🇵 蕾絲邊黃色短褲 (Lace Trim Yellow)" },
+        { value: "Pink gingham crop top with bow, matching pink gingham shorts set, white sneakers, summer date (日系粉格紋套裝)", label: "🎀🇯🇵 粉格紋短褲套裝 (Gingham Set)" },
+        // ────────────────────────────────────────
+        // 🎀 韓系甜美短褲 Korean Sweet Shorts
+        // ────────────────────────────────────────
+        { value: "White cropped cardigan with gold buttons, cream camisole, high-waisted beige shorts, nude mules, elegant casual (韓系奶茶甜美短褲)", label: "🎀🇰🇷 奶茶甜美短褲 (Milk Tea Sweet Shorts)" },
+        { value: "Soft pink tweed cropped jacket, matching pink tweed shorts, pearl accessories, nude heels (韓系粉色小香風短褲套裝)", label: "🎀🇰🇷 粉色小香風短褲套裝 (Pink Tweed Shorts Set)" },
+        { value: "White square neck puff sleeve top, lavender paper bag shorts, strappy sandals, romantic date (韓系薰衣草紙袋短褲)", label: "🎀🇰🇷 薰衣草紙袋短褲 (Lavender Paper Bag)" },
+        { value: "Baby blue knit vest over white shirt, matching blue tailored shorts, white sneakers, preppy cute (韓系學院風藍色短褲)", label: "🎀🇰🇷 學院風藍色短褲 (Preppy Blue Shorts)" },
+        { value: "Cream silk camisole, high-waisted linen shorts with belt, straw bag, nude sandals, summer elegant (韓系亞麻優雅短褲)", label: "🎀🇰🇷 亞麻優雅短褲 (Linen Elegant Shorts)" },
+        { value: "Pastel mint cropped hoodie, white denim shorts, white chunky sneakers, sporty cute (韓系薄荷休閒短褲)", label: "🎀🇰🇷 薄荷休閒短褲 (Mint Casual Shorts)" },
+        { value: "White eyelet lace top, high-waisted cream shorts with bow, nude block heels (韓系蕾絲蝴蝶結短褲)", label: "🎀🇰🇷 蕾絲蝴蝶結短褲 (Lace Bow Shorts)" },
+        { value: "Peach ruched crop top, matching peach shorts set, gold jewelry, nude heels (韓系蜜桃套裝短褲)", label: "🎀🇰🇷 蜜桃套裝短褲 (Peach Set Shorts)" },
+        // ────────────────────────────────────────
+        // 💋 性感辣妹短褲 Sexy Shorts Outfits
+        // ────────────────────────────────────────
+        { value: "Black lace bralette, high-waisted black leather shorts, fishnet stockings, black stiletto heels (性感皮革蕾絲短褲)", label: "💋🔥 皮革蕾絲短褲 (Leather Lace Shorts)" },
+        { value: "White cropped tube top, ultra low-rise denim hot pants, chunky silver chain belt, clear heels (性感低腰牛仔熱褲)", label: "💋🔥 低腰牛仔熱褲 (Low-rise Denim Hot)" },
+        { value: "Red satin crop top with tie front, black micro shorts, black ankle boots (性感紅緞面短褲)", label: "💋🔥 紅緞面短褲 (Red Satin Shorts)" },
+        { value: "Sheer mesh long sleeve top, black bralette visible, high-waisted black shorts, black heels (性感透視網紗短褲)", label: "💋🔥 透視網紗短褲 (Sheer Mesh Shorts)" },
+        { value: "Black velvet bustier top, matching velvet micro shorts, choker necklace, black stilettos (性感絲絨套裝短褲)", label: "💋🔥 絲絨套裝短褲 (Velvet Set Shorts)" },
+        { value: "White bodysuit with deep V, distressed denim shorts, black ankle boots, edgy sexy (性感深V連身短褲)", label: "💋🔥 深V連身短褲 (Deep V Shorts)" },
+        { value: "Sequin bralette top, black satin shorts, strappy heels, night out style (性感亮片夜店短褲)", label: "💋🔥 亮片夜店短褲 (Sequin Club Shorts)" },
+        { value: "Off-shoulder crop sweater, high-waisted PU leather shorts, over-the-knee boots (性感露肩皮短褲)", label: "💋🔥 露肩皮短褲 (Off-shoulder Leather)" },
+        // ────────────────────────────────────────
+        // 🇯🇵 日系辣妹短褲 Japanese Spicy Shorts
+        // ────────────────────────────────────────
+        { value: "White halter neck crop top, ultra high-waisted denim shorts, white platform sneakers, gyaru style (日系辣妹高腰牛仔短褲)", label: "🔥🇯🇵 辣妹高腰牛仔短褲 (Gyaru Denim)" },
+        { value: "Pink cropped hoodie, black micro shorts, white thigh-high socks, pink platform sneakers (日系甜辣帽T短褲)", label: "🔥🇯🇵 甜辣帽T短褲 (Sweet Spicy Hoodie)" },
+        { value: "Black tube top with rhinestones, white hot pants, clear platform heels, Y2K gyaru (日系Y2K辣妹熱褲)", label: "🔥🇯🇵 Y2K辣妹熱褲 (Y2K Gyaru Hot)" },
+        { value: "White off-shoulder ruffle top, light blue denim shorts, white knee-high boots, summer spicy (日系露肩辣妹短褲)", label: "🔥🇯🇵 露肩辣妹短褲 (Off-shoulder Spicy)" },
+        { value: "Cropped sailor top, navy micro pleated shorts, white loose socks, platform loafers (日系改良水手短褲)", label: "🔥🇯🇵 改良水手短褲 (Modified Sailor Shorts)" },
+        // ────────────────────────────────────────
+        // 🇰🇷 韓系辣妹短褲 Korean Spicy Shorts
+        // ────────────────────────────────────────
+        { value: "Black cropped blazer, white bralette visible, high-waisted tailored shorts, black heels (韓系辣妹西裝短褲)", label: "🔥🇰🇷 辣妹西裝短褲 (Spicy Blazer Shorts)" },
+        { value: "Ribbed white crop top, high-waisted cargo shorts, chunky sneakers, street style (韓系工裝辣妹短褲)", label: "🔥🇰🇷 工裝辣妹短褲 (Cargo Spicy Shorts)" },
+        { value: "Black one-shoulder top, leather shorts with belt, ankle boots, chic edgy (韓系單肩皮革短褲)", label: "🔥🇰🇷 單肩皮革短褲 (One-shoulder Leather)" },
+        { value: "White cropped shirt tied at waist, high-waisted black shorts, white sneakers, casual sexy (韓系綁結短褲)", label: "🔥🇰🇷 綁結短褲 (Tied Shirt Shorts)" },
+        { value: "Oversized graphic tee tucked in, ultra high-waisted denim shorts, white dad sneakers (韓系寬T高腰短褲)", label: "🔥🇰🇷 寬T高腰短褲 (Oversized Tee Shorts)" },
+        { value: "Off-shoulder knit crop top, high-waisted pleated shorts, strappy heels, date night (韓系露肩約會短褲)", label: "🔥🇰🇷 露肩約會短褲 (Off-shoulder Date Shorts)" },
+        // ────────────────────────────────────────
+        // 🌸 日韓運動休閒短褲 JK Sporty Casual Shorts
+        // ────────────────────────────────────────
+        { value: "White cropped zip hoodie, matching white bike shorts, white chunky sneakers, athleisure (日系運動甜心短褲)", label: "🏃🇯🇵 運動甜心短褲 (Sporty Sweet Shorts)" },
+        { value: "Pink sports bra, high-waisted grey yoga shorts, white sneakers, gym cute (韓系健身辣妹短褲)", label: "🏃🇰🇷 健身辣妹短褲 (Gym Girl Shorts)" },
+        { value: "Oversized team jersey, black bike shorts peeking out, white high-top sneakers (日系球衣單車褲)", label: "🏃🇯🇵 球衣單車褲 (Jersey Bike Shorts)" },
+        { value: "Cropped tennis sweater, white pleated tennis shorts, white sneakers, sporty preppy (韓系網球甜心短褲)", label: "🏃🇰🇷 網球甜心短褲 (Tennis Sweet Shorts)" },
+        { value: "Pastel blue cropped tee, matching blue running shorts, white sneakers, summer active (日系馬卡龍運動短褲)", label: "🏃🇯🇵 馬卡龍運動短褲 (Macaron Sport Shorts)" },
+        // ────────────────────────────────────────
+        // ☀️ 夏日清涼短褲 Summer Fresh Shorts
+        // ────────────────────────────────────────
+        { value: "White crochet crop top, light wash denim shorts, tan sandals, beach casual (日系夏日沙灘短褲)", label: "☀️🇯🇵 夏日沙灘短褲 (Beach Casual Shorts)" },
+        { value: "Yellow gingham bikini top with cover-up shirt, white shorts, straw hat, sandals (韓系度假風短褲)", label: "☀️🇰🇷 度假風短褲 (Vacation Shorts)" },
+        { value: "Off-shoulder white eyelet top, light blue linen shorts, espadrilles, summer romance (日系清涼亞麻短褲)", label: "☀️🇯🇵 清涼亞麻短褲 (Fresh Linen Shorts)" },
+        { value: "Striped crop tank, white high-waisted shorts, white canvas sneakers, casual summer (韓系條紋夏日短褲)", label: "☀️🇰🇷 條紋夏日短褲 (Stripe Summer Shorts)" },
+        { value: "Floral print tube top, denim cutoff shorts, tan wedge sandals, tropical vibes (日系碎花度假短褲)", label: "☀️🇯🇵 碎花度假短褲 (Floral Vacation Shorts)" }
+    ],
+
     // === ☕ 咖啡廳約會風 (Cafe Date Style) ===
     cafe_date: [
         // 奶茶色系 Milk Tea Tones
@@ -791,58 +872,209 @@ export const outerDatabase = [
 
 // --- ★★★ 鞋子 (Shoes) - 增加甜美厚底款 ★★★ ---
 export const shoeDatabase = {
+    // ═══════════════════════════════════════
+    // 👟 運動休閒 Sneakers
+    // ═══════════════════════════════════════
     sneakers: [
-        { value: "Sneakers (運動鞋)", label: "基本款 (Basic)" },
-        { value: "High-top sneakers (高筒運動鞋)", label: "高筒 (High-tops)" },
-        { value: "Chunky sneakers (老爹鞋)", label: "老爹鞋 (Chunky)" },
-        { value: "Canvas shoes (帆布鞋)", label: "帆布鞋 (Canvas)" },
-        { value: "Retro running shoes (復古跑鞋)", label: "復古跑鞋 (Retro)" }, 
-        { value: "Slip-on sneakers (懶人鞋)", label: "懶人鞋 (Slip-on)" } 
+        // 基本款 Basic
+        { value: "White sneakers, clean minimal style (白色運動鞋)", label: "基本-白色運動鞋" },
+        { value: "Black sneakers, versatile casual (黑色運動鞋)", label: "基本-黑色運動鞋" },
+        { value: "High-top sneakers (高筒運動鞋)", label: "基本-高筒運動鞋" },
+        // 🇯🇵 日系風格
+        { value: "White canvas sneakers, Japanese street style, clean and simple (日系帆布鞋)", label: "日系-帆布鞋" },
+        { value: "Pastel pink sneakers, kawaii style, cute and girly (粉色可愛運動鞋)", label: "日系-粉色可愛款" },
+        { value: "Platform sneakers, Harajuku style, white with colorful accents (原宿厚底鞋)", label: "日系-原宿厚底鞋" },
+        // 🇰🇷 韓系風格
+        { value: "Chunky white sneakers, Korean street fashion, dad shoes style (韓系老爹鞋)", label: "韓系-老爹鞋" },
+        { value: "Minimalist white sneakers, Korean clean style, slim profile (韓系簡約白鞋)", label: "韓系-簡約白鞋" },
+        { value: "Beige toned sneakers, Korean neutral aesthetic (韓系奶茶色運動鞋)", label: "韓系-奶茶色運動鞋" },
+        // 🎀 甜美風格
+        { value: "Pink and white sneakers with ribbon laces, sweet girly style (粉白蝴蝶結運動鞋)", label: "甜美-蝴蝶結運動鞋" },
+        { value: "Pastel lavender sneakers, soft dreamy aesthetic (薰衣草紫運動鞋)", label: "甜美-薰衣草紫款" },
+        { value: "White sneakers with heart details, cute romantic (愛心裝飾運動鞋)", label: "甜美-愛心裝飾款" },
+        // 🔥 性感運動風
+        { value: "Sleek black sneakers, sporty sexy, form-fitting (黑色貼腿運動鞋)", label: "性感-黑色貼腿款" },
+        { value: "White platform sneakers, leg-lengthening effect (增高厚底運動鞋)", label: "性感-增高厚底款" }
     ],
+    // ═══════════════════════════════════════
+    // 👠 高跟鞋 Heels
+    // ═══════════════════════════════════════
     heels: [
-        { value: "High heels (高跟鞋)", label: "基本高跟 (Basic Heels)" },
-        { value: "Stilettos (細跟高跟鞋)", label: "細跟 (Stilettos)" },
-        { value: "Ankle strap heels (踝帶高跟鞋)", label: "踝帶 (Ankle Strap)" },
-        { value: "Platform heels (厚底高跟鞋)", label: "厚底 (Platform)" },
-        { value: "Clear strap heels (透明跟鞋)", label: "透明跟鞋 (Clear Strap)" }, 
-        { value: "Kitten heels (低跟鞋)", label: "低跟鞋 (Kitten Heels)" }, 
-        { value: "Lace-up gladiator heels (綁帶羅馬跟鞋)", label: "綁帶羅馬鞋 (Gladiator)" } 
+        // 基本款 Basic
+        { value: "Classic black high heels, elegant pointed toe (經典黑色高跟鞋)", label: "基本-經典黑色" },
+        { value: "Nude high heels, skin tone elegant (裸色高跟鞋)", label: "基本-裸色款" },
+        { value: "White high heels, clean sophisticated (白色高跟鞋)", label: "基本-白色款" },
+        // 🇯🇵 日系風格
+        { value: "Low kitten heels, Japanese office lady style, elegant and modest (日系低跟鞋)", label: "日系-低跟鞋" },
+        { value: "Nude pointed heels, Japanese feminine style, delicate (日系裸色尖頭跟鞋)", label: "日系-裸色尖頭" },
+        { value: "Ankle strap heels, Japanese date style, romantic (日系踝帶約會鞋)", label: "日系-約會踝帶鞋" },
+        // 🇰🇷 韓系風格
+        { value: "Slim stiletto heels, Korean chic style, sharp and elegant (韓系細跟高跟鞋)", label: "韓系-細跟鞋" },
+        { value: "Slingback heels, Korean minimalist, modern sophisticated (韓系後空高跟鞋)", label: "韓系-後空鞋" },
+        { value: "Square toe heels, Korean trendy style, fashion forward (韓系方頭高跟鞋)", label: "韓系-方頭鞋" },
+        { value: "Mule heels, Korean effortless chic (韓系穆勒高跟鞋)", label: "韓系-穆勒鞋" },
+        // 🎀 甜美風格
+        { value: "Pink satin heels with bow, princess style, romantic (粉色緞面蝴蝶結高跟鞋)", label: "甜美-粉色蝴蝶結" },
+        { value: "White heels with pearl strap, elegant sweet (珍珠裝飾白色高跟鞋)", label: "甜美-珍珠裝飾款" },
+        { value: "Pastel blue heels, dreamy fairy tale style (夢幻粉藍高跟鞋)", label: "甜美-夢幻粉藍款" },
+        { value: "Lace overlay heels, romantic feminine (蕾絲覆蓋高跟鞋)", label: "甜美-蕾絲浪漫款" },
+        { value: "Mary Jane heels with ribbon, sweet lolita (瑪莉珍緞帶高跟鞋)", label: "甜美-緞帶瑪莉珍" },
+        // 🔥 性感風格
+        { value: "Black stiletto heels, sexy pointed toe, leg-lengthening (性感黑色細跟鞋)", label: "性感-黑色細跟" },
+        { value: "Red high heels, seductive classic, bold statement (性感紅色高跟鞋)", label: "性感-紅色款" },
+        { value: "Clear transparent heels, sexy modern, see-through (透明性感高跟鞋)", label: "性感-透明高跟鞋" },
+        { value: "Ankle strap stilettos, sexy restraint aesthetic (踝帶細跟性感款)", label: "性感-踝帶款" },
+        { value: "Platform stilettos, ultra high sexy, dramatic height (超高厚底細跟鞋)", label: "性感-超高厚底款" },
+        { value: "Strappy sandal heels, sexy minimal, leg showcase (細帶涼鞋高跟)", label: "性感-細帶涼鞋款" },
+        { value: "Lace-up gladiator heels, sexy warrior style (綁帶羅馬性感鞋)", label: "性感-綁帶羅馬款" }
     ],
-    barefoot: [
-        { value: "Barefoot (赤腳)", label: "赤腳 (Barefoot)" }
-    ],
+    // ═══════════════════════════════════════
+    // 👢 靴子 Boots
+    // ═══════════════════════════════════════
     boots: [
-        { value: "Ankle boots (踝靴)", label: "踝靴 (Ankle Boots)" },
-        { value: "Knee-high boots (膝下靴)", label: "膝下靴 (Knee-high)" },
-        { value: "Thigh-high boots (過膝靴)", label: "過膝靴 (Thigh-high)" },
-        { value: "Combat boots (軍靴)", label: "軍靴/馬汀 (Combat)" }, 
-        { value: "Platform boots (厚底靴)", label: "厚底靴 (Platform)" }, 
-        { value: "Sock boots (襪靴)", label: "貼腿襪靴 (Sock Boots)" } 
+        // 基本款 Basic
+        { value: "Black ankle boots, classic versatile (黑色踝靴)", label: "基本-黑色踝靴" },
+        { value: "Brown leather boots, classic casual (棕色皮靴)", label: "基本-棕色皮靴" },
+        // 🇯🇵 日系風格
+        { value: "Brown suede ankle boots, Japanese autumn style (日系棕色麂皮短靴)", label: "日系-麂皮短靴" },
+        { value: "White boots, Japanese street fashion, clean cute (日系白色短靴)", label: "日系-白色短靴" },
+        { value: "Lace-up boots, Japanese girly style, sweet combat (日系甜美綁帶靴)", label: "日系-甜美綁帶靴" },
+        // 🇰🇷 韓系風格
+        { value: "Sleek black ankle boots, Korean minimal chic (韓系簡約黑短靴)", label: "韓系-簡約短靴" },
+        { value: "Chelsea boots, Korean androgynous style (韓系切爾西靴)", label: "韓系-切爾西靴" },
+        { value: "Square toe boots, Korean trendy modern (韓系方頭短靴)", label: "韓系-方頭靴" },
+        { value: "Western boots, Korean cowgirl trend (韓系西部靴)", label: "韓系-西部靴" },
+        // 🎀 甜美風格
+        { value: "White lace-up boots, sweet princess style (白色甜美綁帶靴)", label: "甜美-白色公主靴" },
+        { value: "Pink ankle boots, kawaii girly (粉紅可愛短靴)", label: "甜美-粉紅可愛靴" },
+        { value: "Bow detail boots, romantic feminine (蝴蝶結裝飾靴)", label: "甜美-蝴蝶結短靴" },
+        { value: "Fur trim boots, soft cute winter (毛毛裝飾甜美靴)", label: "甜美-毛毛甜美靴" },
+        // 🔥 性感風格
+        { value: "Thigh-high boots, sexy leg-lengthening, sleek black (性感過膝長靴)", label: "性感-過膝靴" },
+        { value: "Stiletto ankle boots, sexy pointed (細跟尖頭性感短靴)", label: "性感-細跟短靴" },
+        { value: "Patent leather boots, shiny sexy, bold (亮皮性感靴)", label: "性感-亮皮靴" },
+        { value: "Lace-up thigh boots, dominatrix style (綁帶過膝性感靴)", label: "性感-綁帶過膝靴" },
+        { value: "Platform knee boots, sexy powerful (厚底及膝性感靴)", label: "性感-厚底及膝靴" },
+        { value: "Red thigh-high boots, bold seductive (紅色過膝性感靴)", label: "性感-紅色過膝靴" }
     ],
+    // ═══════════════════════════════════════
+    // 🥿 平底鞋 Flats
+    // ═══════════════════════════════════════
     flats: [
-        { value: "Loafers (樂福鞋)", label: "樂福鞋 (Loafers)" },
-        { value: "Mary Jane shoes (瑪莉珍鞋)", label: "瑪莉珍 (Mary Jane)" },
-        { value: "Sandals (涼鞋)", label: "涼鞋 (Sandals)" },
-        { value: "Ballet flats (芭蕾平底鞋)", label: "平底鞋 (Flats)" },
-        { value: "Platform loafers (厚底樂福鞋)", label: "厚底樂福 (Platform Loafers)" },
-        // ★ 新增
-        { value: "Platform Mary Janes (厚底瑪莉珍)", label: "厚底瑪莉珍 (Platform MJ)" } 
+        // 基本款 Basic
+        { value: "Black loafers, classic casual (黑色樂福鞋)", label: "基本-黑色樂福鞋" },
+        { value: "White ballet flats, simple elegant (白色芭蕾平底鞋)", label: "基本-白色平底鞋" },
+        // 🇯🇵 日系風格
+        { value: "Brown leather loafers, Japanese preppy style (日系棕色樂福鞋)", label: "日系-學院樂福" },
+        { value: "White Mary Jane flats, Japanese sweet innocent (日系白色瑪莉珍)", label: "日系-白瑪莉珍" },
+        { value: "Canvas slip-ons, Japanese casual effortless (日系帆布懶人鞋)", label: "日系-帆布懶人鞋" },
+        { value: "Ballet flats with ribbon, Japanese feminine (日系緞帶芭蕾鞋)", label: "日系-緞帶芭蕾鞋" },
+        // 🇰🇷 韓系風格
+        { value: "Pointed loafers, Korean chic minimal (韓系尖頭樂福鞋)", label: "韓系-尖頭樂福" },
+        { value: "Slingback flats, Korean elegant casual (韓系後空平底鞋)", label: "韓系-後空平底鞋" },
+        { value: "Mule flats, Korean effortless style (韓系穆勒平底鞋)", label: "韓系-穆勒鞋" },
+        { value: "Square toe flats, Korean trendy modern (韓系方頭平底鞋)", label: "韓系-方頭鞋" },
+        // 🎀 甜美風格
+        { value: "Pink Mary Jane shoes, sweet girly style (粉紅瑪莉珍鞋)", label: "甜美-粉紅瑪莉珍" },
+        { value: "Ballet flats with bow, romantic feminine (蝴蝶結芭蕾平底鞋)", label: "甜美-蝴蝶結芭蕾鞋" },
+        { value: "Pearl strap flats, elegant sweet (珍珠帶平底鞋)", label: "甜美-珍珠帶平底鞋" },
+        { value: "Lace ballet flats, delicate romantic (蕾絲芭蕾平底鞋)", label: "甜美-蕾絲芭蕾鞋" },
+        { value: "Heart buckle Mary Janes, cute kawaii (愛心扣瑪莉珍)", label: "甜美-愛心扣瑪莉珍" },
+        { value: "Platform Mary Janes, sweet doll style (厚底瑪莉珍鞋)", label: "甜美-厚底瑪莉珍" },
+        // 🔥 性感風格
+        { value: "Pointed toe flats, sexy elegant minimal (性感尖頭平底鞋)", label: "性感-尖頭平底鞋" },
+        { value: "Strappy sandals, sexy minimal summer (細帶性感涼鞋)", label: "性感-細帶涼鞋" },
+        { value: "Ankle strap flats, subtle sexy detail (踝帶性感平底鞋)", label: "性感-踝帶平底鞋" }
+    ],
+    // ═══════════════════════════════════════
+    // 🦶 赤腳 Barefoot
+    // ═══════════════════════════════════════
+    barefoot: [
+        { value: "Barefoot, natural and free (赤腳)", label: "基本-赤腳" },
+        { value: "Barefoot with anklet, bohemian style (赤腳配腳鍊)", label: "甜美-赤腳配腳鍊" },
+        { value: "Barefoot on tiptoes, elegant pose (踮腳尖赤腳)", label: "性感-踮腳尖" }
+    ],
+    // ═══════════════════════════════════════
+    // 🏮 旗袍鞋款 Qipao Style Heels
+    // 專為旗袍、漢服、和服等東方風格設計
+    // ═══════════════════════════════════════
+    qipao_heels: [
+        { value: "Red silk high heels, elegant pointed toe (紅色絲質高跟鞋)", label: "經典-紅色絲質高跟鞋" },
+        { value: "White strappy heels, delicate ankle straps (白色綁帶高跟鞋)", label: "經典-白色綁帶高跟鞋" },
+        { value: "Black velvet pumps, classic elegant (黑色絲絨高跟鞋)", label: "經典-黑色絲絨高跟鞋" },
+        { value: "White satin heels, lustrous finish (白色緞面高跟鞋)", label: "經典-白色緞面高跟鞋" },
+        { value: "Nude high heels, skin tone elegant (裸色高跟鞋)", label: "經典-裸色高跟鞋" },
+        { value: "Black stiletto heels, sleek pointed (黑色細跟高跟鞋)", label: "性感-黑色細跟高跟鞋" },
+        { value: "Black strappy sandal heels, sexy elegant (黑色綁帶涼鞋高跟)", label: "性感-黑色綁帶涼鞋" },
+        { value: "Gold strappy heels, luxurious glamour (金色綁帶高跟鞋)", label: "華麗-金色綁帶高跟鞋" },
+        { value: "Red pointed toe pumps, classic cheongsam style (紅色尖頭高跟鞋)", label: "經典-紅色尖頭高跟鞋" },
+        { value: "Champagne satin heels, subtle shimmer (香檳色緞面高跟鞋)", label: "優雅-香檳色緞面高跟鞋" },
+        { value: "Pearl embellished heels, oriental elegance (珍珠裝飾高跟鞋)", label: "甜美-珍珠裝飾高跟鞋" },
+        { value: "Embroidered silk heels, traditional craft (刺繡絲質高跟鞋)", label: "傳統-刺繡絲質高跟鞋" }
     ],
     none: [
-        { value: "None", label: "無 (None)" }
+        { value: "None", label: "不指定" }
     ]
 };
 
 // --- ★★★ 下裝 (Bottoms) - 增加甜美短裙 ★★★ ---
 export const bottomDatabase = {
+    // === 短褲 Shorts ===
+    shorts: [
+        // 牛仔短褲 Denim Shorts
+        { value: "High-waisted denim shorts, classic blue (高腰牛仔短褲)", label: "👖 高腰牛仔短褲 (High-waist Denim)" },
+        { value: "Low-rise denim shorts, Y2K style (低腰牛仔短褲)", label: "👖 低腰牛仔短褲 (Low-rise Denim)" },
+        { value: "Distressed denim shorts, ripped details (破洞牛仔短褲)", label: "👖 破洞牛仔短褲 (Distressed Denim)" },
+        { value: "White denim shorts, summer fresh (白色牛仔短褲)", label: "👖 白色牛仔短褲 (White Denim)" },
+        { value: "Light wash denim shorts, vintage (淺色牛仔短褲)", label: "👖 淺色牛仔短褲 (Light Wash)" },
+        { value: "Denim cutoff shorts, frayed hem (毛邊牛仔短褲)", label: "👖 毛邊牛仔短褲 (Cutoff Denim)" },
+        // 熱褲 Hot Pants
+        { value: "Black hot pants, ultra short, tight fit (黑色熱褲)", label: "🔥 黑色熱褲 (Black Hot Pants)" },
+        { value: "Denim hot pants, minimal coverage (牛仔熱褲)", label: "🔥 牛仔熱褲 (Denim Hot Pants)" },
+        { value: "Leather hot pants, edgy style (皮革熱褲)", label: "🔥 皮革熱褲 (Leather Hot Pants)" },
+        { value: "Shiny PU hot pants, club style (亮面PU熱褲)", label: "🔥 亮面PU熱褲 (Shiny PU Hot Pants)" },
+        // 運動短褲 Athletic Shorts
+        { value: "Black bike shorts, cycling style (黑色單車褲)", label: "🏃 黑色單車褲 (Bike Shorts)" },
+        { value: "Running shorts, athletic fit (跑步短褲)", label: "🏃 跑步短褲 (Running Shorts)" },
+        { value: "Yoga shorts, high-waisted, stretchy (瑜伽短褲)", label: "🏃 瑜伽短褲 (Yoga Shorts)" },
+        { value: "Tennis shorts, sporty white (網球短褲)", label: "🏃 網球短褲 (Tennis Shorts)" },
+        { value: "Gym shorts, breathable fabric (健身短褲)", label: "🏃 健身短褲 (Gym Shorts)" },
+        { value: "Compression shorts, form-fitting (緊身運動短褲)", label: "🏃 緊身運動短褲 (Compression)" },
+        // 休閒短褲 Casual Shorts
+        { value: "Linen shorts, relaxed fit, summer vibes (亞麻休閒短褲)", label: "🌴 亞麻休閒短褲 (Linen Shorts)" },
+        { value: "Cotton shorts, comfortable casual (棉質休閒短褲)", label: "🌴 棉質休閒短褲 (Cotton Shorts)" },
+        { value: "Cargo shorts, multiple pockets (工裝短褲)", label: "🌴 工裝短褲 (Cargo Shorts)" },
+        { value: "Paper bag shorts, tie waist (紙袋短褲)", label: "🌴 紙袋短褲 (Paper Bag)" },
+        { value: "Drawstring shorts, casual comfort (鬆緊短褲)", label: "🌴 鬆緊短褲 (Drawstring)" },
+        // 甜美可愛 Cute Shorts
+        { value: "High-waisted shorts with bow, cute style (蝴蝶結高腰短褲)", label: "🎀 蝴蝶結高腰短褲 (Bow Shorts)" },
+        { value: "Pastel pink shorts, soft girl (粉色甜美短褲)", label: "🎀 粉色甜美短褲 (Pink Cute)" },
+        { value: "Gingham check shorts, vintage cute (格紋短褲)", label: "🎀 格紋短褲 (Gingham Check)" },
+        { value: "Ruffle hem shorts, feminine (荷葉邊短褲)", label: "🎀 荷葉邊短褲 (Ruffle Hem)" },
+        { value: "Overall shorts, playful style (吊帶短褲)", label: "🎀 吊帶短褲 (Overall Shorts)" },
+        { value: "Floral print shorts, spring vibes (碎花短褲)", label: "🎀 碎花短褲 (Floral Print)" },
+        // 正裝短褲 Dress Shorts
+        { value: "Tailored shorts, office appropriate (西裝短褲)", label: "💼 西裝短褲 (Tailored Shorts)" },
+        { value: "High-waisted pleated shorts, elegant (高腰打褶短褲)", label: "💼 高腰打褶短褲 (Pleated Shorts)" },
+        { value: "Bermuda shorts, knee-length smart (百慕達短褲)", label: "💼 百慕達短褲 (Bermuda)" },
+        // 性感短褲 Sexy Shorts
+        { value: "Micro shorts, ultra revealing (超短迷你短褲)", label: "💋 超短迷你短褲 (Micro Shorts)" },
+        { value: "Side tie shorts, adjustable (側綁帶短褲)", label: "💋 側綁帶短褲 (Side Tie)" },
+        { value: "Cut-out detail shorts, edgy (挖空設計短褲)", label: "💋 挖空設計短褲 (Cut-out Shorts)" },
+        { value: "Lace-up front shorts, sexy detail (前綁帶短褲)", label: "💋 前綁帶短褲 (Lace-up Front)" },
+        { value: "Satin sleep shorts, intimate (緞面睡褲)", label: "💋 緞面睡褲 (Satin Sleep)" }
+    ],
     pants: [
-        { value: "Denim shorts (牛仔短褲)", label: "牛仔短褲 (Denim Shorts)" },
-        { value: "Hot pants (熱褲)", label: "熱褲 (Hot Pants)" },
         { value: "Skinny jeans (緊身牛仔褲)", label: "緊身牛仔褲 (Skinny Jeans)" },
         { value: "Wide-leg pants (寬褲)", label: "寬褲 (Wide-leg Pants)" },
         { value: "Leather pants (皮褲)", label: "皮褲 (Leather Pants)" },
-        { value: "Leggings (內搭褲)", label: "內搭褲 (Leggings)" }, 
-        { value: "Cargo pants (工裝褲)", label: "工裝褲 (Cargo Pants)" }
+        { value: "Leggings (內搭褲)", label: "內搭褲 (Leggings)" },
+        { value: "Cargo pants (工裝褲)", label: "工裝褲 (Cargo Pants)" },
+        { value: "High-waisted jeans (高腰牛仔褲)", label: "高腰牛仔褲 (High-waisted Jeans)" },
+        { value: "Mom jeans, relaxed fit (老媽褲)", label: "老媽褲 (Mom Jeans)" },
+        { value: "Flare pants, 70s style (喇叭褲)", label: "喇叭褲 (Flare Pants)" },
+        { value: "Jogger pants, casual sporty (運動棉褲)", label: "運動棉褲 (Joggers)" },
+        { value: "Yoga pants, high-waisted (瑜伽褲)", label: "瑜伽褲 (Yoga Pants)" }
     ],
     mini_skirt: [
         // 基本款 Basic Styles

@@ -1,4 +1,4 @@
-import { hairDatabase, expressionDatabase } from '../data/db_character.js';
+import { hairDatabase, expressionDatabase, ethnicityDatabase } from '../data/db_character.js';
 import { toggleSection } from '../utils.js';
 
 let updateCallback = null;
@@ -6,7 +6,17 @@ let currentHairColor = null;
 
 export function init(callback) {
     updateCallback = callback;
-    
+
+    // 0. 初始化人種/族裔選單
+    const ethSelect = document.getElementById('charEthnicity');
+    if (ethSelect) {
+        ethSelect.innerHTML = '';
+        ethnicityDatabase.forEach(item => {
+            ethSelect.add(new Option(item.label, item.value));
+        });
+        ethSelect.addEventListener('change', notify);
+    }
+
     // 1. 初始化表情選單
     const expCat = document.getElementById('charExpressionCategory');
     if (expCat) {
@@ -35,11 +45,14 @@ export function init(callback) {
     renderHairColors();
 
     // 5. 綁定開關
-    ['toggleCharBase', 'toggleCharHair', 'toggleCharExpression'].forEach(id => {
-        document.getElementById(id).addEventListener('change', () => {
-            toggleSection(id);
-            notify();
-        });
+    ['toggleCharEthnicity', 'toggleCharBase', 'toggleCharHair', 'toggleCharExpression'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('change', () => {
+                toggleSection(id);
+                notify();
+            });
+        }
     });
 
     // 初次執行
@@ -127,9 +140,16 @@ function notify() { if(updateCallback) updateCallback(); }
 
 export function getData() {
     const data = {};
-    if(document.getElementById('toggleCharBase').checked) 
+
+    // 人種/族裔 (如果有開啟)
+    if(document.getElementById('toggleCharEthnicity')?.checked) {
+        const ethEl = document.getElementById('charEthnicity');
+        if (ethEl) data.ethnicity = ethEl.value;
+    }
+
+    if(document.getElementById('toggleCharBase').checked)
         data.base = document.getElementById('charBase').value;
-    
+
     if(document.getElementById('toggleCharHair').checked) {
         data.hair_style = document.getElementById('charHairStyle').value;
         if(currentHairColor) data.hair_color = `${currentHairColor.name} (${currentHairColor.hex})`;
